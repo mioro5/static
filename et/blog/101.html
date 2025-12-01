@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="utf-8">
+    <title>Massaaži blogi - Kukekannus ja lööklaineteraapia</title>
+    <meta name="description"
+        content="MV Therapy pakub Pärnus massaaži. Loe artiklit kukekannuse ja lööklaineteraapia kohta.">
+    <!-- Updated viewport for better accessibility on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
+    <!-- Theme color for address bar coloring on mobile -->
+    <meta name="theme-color" content="#44437d">
+
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//widget.salon.life">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" media="screen">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <style>
+        /* Ensure a consistent box-sizing model across elements */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8f9fb;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem; /* Baasfondi suurus */
+        }
+
+        .sticky-wrapper {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header {
+            background: #44437d;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            padding: 0 0 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.5rem 0 0.5rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Lucida Calligraphy', cursive, serif;
+            font-size: 1.5rem;
+        }
+
+        .claim {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .claim img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .language-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+        }
+
+        .language-menu a {
+            display: inline-block;
+            margin-left: 0.5rem;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        .language-menu .selected {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .nav {
+            background: #f4f5fa;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-item a {
+            color: #44437d;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-item.active a,
+        .nav-item a:hover {
+            background: #e3e4f5;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+            margin-right: 1rem;
+            padding: 15px;
+        }
+
+        .hamburger .line {
+            width: 28px;
+            height: 3px;
+            background: #44437d;
+            border-radius: 2px;
+            /* Smoothly animate line transforms for menu icon transition */
+            transition: all 0.3s ease;
+        }
+
+        /* Transform hamburger lines into an X when active */
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem 1.5rem;
+        }
+        
+        main > .container > h2#blog0 {
+             font-size: 1.8rem; 
+             font-weight: bold;
+             margin-bottom: 1rem;
+             color: #333;
+        }
+        .h-div-txt > h3 {
+            font-size: 1.4rem; 
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .single-box-txt h1,
+        .single-box-txt h2,
+        .single-box-txt h3 {
+            font-size: 1.15rem;
+            font-weight: bold; 
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #444;
+        }
+
+
+        .single-box-txt {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .single-box-txt p {
+            margin-bottom: 1em; 
+        }
+        .single-box-txt ul {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+
+        .single-box-img {
+            float: right;
+            margin: 0 0 1rem 1.5rem;
+            max-width: 280px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .flx-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: flex-start;
+        }
+
+        .flx-small-box {
+            flex: 1 1 220px;
+            max-width: 220px;
+            background: #f4f5fa;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flx-box-inner {
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        .flx-small-box-a {
+            display: block;
+            color: #44437d;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.7rem 1rem;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+            background: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .flx-small-box-a:hover {
+            color: #222;
+            background: #e3e4f5;
+        }
+
+        .goTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #44437d;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            /* Hidden by default and toggled via script for accessibility */
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            z-index: 99;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .page-footer {
+            background: #222;
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .page-footer a,
+        .page-footer span {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .page-footer .container {
+            padding: 0 1rem;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem; 
+        }
+
+        #broneeri-container { /* Konteiner broneerimisnupu jaoks */
+            margin-top: 1.5rem;
+            text-align: left; /* Joonda vasakule */
+        }
+
+        #broneeri-container .button-cta { /* Eraldi klass staatilise nupu jaoks, kui SalonLife ei loo enda oma */
+            display: inline-block;
+            background: #44437d;
+            color: #fff !important; 
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none !important; 
+            padding: 0.8rem 1.5rem;
+        }
+        .h-div { margin-bottom: 2rem; }
+        
+        .single-box-txt > h2:last-of-type { 
+             font-size: 1.2rem; 
+             font-weight: bold;
+             margin-top: 2rem;
+             margin-bottom: 1rem;
+        }
+        main .container > h4#blog2 {
+            font-size: 1.5rem; 
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+
+        @media (max-width: 900px) {
+            .flx-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+            .flx-small-box {
+                max-width: 100%;
+            }
+
+            .single-box-img {
+                float: none;
+                display: block;
+                margin: 0 auto 1rem auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 120;
+                position: absolute; 
+                top: 0.5rem;
+                left: 1rem;
+            }
+
+            .nav-inner {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                background: #f4f5fa;
+                z-index: 110;
+                top: 100%; 
+                left: 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding-bottom: 0.5rem;
+            }
+
+            .nav-inner.open {
+                display: flex;
+            }
+
+            .nav-item {
+                width: 100%;
+                margin: 0;
+            }
+
+            .nav-item a {
+                display: block;
+                width: 100%;
+                padding: 0.8rem 1.2rem;
+                box-sizing: border-box;
+            }
+
+            .language-menu {
+                position: absolute; 
+                top: 1.5rem;
+                right: 1rem;
+            }
+
+            .logo {
+                padding: 1rem;
+                font-size: 1.3rem;
+                margin-top: 3rem; 
+            }
+             main > .container > h2#blog0 {
+                font-size: 1.5rem;
+            }
+            .h-div-txt > h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-item a {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
+            }
+             .claim img {
+                max-width: 90%;
+            }
+
+            main {
+                padding: 1rem 0.75rem;
+            }
+             main > .container > h2#blog0 {
+                font-size: 1.3rem;
+            }
+             .h-div-txt > h3 {
+                font-size: 1.1rem;
+            }
+            .single-box-txt {
+                font-size: 0.95rem;
+            }
+            .language-menu a {
+                padding: 0.1rem 0.4rem;
+                font-size: 0.9rem;
+                color: #ffffff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="sticky-wrapper">
+            <header>
+                <div class="logo">
+                    <a href="/et/index.html" id="header0" data-lng>
+                        Teie usaldusväärne massaaži terapeut
+                    </a>
+                </div>
+                <div class="claim">
+                    <img src="/public/img/mvsubheader.png" class="img-claim" alt="MV Therapy alapealkiri">
+                </div>
+                <div class="language-menu">
+                    <a href="/et/blog/101.html" class="selected">EST</a>
+                    <a href="/ru/blog/101.html">РУС</a>
+                    <a href="/en/blog/101.html">ENG</a>
+                </div>
+            </header>
+            <nav class="nav" role="navigation" aria-label="Peamenüü">
+                <div class="hamburger" id="hamburger" tabindex="0" aria-label="Ava menüü" role="button" aria-expanded="false">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="nav-inner" id="nav-inner">
+                    <div class="nav-item">
+                        <a href="/et/home.html"><span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">home</span>Kodu</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/et/services.html">Massaažid</a>
+                    </div>
+                     <div class="nav-item"><a href="/et/Diagnosis.html" itemprop="url"><span itemprop="name">Diagnoosid</span></a></div>
+                    <div class="nav-item">
+                        <a href="/et/campaign.html">Kampaaniad</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/et/workshops.html">Koolitused</a>
+                    </div>
+                     <div class="nav-item"><a href="/et/team.html" itemprop="url" aria-current="page"><span itemprop="name">Meeskond</span></a></div>
+                    <div class="nav-item">
+                        <a href="/et/kkk.html">KKK</a>
+                    </div>
+                    <div class="nav-item active">
+                        <a>Blogi</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <main id="main-app">
+            <div class="container">
+                <h2 id="blog0" data-lng>Artiklid</h2>
+                <div class="h-div">
+                    <div class="h-div-txt">
+                        <h3>Krooniline kukekannus: Lööklaineteraapia efektiivsus kroonilise plantaarfastsiidi ravis</h3>
+                        <div>
+                            <div class="single-box-txt">
+                                <img class="single-box-img img-right" loading="lazy" src="/public/img/blog/101.jpg"
+                                    alt="Krooniline kukekannus: Lööklaineteraapia efektiivsus kroonilise plantaarfastsiidi ravis">
+                                <h1>Mis on kukekannus ja miks see nii tüütu on?</h1>
+                                <p>Kui hommikul voodist tõustes käib kannast läbi valusähvatus, mis paneb sind korraks kikivarvul
+                                    seisma, võib süüdlaseks olla kukekannus ehk plantaarfastsiit. See on seisund, kus jalatalla
+                                    all olev kõõlus (plantaarfastsia) muutub põletikuliseks ja mõnikord tekib kanna alla isegi väike
+                                    luuline “okkake” ehk kukekannus. Selline seisund võib muuta iga sammu piinavaks – eriti
+                                    hommikul või pärast pikka istumist, sest põletikuline sidekirme on öö jooksul jäigastunud ning
+                                    esimeste sammude ajal annab valu eriti tugevalt tunda (Khan jt. 2008) (Wang jt. 2013).</p>
+
+                                <h2>Mida teha, kui tavalised võtted ei aita?</h2>
+                                <p>Enamik inimesi proovib esmalt tallatugesid, venitusharjutusi ja valuvaigisteid. Need võivad
+                                    mõnel juhul aidata, kuid sageli jääb valu püsima või tuleb kiiresti tagasi. Kui tavalised
+                                    võtted ei anna tulemusi, võib tekkida tunne, et kannavalu tulebki lihtsalt välja kannatada.
+                                    Õnneks on olemas ka kaasaegsemaid lahendusi – üks tõhusamaid neist on lööklaineteraapia (inglise
+                                    keeles ESWT), mis on leidnud tugeva teadusliku tõestuse kroonilise plantaarfastsiidi ravis (Yalcin jt. 2020); (Babaei-Ghazani jt.
+                                    2022).</p>
+
+                                <h2>Mis on lööklaineteraapia?</h2>
+                                <p>Lööklaineteraapia pole midagi hirmutavat – see pole elektrišokk ega midagi valusat. Tegemist on
+                                    protseduuriga, kus spetsiaalne aparaat saadab kannale lühikesi ja tugevaid “helilaineid”.
+                                    Kujuta ette, nagu keegi koputaks su kanna sisse väikeste haamrikestega – need lained panevad keha
+                                    ise põletikku ja valu vastu võitlema (Kudo jt. 2006); (Chew jt. 2015).</p>
+
+                                <h3>Kuidas see töötab?</h3>
+                                <ul>
+                                    <li>Parandab verevarustust</li>
+                                    <li>Kiirendab kudede paranemist</li>
+                                    <li>Vähendab põletikku</li>
+                                    <li>Aitab närvilõpmetel “rahuneda”, nii et valu taandub (Babaei-Ghazani jt.
+                                        2022); (Yalcin jt.
+                                        2020)</li>
+                                </ul>
+
+                                <h2>Mida ütlevad teadusuuringud?</h2>
+                                <h3>1. Kas see päriselt ka töötab?</h3>
+                                <p>Mitmed randomiseeritud uuringud ja ülevaated kinnitavad, et lööklaineteraapia on väga tõhus
+                                    kroonilise kukekannuse puhul. Näiteks leidsid Khan jt. 2008, et juba kolme seansi järel oli osalejate kannavalu märgatavalt
+                                    vähenenud ning jalatalla sidekirme õhem – see viitab põletiku ja turse taandumisele. Valu
+                                    vähenes lööklaineteraapia grupis 73,2%, mis oli 32,7% suurem kui platseebogrupis ning olulisi
+                                    kõrvaltoimeid ei esinenud.</p>
+                                <p>Samuti kinnitas Kudo jt. 2006, et lööklaineteraapia aitab vähendada just seda
+                                    tüüpilist hommikust “esimese sammu” valu, mis on plantaarfastsiidi üks ebameeldivamaid
+                                    sümptomeid. Kolme kuu pärast oli valu oluliselt väiksem kui neil, kes said platseeboravi.</p>
+
+                                <h3>2. Kas efekt on püsiv?</h3>
+                                <p>Jah, uuringud kinnitavad, et lööklaineteraapia mõju ei ole lühiajaline. Näiteks Yalcin jt. 2020
+                                    uurisid, kuidas muutus kannavalu ja liikumisvõime pärast
+                                    lööklaineteraapiat mitte ainult vahetult pärast ravi, vaid ka pikema aja jooksul. Nad hindasid
+                                    patsiente 3, 6 ja 12 nädalat pärast ravikuuri lõppu ning leidsid, et valu püsis oluliselt
+                                    väiksemana ka mitmeid nädalaid hiljem. Samuti paranes igapäevane liikumine ja jalgade funktsioon.
+                                </p>
+                                <p>Ka pikaajalised uuringud kinnitavad, et ESWT vähendab valu ja parandab elukvaliteeti veel kuid
+                                    pärast ravi lõppu (Kapusta jt.
+                                    2022).</p>
+
+                                <h3>3. Kas see on parem kui süstid või muud võtted?</h3>
+                                <p>Kui võrrelda lööklaineteraapiat näiteks kortisoonisüstidega, siis mitmed uuringud on näidanud, et
+                                    lööklaineteraapia võib pakkuda pikemaajalist leevendust. Näiteks Chew jt. 2015 uuringus leiti, et kuigi mõlemad ravimeetodid võivad valu
+                                    kiiresti vähendada, püsib lööklaineteraapia toime sageli kauem. See tähendab, et valu ei kipu nii
+                                    kergesti tagasi tulema ning patsiendid saavad nautida püsivamat tulemust. Samuti on kordusravi
+                                    vajadus väiksem kui süstide puhul ning ravi on ohutu ka pikaajalisel kasutamisel.</p>
+                                <p>Ka teised uuringud kinnitavad, et lööklaineteraapia on efektiivsem kui kortikosteroidisüstid või
+                                    muud konservatiivsed meetodid, eriti kroonilise valu korral (Shockwave Canada 2024); (Sun jt. 2017).</p>
+
+                                <h3>4. Kas see on ohutu?</h3>
+                                <p>Lööklaineteraapia on ohutu ja hästi talutav ravimeetod, mille kõrvaltoimed on enamasti kerged ja
+                                    mööduvad kiiresti. Babaei-Ghazani jt. 2022 kinnitavad, et protseduuri järgselt võib ravipiirkond olla veidi
+                                    tundlik või punetada, kuid need nähud kaovad tavaliselt mõne päevaga. Enamik inimesi ei vaja
+                                    taastumiseks eraldi aega ning saavad jätkata oma igapäevategevustega.</p>
+                                <p>Protseduur ise on lihtne ja kiire. Tavaliselt tehakse 3–6 seanssi, igaüks kestab umbes 10–20
+                                    minutit. Protseduuri ajal võib tunda kerget ebamugavust, kuid enamik patsiente peab seda täiesti
+                                    talutavaks – sageli kirjeldatakse tunnet kui tugevat massaaži. Pärast protseduuri soovitatakse jalga
+                                    natuke säästa, kuid erilist taastumisaega ega piiranguid pole vaja. Paljud inimesed tunnevad juba
+                                    pärast esimesi seansse, et valu on vähenenud ning liikumine muutub kergemaks (Yalcin jt. 2020).
+                                    Ka suured ülevaated kinnitavad, et tõsiseid kõrvaltoimeid ei esine ning ESWT on pikaajaliselt
+                                    ohutu; (Leão jt. 2020).</p>
+
+                                <h2>Kas kõigile aitab?</h2>
+                                <p>Lööklaineteraapia sobib eriti hästi neile, kelle kannavalu on kestnud juba pikka aega ja kelle
+                                    puhul tavapärased ravimeetodid, nagu venitused, tallatoed või valuvaigistid, pole soovitud
+                                    tulemust andnud (Wang jt. 2013). Uuringud näitavad, et just kroonilise ja püsiva valu korral on
+                                    lööklaineteraapia sageli tõhusaim, aidates vähendada valu ning parandada jalalaba liikuvust ja
+                                    igapäevast toimetulekut (El Molla jt. 2021).</p>
+
+                                <h2>Lõppsõna: kas tasub proovida?</h2>
+                                <p>Kui oled varem kokku puutunud kukekannuse ehk plantaarfastsiidiga, tead, kui visalt võib valu
+                                    püsima jääda. Lööklaineteraapia puhul on oluline mõista, et see ravi ei leevenda mitte ainult
+                                    sümptomeid, vaid aitab kaasa ka jalalaba sidekoe tegelikule taastumisele (Khan jt. 2008). Näiteks on uuringutes leitud, et pärast lööklaineteraapiat muutub
+                                    plantaarfastsia struktuur elastsemaks ning põletikunähud vähenevad.</p>
+                                <p>Lisaks on lööklaineteraapia üks väheseid ravimeetodeid, mille puhul on dokumenteeritud, et see
+                                    parandab ka jalalaba funktsiooni – inimesed saavad kiiremini naasta nii tööle kui ka
+                                    hobitegevuste juurde (Yalcin jt. 2020). See on eriti
+                                    oluline neile, kelle elukvaliteet on kannavalu tõttu oluliselt langenud. Tänu sellele, et
+                                    protseduur ei vaja taastumisaega ega operatsiooni, sobib see hästi ka aktiivsetele inimestele, kes
+                                    soovivad võimalikult kiiresti tavapärase elurütmi juurde naasta (Babaei-Ghazani jt. 2022). Samuti ei kahjusta lööklaineteraapia kudesid ega põhjusta
+                                    pikaajalisi kõrvaltoimeid, mistõttu sobib see ka korduvaks kasutamiseks, kui valu peaks aja
+                                    jooksul tagasi tulema (Chew jt. 2015).</p>
+                                <p>Kaasaegsed ravikeskused kohandavad lööklaineteraapia protokolli vastavalt patsiendi vajadustele –
+                                    olgu tegemist erineva valu tugevuse, haiguse kestuse või elustiiliga. Just individuaalne
+                                    lähenemine ja teaduslikult tõestatud efektiivsus teevad sellest meetodist usaldusväärse valiku
+                                    neile, kes soovivad pikaajalist lahendust kroonilisele kannavalule (Kudo jt. 2006).</p>
+
+                                <h2>Viidatud teadusallikad:</h2>
+                                <p>1. Khan jt. 2008, DOI: 10.4103/0019-5413.41853<br>
+                                2. Kudo jt. 2006, DOI: 10.1002/jor.20008<br>
+                                3. Yalcin jt. 2020, DOI: 10.1590/1413-785220202801227.190<br>
+                                4. Chew jt. 2015, DOI: 10.1016/j.arthro.2015.05.036<br>
+                                5. Babaei-Ghazani jt. 2022, DOI: 10.3390/medicina58111598<br>
+                                6. Wang jt. 2013, DOI: 10.4103/0019-5413.114932<br>
+                                7. Kapusta jt. 2022, DOI: 10.3390/jcm11236926<br>
+                                8. Sun jt. 2017, DOI: 10.1097/MD.0000000000006621<br>
+                                9. Heide jt. 2020, DOI: 10.1186/s13063-020-04510-z<br>
+                                10. El Molla jt. 2021, DOI: 10.1186/s43166-021-00085-y<br>
+                                11. Leão jt. 2020, DOI: 10.1590/1413-785220202801227402</p>
+                            </div>
+                            <!-- Broneerimisnupu konteiner (vasakule joondatud) -->
+                            <div id="broneeri-container"> 
+                                <!-- Staatiline broneerimisnupp, kui SalonLife ei loo enda oma või kui soovid seda alati näidata -->
+                                <!-- <a href="/et/broneeri.html" class="button-cta">Broneeri aeg</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 data-lng id="blog2">Kõik artiklid</h4>
+                <div class="flx-container">
+                    <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/13.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/13.html">Massööri peamised abivahendid – Funktsionaalne anatoomia ja kinesioloogia.</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/12.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/12.html">Füsioteraapia ja ravimassaaži sünergia: tervikliku ravi võti.</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/7.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/7.html">Massaaž on tänapäeva meditsiinis oluline ravimeetod.</a>
+                    </div>
+                    <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/6.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/6.html">Massaažiterapeutide roll ennetava meditsiini praktikas</a>
+                    </div>
+                    <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/5.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/5.html">Massaaži tähtsus võitlussportlastele</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/19.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/19.html">Karpaalkanali sündroomi leevendamine massaažiteraapiaga: loomulik ja tõhus alternatiiv</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/22.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/22.html">Lümfimassaaž: tervise ja heaolu edendamine</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/24.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/24.html">Süvakoemassaaž ja närviretseptorid: Kuidas see aitab leevendada lihaspingeid</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/35.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/35.html">Massaaž jooksjatele: spetsialisti pilgu läbi</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/36.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/36.html">Kutsetunnistusega massaažiterapeut versus kiirkursused</a>
+                    </div>
+                    <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/59.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/59.html">Perkussiooniteraapia</a>
+                    </div>
+                     <div class="flx-small-box">
+                        <div class="flx-box-inner" style="background-image:url(/public/img/blog/101.jpg);"></div>
+                        <a class="flx-small-box-a" href="/et/blog/101.html">Krooniline kukekannus: Lööklaineteraapia efektiivsus kroonilise plantaarfastsiidi ravis</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <div class="container">
+                <span>&copy; 2024-2025 MV Therapy</span> |
+                <a href="/et/privacy.html">Privaatsuspoliitika</a> |
+                <a href="/et/terms.html">Kasutustingimused</a>
+            </div>
+        </footer>
+        <!-- Scroll to top button -->
+        <button class="goTop" id="scrollBtn" title="Keri üles" aria-label="Keri lehe algusesse">
+            <span class="material-symbols-outlined">expand_less</span>
+        </button>
+        <!-- Cookie Notice -->
+        <div id="cookieNotice" class="light display-right" style="display: none;" role="dialog" aria-label="Küpsiste teade">
+            <div class="content-wrap">
+                <div class="msg-wrap">
+                    <p>
+                        Kasutame küpsiseid teie sirvimiskogemuse parandamiseks, isikupärastatud reklaamide või sisu esitamiseks ja liikluse analüüsimiseks. Klõpsates "OK", nõustute meie küpsiste kasutamisega.
+                        <button class="btn-primary" aria-label="Nõustu küpsistega">OK</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Closing wrap -->
+    <script>
+        // Enhanced interactivity for mobile navigation, scroll button, and cookie notice
+        document.addEventListener('DOMContentLoaded', function() {
+          const hamburger = document.getElementById('hamburger');
+          const navInner = document.getElementById('nav-inner');
+
+          function toggleMobileMenu() {
+            navInner.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            const isOpen = navInner.classList.contains('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            // Prevent body scroll when menu is open
+            if (isOpen) {
+              document.body.style.overflow = 'hidden';
+            } else {
+              document.body.style.overflow = '';
+            }
+          }
+
+          // Toggle menu on click
+          hamburger.addEventListener('click', toggleMobileMenu);
+
+          // Toggle menu on Enter or Space keypress
+          hamburger.addEventListener('keypress', function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggleMobileMenu();
+            }
+          });
+
+          // Close mobile menu when clicking nav links on mobile
+          document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', () => {
+              if (window.innerWidth <= 767) {
+                navInner.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+              }
+            });
+          });
+
+          // Close menu when clicking outside of it
+          document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navInner.contains(e.target)) {
+              navInner.classList.remove('open');
+              hamburger.classList.remove('active');
+              hamburger.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+          });
+
+          // Scroll to top button functionality
+          const scrollBtn = document.getElementById('scrollBtn');
+          function toggleScrollButton() {
+            if (window.scrollY > 200) {
+              if (scrollBtn) scrollBtn.style.display = 'flex';
+            } else {
+              if (scrollBtn) scrollBtn.style.display = 'none';
+            }
+          }
+          window.addEventListener('scroll', toggleScrollButton);
+          if (scrollBtn) {
+            scrollBtn.addEventListener('click', () => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+          }
+
+          // Cookie notice functionality
+          const cookieNotice = document.getElementById('cookieNotice');
+          const cookieButton = cookieNotice ? cookieNotice.querySelector('.btn-primary') : null;
+          // Display the cookie notice if not accepted yet
+          if (cookieNotice && !localStorage.getItem('cookieAccepted')) {
+            setTimeout(() => {
+              cookieNotice.style.display = 'block';
+            }, 1000);
+          }
+          if (cookieButton) {
+            cookieButton.addEventListener('click', function() {
+              localStorage.setItem('cookieAccepted', 'true');
+              cookieNotice.style.display = 'none';
+            });
+          }
+
+          // Initialize scroll button state on load
+          toggleScrollButton();
+
+          // Reset menu on window resize
+          window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+              navInner.classList.remove('open');
+              hamburger.classList.remove('active');
+              hamburger.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+          });
+        });
+    </script>
+    <!-- Salon.life booking script -->
+    <script>
+        var book_texts = {et: 'Broneeri aeg', ru: 'Записаться', en: 'Book now'};
+        var current_lang_element = document.querySelector('.language-menu .selected');
+        var current_lang = 'et'; // Vaikimisi keel
+        if (current_lang_element && current_lang_element.textContent) {
+            var lang_abbr = current_lang_element.textContent.trim().toLowerCase();
+            if (lang_abbr === 'est') current_lang = 'et';
+            else if (lang_abbr === 'рус') current_lang = 'ru';
+            else if (lang_abbr === 'eng') current_lang = 'en';
+        }
+        
+        !function(e,n,t){var i=document,o="script",a=i.createElement(o),d=i.getElementsByTagName(o)[0];a.async=!0,a.defer=!0,a.src="//widget.salon.life/static/js/widget.js?t=" + (new Date()).getTime(),n&&a.addEventListener("load",function(){t.SalonLifeCb=n},!1),d.parentNode.insertBefore(a,d)}(0,function(){
+            var salonLifeContainer = document.getElementById('broneeri-container');
+            if (salonLifeContainer) {
+                 window.SalonLifeWidget.mount({
+                    identifier: 3986, 
+                    button_text: book_texts[current_lang] || book_texts['et'], 
+                    language: current_lang, 
+                    color: '#44437d', 
+                    container: '#broneeri-container' 
+                });
+            }
+        },window);
+    </script>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//mvtherapy.ee/matomo/"; // Sinu Matomo URL
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']); // Sinu saidi ID Matomos
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+</body>
+</html>
