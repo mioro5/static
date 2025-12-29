@@ -9,7 +9,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#44437d">
-  
+
+  <!-- Geo Location Meta Tags for Pärnu Local SEO -->
+  <meta name="geo.region" content="EE-67">
+  <meta name="geo.placename" content="Pärnu, Estonia">
+  <meta name="geo.position" content="58.3859;24.4971">
+  <meta name="ICBM" content="58.3859, 24.4971">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mvtherapy.ee/en/home.html">
@@ -57,7 +63,7 @@
     "url": "https://mvtherapy.ee",
     "telephone": "+372 5818 9561",
     "email": "info@mvtherapy.ee",
-    "priceRange": "€€",
+    "priceRange": "€45-€85",
     "paymentAccepted": ["Cash", "Credit Card"],
     "currenciesAccepted": "EUR",
     "address": {
@@ -76,21 +82,16 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "10:00",
-        "closes": "16:00"
+        "closes": "19:00"
       }
     ],
+    "openingHours": "Mo-Su 10:00-19:00 (by appointment)",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "324",
+      "reviewCount": "42",
       "bestRating": "5",
       "worstRating": "1",
       "itemReviewed": {
@@ -98,6 +99,79 @@
         "name": "MV Therapy"
       }
     },
+    "hasMap": "https://share.google/qSNawGe4CYtPM7RS1",
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mario-Sandra Pajula"
+        },
+        "datePublished": "2024-12-16",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Original (Estonian): Väga professionaalne teenus. Massöör oli põhjalik ja sõbralik kohapealselt, selgitades loo siisu ja eesmärke. Eriti väärtustan individuaalset lähenemist, et arvestati minu vajaduste ja karatuse seisundiga. Soovitan kindlasti!\n\nTranslation (English): Very professional service. The massage therapist was thorough and friendly on-site, explaining the procedure's content and goals. I especially appreciate the individual approach, taking into account my needs and health condition. Definitely recommend!"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Annika Karoiam"
+        },
+        "datePublished": "2024-09-15",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Original (Estonian): Täienl soovitan soojalt! Sain juba paari korraga leevendust aasta kestnud piinapeavalustest, mis igapäevaselt tugevalt häirisid. Minu jaoks suur muhe sai lahenduse dilatavatl kiiretli. Massöör ise on tugeva teadmiste pagasiga ja oskab oskuslikult leda vate murbhtel ning selgitada ravi massaaži protsessi. Soovitan kindlasti, kui murad eht saate professionaalse massaazi.\n\nTranslation (English): I warmly recommend! I got relief from year-long tortuous headaches that were severely disrupting my daily life after just a couple of sessions. For me, a major concern was solved remarkably quickly. The massage therapist has a strong knowledge base and skillfully works on problem areas while explaining the therapeutic massage process. Definitely recommend if you want to get professional massage."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Zhanett Poder"
+        },
+        "datePublished": "2024-06-20",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Original (Estonian/English): Super strict professionaalselt eles. Soovitan kögie köneil väga headaks ja professionaalne abi. If you are looking to get professional help for your painful back or any other body parts, I would recommend Roman very highly.\n\nTranslation (English): Performed very professionally. I recommend to everyone for very good and professional help. If you are looking to get professional help for your painful back or any other body parts, I would recommend Roman very highly."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Marko Rahuorg"
+        },
+        "datePublished": "2024-06-15",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Original (Estonian): Professionaalne massöör\n\nTranslation (English): Professional massage therapist"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pille Rand"
+        },
+        "datePublished": "2024-12-16",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4",
+          "bestRating": "5"
+        },
+        "reviewBody": "Original (Estonian): Väga rahul ravi massaaziga\n\nTranslation (English): Very satisfied with the therapeutic massage"
+      }
+    ],
     "foundingDate": "2020",
     "slogan": "Over 5000 helped clients since 2020",
     "hasOfferCatalog": {
@@ -170,37 +244,41 @@
       {
         "@type": "City",
         "name": "Pärnu",
+        "description": "Primary service location - Pärnu city center, Rüütli 47",
         "containedInPlace": {"@type": "Country", "name": "Estonia"}
       },
       {
-        "@type": "City",
-        "name": "Tallinn",
-        "containedInPlace": {"@type": "Country", "name": "Estonia"}
-      },
-      {
-        "@type": "City",
-        "name": "Tartu",
+        "@type": "State",
+        "name": "Pärnu County",
         "containedInPlace": {"@type": "Country", "name": "Estonia"}
       },
       {
         "@type": "Country",
-        "name": "Finland"
-      },
-      {
-        "@type": "Country",
-        "name": "Sweden"
-      },
-      {
-        "@type": "Country",
-        "name": "Norway"
+        "name": "Estonia",
+        "description": "We welcome clients from across Estonia (Tallinn, Tartu, and other cities) and international visitors"
       }
     ],
-    "hasMap": "https://maps.google.com/?q=Rüütli+47,+Pärnu,+Estonia",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=100090837369433",
-      "https://www.tiktok.com/@mvtherapy",
-      "https://www.instagram.com/mvtherapy.ee",
+      "https://www.instagram.com/medmassaaz/",
+      "https://www.tiktok.com/@medmassaaz",
       "https://mvtherapy.ee"
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema for Navigation and SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mvtherapy.ee/en/home.html"
+      }
     ]
   }
   </script>
@@ -855,6 +933,8 @@
           Our <strong class="keyword-link">massage services</strong> include <strong class="keyword-link">classical massage in Pärnu</strong>, <strong class="keyword-link">medical massage</strong>, <strong class="keyword-link">sports massage Pärnu</strong>, <strong>high-intensity magnetic therapy</strong>, <strong>shockwave therapy</strong>, <strong>trigger point therapy</strong>, <strong class="keyword-link">deep tissue massage</strong> and 8 other different <strong class="keyword-link">massage types in Pärnu</strong>.
           
           All services are performed by a certified <strong class="keyword-link">massage therapist</strong> with a <strong>Level 6 professional certificate</strong>. <strong>Book your appointment today</strong> and experience <strong class="keyword-link">professional massage service in Pärnu</strong>!</p>
+
+          <p style="margin-top: 1rem; padding: 1rem; background: #f8f9fb; border-left: 4px solid #44437d;"><strong>📍 Our Location in the Heart of Pärnu:</strong> Located on Pärnu's main pedestrian street at <strong>Rüütli 47, 2nd floor</strong> – in the heart of the historic Old Town. Near the Red Tower (15th century landmark) and Independence Square. Pärnu beach is a 15-minute walk away. <strong>Serving Pärnu residents and visitors since 2020</strong> – over 5000 happy clients from Pärnu and across Estonia!</p>
         </section>
 
         <!-- Campaign Banner - Winter Promotion -->
