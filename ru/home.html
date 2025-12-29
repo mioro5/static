@@ -74,14 +74,19 @@
       "latitude": "58.3859",
       "longitude": "24.4971"
     },
-    "openingHours": [
-      "Mo-Fr 09:00-18:00",
-      "Sa 10:00-16:00"
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
     ],
+    "openingHours": "Mo-Su 10:00-19:00 (по предварительной записи)",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "324",
+      "reviewCount": "42",
       "bestRating": "5",
       "worstRating": "1",
       "itemReviewed": {
@@ -89,6 +94,79 @@
         "name": "MV Therapy"
       }
     },
+    "hasMap": "https://share.google/qSNawGe4CYtPM7RS1",
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mario-Sandra Pajula"
+        },
+        "datePublished": "2024-12-16",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Väga professionaalne teenus. Massöör oli põhjalik ja sõbralik kohapealselt, selgitades loo siisu ja eesmärke. Eriti väärtustan individuaalset lähenemist, et arvestati minu vajaduste ja karatuse seisundiga. Soovitan kindlasti!"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Annika Karoiam"
+        },
+        "datePublished": "2024-09-15",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Täienl soovitan soojalt! Sain juba paari korraga leevendust aasta kestnud piinapeavalustest, mis igapäevaselt tugevalt häirisid. Minu jaoks suur muhe sai lahenduse dilatavatl kiiretli. Massöör ise on tugeva teadmiste pagasiga ja oskab oskuslikult leda vate murbhtel ning selgitada ravi massaaži protsessi. Soovitan kindlasti, kui murad eht saate professionaalse massaazi."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Zhanett Poder"
+        },
+        "datePublished": "2024-06-20",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Super strict professionaalselt eles. Soovitan kögie köneil väga headaks ja professionaalne abi. If you are looking to get professional help for your painful back or any other body parts, I would recommend Roman very highly."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Marko Rahuorg"
+        },
+        "datePublished": "2024-06-15",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Professionaalne massöör"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pille Rand"
+        },
+        "datePublished": "2024-12-16",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4",
+          "bestRating": "5"
+        },
+        "reviewBody": "Väga rahul ravi massaaziga"
+      }
+    ],
     "foundingDate": "2020",
     "slogan": "Более 5000 довольных клиентов с 2020 года",
     "hasOfferCatalog": {
@@ -188,14 +266,29 @@
         "containedInPlace": {"@type": "Country", "name": "Estonia"}
       }
     ],
-    "hasMap": "https://maps.google.com/?q=Rüütli+47,+Pärnu,+Estonia",
     "isAccessibleForFree": false,
     "publicAccess": true,
     "sameAs": [
       "https://www.facebook.com/profile.php?id=100090837369433",
-      "https://www.tiktok.com/@mvtherapy",
-      "https://www.instagram.com/mvtherapy.ee",
+      "https://www.instagram.com/medmassaaz/",
+      "https://www.tiktok.com/@medmassaaz",
       "https://mvtherapy.ee"
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema for Navigation and SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://mvtherapy.ee/ru/home.html"
+      }
     ]
   }
   </script>
