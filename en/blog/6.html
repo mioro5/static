@@ -244,50 +244,86 @@
       .logo { font-size: 1.1rem; padding: 1rem; }
       main { padding: 1rem 0.75rem; }
       h2 { font-size: 1.4rem; }
-    }}
-
-    /* === TILDA-STYLE ANIMATIONS v2 === */
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    [data-animate].animated {
+    /* === SCROLL ANIMATIONS === */
+
+    /* Elements start hidden – CSS knows which ones, no JS needed */
+    #main-app h2, #main-app h3, #main-app h4,
+    #main-app .benefit-card, #main-app .card,
+    #main-app .technique-item, #main-app .faq-item,
+    #main-app .team-card, #main-app .campaign-card,
+    #main-app .service-card, #main-app .blog-card,
+    #main-app .diagnosis-card, #main-app .workshop-card,
+    #main-app .scroll-item, #main-app .info-block,
+    #main-app .step-item, #main-app .price-row {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    #main-app h2.animated, #main-app h3.animated, #main-app h4.animated,
+    #main-app .benefit-card.animated, #main-app .card.animated,
+    #main-app .technique-item.animated, #main-app .faq-item.animated,
+    #main-app .team-card.animated, #main-app .campaign-card.animated,
+    #main-app .service-card.animated, #main-app .blog-card.animated,
+    #main-app .diagnosis-card.animated, #main-app .workshop-card.animated,
+    #main-app .scroll-item.animated, #main-app .info-block.animated,
+    #main-app .step-item.animated, #main-app .price-row.animated {
       opacity: 1;
       transform: translateY(0);
     }
-    [data-animate-scale] {
+
+    /* Images: scale-in */
+    #main-app img {
       opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform: scale(0.92);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    [data-animate-scale].animated {
+    #main-app img.animated {
       opacity: 1;
       transform: scale(1);
     }
+
     /* Button hover lift */
     .cta-section a, .cta-section button,
     #salonlife-widget-root .button-cta,
-    a.booking-btn, button.booking-btn,
-    .scroll-arrow {
+    a.booking-btn, button.booking-btn {
       transition: background 0.2s, transform 0.18s, box-shadow 0.18s !important;
     }
     .cta-section a:hover, .cta-section button:hover,
     #salonlife-widget-root .button-cta:hover,
-    a.booking-btn:hover, button.booking-btn:hover,
-    .scroll-arrow:hover {
+    a.booking-btn:hover, button.booking-btn:hover {
       transform: translateY(-3px) !important;
       box-shadow: 0 8px 24px rgba(68,67,125,0.30) !important;
     }
+
+    /* No-JS / reduced-motion fallback */
     @media (prefers-reduced-motion: reduce) {
-      [data-animate], [data-animate-scale] {
+      #main-app h2, #main-app h3, #main-app h4,
+      #main-app .benefit-card, #main-app .card,
+      #main-app .technique-item, #main-app .faq-item,
+      #main-app .team-card, #main-app .campaign-card,
+      #main-app .service-card, #main-app .blog-card,
+      #main-app .diagnosis-card, #main-app .workshop-card,
+      #main-app .scroll-item, #main-app .info-block,
+      #main-app .step-item, #main-app .price-row,
+      #main-app img {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
       }
     }
   </style>
+  <noscript><style>
+    #main-app h2, #main-app h3, #main-app h4,
+    #main-app .benefit-card, #main-app .card,
+    #main-app .technique-item, #main-app .faq-item,
+    #main-app .team-card, #main-app .campaign-card,
+    #main-app .service-card, #main-app .blog-card,
+    #main-app .diagnosis-card, #main-app .workshop-card,
+    #main-app .scroll-item, #main-app img {
+      opacity: 1 !important; transform: none !important;
+    }
+  </style></noscript>
 </head>
 <body>
   <div id="wrap">
@@ -498,80 +534,78 @@
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <!-- Tilda-style animations v2 -->
+  <!-- Scroll animations -->
   <script>
     (function () {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      document.addEventListener('DOMContentLoaded', function () {
-        var main = document.getElementById('main-app') || document.querySelector('main') || document.body;
+      var SEL = [
+        'h2','h3','h4',
+        '.benefit-card','.card','.technique-item','.faq-item',
+        '.team-card','.campaign-card','.service-card','.blog-card',
+        '.diagnosis-card','.workshop-card','.scroll-item',
+        '.info-block','.step-item','.price-row','img'
+      ].join(',');
+
+      function init() {
+        var main = document.getElementById('main-app') || document.querySelector('main');
         if (!main) return;
 
-        /* 1. HERO — first h1 fires immediately */
+        /* 1. HERO h1 — inline style so it animates on load (not on scroll) */
         var h1 = main.querySelector('h1');
         if (h1) {
-          h1.setAttribute('data-animate', '');
-          h1.style.transitionDelay = '0.1s';
-          setTimeout(function () { h1.classList.add('animated'); }, 120);
+          h1.style.cssText += ';opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease';
+          setTimeout(function () {
+            h1.style.opacity = '1';
+            h1.style.transform = 'translateY(0)';
+          }, 80);
+          /* sub-headline */
           var sub = h1.nextElementSibling;
-          if (sub && (sub.tagName === 'P' || (sub.className && sub.className.indexOf('service-description') !== -1))) {
-            sub.setAttribute('data-animate', '');
-            sub.style.transitionDelay = '0.3s';
-            setTimeout(function () { sub.classList.add('animated'); }, 120);
+          if (sub && (sub.tagName === 'P' || (sub.className && sub.className.indexOf('service-description') > -1))) {
+            sub.style.cssText += ';opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;transition-delay:0.2s';
+            setTimeout(function () { sub.style.opacity = '1'; sub.style.transform = 'translateY(0)'; }, 80);
           }
         }
 
-        /* 2. All h2, h3, h4 — scroll fade-up */
-        main.querySelectorAll('h2, h3, h4').forEach(function (el) {
-          if (!el.hasAttribute('data-animate')) el.setAttribute('data-animate', '');
+        /* 2. Stagger delay for cards/items inside grids */
+        main.querySelectorAll(
+          '.benefits-grid,.cards-grid,.technique-list,.team-grid,' +
+          '.blog-grid,.campaigns-grid,.workshops-grid,.diagnosis-grid,' +
+          '.scroll-section'
+        ).forEach(function (grid) {
+          var children = grid.querySelectorAll(SEL);
+          children.forEach(function (el, i) {
+            el.style.transitionDelay = (i * 0.10) + 's';
+          });
         });
 
-        /* 3. Paragraphs + cards — staggered per section */
-        var sectionSel = 'section, .benefits-grid, .cards-grid, .technique-list, ' +
-          '.scroll-section, .faq-section, .team-grid, .blog-grid, ' +
-          '.campaigns-grid, .workshops-grid, .diagnosis-grid';
-        main.querySelectorAll(sectionSel).forEach(function (sec) {
-          var itemSel = 'p, .benefit-card, .card, .technique-item, .faq-item, ' +
-            '.team-card, .campaign-card, .service-card, .blog-card, ' +
-            '.diagnosis-card, .workshop-card, .scroll-item, ' +
-            '.info-block, .price-row, .step-item';
-          var idx = 0;
-          sec.querySelectorAll(itemSel).forEach(function (el) {
-            if (!el.hasAttribute('data-animate') && !el.closest('[data-animate]')) {
-              el.setAttribute('data-animate', '');
-              el.style.transitionDelay = (idx * 0.12) + 's';
-              idx++;
+        /* 3. IntersectionObserver — reveal on scroll */
+        var vH = window.innerHeight || 600;
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('animated');
+              obs.unobserve(e.target);
             }
           });
-        });
-
-        /* 4. Images — scale animation + native lazy loading */
-        var imgCount = 0;
-        main.querySelectorAll('img').forEach(function (img) {
-          if (img.closest('header') || img.closest('.logo') || img.closest('.claim')) return;
-          img.setAttribute('data-animate-scale', '');
-          if (imgCount > 0 && !img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
-          imgCount++;
-        });
-
-        /* 5. IntersectionObserver — fade-up */
-        var fadeObs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('animated'); fadeObs.unobserve(e.target); }
-          });
         }, { threshold: 0.10 });
-        main.querySelectorAll('[data-animate]').forEach(function (el) {
-          if (!el.classList.contains('animated')) fadeObs.observe(el);
-        });
 
-        /* 6. IntersectionObserver — scale */
-        var scaleObs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('animated'); scaleObs.unobserve(e.target); }
-          });
-        }, { threshold: 0.10 });
-        main.querySelectorAll('[data-animate-scale]').forEach(function (el) { scaleObs.observe(el); });
-      });
+        main.querySelectorAll(SEL).forEach(function (el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < vH && rect.bottom > 0) {
+            /* Already visible on load — show after tiny delay so user sees the transition */
+            setTimeout(function () { el.classList.add('animated'); }, 150);
+          } else {
+            obs.observe(el);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init(); /* DOM already ready */
+      }
     })();
   </script>
 </body>
