@@ -2,9 +2,9 @@
 <html class="no-js" lang="et">
 <head>
   <meta charset="utf-8">
-  <title>Emadepäeva Massaaži Sooduskampaania - MV Therapy Pärnus</title>
-  <meta name="description" content="Emadepäeva eriskampaania! MV Therapy Pärnus pakub massaaži kinkekaarte soodsalt: 60min 45€, 90min 70€, 5×60min 200€. Kingi emale tervist!">
-  <meta name="keywords" content="emadepäev, massaaž kampaania, kinkekaart, MV Therapy, massaaž Pärnus, emale kingitus">
+  <title>Naistepäeva Eripakkumine – MV Therapy Pärnus</title>
+  <meta name="description" content="Naistepäeva eripakkumine! Kehtib kuni 08.03.2026. 60min 50€ (enne 60€), 90min 80€ (enne 90€), 5×60min 250€ (enne 300€). Kingitus, mis toob leevendust!">
+  <meta name="keywords" content="naistepäev, massaaž eripakkumine, kinkekaart, MV Therapy, massaaž Pärnus, naistepäeva kingitus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#44437d">
   
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Emadepäeva Massaaži Sooduskampaania - MV Therapy Pärnus">
-  <meta property="og:description" content="Kingi oma emale tükike tervist! Massaaži kinkekaardid soodsalt: 60min 45€, 90min 70€, 5×60min 200€. Kehtib 04.05-11.05.">
+  <meta property="og:title" content="Naistepäeva Eripakkumine – MV Therapy Pärnus">
+  <meta property="og:description" content="Kingitus, mis toob päriselt leevendust! 60min 50€ (enne 60€), 90min 80€ (enne 90€), 5×60min 250€ (enne 300€). Kehtib kuni 08.03.2026.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mvtherapy.ee/et/campaign.html">
   <meta property="og:image" content="https://mvtherapy.ee/public/img/mvsubheader.png" width="400" height="60">
@@ -26,8 +26,8 @@
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Emadepäeva Massaaži Sooduskampaania - MV Therapy Pärnus">
-  <meta name="twitter:description" content="Kingi oma emale tükike tervist! Massaaži kinkekaardid soodsalt. Kehtib 04.05-11.05.">
+  <meta name="twitter:title" content="Naistepäeva Eripakkumine – MV Therapy Pärnus">
+  <meta name="twitter:description" content="Kingitus, mis toob leevendust! 60min 50€, 90min 80€, 5×60min 250€. Kehtib kuni 08.03.2026.">
   <meta name="twitter:image" content="https://mvtherapy.ee/public/img/mvsubheader.png" width="400" height="60">
   
   <!-- Canonical URL -->
@@ -378,6 +378,83 @@
       margin-left: 0.5rem;
     }
 
+    /* Campaign subtitle */
+    .campaign-subtitle {
+      font-size: 1.15rem;
+      color: #6d3b6d;
+      margin: 0.5rem 0 2rem 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Enhanced gift card styling */
+    .gift-card-offers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .gift-card-item {
+      background: linear-gradient(135deg, #44437d 0%, #c2185b 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(194,24,91,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .gift-card-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(194,24,91,0.35);
+    }
+
+    .gift-card-item.best-offer {
+      background: linear-gradient(135deg, #c2185b 0%, #880e4f 100%);
+      box-shadow: 0 4px 22px rgba(136,14,79,0.35);
+    }
+
+    .best-offer-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+      text-transform: uppercase;
+    }
+
+    .gift-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .gift-card-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.4rem 0;
+      line-height: 1;
+    }
+
+    .gift-card-original {
+      text-decoration: line-through;
+      opacity: 0.65;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gift-card-savings {
+      background: rgba(255, 255, 255, 0.22);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+      font-weight: 600;
+    }
+
     /* Responsive breakpoints - Mobile first */
     
     /* Small phones */
@@ -445,17 +522,25 @@
       .h-div-txt h2 {
         font-size: 1.8rem;
       }
-      
+
       .claim img {
         max-height: 60px;
       }
-      
+
       .single-box-txt {
         font-size: 1rem;
       }
-      
+
       main {
         padding: 1.25rem;
+      }
+
+      .gift-card-offers {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gift-card-offers .gift-card-item:last-child {
+        grid-column: 1 / -1;
       }
     }
 
@@ -535,17 +620,31 @@
         margin: 2rem auto;
         padding: 2rem;
       }
-      
+
       .flx-container {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
         align-items: flex-start;
       }
-      
+
       .goTop {
         bottom: 2rem;
         right: 2rem;
+      }
+
+      .gift-card-offers {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .gift-card-item {
+        padding: 2rem;
+      }
+
+      .gift-card-price {
+        font-size: 3rem;
       }
     }
 
@@ -637,7 +736,7 @@
     "@id": "https://mvtherapy.ee",
     "name": "MV Therapy",
     "image": "https://mvtherapy.ee/public/img/mvsubheader.png",
-    "description": "Emadepäeva eriskampaania MV Therapy massaažisalongis Pärnus. Massaaži kinkekaardid soodsalt: 60min 45€, 90min 70€, 5×60min 200€.",
+    "description": "Naistepäeva eripakkumine MV Therapy massaažisalongis Pärnus. Kehtib kuni 08.03.2026. 60min 50€, 90min 80€, 5×60min 250€.",
     "url": "https://mvtherapy.ee/et/campaign.html",
     "telephone": "+372 5818 9561",
     "email": "info@mvtherapy.ee",
@@ -665,28 +764,28 @@
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "offers": {
       "@type": "Offer",
-      "name": "Emadepäeva Massaaži Kampaania",
-      "description": "Massaaži kinkekaardid soodsalt: 60min 45€, 90min 70€, 5×60min 200€",
-      "validFrom": "2025-05-04",
-      "validThrough": "2025-05-11",
+      "name": "Naistepäeva Eripakkumine",
+      "description": "Naistepäeva massaaži eripakkumine: 60min 50€ (enne 60€), 90min 80€ (enne 90€), 5×60min 250€ (enne 300€)",
+      "validFrom": "2026-03-01",
+      "validThrough": "2026-03-08",
       "priceSpecification": [
         {
           "@type": "PriceSpecification",
-          "price": "45",
+          "price": "50",
           "priceCurrency": "EUR",
-          "name": "60 minuti kinkekaart"
-        },
-        {
-          "@type": "PriceSpecification", 
-          "price": "70",
-          "priceCurrency": "EUR",
-          "name": "90 minuti kinkekaart"
+          "name": "60 min massaaž"
         },
         {
           "@type": "PriceSpecification",
-          "price": "200", 
+          "price": "80",
           "priceCurrency": "EUR",
-          "name": "5×60 minuti kinkekaart"
+          "name": "90 min massaaž"
+        },
+        {
+          "@type": "PriceSpecification",
+          "price": "250",
+          "priceCurrency": "EUR",
+          "name": "5×60 min massaaž pakett"
         }
       ]
     },
@@ -754,21 +853,33 @@
     <main id="main-app">
       <div class="container">
         <div class="h-div-txt">
-          <span class="from_until">04.05.25 - 11.05.25</span>
-          <h2>❤️EMADEPÄEVA MASSAAŽI SOODUSTUSKAMPAANIA!</h2>
-          <div class="single-box-txt">
-            <p>
-              👑 Kingi oma emale tükike tervist! 👑<br><br>
-              🎁 Soodushinnad:<br>
-              ✨ 60 min kinkekaart – ainult 45 € (tavahind 50 €)<br>
-              ✨ 90 min kinkekaart – ainult 70 € (tavahind 75 €)<br>
-              ✨ 5×60 min kinkekaart – ainult 200 € (1 massaaži hind tuleb 40 €)<br><br>
-              💖 Hoolitse oma ema heaolu eest! 💖<br>
-              Kinkekaardi ostmiseks BRONEERI aeg läbi broneerimissüsteemi!
-            </p>
+          <span class="from_until">Kehtib kuni 08.03.2026</span>
+          <h2>🌸 NAISTEPÄEVA ERIPAKKUMINE 🌸</h2>
+          <p class="campaign-subtitle">Kingitus, mis toob päriselt leevendust.<br><strong>Tervis. Taastumine. Lõõgastus.</strong></p>
+        </div>
+
+        <div class="gift-card-offers">
+          <div class="gift-card-item">
+            <div class="gift-card-title">60 min massaaž</div>
+            <div class="gift-card-price">50 €</div>
+            <div class="gift-card-original">Enne 60 €</div>
+            <div class="gift-card-savings">Säästad 10 €</div>
+          </div>
+          <div class="gift-card-item">
+            <div class="gift-card-title">90 min massaaž</div>
+            <div class="gift-card-price">80 €</div>
+            <div class="gift-card-original">Enne 90 €</div>
+            <div class="gift-card-savings">Säästad 10 €</div>
+          </div>
+          <div class="gift-card-item best-offer">
+            <div class="best-offer-badge">⭐ PARIM PAKKUMINE</div>
+            <div class="gift-card-title">5 × 60 min massaaž</div>
+            <div class="gift-card-price">250 €</div>
+            <div class="gift-card-original">Enne 300 €</div>
+            <div class="gift-card-savings">Säästad 50 €</div>
           </div>
         </div>
-        
+
         <!-- BRONEERIMISSÜSTEEMI KONTEINER -->
         <div id="broneeri-container"></div>
       </div>

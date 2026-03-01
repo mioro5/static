@@ -2,8 +2,8 @@
 <html class="no-js" lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Подарочные сертификаты на массаж – акция</title>
-  <meta name="description" content="MV Therapy предлагает массаж в Пярну. Мы предлагаем как расслабляющий, так и лечебный массаж для вашего тела и души.">
+  <title>Акция ко Дню женщин – MV Therapy Пярну</title>
+  <meta name="description" content="Специальное предложение ко Дню женщин! Действует до 08.03.2026. 60мин 50€ (ранее 60€), 90мин 80€ (ранее 90€), 5×60мин 250€ (ранее 300€). Подарок, который приносит облегчение!">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="robots" content="index, follow">
@@ -360,6 +360,83 @@
       appearance: textfield;
     }
 
+    /* Campaign subtitle */
+    .campaign-subtitle {
+      font-size: 1.15rem;
+      color: #6d3b6d;
+      margin: 0.5rem 0 2rem 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Enhanced gift card styling */
+    .gift-card-offers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .gift-card-item {
+      background: linear-gradient(135deg, #44437d 0%, #c2185b 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(194,24,91,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .gift-card-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(194,24,91,0.35);
+    }
+
+    .gift-card-item.best-offer {
+      background: linear-gradient(135deg, #c2185b 0%, #880e4f 100%);
+      box-shadow: 0 4px 22px rgba(136,14,79,0.35);
+    }
+
+    .best-offer-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+      text-transform: uppercase;
+    }
+
+    .gift-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .gift-card-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.4rem 0;
+      line-height: 1;
+    }
+
+    .gift-card-original {
+      text-decoration: line-through;
+      opacity: 0.65;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gift-card-savings {
+      background: rgba(255, 255, 255, 0.22);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+      font-weight: 600;
+    }
+
     /* Responsive breakpoints - Mobile first */
     
     /* Small phones */
@@ -422,17 +499,25 @@
       .h-div-txt h2 {
         font-size: 1.5rem;
       }
-      
+
       .claim img {
         max-height: 60px;
       }
-      
+
       main {
         padding: 1.25rem;
       }
-      
+
       .campaign-date {
         font-size: 1.2em;
+      }
+
+      .gift-card-offers {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gift-card-offers .gift-card-item:last-child {
+        grid-column: 1 / -1;
       }
     }
 
@@ -509,22 +594,36 @@
         font-size: 1.4em;
         padding: 1rem;
       }
-      
+
       main {
         margin: 2rem auto;
         padding: 2rem 2rem;
       }
-      
+
       .flx-container {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
         align-items: flex-start;
       }
-      
+
       .goTop {
         bottom: 2rem;
         right: 2rem;
+      }
+
+      .gift-card-offers {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .gift-card-item {
+        padding: 2rem;
+      }
+
+      .gift-card-price {
+        font-size: 3rem;
       }
     }
 
@@ -666,21 +765,33 @@
     <main id="main-app">
       <div class="container">
         <div class="h-div-txt">
-          <span class="campaign-date">04.05.25 - 11.05.25</span>
-          <h2>❤️ АКЦИЯ К ДНЮ МАТЕРИ НА ПОДАРОЧНЫЕ СЕРТИФИКАТЫ НА МАССАЖ! ❤️</h2>
-          <div class="single-box-txt">
-            <p style="font-size:1.1em; font-weight:bold;">💆‍♂️ Подари своей маме кусочек здоровья! 💆‍♀️</p>
-            <p>🎁 Скидки:</p>
-            <ul>
-              <li>✨ Сертификат на 60 мин – всего 45 € (обычная цена 50 €)</li>
-              <li>✨ Сертификат на 90 мин – всего 70 € (обычная цена 75 €)</li>
-              <li>✨ 5x60 мин сертификат – всего 200 € (цена за 1 массаж – 40 €)</li>
-            </ul>
-            <p>💖 Позаботьтесь о здоровье своей мамы!💖</p>
-            <p>Для покупки подарочной карты, БРОНИРУЙТЕ время в системе бронирования!</p>
+          <span class="campaign-date">Действует до 08.03.2026</span>
+          <h2>🌸 СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ КО ДНЮ ЖЕНЩИН 🌸</h2>
+          <p class="campaign-subtitle">Подарок, который приносит настоящее облегчение.<br><strong>Здоровье. Восстановление. Расслабление.</strong></p>
+        </div>
+
+        <div class="gift-card-offers">
+          <div class="gift-card-item">
+            <div class="gift-card-title">Массаж 60 мин</div>
+            <div class="gift-card-price">50 €</div>
+            <div class="gift-card-original">Ранее 60 €</div>
+            <div class="gift-card-savings">Экономия 10 €</div>
+          </div>
+          <div class="gift-card-item">
+            <div class="gift-card-title">Массаж 90 мин</div>
+            <div class="gift-card-price">80 €</div>
+            <div class="gift-card-original">Ранее 90 €</div>
+            <div class="gift-card-savings">Экономия 10 €</div>
+          </div>
+          <div class="gift-card-item best-offer">
+            <div class="best-offer-badge">⭐ ЛУЧШЕЕ ПРЕДЛОЖЕНИЕ</div>
+            <div class="gift-card-title">5 × 60 мин массаж</div>
+            <div class="gift-card-price">250 €</div>
+            <div class="gift-card-original">Ранее 300 €</div>
+            <div class="gift-card-savings">Экономия 50 €</div>
           </div>
         </div>
-        
+
         <!-- BRONEERIMISSÜSTEEMI KONTEINER -->
         <div id="broneeri-container"></div>
       </div>
