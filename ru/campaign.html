@@ -2,8 +2,8 @@
 <html class="no-js" lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Подарочные сертификаты на массаж – акция</title>
-  <meta name="description" content="MV Therapy предлагает массаж в Пярну. Мы предлагаем как расслабляющий, так и лечебный массаж для вашего тела и души.">
+  <title>Специальное предложение ко Дню женщин – MV Therapy | Массаж в Пярну</title>
+  <meta name="description" content="Специальное предложение ко Дню женщин до 08.03.2026. 60 мин – 50€, 90 мин – 80€, 5×60 мин – 250€. Массажный салон MV Therapy в Пярну.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="robots" content="index, follow">
@@ -605,6 +605,164 @@
         transition: none !important;
       }
     }
+  
+    /* ── Women's Day Campaign ── */
+    .wd-wrap {
+      padding: 0.5rem 1rem 2rem;
+    }
+    .wd-hero {
+      background: linear-gradient(135deg, #7b4fa0 0%, #c2527e 50%, #e8708a 100%);
+      border-radius: 18px;
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .wd-hero::before {
+      content: '🌸';
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.10;
+      top: -1rem;
+      left: -1rem;
+      pointer-events: none;
+    }
+    .wd-hero::after {
+      content: '🌸';
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.10;
+      bottom: -2rem;
+      right: -1rem;
+      pointer-events: none;
+    }
+    .wd-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.22);
+      border: 1.5px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 0.35rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.2rem;
+    }
+    .wd-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .wd-tagline {
+      font-size: 1.05rem;
+      opacity: 0.93;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .wd-prices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .wd-price-card {
+      background: #fff;
+      border: 2px solid #e8d5f0;
+      border-radius: 14px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(123,79,160,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wd-price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(123,79,160,0.16);
+    }
+    .wd-price-card--best {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #7b4fa0, #c2527e);
+      border: none;
+      color: #fff;
+    }
+    .wd-best-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.25);
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    .wd-duration {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #44437d;
+      margin-bottom: 0.5rem;
+    }
+    .wd-price-card--best .wd-duration {
+      color: rgba(255,255,255,0.9);
+    }
+    .wd-old {
+      font-size: 0.95rem;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .wd-price-card--best .wd-old {
+      color: rgba(255,255,255,0.6);
+    }
+    .wd-new {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #7b4fa0;
+      line-height: 1;
+    }
+    .wd-price-card--best .wd-new {
+      color: #fff;
+    }
+    .wd-saving {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      color: #fff;
+    }
+    .wd-book-btn {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      margin: 1.5rem auto 0;
+      background: linear-gradient(135deg, #7b4fa0, #c2527e);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(123,79,160,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wd-book-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(123,79,160,0.45);
+    }
+    @media (max-width: 480px) {
+      .wd-prices { grid-template-columns: 1fr; }
+      .wd-price-card--best { grid-column: auto; }
+    }
   </style>
 </head>
 
@@ -663,26 +821,37 @@
       </nav>
     </div>
 
-    <main id="main-app">
+        <main id="main-app">
       <div class="container">
-        <div class="h-div-txt">
-          <span class="campaign-date">04.05.25 - 11.05.25</span>
-          <h2>❤️ АКЦИЯ К ДНЮ МАТЕРИ НА ПОДАРОЧНЫЕ СЕРТИФИКАТЫ НА МАССАЖ! ❤️</h2>
-          <div class="single-box-txt">
-            <p style="font-size:1.1em; font-weight:bold;">💆‍♂️ Подари своей маме кусочек здоровья! 💆‍♀️</p>
-            <p>🎁 Скидки:</p>
-            <ul>
-              <li>✨ Сертификат на 60 мин – всего 45 € (обычная цена 50 €)</li>
-              <li>✨ Сертификат на 90 мин – всего 70 € (обычная цена 75 €)</li>
-              <li>✨ 5x60 мин сертификат – всего 200 € (цена за 1 массаж – 40 €)</li>
-            </ul>
-            <p>💖 Позаботьтесь о здоровье своей мамы!💖</p>
-            <p>Для покупки подарочной карты, БРОНИРУЙТЕ время в системе бронирования!</p>
+        <div class="wd-wrap">
+          <div class="wd-hero">
+            <div class="wd-badge">Действительно до 08.03.2026</div>
+            <h1 class="wd-title">🌸 Специальное<br>предложение<br>ко Дню женщин</h1>
+            <p class="wd-tagline">Подарок, который приносит настоящее облегчение.<br>Здоровье. Восстановление. Расслабление.</p>
           </div>
+
+          <div class="wd-prices">
+            <div class="wd-price-card">
+              <div class="wd-duration">60 мин</div>
+              <div class="wd-old">60€</div>
+              <div class="wd-new">50€</div>
+            </div>
+            <div class="wd-price-card">
+              <div class="wd-duration">90 мин</div>
+              <div class="wd-old">90€</div>
+              <div class="wd-new">80€</div>
+            </div>
+            <div class="wd-price-card wd-price-card--best">
+              <div class="wd-best-label">✨ Лучшее предложение</div>
+              <div class="wd-duration">5 × 60 мин</div>
+              <div class="wd-old">300€</div>
+              <div class="wd-new">250€</div>
+              <div class="wd-saving">Экономия 50€</div>
+            </div>
+          </div>
+
+          <div id="broneeri-container"></div>
         </div>
-        
-        <!-- BRONEERIMISSÜSTEEMI KONTEINER -->
-        <div id="broneeri-container"></div>
       </div>
     </main>
 
