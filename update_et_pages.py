@@ -366,12 +366,15 @@ def build_header(et_url, ru_url, en_url, active_section):
 OLD_BASE_SELECTORS = [
     r'\*\s*\{', r'html\s*\{', r'body\s*\{', r'img\s*\{',
     r'a\s*\{', r'\.container\s*\{', r'\.sticky-wrapper\s*\{',
+    r'main\s*\{',  # old pages had main { background: #fff } card style
     r'header\s*\{', r'\.logo\b', r'\.claim\b', r'\.language-menu\b',
     r'\.nav\b', r'\.nav-inner\b', r'\.nav-item\b', r'\.hamburger\b',
     r'footer\s*\{', r'\.flx-container\b', r'\.goTop\b', r'\.go-top\b',
     r'#scrollBtn\b', r'\.page-footer\b', r'\.site-footer\b',
     r'\.footer-grid\b', r'\.footer-social\b', r'\.footer-copy\b',
     r'#cookieNotice\b', r'\.mobile-book-bar\b',
+    r'\.seo-section\b', r'\.seo-grid\b', r'\.seo-col\b',  # new CSS defines these
+    r'h1\s*\{',  # new CSS defines h1 with DM Serif Display
 ]
 
 def filter_old_css(css_text):
@@ -505,6 +508,132 @@ def extract_head_meta(html):
 
     return head_content.strip('\n')
 
+# ─── Standardise / clean SEO meta tags ───────────────────────────────────────
+def clean_meta_seo(head_content):
+    """
+    Fix SEO meta tags to match home.html standard:
+    - Remove keywords, author, publisher, copyright and other junk meta
+    - Fix geo.region EE-68 → EE-67
+    - Fix geo.placename to "Pärnu, Estonia"
+    - Standardise robots content order
+    - Fix viewport user-scalable=no → yes
+    - Standardise twitter:* tags to use property= (not name=)
+    - Add geo block if missing
+    - Add og:image dimensions if og:image is present but dimensions are missing
+    - Clean up inline width/height attributes from og:image tags
+    """
+    # 1. Remove tags we no longer want
+    for pat in [
+        r'\s*<meta\s+name=["\']keywords["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']author["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']publisher["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']copyright["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']googlebot["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']format-detection["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']msapplication-TileColor["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']rating["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']distribution["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']revisit-after["\'][^>]*>\s*',
+        r'\s*<meta\s+http-equiv=["\']expires["\'][^>]*>\s*',
+        r'\s*<meta\s+http-equiv=["\']cache-control["\'][^>]*>\s*',
+        r'\s*<meta\s+name=["\']og:site_name["\'][^>]*>\s*',
+    ]:
+        head_content = re.sub(pat, '\n', head_content, flags=re.IGNORECASE)
+
+    # 2. Fix geo.region EE-68 → EE-67
+    head_content = re.sub(
+        r'(content=["\'])EE-6[0-9](["\'])',
+        r'\g<1>EE-67\2', head_content
+    )
+
+    # 3. Fix geo.placename → "Pärnu, Estonia"
+    head_content = re.sub(
+        r'(<meta\s+name=["\']geo\.placename["\']?\s+content=["\'])([^"\']+)(["\'])',
+        lambda m: m.group(1) + 'Pärnu, Estonia' + m.group(3),
+        head_content, flags=re.IGNORECASE
+    )
+
+    # 4. Standardise robots content to home.html order
+    def fix_robots(m):
+        return (m.group(1) +
+                'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' +
+                m.group(3))
+    head_content = re.sub(
+        r'(<meta\s+name=["\']robots["\'][^>]*content=["\'])([^"\']+)(["\'])',
+        fix_robots, head_content, flags=re.IGNORECASE
+    )
+    head_content = re.sub(
+        r'(<meta\s+content=["\'])([^"\']+)(["\'][^>]*name=["\']robots["\'])',
+        lambda m: m.group(1) + 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' + m.group(3),
+        head_content, flags=re.IGNORECASE
+    )
+
+    # 5. Fix viewport user-scalable=no → yes
+    head_content = re.sub(
+        r'user-scalable=no', 'user-scalable=yes', head_content, flags=re.IGNORECASE
+    )
+
+    # 6. Standardise twitter:* tags: name= → property=
+    head_content = re.sub(
+        r'<meta\s+name=(["\'])(twitter:[^"\']+)(\1)',
+        r'<meta property=\1\2\3',
+        head_content, flags=re.IGNORECASE
+    )
+
+    # 7. Remove inline width/height attributes from og:image meta tags (not valid HTML meta attrs)
+    head_content = re.sub(
+        r'(<meta[^>]*property=["\']og:image["\'][^>]*)\s+width=["\'][^"\']*["\'](\s+height=["\'][^"\']*["\'])?',
+        r'\1', head_content, flags=re.IGNORECASE
+    )
+    head_content = re.sub(
+        r'(<meta[^>]*property=["\']og:image["\'][^>]*)\s+height=["\'][^"\']*["\']',
+        r'\1', head_content, flags=re.IGNORECASE
+    )
+
+    # 8. Add og:image:width / og:image:height if og:image present but dimensions missing
+    if re.search(r'property=["\']og:image["\']', head_content, re.IGNORECASE):
+        if not re.search(r'property=["\']og:image:width["\']', head_content, re.IGNORECASE):
+            head_content = re.sub(
+                r'(<meta[^>]*property=["\']og:image["\'][^>]*>)',
+                r'\1\n  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">',
+                head_content, count=1, flags=re.IGNORECASE
+            )
+
+    # 9. Add missing geo tags block if none present
+    if not re.search(r'geo\.region', head_content, re.IGNORECASE):
+        geo_block = '''
+  <!-- Geo Location Meta Tags -->
+  <meta name="geo.region" content="EE-67">
+  <meta name="geo.placename" content="Pärnu, Estonia">
+  <meta name="geo.position" content="58.3859;24.4971">
+  <meta name="ICBM" content="58.3859, 24.4971">'''
+        # Insert after theme-color if present, else after apple-mobile-web-app-capable, else append
+        if re.search(r'theme-color', head_content, re.IGNORECASE):
+            head_content = re.sub(
+                r'(<meta[^>]*theme-color[^>]*>)',
+                r'\1' + geo_block, head_content, count=1, flags=re.IGNORECASE
+            )
+        else:
+            head_content += geo_block
+
+    # 10. Add apple-mobile-web-app-capable if missing
+    if not re.search(r'apple-mobile-web-app-capable', head_content, re.IGNORECASE):
+        head_content = re.sub(
+            r'(<meta\s+name=["\']robots["\'][^>]*>)',
+            r'<meta name="apple-mobile-web-app-capable" content="yes">\n  \1',
+            head_content, count=1, flags=re.IGNORECASE
+        )
+
+    # 11. Add theme-color if missing
+    if not re.search(r'theme-color', head_content, re.IGNORECASE):
+        head_content = re.sub(
+            r'(<meta\s+name=["\']robots["\'][^>]*>)',
+            r'\1\n  <meta name="theme-color" content="#44437d">',
+            head_content, count=1, flags=re.IGNORECASE
+        )
+
+    return head_content
+
 # ─── Extract page-specific inline CSS ────────────────────────────────────────
 def extract_page_css(html):
     """Extract CSS from <style> blocks that is page-specific (not base styles)."""
@@ -542,6 +671,7 @@ def process_file(filepath):
 
     # Extract parts from old file
     head_meta = extract_head_meta(html)
+    head_meta = clean_meta_seo(head_meta)
     page_css = extract_page_css(html)
     main_content = extract_main(html)
 
