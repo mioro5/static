@@ -1217,6 +1217,44 @@
             display: block;
           }
         }
+
+    /* ── Article card wrapper ── */
+        .h-div {
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow-card);
+          padding: 2rem 1.5rem;
+          margin: 1.5rem 0;
+        }
+    
+    /* ── All-articles flex grid ── */
+        .flx-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+    
+    /* ── Article body text – readable size ── */
+        .h-div-txt .single-box-txt {
+          font-size: 1rem;
+          color: var(--text);
+          line-height: 1.8;
+        }
+    
+    /* ── Article image override ── */
+        .h-div-txt .single-box-img {
+          max-width: 280px;
+          height: auto;
+        }
+    
+    /* ── Article title ── */
+        .h-div-txt h3 {
+          font-size: 1.4rem;
+          margin-bottom: 1.2rem;
+          color: var(--brand);
+        }
   </style>
 </head>
 <body>
