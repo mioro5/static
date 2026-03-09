@@ -704,7 +704,150 @@
       }
       .trust.in { animation: none !important; }
     }
-  
+
+    /* ── Workshops page-specific styles ── */
+    .intro-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    .grey-container {
+      background: #f4f5fa;
+      padding: 1rem;
+      border-radius: var(--radius, 8px);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--brand, #44437d);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .flx-medium-box {
+      background: #f8f9fb;
+      border-radius: var(--radius, 10px);
+      box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.04));
+      flex: 1 1 280px;
+      min-width: 280px;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .flx-medium-box:hover {
+      border-color: var(--brand, #44437d);
+      transform: translateY(-2px);
+    }
+
+    .flx-box-inner {
+      min-height: 140px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .date-price-badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(68,67,125,0.95);
+      color: #fff;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius, 8px);
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      min-width: 100px;
+    }
+
+    .workshop-date {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .workshop-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: block;
+      color: #ffd700;
+    }
+
+    .coming-soon {
+      background: rgba(150,150,150,0.95);
+    }
+
+    .coming-soon .workshop-price {
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .flx-medium-box-a {
+      background: rgba(68,67,125,0.95);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius, 6px);
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.08));
+      transition: background 0.2s;
+    }
+
+    .flx-medium-box-a:hover {
+      background: #222259;
+    }
+
+    .flx-medium-box-content {
+      padding: 1rem;
+      color: #222;
+      font-size: 1rem;
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--line, #e3e4f5);
+      min-height: 100px;
+    }
+
+    .benefits-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: var(--radius, 8px);
+    }
+
+    .benefits-section h2 {
+      font-size: 1.4rem;
+      color: var(--brand, #44437d);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .benefit-item::before {
+      content: "✓";
+      color: var(--brand, #44437d);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
   </style>
 </head>
 <body>

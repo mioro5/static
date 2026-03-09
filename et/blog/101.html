@@ -602,7 +602,60 @@
       }
       .trust.in { animation: none !important; }
     }
-  
+
+    /* ── Blog sub-page specific styles ── */
+    .flx-small-box {
+      flex: 1 1 220px;
+      max-width: 220px;
+      background: #f4f5fa;
+      border-radius: var(--radius, 10px);
+      box-shadow: var(--shadow-card, 0 1px 4px rgba(0,0,0,0.04));
+      overflow: hidden;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flx-box-inner {
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    .flx-small-box-a {
+      display: block;
+      color: var(--brand, #44437d);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.7rem 1rem;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      background: var(--surface, #fff);
+      border-radius: 0 0 10px 10px;
+    }
+
+    .flx-small-box-a:hover {
+      color: #222;
+      background: #e3e4f5;
+    }
+
+    .img-right {
+      float: right;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .single-box-img.img-right {
+        float: none;
+        margin: 1rem auto;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>

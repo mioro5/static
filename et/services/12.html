@@ -672,7 +672,142 @@
       }
       .trust.in { animation: none !important; }
     }
-  
+
+    /* ── Services sub-page specific styles ── */
+    .service-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    .service-image {
+      width: 100%;
+      border-radius: var(--radius, 12px);
+      box-shadow: var(--shadow-card, 0 4px 16px rgba(0,0,0,0.1));
+      height: auto;
+    }
+
+    .service-info {
+      padding: 1rem 0;
+    }
+
+    .service-description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: #f8f9fb;
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.04));
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--line, #e0e0e0);
+    }
+
+    .price-table th {
+      background: #e3e4f5;
+      color: var(--brand, #44437d);
+      font-weight: 600;
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .benefit-card {
+      background: #f8f9fb;
+      padding: 1.5rem;
+      border-radius: var(--radius, 8px);
+      border-left: 4px solid var(--brand, #44437d);
+    }
+
+    .benefit-card h4 {
+      color: var(--brand, #44437d);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .technique-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .technique-item {
+      background: #e3e4f5;
+      padding: 1rem;
+      border-radius: var(--radius, 6px);
+      text-align: center;
+      font-weight: 500;
+      color: var(--brand, #44437d);
+    }
+
+    .faq-section {
+      margin-top: 3rem;
+    }
+
+    .faq-question {
+      background: #f8f9fb;
+      padding: 1rem;
+      font-weight: 600;
+      color: var(--brand, #44437d);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 1rem;
+      border-top: 1px solid var(--line, #e0e0e0);
+      display: none;
+    }
+
+    .faq-answer.open {
+      display: block;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--brand, #44437d), #222259);
+      color: white;
+      padding: 2rem;
+      border-radius: var(--radius, 12px);
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .cta-section h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .service-hero {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>

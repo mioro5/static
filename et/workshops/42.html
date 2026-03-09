@@ -847,7 +847,65 @@
       }
       .trust.in { animation: none !important; }
     }
-  
+
+    /* ── Workshop sub-page specific styles ── */
+    .grey-container {
+      background: #f4f5fa;
+      padding: 1.5rem;
+      border-radius: var(--radius, 8px);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--brand, #44437d);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .img-right {
+      float: right;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .flx-container-fullwidth {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .faq-question {
+      background: var(--brand, #44437d);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.3s ease;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .faq-question:focus {
+      outline: 3px solid #e3e4f5;
+      outline-offset: 2px;
+      background: #35346a;
+    }
+
+    .faq-question:hover {
+      background: #35346a;
+    }
+
+    .faq-answer {
+      padding: 1.5rem;
+      background: var(--surface, white);
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .single-box-img.img-right {
+        float: none;
+        margin: 1rem auto;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
