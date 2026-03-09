@@ -835,1186 +835,8 @@
       }
       .trust.in { animation: none !important; }
     }
-  
-
-    /* === PAGE-SPECIFIC STYLES === */
-    :root {
-          --bg: #f5f4fa;
-          --surface: rgba(255,255,255,.78);
-          --surface-solid: #ffffff;
-          --text: #1a1832;
-          --text-secondary: #5e5977;
-          --line: rgba(68,67,125,.10);
-          --brand: #44437d;
-          --brand-light: #5c5b9e;
-          --brand-accent: #6c6bb5;
-          --brand-bg: #eeedf8;
-          --brand-glow: rgba(68,67,125,.12);
-          --ok: #0f9d58;
-          --shadow: 0 8px 32px rgba(26,24,50,.08);
-          --shadow-lg: 0 16px 56px rgba(26,24,50,.13);
-          --shadow-card: 0 4px 20px rgba(26,24,50,.06);
-          --radius: 20px;
-          --radius-sm: 14px;
-          --radius-xs: 10px;
-          --container: 1240px;
-          --header-h: 72px;
-        }
-    
-    *,*::before,*::after { box-sizing: border-box; margin: 0; }
-    
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
-    
-    body {
-          font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-          color: var(--text);
-          background: var(--bg);
-          line-height: 1.6;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          overflow-x: hidden;
-        }
-    
-    img { max-width: 100%; display: block; height: auto; }
-    
-    a { color: inherit; }
-    
-    .container { width: min(100% - 28px, var(--container)); margin-inline: auto; }
-    
-    /* === HEADER === */
-        .site-header {
-          position: sticky; top: 0; z-index: 100;
-          backdrop-filter: blur(20px) saturate(1.4);
-          -webkit-backdrop-filter: blur(20px) saturate(1.4);
-          background: rgba(245,244,250,.82);
-          border-bottom: 1px solid var(--line);
-          height: var(--header-h);
-        }
-    
-    .topbar {
-          display: flex; align-items: center; justify-content: space-between;
-          gap: 8px; height: var(--header-h);
-        }
-    
-    .brand {
-          display: flex; align-items: center; gap: 8px;
-          text-decoration: none; min-width: 0; flex-shrink: 1;
-        }
-    
-    .brand-logo {
-          width: 38px; height: 38px; border-radius: 10px;
-          background: linear-gradient(135deg, var(--brand), var(--brand-accent));
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 4px 12px rgba(68,67,125,.2);
-          flex-shrink: 0;
-        }
-    
-    .brand-text { min-width: 0; overflow: hidden; }
-    
-    .brand-text strong { display: block; font-size: .88rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    
-    .brand-text span { display: block; font-size: .68rem; color: var(--text-secondary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    
-    .desktop-nav { display: none; gap: 4px; align-items: center; }
-    
-    .desktop-nav a {
-          text-decoration: none; padding: 8px 14px; border-radius: 999px;
-          font-weight: 600; font-size: .9rem; color: var(--text-secondary);
-          transition: all .2s;
-        }
-    
-    .desktop-nav a:hover, .desktop-nav a[aria-current="page"] {
-          background: var(--surface-solid); color: var(--brand);
-          box-shadow: var(--shadow-card);
-        }
-    
-    .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-    
-    /* Mobile language switcher — visible on mobile, hidden on desktop */
-        .mobile-lang-header {
-          display: flex; gap: 1px; align-items: center;
-        }
-    
-    .mobile-lang-header a {
-          text-decoration: none; padding: 4px 6px; border-radius: 999px;
-          font-weight: 700; font-size: .7rem; color: var(--text-secondary);
-          transition: all .2s;
-        }
-    
-    .mobile-lang-header a.active {
-          background: var(--brand-bg); color: var(--brand);
-        }
-    
-    /* Desktop language switcher — hidden by default, shown 900px+ */
-        .lang-switch { display: none; gap: 2px; }
-    
-    .lang-switch a {
-          text-decoration: none; padding: 6px 10px; border-radius: 999px;
-          font-weight: 700; font-size: .8rem; color: var(--text-secondary);
-          transition: all .2s;
-        }
-    
-    .lang-switch a:hover, .lang-switch a.active {
-          background: var(--brand-bg); color: var(--brand);
-        }
-    
-    /* Buttons */
-        .btn {
-          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-          border: 0; border-radius: 999px; padding: 12px 20px; font-weight: 700;
-          font-size: .9rem; text-decoration: none; cursor: pointer;
-          transition: transform .2s, box-shadow .2s;
-          font-family: inherit;
-        }
-    
-    .btn-primary {
-          color: #fff;
-          background: linear-gradient(135deg, var(--brand), var(--brand-accent));
-          box-shadow: 0 8px 24px rgba(68,67,125,.22);
-        }
-    
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(68,67,125,.3); }
-    
-    .btn-secondary {
-          background: var(--brand-bg); color: var(--brand);
-          border: 1px solid rgba(68,67,125,.1);
-        }
-    
-    .btn-secondary:hover { background: #e2e0f3; }
-    
-    /* Mobile toggle */
-        .mobile-toggle {
-          width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
-          background: #fff; box-shadow: var(--shadow-card); display: inline-grid;
-          place-items: center; cursor: pointer; font-size: 1.1rem;
-          -webkit-tap-highlight-color: transparent;
-        }
-    
-    .mobile-panel {
-          display: none; position: absolute; top: var(--header-h); left: 0; right: 0;
-          background: rgba(245,244,250,.96); backdrop-filter: blur(20px);
-          border-bottom: 1px solid var(--line); padding: 16px;
-          box-shadow: 0 12px 40px rgba(0,0,0,.1); z-index: 99;
-        }
-    
-    .mobile-panel.open { display: block; }
-    
-    .mobile-panel nav { display: grid; gap: 6px; }
-    
-    .mobile-panel nav a {
-          text-decoration: none; background: #fff; padding: 14px 16px;
-          border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
-          font-weight: 600; display: block;
-        }
-    
-    /* === HERO === */
-        .hero { padding: 28px 0 16px; }
-    
-    .hero-grid {
-          display: grid; gap: 20px; grid-template-columns: 1fr;
-          align-items: stretch;
-        }
-    
-    .hero-copy {
-          background: var(--surface);
-          border: 1px solid rgba(255,255,255,.7);
-          backdrop-filter: blur(16px);
-          border-radius: 28px;
-          box-shadow: var(--shadow-lg);
-          padding: 28px 22px;
-        }
-    
-    .eyebrow {
-          display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
-          padding: 8px 14px; border-radius: 999px;
-          background: var(--brand-bg); color: var(--brand);
-          font-size: .82rem; font-weight: 700;
-        }
-    
-    h1 {
-          font-family: 'DM Serif Display', Georgia, serif;
-          font-size: clamp(1.8rem, 5vw, 3.6rem);
-          line-height: 1.08; margin: 16px 0 14px;
-          letter-spacing: -.02em; font-weight: 400;
-        }
-    
-    .lead {
-          font-size: clamp(.95rem, 1.4vw, 1.1rem);
-          color: var(--text-secondary); max-width: 60ch;
-        }
-    
-    .hero-pills {
-          display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0;
-        }
-    
-    .pill {
-          padding: 8px 14px; border-radius: 999px; background: #fff;
-          border: 1px solid var(--line); font-weight: 600; font-size: .85rem;
-          text-decoration: none; color: var(--text); transition: all .2s;
-        }
-    
-    a.pill:hover {
-          background: var(--brand-bg); color: var(--brand);
-          border-color: rgba(68,67,125,.25);
-        }
-    
-    .pill-lang a {
-          text-decoration: none; color: var(--text); font-weight: 700;
-          padding: 2px 4px; border-radius: 6px; transition: all .2s;
-        }
-    
-    .pill-lang a:hover {
-          background: var(--brand); color: #fff;
-        }
-    
-    .trustbar {
-          display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 22px;
-        }
-    
-    .trust {
-          background: #fff; border: 1px solid var(--line); border-radius: 16px;
-          padding: 14px; box-shadow: var(--shadow-card); text-align: center;
-        }
-    
-    .trust strong { display: block; font-size: 1.2rem; color: var(--brand); }
-    
-    .trust span { color: var(--text-secondary); font-size: .85rem; }
-    
-    .hero-visual {
-          background: var(--surface);
-          border: 1px solid rgba(255,255,255,.7);
-          backdrop-filter: blur(16px);
-          border-radius: 28px;
-          box-shadow: var(--shadow-lg);
-          padding: 16px; overflow: hidden;
-        }
-    
-    .hero-visual img {
-          width: 100%; border-radius: 20px; box-shadow: var(--shadow);
-        }
-    
-    .location-callout {
-          margin-top: 14px; padding: 14px 16px;
-          background: var(--brand-bg); border-radius: var(--radius-sm);
-          border-left: 4px solid var(--brand);
-          font-size: .88rem; color: var(--text-secondary); line-height: 1.5;
-        }
-    
-    .location-callout strong { color: var(--text); }
-    
-    /* === SECTIONS === */
-        .section { padding: 28px 0 12px; }
-    
-    .section-head {
-          display: flex; align-items: end; justify-content: space-between;
-          gap: 16px; margin-bottom: 18px; flex-wrap: wrap;
-        }
-    
-    .section-head h2 {
-          font-family: 'DM Serif Display', serif;
-          font-size: clamp(1.4rem, 3vw, 2.2rem);
-          font-weight: 400; letter-spacing: -.01em;
-        }
-    
-    /* === SCROLL SECTIONS === */
-        .scroll-track {
-          display: flex; overflow-x: auto; gap: 14px;
-          padding: 4px 0 20px; scroll-behavior: smooth;
-          -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
-          scrollbar-width: thin; scrollbar-color: var(--brand) #e8e7f0;
-        }
-    
-    .scroll-track::-webkit-scrollbar { height: 6px; }
-    
-    .scroll-track::-webkit-scrollbar-track { background: #e8e7f0; border-radius: 3px; }
-    
-    .scroll-track::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 3px; }
-    
-    .s-card {
-          flex: 0 0 270px; background: #fff; border-radius: var(--radius);
-          box-shadow: var(--shadow-card); overflow: hidden;
-          text-decoration: none; color: inherit; scroll-snap-align: start;
-          border: 1px solid var(--line); transition: transform .2s, box-shadow .2s;
-        }
-    
-    .s-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    
-    .s-card img {
-          width: 100%; height: 170px; object-fit: cover; display: block;
-        }
-    
-    .s-card-body { padding: 14px 16px; }
-    
-    .s-card-body h3 {
-          font-size: .95rem; font-weight: 700; margin: 0 0 6px;
-          color: var(--brand); line-height: 1.3;
-        }
-    
-    .s-card-body p {
-          font-size: .82rem; color: var(--text-secondary); line-height: 1.45; margin: 0;
-          display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-        }
-    
-    .scroll-nav {
-          display: flex; justify-content: center; gap: 10px; margin-top: 8px;
-        }
-    
-    .scroll-arrow {
-          width: 40px; height: 40px; border-radius: 50%;
-          background: var(--brand); color: #fff; border: 0;
-          display: inline-grid; place-items: center; cursor: pointer;
-          transition: all .2s; font-size: 1.1rem;
-          box-shadow: 0 4px 12px rgba(68,67,125,.2);
-        }
-    
-    .scroll-arrow:hover { background: #333259; transform: scale(1.08); }
-    
-    /* === FAQ === */
-        .faq-grid { display: grid; gap: 10px; }
-    
-    .faq-item {
-          background: #fff; border: 1px solid var(--line); border-radius: 16px;
-          box-shadow: var(--shadow-card); overflow: hidden;
-        }
-    
-    .faq-item summary {
-          cursor: pointer; font-weight: 700; padding: 16px 18px;
-          list-style: none; display: flex; justify-content: space-between; align-items: center;
-          font-size: .95rem;
-        }
-    
-    .faq-item summary::-webkit-details-marker { display: none; }
-    
-    .faq-item summary::after {
-          content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand);
-          transition: transform .2s; flex-shrink: 0; margin-left: 12px;
-        }
-    
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    
-    .faq-item .faq-body {
-          padding: 0 18px 16px; color: var(--text-secondary); font-size: .9rem; line-height: 1.6;
-        }
-    
-    /* === VIDEO === */
-        .video-wrap {
-          margin: 28px 0; border-radius: var(--radius); overflow: hidden;
-          box-shadow: var(--shadow);
-        }
-    
-    .video-wrap iframe {
-          width: 100%; aspect-ratio: 16/9; border: none; display: block;
-        }
-    
-    /* === HERO REVIEWS === */
-        .hero-reviews { margin-top: 18px; }
-    
-    @media (min-width: 900px) {
-          .seo-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    
-    /* === RESPONSIVE === */
-        @media (min-width: 640px) {
-          .trustbar { grid-template-columns: repeat(4,1fr); }
-          .s-card { flex: 0 0 290px; }
-        }
-    
-    /* Extra bottom padding on mobile for sticky booking bar */
-        @media (max-width: 899px) {
-          .site-footer { padding-bottom: 90px; }
-          .go-top { bottom: 80px; }
-          #cookieNotice { bottom: 80px; }
-        }
-    
-    @media (min-width: 900px) {
-          .desktop-nav, .lang-switch { display: flex; }
-          .mobile-toggle, .mobile-lang-header { display: none; }
-          .brand-text span { font-size: .78rem; }
-          .brand-logo { width: 42px; height: 42px; border-radius: 12px; }
-          .brand-text strong { font-size: .95rem; }
-          .hero-grid { grid-template-columns: 1.15fr .85fr; }
-          .footer-grid { grid-template-columns: 1.4fr 1fr 1fr .8fr; }
-          .s-card { flex: 0 0 300px; }
-          .mobile-book-bar { display: none !important; }
-        }
-    
-    @media (min-width: 1200px) {
-          .s-card { flex: 0 0 320px; }
-        }
-    
-    /* === SCROLL & ENTRANCE ANIMATIONS === */
-    
-        /* Base hidden states — auto-applied by JS */
-        [data-anim] {
-          opacity: 0;
-          transition: opacity .7s cubic-bezier(.16,1,.3,1),
-                      transform .7s cubic-bezier(.16,1,.3,1),
-                      filter .7s cubic-bezier(.16,1,.3,1);
-          will-change: opacity, transform;
-        }
-    
-    /* Prevent left/right animation transforms from causing page overflow */
-        .hero { overflow: hidden; }
-    
-    [data-anim="up"]    { transform: translateY(48px); }
-    
-    [data-anim="down"]  { transform: translateY(-36px); }
-    
-    [data-anim="left"]  { transform: translateX(40px); }
-    
-    [data-anim="right"] { transform: translateX(-40px); }
-    
-    [data-anim="scale"] { transform: scale(.88); }
-    
-    [data-anim="blur"]  { transform: translateY(24px); filter: blur(8px); }
-    
-    [data-anim="pop"]   { transform: scale(.6); }
-    
-    /* Visible state */
-        [data-anim].in {
-          opacity: 1;
-          transform: none;
-          filter: none;
-        }
-    
-    /* Hero entrance — faster, more dramatic */
-        .hero [data-anim] {
-          transition-duration: .9s;
-        }
-    
-    /* Cards get a subtle hover lift that's separate from entrance */
-        .s-card, .faq-item {
-          transition: transform .25s ease, box-shadow .25s ease, opacity .7s cubic-bezier(.16,1,.3,1) !important;
-        }
-    
-    .s-card.in, .faq-item.in { opacity: 1; transform: translateY(0); }
-    
-    /* Floating accent for trust blocks */
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-4px); }
-        }
-    
-    .trust.in {
-          animation: float 4s ease-in-out infinite;
-          animation-delay: var(--float-d, 0s);
-        }
-    
-    /* Pill pop-in */
-        .pill[data-anim="pop"].in {
-          animation: pill-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;
-        }
-    
-    @keyframes pill-pop {
-          0%   { opacity: 0; transform: scale(.5); }
-          60%  { transform: scale(1.08); }
-          100% { opacity: 1; transform: scale(1); }
-        }
-    
-    /* Eyebrow slide-in */
-        @keyframes slide-in-badge {
-          0%   { opacity: 0; transform: translateX(-30px) scale(.9); }
-          100% { opacity: 1; transform: none; }
-        }
-    
-    .eyebrow[data-anim].in {
-          animation: slide-in-badge .7s cubic-bezier(.16,1,.3,1) forwards;
-        }
-    
-    /* H1 character feel */
-        h1[data-anim].in {
-          animation: heading-rise .9s cubic-bezier(.16,1,.3,1) forwards;
-        }
-    
-    @keyframes heading-rise {
-          0%   { opacity: 0; transform: translateY(50px); filter: blur(4px); }
-          100% { opacity: 1; transform: none; filter: none; }
-        }
-    
-    /* Scroll track cards — stagger set by JS */
-        .scroll-track [data-anim] {
-          transition-duration: .55s;
-        }
-    
-    @media (max-width: 540px) {
-          .flx-container-services { grid-template-columns: 1fr; }
-        }
-    
-    .single-box {
-          background: var(--c-surface);
-          border-radius: var(--radius);
-          box-shadow: var(--shadow-card);
-          padding: 1.5rem;
-          cursor: pointer;
-          transition: transform .25s, box-shadow .25s;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-    
-    .single-box:hover {
-          transform: translateY(-4px);
-          box-shadow: var(--shadow-lg);
-        }
-    
-    .single-box-img {
-          width: 100%;
-          max-width: 240px;
-          height: 180px;
-          object-fit: cover;
-          border-radius: var(--radius-sm);
-          margin-bottom: 1rem;
-        }
-    
-    .single-box h3 {
-          font-size: 1.05rem;
-          font-weight: 600;
-          color: var(--brand);
-          margin-bottom: .5rem;
-        }
-    
-    .single-box-txt {
-          font-size: .9rem;
-          color: var(--c-text-muted);
-          line-height: 1.6;
-          text-align: left;
-        }
-    
-    @media (prefers-reduced-motion: reduce) {
-          [data-anim] {
-            opacity: 1 !important; transform: none !important;
-            filter: none !important; transition: none !important;
-            animation: none !important;
-          }
-          .trust.in { animation: none !important; }
-        }
-    
-    /* === Page-specific styles === */
-      * {
-          box-sizing: border-box;
-        }
-    
-    }
-        body {
-          font-family: 'Inter', Arial, sans-serif;
-          background: #f8f9fb;
-          color: #222;
-          margin: 0;
-          padding: 0;
-          line-height: 1.6;
-        }
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1rem;
-        }
-        .sticky-wrapper {
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
-          z-index: 100;
-        }
-        header {
-          background: #44437d;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-          padding: 1rem 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-        }
-        .logo {
-          font-size: 1.2rem;
-          font-weight: 600;
-          padding: 0.5rem 0;
-          text-align: center;
-          width: 100%;
-          margin-bottom: 0.5rem;
-        }
-        .logo a {
-          color: #ffffff;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          text-rendering: optimizeLegibility;
-          text-decoration: none;
-          font-family:'Lucida Calligraphy',cursive,serif;
-          font-size: 1.3rem;
-        }
-        .claim {
-          text-align: center;
-          margin-bottom: 1rem;
-        }
-        .claim img {
-          max-width: 100%;
-          height: auto;
-          max-height: 60px;
-        }
-        .language-menu {
-          position: absolute;
-          top: 0.5rem;
-          right: 1rem;
-          display: flex;
-          gap: 0.25rem;
-        }
-        .language-menu a {
-          text-decoration: none;
-          color: #ffffff;
-          font-weight: 600;
-          padding: 0.3rem 0.5rem;
-          border-radius: 3px;
-          transition: background 0.2s;
-          font-size: 0.8rem;
-        }
-        .language-menu .selected {
-          background: rgba(255,255,255,0.2);
-          color: #fff;
-        }
-        .nav {
-          background: #f4f5fa;
-          border-bottom: 1px solid #e0e0e0;
-          padding: 0;
-          width: 100%;
-          position: relative;
-        }
-        .nav-inner {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          position: absolute;
-          background: #f4f5fa;
-          top: 100%;
-          left: 0;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          z-index: 110;
-        }
-        .nav-inner.open {
-          display: flex;
-        }
-        .nav-item {
-          width: 100%;
-        }
-        .nav-item a {
-          color: #44437d;
-          font-weight: 500;
-          text-decoration: none;
-          padding: 1rem 1.5rem;
-          border-radius: 0;
-          transition: background 0.2s;
-          -webkit-tap-highlight-color: transparent;
-          touch-action: manipulation;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          width: 100%;
-          border-bottom: 1px solid #e0e0e0;
-        }
-        .nav-item:last-child a {
-          border-bottom: none;
-        }
-        .nav-item.active a,
-        .nav-item a:hover {
-          background: #e3e4f5;
-        }
-        .hamburger {
-          display: flex;
-          cursor: pointer;
-          flex-direction: column;
-          gap: 4px;
-          padding: 1rem 1.5rem;
-          -webkit-tap-highlight-color: transparent;
-          z-index: 120;
-          background: #f4f5fa;
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-        }
-        .hamburger .line {
-          width: 25px;
-          height: 3px;
-          background: #44437d;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-        .hamburger.active .line:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger.active .line:nth-child(2) {
-          opacity: 0;
-        }
-        .hamburger.active .line:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
-        }
-        main {
-          max-width: 1200px;
-          margin: 1rem auto;
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-          padding: 1rem;
-        }
-        .intro-section {
-          text-align: center;
-          margin-bottom: 2rem;
-          padding: 1rem 0;
-        }
-        .intro-section h1 {
-          font-size: 1.8rem;
-          color: #44437d;
-          margin-bottom: 1rem;
-          line-height: 1.3;
-        }
-        .intro-section p {
-          font-size: 1rem;
-          color: #555;
-          line-height: 1.7;
-          max-width: 100%;
-          margin: 0 auto;
-          text-align: left;
-        }
-    
-        /* Campaign Banner Styles */
-        .campaign-banner {
-          background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-          color: #fff;
-          padding: 1.25rem 1.5rem;
-          border-radius: 12px;
-          margin: 1.5rem 0;
-          text-align: center;
-          box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
-          position: relative;
-          overflow: hidden;
-        }
-        .campaign-banner::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-          animation: shimmer 3s ease-in-out infinite;
-        }
-        @keyframes shimmer {
-          0%, 100% { transform: translateX(-30%) translateY(-30%); }
-    
-    50% { transform: translateX(30%) translateY(30%); }
-    
-    }
-        .campaign-banner-content {
-          position: relative;
-          z-index: 1;
-        }
-        .campaign-banner .campaign-icon {
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-        }
-        .campaign-banner .campaign-title {
-          font-size: 1.4rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-        .campaign-banner .campaign-subtitle {
-          font-size: 1.1rem;
-          margin-bottom: 0.5rem;
-          opacity: 0.95;
-        }
-        .campaign-banner .campaign-dates {
-          font-size: 0.95rem;
-          opacity: 0.9;
-          margin-bottom: 0.5rem;
-        }
-        .campaign-banner .campaign-info {
-          font-size: 0.9rem;
-          opacity: 0.85;
-        }
-    
-        .scroll-section {
-          margin: 2rem 0;
-        }
-        .scroll-section h2 {
-          font-size: 1.5rem;
-          color: #44437d;
-          text-align: center;
-          margin-bottom: 1.5rem;
-        }
-        .scroll-container {
-          display: flex;
-          overflow-x: auto;
-          gap: 1rem;
-          padding: 1rem 0 2rem 0;
-          scroll-behavior: smooth;
-          -webkit-overflow-scrolling: touch;
-          scroll-snap-type: x mandatory;
-        }
-        .scroll-container::-webkit-scrollbar {
-          height: 8px;
-        }
-        .scroll-container::-webkit-scrollbar-track {
-          background: #f1f1f1;
-          border-radius: 4px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-          background: #44437d;
-          border-radius: 4px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb:hover {
-          background: #333259;
-        }
-        .scroll-item {
-          flex: 0 0 280px;
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-          overflow: hidden;
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          text-decoration: none;
-          color: inherit;
-          scroll-snap-align: start;
-        }
-        .scroll-item:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        .scroll-item-image {
-          width: 100%;
-          height: 180px;
-          object-fit: cover;
-          display: block;
-        }
-        .scroll-item-content {
-          padding: 1rem;
-        }
-        .scroll-item-title {
-          font-size: 1rem;
-          font-weight: 600;
-          color: #44437d;
-          margin-bottom: 0.5rem;
-          line-height: 1.3;
-        }
-        .scroll-item-description {
-          font-size: 0.85rem;
-          color: #666;
-          line-height: 1.4;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        .scroll-nav {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-top: 1rem;
-        }
-        .scroll-arrow {
-          background: #44437d;
-          color: white;
-          border: none;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.2s, transform 0.2s;
-          font-size: 1.2rem;
-        }
-        .scroll-arrow:hover {
-          background: #333259;
-          transform: scale(1.12);
-        }
-    
-        /* FAQ Section Styles */
-        .faq-section {
-          margin: 2rem 0;
-        }
-        .faq-section h2 {
-          font-size: 1.5rem;
-          color: #44437d;
-          text-align: center;
-          margin-bottom: 1.5rem;
-        }
-        .faq-item {
-          background: #f8f9fb;
-          border-radius: 8px;
-          padding: 1.25rem;
-          margin-bottom: 1rem;
-          border-left: 4px solid #44437d;
-        }
-        .faq-question {
-          font-size: 1.05rem;
-          font-weight: 600;
-          color: #44437d;
-          margin-bottom: 0.75rem;
-        }
-        .faq-answer {
-          font-size: 0.95rem;
-          color: #555;
-          line-height: 1.6;
-        }
-    
-        iframe {
-          width: 100%;
-          max-width: 100%;
-          aspect-ratio: 16/9;
-          border: none;
-          border-radius: 8px;
-          margin: 2rem auto;
-          display: block;
-        }
-        .elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9 {
-          margin: 2rem 0;
-        }
-        #broneeri-container {
-          margin: 2.5rem 0 0 0;
-          padding: 1.5rem 0 0 0;
-          border-top: 1px solid #e3e4f5;
-          text-align: center;
-        }
-        #salonlife-widget-root .button-cta {
-          display: inline-block;
-          background: #44437d;
-          color: #fff;
-          font-weight: 600;
-          border-radius: 5px;
-          padding: 0.8rem 1.6rem;
-          font-size: 1.1rem;
-          text-decoration: none;
-          margin: 1.2rem auto 0 auto;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-          transition: background 0.2s;
-          cursor: pointer;
-          border: none;
-        }
-        #salonlife-widget-root .button-cta:hover {
-          background: #222259;
-        }
-        .page-footer {
-          background: #222;
-          color: #fff;
-          padding: 2rem 0;
-          margin-top: 2rem;
-        }
-        .flx-container {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          align-items: center;
-          text-align: center;
-        }
-        .flx-container a,
-        .flx-container span {
-          color: #fff;
-          text-decoration: none;
-        }
-        .goTop {
-          position: fixed;
-          bottom: 1rem;
-          right: 1rem;
-          background: #44437d;
-          color: #fff;
-          border: none;
-          border-radius: 50%;
-          width: 48px;
-          height: 48px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-          cursor: pointer;
-          z-index: 99;
-          font-size: 1.5rem;
-          display: none;
-        }
-        .keyword-link {
-          color: #44437d;
-          font-weight: 600;
-          text-decoration: none;
-          border-bottom: 1px dotted #44437d;
-          transition: all 0.2s ease;
-          padding: 0.1rem 0.2rem;
-          margin: -0.1rem -0.2rem;
-          border-radius: 3px;
-        }
-        .keyword-link:hover {
-          background: #e3e4f5;
-          border-bottom: none;
-        }
-    
-        /* Accessibility */
-        .skip-link {
-          position: absolute;
-          top: -40px;
-          left: 6px;
-          background: #44437d;
-          color: white;
-          padding: 8px;
-          text-decoration: none;
-          border-radius: 4px;
-          z-index: 1000;
-        }
-        .skip-link:focus {
-          top: 6px;
-        }
-        a:focus, button:focus, [tabindex]:focus {
-          outline: 3px solid #e3e4f5;
-          outline-offset: 2px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-    
-    }
-    
-        /* Responsive */
-        @media (max-width: 360px) {
-          .logo a { font-size: 1.1rem; }
-    
-    .intro-section h1 { font-size: 1.5rem; }
-    
-    .scroll-item { flex: 0 0 250px; }
-    
-    main { padding: 0.75rem; margin: 0.5rem; border-radius: 8px; }
-    
-    .campaign-banner { padding: 1rem; }
-    
-    .campaign-banner .campaign-title { font-size: 1.2rem; }
-    
-    .campaign-banner .campaign-subtitle { font-size: 1rem; }
-    
-    }
-        @media (min-width: 361px) and (max-width: 480px) {
-          .scroll-item { flex: 0 0 260px; }
-    
-    .intro-section h1 { font-size: 1.6rem; }
-    
-    }
-        @media (min-width: 481px) and (max-width: 767px) {
-          .scroll-item { flex: 0 0 280px; }
-    
-    .intro-section h1 { font-size: 1.8rem; }
-    
-    main { padding: 1.25rem; }
-    
-    }
-        @media (min-width: 768px) {
-          .container { padding: 0 2rem; }
-    
-    .intro-section { padding: 2rem 0; }
-    
-    .intro-section h1 { font-size: 2.5rem; }
-    
-    .intro-section p { font-size: 1.1rem; max-width: 800px; text-align: center; }
-    
-    .scroll-section h2 { font-size: 2rem; }
-    
-    .scroll-container { gap: 1.5rem; }
-    
-    .scroll-item { flex: 0 0 300px; }
-    
-    .scroll-item-content { padding: 1.5rem; }
-    
-    .scroll-item-title { font-size: 1.1rem; margin-bottom: 0.8rem; }
-    
-    .scroll-item-description { font-size: 0.9rem; line-height: 1.5; }
-    
-    main { margin: 2rem auto; padding: 2rem 2rem; }
-    
-    .campaign-banner { padding: 1.5rem 2rem; }
-    
-    .campaign-banner .campaign-title { font-size: 1.6rem; }
-    
-    .campaign-banner .campaign-subtitle { font-size: 1.2rem; }
-    
-    }
-        @media (min-width: 1200px) {
-          .scroll-item { flex: 0 0 320px; }
-    
-    .scroll-container { gap: 2rem; }
-    
-    }
-        @media (pointer: coarse) {
-          .nav-item a { min-height: 44px; display: flex; align-items: center; }
-    
-    .scroll-arrow { min-width: 44px; min-height: 44px; }
-    
-    }
-        /* === SCROLL ANIMATIONS === */
-    
-        /* Elements start hidden – CSS knows which ones, no JS needed */
-        #main-app h2, #main-app h3, #main-app h4,
-        #main-app .benefit-card, #main-app .card,
-        #main-app .technique-item, #main-app .faq-item,
-        #main-app .team-card, #main-app .campaign-card,
-        #main-app .service-card, #main-app .blog-card,
-        #main-app .diagnosis-card, #main-app .workshop-card,
-        #main-app .scroll-item, #main-app .info-block,
-        #main-app .step-item, #main-app .price-row {
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        #main-app h2.animated, #main-app h3.animated, #main-app h4.animated,
-        #main-app .benefit-card.animated, #main-app .card.animated,
-        #main-app .technique-item.animated, #main-app .faq-item.animated,
-        #main-app .team-card.animated, #main-app .campaign-card.animated,
-        #main-app .service-card.animated, #main-app .blog-card.animated,
-        #main-app .diagnosis-card.animated, #main-app .workshop-card.animated,
-        #main-app .scroll-item.animated, #main-app .info-block.animated,
-        #main-app .step-item.animated, #main-app .price-row.animated {
-          opacity: 1;
-          transform: translateY(0);
-        }
-    
-        /* Images: scale-in */
-        #main-app img {
-          opacity: 0;
-          transform: scale(0.92);
-          transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        #main-app img.animated {
-          opacity: 1;
-          transform: scale(1);
-        }
-    
-        /* Button hover lift */
-        .cta-section a, .cta-section button,
-        #salonlife-widget-root .button-cta,
-        a.booking-btn, button.booking-btn {
-          transition: background 0.2s, transform 0.18s, box-shadow 0.18s !important;
-        }
-        .cta-section a:hover, .cta-section button:hover,
-        #salonlife-widget-root .button-cta:hover,
-        a.booking-btn:hover, button.booking-btn:hover {
-          transform: translateY(-3px) !important;
-          box-shadow: 0 8px 24px rgba(68,67,125,0.30) !important;
-        }
-    
-        /* No-JS / reduced-motion fallback */
-        @media (prefers-reduced-motion: reduce) {
-          #main-app h2, #main-app h3, #main-app h4,
-          #main-app .benefit-card, #main-app .card,
-          #main-app .technique-item, #main-app .faq-item,
-          #main-app .team-card, #main-app .campaign-card,
-          #main-app .service-card, #main-app .blog-card,
-          #main-app .diagnosis-card, #main-app .workshop-card,
-          #main-app .scroll-item, #main-app .info-block,
-          #main-app .step-item, #main-app .price-row,
-          #main-app img {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
-          }
-    
-    }
   </style>
+
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to main content</a>
@@ -2072,366 +894,307 @@
   </header>
 
   <!-- ===== MAIN ===== -->
-<main id="content" >
+  <!-- ===== MAIN ===== -->
+  <main id="content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">5.0★ Google rating · 5,000+ clients · Pärnu city centre</div>
+          <h1>Massage in Pärnu&nbsp;&mdash;&nbsp;MV&nbsp;Therapy</h1>
+          <p class="lead">Therapy centre specialised in <strong>medical massage at Rüütli 47, Pärnu city centre</strong>. We offer trigger point therapy, high-intensity magnetic therapy, shockwave therapy, deep tissue massage, sports massage, classical and relaxation massage &ndash; over 14 different services. All performed by a <strong>Level 6 certified massage therapist</strong>.</p>
+          <div class="hero-pills">
+            <a class="pill" href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener noreferrer">Level 6 certificate ↗</a>
+            <a class="pill" href="https://share.google/qSNawGe4CYtPM7RS1" target="_blank" rel="noopener noreferrer">📍 Rüütli 47, Pärnu</a>
+            <span class="pill pill-lang"><a href="/et/home.html">ET</a> · <a href="/ru/home.html">RU</a> · <a href="/en/home.html">EN</a></span>
+            <a class="pill" href="/en/services.html">Medical &amp; relaxation</a>
+          </div>
+          <div class="trustbar">
+            <div class="trust"><strong>5,000+</strong><span>happy clients</span></div>
+            <div class="trust"><strong>2020–</strong><span>serving Pärnu</span></div>
+            <div class="trust"><strong>5.0★</strong><span>Google rating</span></div>
+            <div class="trust"><strong>3 languages</strong><span>ET, RU, EN</span></div>
+          </div>
+          <!-- Google Reviews inside hero -->
+          <div class="hero-reviews">
+            <div class="elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9" data-elfsight-app-lazy></div>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Therapy photo and location info">
+          <img src="/public/img/m1.jpg" alt="Massage therapist Roman Gussev with professional certificates">
+          <div class="location-callout">
+            <strong>📍 Our location in the heart of Pärnu:</strong> Located on Pärnu's main pedestrian street at <strong>Rüütli 47, 2nd floor</strong> – in the heart of the historic Old Town. Near the Red Tower (15th century landmark) and Independence Square. Pärnu beach is a 15-minute walk away. <strong>Serving Pärnu residents and visitors since 2020</strong> – over 5,000 happy clients from Pärnu and across Estonia!
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="teenused">
       <div class="container">
-        <!-- Intro section -->
-        <section class="intro-section">
-          <h1>Massage in Pärnu — MV Therapy</h1>
-          <p><strong>MV Therapy</strong> is a massage centre in Pärnu specialized in <strong class="keyword-link">medical massage</strong> for solving muscle-based problems. We also provide <strong class="keyword-link">relaxing massage in Pärnu</strong> to restore the client's psycho-emotional state – this is an important part of every effective treatment. We offer quality <strong class="keyword-link">professional massage in Pärnu city center</strong> at <strong>Rüütli 47</strong>.
-          
-          Our <strong class="keyword-link">massage services</strong> include <strong class="keyword-link">classical massage in Pärnu</strong>, <strong class="keyword-link">medical massage</strong>, <strong class="keyword-link">sports massage Pärnu</strong>, <strong>high-intensity magnetic therapy</strong>, <strong>shockwave therapy</strong>, <strong>trigger point therapy</strong>, <strong class="keyword-link">deep tissue massage</strong> and 8 other different <strong class="keyword-link">massage types in Pärnu</strong>.
-          
-          All services are performed by a certified <strong class="keyword-link">massage therapist</strong> with a <strong>Level 6 professional certificate</strong>. <strong>Book your appointment today</strong> and experience <strong class="keyword-link">professional massage service in Pärnu</strong>!</p>
-
-          <p style="margin-top: 1rem; padding: 1rem; background: #f8f9fb; border-left: 4px solid #44437d;"><strong>📍 Our Location in the Heart of Pärnu:</strong> Located on Pärnu's main pedestrian street at <strong>Rüütli 47, 2nd floor</strong> – in the heart of the historic Old Town. Near the Red Tower (15th century landmark) and Independence Square. Pärnu beach is a 15-minute walk away. <strong>Serving Pärnu residents and visitors since 2020</strong> – over 5000 happy clients from Pärnu and across Estonia!</p>
-        </section>
-
-        <!-- Campaign Banner - Winter Promotion -->
-        <section class="campaign-banner" aria-label="Winter campaign">
-          <div class="campaign-banner-content">
-            <div class="campaign-icon">❄️ 🌨️ ❄️</div>
-            <div class="campaign-title">Winter Campaign</div>
-            <div class="campaign-subtitle">All manual massages at special prices!</div>
-            <div class="campaign-dates">01.12.2025 – 28.02.2026</div>
-            <div class="campaign-info">Details in the booking system</div>
-          </div>
-        </section>
-
-        <!-- Services scrollable section -->
-        <section class="scroll-section">
+        <div class="section-head">
           <h2>Our Massage Services in Pärnu</h2>
-          <div class="scroll-container" id="services-scroll">
-            <a href="/en/services/2.html" class="scroll-item">
-              <img src="/public/img/services/6.jpg" alt="Classical massage in Pärnu" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Classical massage</div>
-                <div class="scroll-item-description">Stroking, rubbing and caressing to improve circulation in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/1.html" class="scroll-item">
-              <img src="/public/img/services/2.jpg" alt="Medical massage in Pärnu" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Medical massage</div>
-                <div class="scroll-item-description">Therapeutic approach for treating chronic muscle pain in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/15.html" class="scroll-item">
-              <img src="/public/img/blog/102.jpg" alt="High-intensity magnetic therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">High-intensity magnetic therapy</div>
-                <div class="scroll-item-description">Revolutionary pain treatment method without medication in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/3.html" class="scroll-item">
-              <img src="/public/img/services/20.png" alt="Shockwave therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Shockwave therapy</div>
-                <div class="scroll-item-description">Sound waves for chronic pain and inflammation relief at Rüütli 47...</div>
-              </div>
-            </a>
-            <a href="/en/services/4.html" class="scroll-item">
-              <img src="/public/img/services/5.jpg" alt="Trigger point therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Trigger point therapy</div>
-                <div class="scroll-item-description">Releasing painful muscle knots and tension points in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/5.html" class="scroll-item">
-              <img src="/public/img/services/10.jpg" alt="Sports massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Sports massage</div>
-                <div class="scroll-item-description">For athletes before and after training in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/6.html" class="scroll-item">
-              <img src="/public/img/services/16.jpg" alt="Deep tissue massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Deep tissue massage</div>
-                <div class="scroll-item-description">Treatment of chronic pain in deeper muscle layers in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/7.html" class="scroll-item">
-              <img src="/public/img/services/14.jpg" alt="Cupping massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Cupping massage</div>
-                <div class="scroll-item-description">Vacuum improves lymphatic and blood circulation at Pärnu massage center...</div>
-              </div>
-            </a>
-            <a href="/en/services/8.html" class="scroll-item">
-              <img src="/public/img/services/12.jpg" alt="Gua Sha therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Gua Sha therapy</div>
-                <div class="scroll-item-description">Traditional Chinese skin scraping technique for circulation stimulation in Pärnu...</div>
-              </div>
-            </a>
-            <a href="/en/services/9.html" class="scroll-item">
-              <img src="/public/img/services/13.jpg" alt="Biocurrent massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Biocurrent massage</div>
-                <div class="scroll-item-description">Microcurrents and bioelectric stimulation to increase skin elasticity...</div>
-              </div>
-            </a>
-            <a href="/en/services/10.html" class="scroll-item">
-              <img src="/public/img/services/3.jpg" alt="Lymphatic massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lymphatic massage</div>
-                <div class="scroll-item-description">Increasing lymphatic fluid flow and reducing swelling in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/11.html" class="scroll-item">
-              <img src="/public/img/services/7.jpg" alt="Foot sole massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Foot sole massage</div>
-                <div class="scroll-item-description">Improving foot circulation and functionality at Rüütli 47...</div>
-              </div>
-            </a>
-            <a href="/en/services/12.html" class="scroll-item">
-              <img src="/public/img/services/9.jpg" alt="Ultrasound therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Ultrasound therapy</div>
-                <div class="scroll-item-description">Microvibration warms tissues and improves metabolism in Pärnu city center...</div>
-              </div>
-            </a>
-            <a href="/en/services/13.html" class="scroll-item">
-              <img src="/public/img/services/18.jpg" alt="Manual muscle testing" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Manual muscle testing</div>
-                <div class="scroll-item-description">Posture and movement pattern analysis for personalized massage plan...</div>
-              </div>
-            </a>
-            <a href="/en/services/14.html" class="scroll-item">
-              <img src="/public/img/services/1.jpg" alt="Kinesio taping" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kinesio taping</div>
-                <div class="scroll-item-description">Supporting muscle and joint recovery and treatment process...</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('services-scroll', -300)" aria-label="Scroll left">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('services-scroll', 300)" aria-label="Scroll right">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
+          <a class="btn btn-secondary" href="/en/services.html">All services →</a>
+        </div>
+        <div class="scroll-track" id="services-scroll">
+          <a href="/en/services/2.html" class="s-card">
+            <img src="/public/img/services/6.jpg" alt="Classical massage session in a relaxing environment">
+            <div class="s-card-body"><h3>Classical massage</h3><p>Stroking, rubbing and caressing to improve circulation in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/1.html" class="s-card">
+            <img src="/public/img/services/2.jpg" alt="Medical massage procedure in the back area">
+            <div class="s-card-body"><h3>Medical massage</h3><p>Therapeutic approach for treating chronic muscle pain in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/15.html" class="s-card">
+            <img src="/public/img/blog/102.jpg" alt="Magnetic therapy device during a treatment session">
+            <div class="s-card-body"><h3>High-intensity magnetic therapy</h3><p>Revolutionary pain treatment method without medication at Rüütli 47.</p></div>
+          </a>
+          <a href="/en/services/3.html" class="s-card">
+            <img src="/public/img/services/20.png" alt="Shockwave therapy device and procedure">
+            <div class="s-card-body"><h3>Shockwave therapy</h3><p>Sound waves for chronic pain and inflammation relief in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/4.html" class="s-card">
+            <img src="/public/img/services/5.jpg" alt="Therapist working on trigger point area">
+            <div class="s-card-body"><h3>Trigger point therapy</h3><p>Releasing painful muscle knots and tension points in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/5.html" class="s-card">
+            <img src="/public/img/services/10.jpg" alt="Sports massage session for an athlete">
+            <div class="s-card-body"><h3>Sports massage</h3><p>For athletes before and after training at Pärnu massage centre.</p></div>
+          </a>
+          <a href="/en/services/6.html" class="s-card">
+            <img src="/public/img/services/16.jpg" alt="Deep tissue massage technique on the back">
+            <div class="s-card-body"><h3>Deep tissue massage</h3><p>Treatment of chronic pain in deeper muscle layers in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/7.html" class="s-card">
+            <img src="/public/img/services/14.jpg" alt="Cupping massage vacuum cups on the back">
+            <div class="s-card-body"><h3>Cupping massage</h3><p>Vacuum improves lymphatic and blood circulation at Pärnu massage centre.</p></div>
+          </a>
+          <a href="/en/services/8.html" class="s-card">
+            <img src="/public/img/services/12.jpg" alt="Gua Sha scraping technique procedure">
+            <div class="s-card-body"><h3>Gua Sha therapy</h3><p>Traditional Chinese skin scraping technique for circulation stimulation in Pärnu.</p></div>
+          </a>
+          <a href="/en/services/9.html" class="s-card">
+            <img src="/public/img/services/13.jpg" alt="Biocurrent massage session with microcurrents">
+            <div class="s-card-body"><h3>Biocurrent massage</h3><p>Microcurrents and bioelectric stimulation to increase skin elasticity in Pärnu.</p></div>
+          </a>
+          <a href="/en/services/10.html" class="s-card">
+            <img src="/public/img/services/3.jpg" alt="Lymphatic massage gentle technique on limbs">
+            <div class="s-card-body"><h3>Lymphatic massage</h3><p>Increasing lymphatic fluid flow and reducing swelling in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/11.html" class="s-card">
+            <img src="/public/img/services/7.jpg" alt="Foot sole massage with reflexology technique">
+            <div class="s-card-body"><h3>Foot sole massage</h3><p>Improving foot circulation and functionality at Rüütli 47.</p></div>
+          </a>
+          <a href="/en/services/12.html" class="s-card">
+            <img src="/public/img/services/9.jpg" alt="Ultrasound therapy device for tissue treatment">
+            <div class="s-card-body"><h3>Ultrasound therapy</h3><p>Microvibration warms tissues and improves metabolism in Pärnu city centre.</p></div>
+          </a>
+          <a href="/en/services/13.html" class="s-card">
+            <img src="/public/img/services/18.jpg" alt="Therapist assessing client mobility and posture">
+            <div class="s-card-body"><h3>Manual muscle testing</h3><p>Posture and movement pattern analysis for a personalised massage plan in Pärnu.</p></div>
+          </a>
+          <a href="/en/services/14.html" class="s-card">
+            <img src="/public/img/services/1.jpg" alt="Kinesio taping applied to a joint">
+            <div class="s-card-body"><h3>Kinesio taping</h3><p>Supporting muscle and joint recovery and the treatment process in Pärnu city centre.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('services-scroll',-320)" aria-label="Scroll left"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('services-scroll',320)" aria-label="Scroll right"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
 
-        <!-- Diagnosis-based treatment scrollable section -->
-        <section class="scroll-section">
+    <!-- DIAGNOSIS SCROLL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
           <h2>Diagnosis-Based Treatment in Pärnu</h2>
-          <div class="scroll-container" id="diagnosis-scroll">
-            <a href="/en/Diagnosis/1.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/1d.jpg" alt="Protrusion, herniation and extrusion treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Protrusion, herniation and extrusion treatment</div>
-                <div class="scroll-item-description">Effective treatment of intervertebral disc problems without surgery...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/2.html" class="scroll-item">
-              <img src="/public/img/blog/101.jpg" alt="Plantar fasciitis treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Plantar fasciitis (heel spur) treatment</div>
-                <div class="scroll-item-description">Stop morning heel pain! Shockwave therapy accelerates healing...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/3.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/3d.jpg" alt="Epicondylitis treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lateral and medial epicondylitis</div>
-                <div class="scroll-item-description">Tennis and golfer's elbow rapid treatment...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/4.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/4d.jpg" alt="Piriformis syndrome treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Piriformis syndrome treatment</div>
-                <div class="scroll-item-description">Effective treatment for sciatic nerve pain and buttock pain...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/5.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/5d.jpg" alt="Depression and anxiety treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Deep Reset - Depression, anxiety, burnout</div>
-                <div class="scroll-item-description">Deep brain reset without medication...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/6.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/6d.jpg" alt="Migraine treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Migraine (Chronic headache) treatment</div>
-                <div class="scroll-item-description">Stop chronic migraines! Manual therapy and magnetic therapy...</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/7.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/7d.jpg" alt="Erectile dysfunction treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Erectile dysfunction (ED) treatment</div>
-                <div class="scroll-item-description">Restore masculinity naturally!</div>
-              </div>
-            </a>
-            <a href="/en/Diagnosis/8.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/8d.jpg" alt="Frozen shoulder treatment" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Adhesive capsulitis treatment</div>
-                <div class="scroll-item-description">Frozen shoulder rapid treatment...</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('diagnosis-scroll', -300)" aria-label="Scroll left">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('diagnosis-scroll', 300)" aria-label="Scroll right">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
+          <a class="btn btn-secondary" href="/en/Diagnosis.html">All diagnoses →</a>
+        </div>
+        <div class="scroll-track" id="diagnosis-scroll">
+          <a href="/en/Diagnosis/1.html" class="s-card">
+            <img src="/public/img/Diagnosis/1d.jpg" alt="Client with back pain receiving spinal treatment">
+            <div class="s-card-body"><h3>Protrusion, herniation and extrusion treatment</h3><p>Effective treatment of intervertebral disc problems without surgery in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/2.html" class="s-card">
+            <img src="/public/img/blog/101.jpg" alt="Heel spur treatment with shockwave therapy">
+            <div class="s-card-body"><h3>Plantar fasciitis (heel spur) treatment</h3><p>Stop morning heel pain! Shockwave therapy accelerates healing in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/3.html" class="s-card">
+            <img src="/public/img/Diagnosis/3d.jpg" alt="Epicondylitis treatment session on the elbow">
+            <div class="s-card-body"><h3>Lateral and medial epicondylitis</h3><p>Rapid treatment for tennis and golfer's elbow with combined therapies in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/4.html" class="s-card">
+            <img src="/public/img/Diagnosis/4d.jpg" alt="Piriformis muscle therapy in the pelvic area">
+            <div class="s-card-body"><h3>Piriformis syndrome treatment</h3><p>Effective treatment for sciatic nerve pain and buttock pain with magnetic therapy in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/5.html" class="s-card">
+            <img src="/public/img/Diagnosis/5d.jpg" alt="Magnetic therapy session for mental health support">
+            <div class="s-card-body"><h3>Deep Reset – Depression, anxiety treatment</h3><p>Deep brain reset without medication. Magnetic therapy balances neurotransmitters in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/6.html" class="s-card">
+            <img src="/public/img/Diagnosis/6d.jpg" alt="Headache relief with manual therapy">
+            <div class="s-card-body"><h3>Migraine (chronic headache) treatment</h3><p>Manual therapy and magnetic therapy combination breaks the pain cycle in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/7.html" class="s-card">
+            <img src="/public/img/Diagnosis/7d.jpg" alt="Pelvic floor magnetic therapy procedure">
+            <div class="s-card-body"><h3>Erectile dysfunction (ED) treatment</h3><p>Magnetic intensive therapy strengthens pelvic floor muscles and improves circulation in Pärnu.</p></div>
+          </a>
+          <a href="/en/Diagnosis/8.html" class="s-card">
+            <img src="/public/img/Diagnosis/8d.jpg" alt="Frozen shoulder therapy to restore mobility">
+            <div class="s-card-body"><h3>Adhesive capsulitis treatment</h3><p>Rapid frozen shoulder treatment. Shockwave and magnetic therapy restores mobility in Pärnu.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('diagnosis-scroll',-320)" aria-label="Scroll left"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('diagnosis-scroll',320)" aria-label="Scroll right"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
 
-        <!-- Blog scrollable section -->
-        <section class="scroll-section">
-          <h2>Our Massage Blog Articles</h2>
-          <div class="scroll-container" id="blog-scroll">
-            <a href="/en/blog/102.html" class="scroll-item">
-              <img src="/public/img/blog/102.jpg" alt="High-intensity magnetic therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">High-intensity magnetic therapy</div>
-                <div class="scroll-item-description">When the body constantly sends signals - the pain doesn't subside...</div>
-              </div>
-            </a>
-            <a href="/en/blog/101.html" class="scroll-item">
-              <img src="/public/img/blog/101.jpg" alt="Chronic heel spur" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Chronic heel spur: Shockwave therapy effectiveness</div>
-                <div class="scroll-item-description">When getting out of bed sends a shock of pain through your heel...</div>
-              </div>
-            </a>
-            <a href="/en/blog/59.html" class="scroll-item">
-              <img src="/public/img/blog/59.jpg" alt="Shockwave therapy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Shockwave therapy</div>
-                <div class="scroll-item-description">A modern and non-invasive treatment method using high-frequency sound waves...</div>
-              </div>
-            </a>
-            <a href="/en/blog/36.html" class="scroll-item">
-              <img src="/public/img/blog/36.jpg" alt="Certified massage therapist" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Certified massage therapist versus quick courses</div>
-                <div class="scroll-item-description">Understanding the difference in qualifications when choosing a therapist...</div>
-              </div>
-            </a>
-            <a href="/en/blog/35.html" class="scroll-item">
-              <img src="/public/img/blog/35.jpg" alt="Massage for runners" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massage for runners: through a specialist's eyes</div>
-                <div class="scroll-item-description">Benefits of massage for runners' performance and recovery...</div>
-              </div>
-            </a>
-            <a href="/en/blog/24.html" class="scroll-item">
-              <img src="/public/img/blog/24.jpg" alt="Deep tissue massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Deep tissue massage and nerve receptors</div>
-                <div class="scroll-item-description">Scientific background of deep tissue massage and its effect on muscle tension...</div>
-              </div>
-            </a>
-            <a href="/en/blog/22.html" class="scroll-item">
-              <img src="/public/img/blog/22.jpg" alt="Lymphatic massage" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lymphatic massage: promoting health and wellbeing</div>
-                <div class="scroll-item-description">Benefits of lymphatic massage for detoxification and immune support...</div>
-              </div>
-            </a>
-            <a href="/en/blog/19.html" class="scroll-item">
-              <img src="/public/img/blog/19.jpg" alt="Carpal tunnel syndrome" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Relieving carpal tunnel syndrome with massage therapy</div>
-                <div class="scroll-item-description">A natural way to relieve carpal tunnel symptoms...</div>
-              </div>
-            </a>
-            <a href="/en/blog/5.html" class="scroll-item">
-              <img src="/public/img/blog/5.jpg" alt="Massage for athletes" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Importance of massage for combat athletes</div>
-                <div class="scroll-item-description">Massage plays a key role in athletes' recovery and performance...</div>
-              </div>
-            </a>
-            <a href="/en/blog/6.html" class="scroll-item">
-              <img src="/public/img/blog/6.jpg" alt="Preventive medicine" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massage therapists' role in preventive medicine</div>
-                <div class="scroll-item-description">How regular massage helps prevent health problems...</div>
-              </div>
-            </a>
-            <a href="/en/blog/7.html" class="scroll-item">
-              <img src="/public/img/blog/7.jpg" alt="Massage in modern medicine" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massage in modern medicine</div>
-                <div class="scroll-item-description">Why massage is increasingly recognized in healthcare...</div>
-              </div>
-            </a>
-            <a href="/en/blog/12.html" class="scroll-item">
-              <img src="/public/img/blog/12.jpg" alt="Physiotherapy synergy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Physiotherapy and therapeutic massage synergy</div>
-                <div class="scroll-item-description">Combining physiotherapy with massage for effective recovery...</div>
-              </div>
-            </a>
-            <a href="/en/blog/13.html" class="scroll-item">
-              <img src="/public/img/blog/13.jpg" alt="Functional anatomy" class="scroll-item-image">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massage therapist's main tools - Functional anatomy</div>
-                <div class="scroll-item-description">Understanding body structure and movement is crucial...</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('blog-scroll', -300)" aria-label="Scroll left">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('blog-scroll', 300)" aria-label="Scroll right">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
+    <!-- BLOG SCROLL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Blog Articles</h2>
+          <a class="btn btn-secondary" href="/en/blog.html">All articles →</a>
+        </div>
+        <div class="scroll-track" id="blog-scroll">
+          <a href="/en/blog/102.html" class="s-card">
+            <img src="/public/img/blog/102.jpg" alt="High-intensity magnetic therapy">
+            <div class="s-card-body"><h3>High-intensity magnetic therapy</h3><p>When the body constantly sends signals – the pain doesn't subside...</p></div>
+          </a>
+          <a href="/en/blog/101.html" class="s-card">
+            <img src="/public/img/blog/101.jpg" alt="Chronic heel spur and shockwave therapy">
+            <div class="s-card-body"><h3>Chronic heel spur: Shockwave therapy effectiveness</h3><p>When getting out of bed in the morning sends a shock of pain through your heel...</p></div>
+          </a>
+          <a href="/en/blog/59.html" class="s-card">
+            <img src="/public/img/blog/59.jpg" alt="Shockwave therapy">
+            <div class="s-card-body"><h3>Shockwave therapy</h3><p>A modern and non-invasive treatment method using high-frequency sound waves...</p></div>
+          </a>
+          <a href="/en/blog/36.html" class="s-card">
+            <img src="/public/img/blog/36.jpg" alt="Certified massage therapist">
+            <div class="s-card-body"><h3>Certified therapist versus quick courses</h3><p>Understanding the difference in qualifications when choosing a massage therapist.</p></div>
+          </a>
+          <a href="/en/blog/35.html" class="s-card">
+            <img src="/public/img/blog/35.jpg" alt="Massage for runners">
+            <div class="s-card-body"><h3>Massage for runners: through a specialist's eyes</h3><p>A professional guide on the benefits of massage for runners' recovery.</p></div>
+          </a>
+          <a href="/en/blog/24.html" class="s-card">
+            <img src="/public/img/blog/24.jpg" alt="Deep tissue massage and nerve receptors">
+            <div class="s-card-body"><h3>Deep tissue massage and nerve receptors</h3><p>Discover the scientific background of deep tissue massage and its effects.</p></div>
+          </a>
+          <a href="/en/blog/22.html" class="s-card">
+            <img src="/public/img/blog/22.jpg" alt="Lymphatic massage">
+            <div class="s-card-body"><h3>Lymphatic massage: promoting health and wellbeing</h3><p>Benefits of lymphatic massage for detoxification and immune support.</p></div>
+          </a>
+          <a href="/en/blog/19.html" class="s-card">
+            <img src="/public/img/blog/19.jpg" alt="Carpal tunnel syndrome">
+            <div class="s-card-body"><h3>Relieving carpal tunnel syndrome</h3><p>How massage therapy offers a natural way to relieve symptoms.</p></div>
+          </a>
+          <a href="/en/blog/5.html" class="s-card">
+            <img src="/public/img/blog/5.jpg" alt="Massage for combat athletes">
+            <div class="s-card-body"><h3>Importance of massage for combat athletes</h3><p>Massage plays a key role in recovery and performance improvement.</p></div>
+          </a>
+          <a href="/en/blog/6.html" class="s-card">
+            <img src="/public/img/blog/6.jpg" alt="Massage therapists in preventive medicine">
+            <div class="s-card-body"><h3>Massage therapist's role in preventive medicine</h3><p>How regular massage helps prevent health problems.</p></div>
+          </a>
+          <a href="/en/blog/7.html" class="s-card">
+            <img src="/public/img/blog/7.jpg" alt="Massage in modern medicine">
+            <div class="s-card-body"><h3>Massage in modern medicine</h3><p>Why massage is increasingly recognised as an important part of healthcare.</p></div>
+          </a>
+          <a href="/en/blog/12.html" class="s-card">
+            <img src="/public/img/blog/12.jpg" alt="Physiotherapy and therapeutic massage synergy">
+            <div class="s-card-body"><h3>Physiotherapy and therapeutic massage synergy</h3><p>Combining with massage leads to more complete and effective recovery.</p></div>
+          </a>
+          <a href="/en/blog/13.html" class="s-card">
+            <img src="/public/img/blog/13.jpg" alt="Functional anatomy and kinesiology">
+            <div class="s-card-body"><h3>Functional anatomy and kinesiology</h3><p>Understanding body structure and movement for effective therapy.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('blog-scroll',-320)" aria-label="Scroll left"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('blog-scroll',320)" aria-label="Scroll right"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
 
-        <!-- FAQ Section - Optimized for AI Overview -->
-        <section class="faq-section" id="faq-section">
+    <!-- FAQ -->
+    <section class="section" id="faq-section">
+      <div class="container">
+        <div class="section-head">
           <h2>Frequently Asked Questions</h2>
-          <div id="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">What problems is medical massage intended for?</div>
-              <div class="faq-answer">Medical massage helps with chronic muscle pain, nerve impingement, migraines, and joint mobility restrictions. It focuses on treating specific problems rather than general relaxation.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">How does medical massage differ from regular massage?</div>
-              <div class="faq-answer">Medical massage is targeted therapy using deep tissue techniques and anatomical knowledge to address specific health issues. Regular massage focuses on general relaxation.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">How often should I get medical massage?</div>
-              <div class="faq-answer">During active treatment, we recommend sessions at 4-7 day intervals. After achieving results, monthly maintenance sessions are sufficient. Your therapist will create a personalized plan.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Can medical massage be painful?</div>
-              <div class="faq-answer">Medical massage is more intensive than regular massage but should never cause excessive pain. The therapist adjusts pressure based on your feedback — open communication during sessions is essential.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">How to prepare for massage and what to do after?</div>
-              <div class="faq-answer">Avoid heavy food before the session and stay hydrated. After massage, drink 1-2 liters of water, do light movement like walking, and rest. Intensive training immediately after is not recommended.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">What is magnetic therapy and is it safe?</div>
-              <div class="faq-answer">Magnetic therapy is a non-invasive treatment using high-intensity magnetic fields. It helps with chronic pain and nerve issues. MV Therapy uses modern professional PEMF/EMTT equipment.</div>
-            </div>
-          </div>
-        </section>
+          <a class="btn btn-secondary" href="/en/kkk.html">More questions →</a>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>What problems is medical massage intended for?</summary>
+            <div class="faq-body">Medical massage helps with chronic muscle pain, nerve impingement, migraines and joint mobility restrictions. It focuses on treating a specific problem rather than just relaxation.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How does medical massage differ from regular massage?</summary>
+            <div class="faq-body">Medical massage is targeted therapy using deep tissue techniques and anatomical knowledge to address specific health issues. Regular massage focuses on general relaxation.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How often should I get medical massage?</summary>
+            <div class="faq-body">During active treatment, we recommend sessions at 4–7 day intervals. After achieving results, monthly maintenance sessions are sufficient. Your therapist will create a personalised plan.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Can medical massage be painful?</summary>
+            <div class="faq-body">Medical massage is more intensive than regular massage but should never cause excessive pain. The therapist adjusts pressure based on your feedback – open communication during the session is essential.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How should I prepare for a massage?</summary>
+            <div class="faq-body">Avoid heavy food before the session and drink water. After massage, drink 1–2 litres of water, do light movement and rest adequately. Intensive exercise is not recommended immediately after.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What are the contraindications for lymphatic massage?</summary>
+            <div class="faq-body">Lymphatic massage should be avoided in cases of acute infections, fever, heart or kidney failure, active tumours and deep vein thrombosis. Consult your doctor for chronic conditions.</div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-        <!-- Elfsight Google Reviews widget -->
-        <div class="elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9" data-elfsight-app-lazy></div>
-        
-        <!-- Video -->
-        <iframe src="https://www.youtube.com/embed/w3Ld7qczhHU?si=yYNA4vY2RCwRVQ2t" title="MV Therapy professional massage and magnetic therapy in Pärnu" allowfullscreen></iframe>
-</div>
-    </main>
+    <!-- VIDEO -->
+    <section class="container">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/w3Ld7qczhHU?si=yYNA4vY2RCwRVQ2t" allowfullscreen loading="lazy" title="MV Therapy introduction"></iframe>
+      </div>
+    </section>
+
+    <!-- SEO CONTENT BLOCK -->
+    <section class="section seo-section">
+      <div class="container">
+        <h2>Massage Therapy in Pärnu &mdash; MV Therapy</h2>
+        <div class="seo-grid">
+          <div class="seo-col">
+            <h3>Therapist Qualifications</h3>
+            <p>MV Therapy massage therapist <strong>Roman Gussev</strong> holds a <a href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener">Level 6 professional certificate (No. 219003)</a>, the highest qualification level for massage therapists in Estonia. Roman has also completed the nursing curriculum at Tallinn Health Care College, providing in-depth knowledge of anatomy, physiology and pathology.</p>
+            <p>Since 2020, MV Therapy has served over 5,000 clients. Appointments are at <a href="https://share.google/qSNawGe4CYtPM7RS1" target="_blank" rel="noopener">Rüütli 47, Pärnu city centre</a>. Services available in Estonian, Russian and English. <a href="/en/team.html">Read more about the therapist →</a></p>
+          </div>
+          <div class="seo-col">
+            <h3>Services and Methods</h3>
+            <p>We offer over 14 different massage services in Pärnu: <a href="/en/services/1.html">medical massage</a>, <a href="/en/services/2.html">classical massage</a>, <a href="/en/services/5.html">sports massage</a>, <a href="/en/services/6.html">deep tissue massage</a>, <a href="/en/services/4.html">trigger point therapy</a>, <a href="/en/services/7.html">cupping massage</a>, <a href="/en/services/10.html">lymphatic massage</a>, <a href="/en/services/8.html">Gua Sha</a>, <a href="/en/services/9.html">biocurrent massage</a>, <a href="/en/services/11.html">foot sole massage</a>, <a href="/en/services/12.html">ultrasound therapy</a>, <a href="/en/services/14.html">kinesio taping</a> and <a href="/en/services/13.html">manual muscle testing</a>.</p>
+            <p>In addition to manual therapy, we also offer <a href="/en/services/15.html">high-intensity magnetic therapy (EMTT)</a> and <a href="/en/services/3.html">shockwave therapy (ESWT)</a> – evidence-based methods for resolving chronic musculoskeletal problems.</p>
+          </div>
+          <div class="seo-col">
+            <h3>Who it Suits and Who it Doesn't</h3>
+            <p>Our services are suitable for people suffering from chronic muscle tension, back pain, neck pain, headaches, joint stiffness or overuse complaints. Also for athletes who want to accelerate recovery and improve performance.</p>
+            <p>Massage is <strong>not suitable</strong> during acute inflammation, fever, skin infections, thrombosis or the active phase of oncological conditions. For chronic illnesses we recommend consulting your doctor beforehand. <a href="/en/kkk.html">See frequently asked questions →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SalonLife booking widget mount point -->
+    <div id="broneeri-container" style="height:0;overflow:hidden;margin:0;padding:0;"></div>
+  </main>
+
+
 
   <!-- BRONEERI CONTAINER -->
   <div id="broneeri-container" style="height:0;overflow:hidden;margin:0;padding:0;"></div>
