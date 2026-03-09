@@ -637,9 +637,19 @@ def clean_schema(html):
 # ─── Extract page-specific CSS ────────────────────────────────────────────────
 def extract_page_css(html):
     styles = re.findall(r'<style>(.*?)</style>', html, re.DOTALL | re.IGNORECASE)
-    all_css = '\n'.join(styles)
-    if not all_css.strip():
+    if not styles:
         return ''
+
+    marker = '/* === PAGE-SPECIFIC STYLES === */'
+    all_css = '\n'.join(styles)
+
+    # Idempotency: if the page already contains our generated marker, extract
+    # only the CSS after the marker (page-specific part from the previous run).
+    # This preserves page-specific styles across repeated runs of this script.
+    if marker in all_css:
+        after_marker = all_css.split(marker, 1)[1].strip()
+        return after_marker if after_marker else ''
+
     return filter_old_css(all_css).strip()
 
 # ─── Build complete HTML page ─────────────────────────────────────────────────
@@ -647,7 +657,7 @@ def build_page(head_meta, page_css, main_content, et_url, ru_url, en_url, active
     header = build_header(et_url, ru_url, en_url, active_section)
     css_block = f'<style>{NEW_CSS}'
     if page_css:
-        css_block += f'\n\n  /* === Page-specific styles === */\n  {page_css}'
+        css_block += '\n\n    /* === PAGE-SPECIFIC STYLES === */\n    ' + page_css.replace('\n', '\n    ')
     css_block += '\n  </style>'
 
     return f"""<!DOCTYPE html>
@@ -675,16 +685,10 @@ def build_page(head_meta, page_css, main_content, et_url, ru_url, en_url, active
 </body>
 </html>"""
 
-ALREADY_PROCESSED_MARKER = 'class="site-header"'
-
 # ─── Process a single file ────────────────────────────────────────────────────
 def process_file(filepath):
     rel = filepath.relative_to(BASE)
     html = filepath.read_text(encoding='utf-8')
-
-    if ALREADY_PROCESSED_MARKER in html:
-        print(f'    -> already updated, skipping')
-        return False
 
     rel_from_en = str(rel).replace('en/', '', 1)
     et_url = f'/et/{rel_from_en}'
