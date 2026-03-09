@@ -106,6 +106,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
   <style>
+
     :root {
       --bg: #f5f4fa;
       --surface: rgba(255,255,255,.78);
@@ -689,6 +690,8 @@
           --bg: #f5f4fa;
           --surface: rgba(255,255,255,.78);
           --surface-solid: #ffffff;
+          --c-surface: var(--surface);
+          --c-text-muted: var(--text-secondary);
           --text: #1a1832;
           --text-secondary: #5e5977;
           --line: rgba(68,67,125,.10);
@@ -727,6 +730,11 @@
     a { color: inherit; }
     
     .container { width: min(100% - 28px, var(--container)); margin-inline: auto; }
+    
+    /* === SKIP LINK === */
+        .skip-link { position: absolute; left: -9999px; top: 0; }
+    
+    .skip-link:focus { left: 16px; top: 16px; z-index: 1000; background: #fff; padding: 12px 16px; border-radius: 12px; }
     
     /* === HEADER === */
         .site-header {
@@ -1197,6 +1205,7 @@
           flex-direction: column;
           align-items: center;
           text-align: center;
+          text-decoration: none;
         }
     
     .single-box:hover {
@@ -1236,85 +1245,8 @@
           .trust.in { animation: none !important; }
         }
     
-    /* === Page-specific styles === */
-      body { 
-          font-family: 'Inter', Arial, sans-serif; 
-          background: #f8f9fb; 
-          color: #222; 
-          margin: 0; 
-          padding: 0; 
-          line-height: 1.6;
-        }
-    
-    .sticky-wrapper { 
-          position: -webkit-sticky; 
-          position: sticky; 
-          top: 0; 
-          z-index: 100; 
-        }
-    
-    header { 
-          background: #44437d; 
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
-          padding: 0 0 1rem 0; 
-          display: flex; 
-          flex-direction: column; 
-          align-items: center; 
-          position: relative; 
-        }
-    
-    main { 
-          max-width: 1100px; 
-          margin: 2rem auto; 
-          background: #fff; 
-          border-radius: 12px; 
-          box-shadow: 0 2px 12px rgba(0,0,0,0.05); 
-          padding: 2rem 1.5rem; 
-        }
-    
-    .container { 
-          max-width: 1100px; 
-          margin: 0 auto; 
-        }
-    
-    .breadcrumb {
-          background: #f8f9fb;
-          padding: 1rem;
-          margin-bottom: 2rem;
-          border-radius: 8px;
-          font-size: 0.9rem;
-        }
-    
-    .breadcrumb a {
-          color: #44437d;
-          text-decoration: none;
-        }
-    
-    .breadcrumb a:hover {
-          text-decoration: underline;
-        }
-    
-    h1 { 
-          margin-top: 0.5rem; 
-          font-size: 2.2rem; 
-          line-height: 1.2; 
-          color: #44437d;
-          margin-bottom: 1rem;
-        }
-    
-    h2 {
-          font-size: 1.6rem;
-          color: #44437d;
-          margin: 2rem 0 1rem 0;
-        }
-    
-    h3 {
-          font-size: 1.3rem;
-          color: #44437d;
-          margin: 1.5rem 0 0.5rem 0;
-        }
-    
-    .service-hero {
+    /* ── Services sub-page specific styles ── */
+        .service-hero {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 2rem;
@@ -1324,8 +1256,8 @@
     
     .service-image {
           width: 100%;
-          border-radius: 12px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+          border-radius: var(--radius, 12px);
+          box-shadow: var(--shadow-card, 0 4px 16px rgba(0,0,0,0.1));
           height: auto;
         }
     
@@ -1340,31 +1272,31 @@
           color: #333;
         }
     
-    .price-table { 
-          width: 100%; 
-          border-collapse: collapse; 
-          margin: 2rem 0; 
-          background: #f8f9fb; 
-          border-radius: 8px; 
-          overflow: hidden; 
-          box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+    .price-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          background: #f8f9fb;
+          border-radius: var(--radius, 8px);
+          overflow: hidden;
+          box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.04));
         }
     
-    .price-table th, 
-        .price-table td { 
-          padding: 1rem; 
-          text-align: center; 
-          border-bottom: 1px solid #e0e0e0; 
+    .price-table th,
+        .price-table td {
+          padding: 1rem;
+          text-align: center;
+          border-bottom: 1px solid var(--line, #e0e0e0);
         }
     
-    .price-table th { 
-          background: #e3e4f5; 
-          color: #44437d; 
-          font-weight: 600; 
+    .price-table th {
+          background: #e3e4f5;
+          color: var(--brand, #44437d);
+          font-weight: 600;
         }
     
-    .price-table tr:last-child td { 
-          border-bottom: none; 
+    .price-table tr:last-child td {
+          border-bottom: none;
         }
     
     .benefits-grid {
@@ -1377,12 +1309,12 @@
     .benefit-card {
           background: #f8f9fb;
           padding: 1.5rem;
-          border-radius: 8px;
-          border-left: 4px solid #44437d;
+          border-radius: var(--radius, 8px);
+          border-left: 4px solid var(--brand, #44437d);
         }
     
     .benefit-card h4 {
-          color: #44437d;
+          color: var(--brand, #44437d);
           margin-bottom: 0.5rem;
           font-size: 1.1rem;
         }
@@ -1397,28 +1329,21 @@
     .technique-item {
           background: #e3e4f5;
           padding: 1rem;
-          border-radius: 6px;
+          border-radius: var(--radius, 6px);
           text-align: center;
           font-weight: 500;
-          color: #44437d;
+          color: var(--brand, #44437d);
         }
     
     .faq-section {
           margin-top: 3rem;
         }
     
-    .faq-item {
-          margin-bottom: 1.5rem;
-          border: 1px solid #e0e0e0;
-          border-radius: 8px;
-          overflow: hidden;
-        }
-    
     .faq-question {
           background: #f8f9fb;
           padding: 1rem;
           font-weight: 600;
-          color: #44437d;
+          color: var(--brand, #44437d);
           cursor: pointer;
           display: flex;
           justify-content: space-between;
@@ -1427,7 +1352,7 @@
     
     .faq-answer {
           padding: 1rem;
-          border-top: 1px solid #e0e0e0;
+          border-top: 1px solid var(--line, #e0e0e0);
           display: none;
         }
     
@@ -1436,10 +1361,10 @@
         }
     
     .cta-section {
-          background: linear-gradient(135deg, #44437d, #222259);
+          background: linear-gradient(135deg, var(--brand, #44437d), #222259);
           color: white;
           padding: 2rem;
-          border-radius: 12px;
+          border-radius: var(--radius, 12px);
           text-align: center;
           margin: 3rem 0;
         }
@@ -1449,217 +1374,10 @@
           margin-bottom: 1rem;
         }
     
-    #broneeri-container { 
-          margin: 2.5rem 0 0 0; 
-          padding: 1.5rem 0 0 0; 
-          border-top: 1px solid #e3e4f5; 
-          text-align: center; 
-        }
-    
-    /* Responsive Design */
-        @media (max-width: 900px) { 
+    @media (max-width: 900px) {
           .service-hero {
             grid-template-columns: 1fr;
             gap: 1.5rem;
-          }
-          
-          .flx-container { 
-            flex-direction: column; 
-            gap: 1rem; 
-          } 
-          
-          main { 
-            padding: 1rem; 
-            margin: 1rem;
-          }
-          
-          h1 {
-            font-size: 1.8rem;
-          }
-        }
-    
-    @media (max-width: 767px) {
-          .nav { 
-            flex-direction: column; 
-            align-items: flex-start; 
-          }
-          
-          .hamburger { 
-            display: flex; 
-            z-index: 120; 
-          }
-          
-          .nav-inner { 
-            display: none; 
-            width: 100%; 
-            flex-direction: column; 
-            gap: 0; 
-            position: absolute; 
-            background: #f4f5fa; 
-            z-index: 110; 
-            top: 100%; 
-            left: 0; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            padding-bottom: 0.5rem; 
-          }
-          
-          .nav-inner.open { 
-            display: flex; 
-          }
-          
-          .nav-item { 
-            width: 100%; 
-            margin: 0; 
-          }
-          
-          .nav-item a { 
-            display: block; 
-            width: 100%; 
-            padding: 0.8rem 1.2rem; 
-          }
-          
-          .language-menu { 
-            position: static; 
-            margin: 0.5rem 0 0 1rem; 
-          }
-          
-          .logo { 
-            padding: 1rem; 
-            font-size: 1.3rem; 
-          }
-          
-          h1 { 
-            font-size: 1.6rem; 
-          }
-          
-          h2 {
-            font-size: 1.4rem;
-          }
-        }
-    
-    @media (max-width: 480px) {
-          .nav-item a { 
-            padding: 0.8rem 1rem; 
-            font-size: 1.1rem; 
-          }
-          
-          .logo { 
-            font-size: 1.1rem; 
-            padding: 1rem; 
-          }
-          
-          main { 
-            padding: 0.5rem; 
-          }
-          
-          h1 { 
-            font-size: 1.4rem; 
-          }
-          
-          .service-description {
-            font-size: 1rem;
-          }
-        }
-    
-    /* Booking Button Styles */
-        #salonlife-widget-root .button-cta {
-          display: inline-block;
-          background: #44437d;
-          color: #fff;
-          font-weight: 600;
-          border-radius: 5px;
-          padding: 0.8rem 1.6rem;
-          font-size: 1.1rem;
-          text-decoration: none;
-          margin: 1.2rem auto 0 auto;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-          transition: background 0.2s;
-          cursor: pointer;
-        }
-    
-    #salonlife-widget-root .button-cta:hover {
-          background: #222259;
-        }
-    
-    /* Animation for FAQ */
-        .faq-question::after {
-          content: '+';
-          font-size: 1.2rem;
-          transition: transform 0.3s;
-        }
-    
-    .faq-item.open .faq-question::after {
-          transform: rotate(45deg);
-        }
-    
-    /* === SCROLL ANIMATIONS === */
-    
-        /* Elements start hidden – CSS knows which ones, no JS needed */
-        #main-app h2, #main-app h3, #main-app h4,
-        #main-app .benefit-card, #main-app .card,
-        #main-app .technique-item, #main-app .faq-item,
-        #main-app .team-card, #main-app .campaign-card,
-        #main-app .service-card, #main-app .blog-card,
-        #main-app .diagnosis-card, #main-app .workshop-card,
-        #main-app .scroll-item, #main-app .info-block,
-        #main-app .step-item, #main-app .price-row {
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-    
-    #main-app h2.animated, #main-app h3.animated, #main-app h4.animated,
-        #main-app .benefit-card.animated, #main-app .card.animated,
-        #main-app .technique-item.animated, #main-app .faq-item.animated,
-        #main-app .team-card.animated, #main-app .campaign-card.animated,
-        #main-app .service-card.animated, #main-app .blog-card.animated,
-        #main-app .diagnosis-card.animated, #main-app .workshop-card.animated,
-        #main-app .scroll-item.animated, #main-app .info-block.animated,
-        #main-app .step-item.animated, #main-app .price-row.animated {
-          opacity: 1;
-          transform: translateY(0);
-        }
-    
-    /* Images: scale-in */
-        #main-app img {
-          opacity: 0;
-          transform: scale(0.92);
-          transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-    
-    #main-app img.animated {
-          opacity: 1;
-          transform: scale(1);
-        }
-    
-    /* Button hover lift */
-        .cta-section a, .cta-section button,
-        #salonlife-widget-root .button-cta,
-        a.booking-btn, button.booking-btn {
-          transition: background 0.2s, transform 0.18s, box-shadow 0.18s !important;
-        }
-    
-    .cta-section a:hover, .cta-section button:hover,
-        #salonlife-widget-root .button-cta:hover,
-        a.booking-btn:hover, button.booking-btn:hover {
-          transform: translateY(-3px) !important;
-          box-shadow: 0 8px 24px rgba(68,67,125,0.30) !important;
-        }
-    
-    /* No-JS / reduced-motion fallback */
-        @media (prefers-reduced-motion: reduce) {
-          #main-app h2, #main-app h3, #main-app h4,
-          #main-app .benefit-card, #main-app .card,
-          #main-app .technique-item, #main-app .faq-item,
-          #main-app .team-card, #main-app .campaign-card,
-          #main-app .service-card, #main-app .blog-card,
-          #main-app .diagnosis-card, #main-app .workshop-card,
-          #main-app .scroll-item, #main-app .info-block,
-          #main-app .step-item, #main-app .price-row,
-          #main-app img {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
           }
         }
   </style>
