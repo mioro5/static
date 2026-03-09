@@ -8,7 +8,7 @@ import os
 import re
 from pathlib import Path
 
-BASE = Path('/home/user/static')
+BASE = Path(__file__).resolve().parent
 HOME = BASE / 'et' / 'home.html'
 
 # ─── Extract from home.html ───────────────────────────────────────────────────
@@ -638,13 +638,20 @@ def clean_meta_seo(head_content):
 def extract_page_css(html):
     """Extract CSS from <style> blocks that is page-specific (not base styles)."""
     styles = re.findall(r'<style>(.*?)</style>', html, re.DOTALL | re.IGNORECASE)
-    all_css = '\n'.join(styles)
-    if not all_css.strip():
+    if not styles:
         return ''
+
+    marker = '/* === PAGE-SPECIFIC STYLES === */'
+    all_css = '\n'.join(styles)
+
+    # Idempotency: if the page already contains our generated marker, avoid
+    # re-ingesting CSS from the generated file (it can contain a full copy of
+    # base styles and would keep growing on each run).
+    if marker in all_css:
+        return ''
+
     filtered = filter_old_css(all_css)
     return filtered.strip()
-
-ALREADY_PROCESSED_MARKER = 'class="site-header"'
 
 # ─── Process a single file ───────────────────────────────────────────────────
 def process_file(filepath):
@@ -653,11 +660,6 @@ def process_file(filepath):
 
     # Skip home.html (template, already done)
     if filepath == HOME:
-        return False
-
-    # Skip already-processed files (idempotency)
-    if ALREADY_PROCESSED_MARKER in html:
-        print(f'    -> already updated, skipping')
         return False
 
     # Get URLs for lang switch

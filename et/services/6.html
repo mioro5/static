@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Süvakudede massaaž Pärnus – MV Therapy | Sügav teraapia</title>
   <meta name="description" content="Süvakudede massaaž MV Therapy massaažisalongis Pärnus. Kroonilist valu ja pingeid leevendav massaaž. Sügavate lihaskihtide töötlemine ja endorfiinide vabanemine.">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#44437d">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -107,6 +107,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
   <style>
+
     :root {
       --bg: #f5f4fa;
       --surface: rgba(255,255,255,.78);
@@ -680,6 +681,7 @@
       }
       .trust.in { animation: none !important; }
     }
+  
   </style>
 </head>
 <body>
@@ -1094,116 +1096,72 @@
     });
   </script>
 
-  <!-- Scroll & entrance animations engine -->
+  <!-- Scroll & entrance animations -->
   <script>
     (function() {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
       function init() {
         var main = document.getElementById('content');
         if (!main) return;
-
-        /* ── 1. HERO entrance: assign data-anim to each element with stagger ── */
         var hero = main.querySelector('.hero');
         if (hero) {
           var map = [
-            ['.eyebrow',      'right',  0],
-            ['h1',            'blur',   .12],
-            ['.lead',         'up',     .25],
+            ['.eyebrow','right',0],['h1','blur',.12],['.lead','up',.25],
           ];
           map.forEach(function(m) {
             var el = hero.querySelector(m[0]);
             if (el) { el.setAttribute('data-anim', m[1]); el.style.transitionDelay = m[2] + 's'; }
           });
-          // Pills — pop in one by one
           hero.querySelectorAll('.pill').forEach(function(p, i) {
-            p.setAttribute('data-anim', 'pop');
-            p.style.transitionDelay = (.35 + i * .08) + 's';
+            p.setAttribute('data-anim','pop'); p.style.transitionDelay = (.35 + i * .08) + 's';
           });
-          // Trust blocks — scale in with stagger, then float
           hero.querySelectorAll('.trust').forEach(function(t, i) {
-            t.setAttribute('data-anim', 'scale');
-            t.style.transitionDelay = (.42 + i * .1) + 's';
+            t.setAttribute('data-anim','scale'); t.style.transitionDelay = (.42 + i * .1) + 's';
             t.style.setProperty('--float-d', (i * .6) + 's');
           });
-          // Hero image
           var heroImg = hero.querySelector('.hero-visual img');
-          if (heroImg) { heroImg.setAttribute('data-anim', 'scale'); heroImg.style.transitionDelay = '.15s'; }
-          // Location callout
+          if (heroImg) { heroImg.setAttribute('data-anim','scale'); heroImg.style.transitionDelay = '.15s'; }
           var loc = hero.querySelector('.location-callout');
-          if (loc) { loc.setAttribute('data-anim', 'up'); loc.style.transitionDelay = '.3s'; }
+          if (loc) { loc.setAttribute('data-anim','up'); loc.style.transitionDelay = '.3s'; }
         }
-
-        /* ── 2. Section headings ── */
         main.querySelectorAll('.section-head h2, .section-head .btn').forEach(function(el, i) {
           el.setAttribute('data-anim', i % 2 === 0 ? 'up' : 'left');
         });
-
-        /* ── 3. Scroll-track cards — slide up with stagger per track ── */
         main.querySelectorAll('.scroll-track').forEach(function(track) {
           track.querySelectorAll('.s-card').forEach(function(card, i) {
-            card.setAttribute('data-anim', 'up');
-            card.style.transitionDelay = (i * .07) + 's';
+            card.setAttribute('data-anim','up'); card.style.transitionDelay = (i * .07) + 's';
           });
         });
-
-        /* ── 4. Scroll nav arrows ── */
         main.querySelectorAll('.scroll-nav .scroll-arrow').forEach(function(btn, i) {
           btn.setAttribute('data-anim', i === 0 ? 'right' : 'left');
           btn.style.transitionDelay = '.2s';
         });
-
-        /* ── 5. FAQ items — alternate left/right ── */
         main.querySelectorAll('.faq-item').forEach(function(faq, i) {
           faq.setAttribute('data-anim', i % 2 === 0 ? 'left' : 'right');
           faq.style.transitionDelay = (i * .08) + 's';
         });
-
-        /* ── 6. Video ── */
         var video = main.querySelector('.video-wrap');
-        if (video) { video.setAttribute('data-anim', 'scale'); }
-
-        /* ── 7. Single-box cards (Diagnosis, workshops, services pages) ── */
-        main.querySelectorAll('.flx-container-services .single-box').forEach(function(card, i) {
-          card.setAttribute('data-anim', 'up');
-          card.style.transitionDelay = (i * .07) + 's';
-        });
-
-        /* ── 8. IntersectionObserver — trigger .in class ── */
+        if (video) { video.setAttribute('data-anim','scale'); }
         var vH = window.innerHeight || 700;
         var obs = new IntersectionObserver(function(entries) {
           entries.forEach(function(e) {
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-              obs.unobserve(e.target);
-            }
+            if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
           });
         }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-
-        var allAnim = main.querySelectorAll('[data-anim]');
-        allAnim.forEach(function(el) {
+        main.querySelectorAll('[data-anim]').forEach(function(el) {
           var rect = el.getBoundingClientRect();
-          if (rect.top < vH && rect.bottom > 0) {
-            // Already in viewport on load — small delay so user sees the entrance
-            setTimeout(function() { el.classList.add('in'); }, 80);
-          } else {
-            obs.observe(el);
-          }
+          if (rect.top < vH && rect.bottom > 0) setTimeout(function() { el.classList.add('in'); }, 80);
+          else obs.observe(el);
         });
-
-        /* ── 9. Re-observe scroll-track cards on scroll (they may be off-screen horizontally) ── */
         main.querySelectorAll('.scroll-track').forEach(function(track) {
           track.addEventListener('scroll', function() {
             track.querySelectorAll('[data-anim]:not(.in)').forEach(function(card) {
               var r = card.getBoundingClientRect();
-              if (r.left < window.innerWidth && r.right > 0) {
-                card.classList.add('in');
-              }
+              if (r.left < window.innerWidth && r.right > 0) card.classList.add('in');
             });
           }, { passive: true });
         });
       }
-
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
       else init();
     })();
