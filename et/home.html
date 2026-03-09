@@ -43,8 +43,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 
   <!-- Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"></noscript>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
   <!-- Enhanced Structured Data -->
@@ -146,1340 +148,1222 @@
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #f5f4fa;
+      --surface: rgba(255,255,255,.78);
+      --surface-solid: #ffffff;
+      --c-surface: var(--surface);
+      --c-text-muted: var(--text-secondary);
+      --text: #1a1832;
+      --text-secondary: #5e5977;
+      --line: rgba(68,67,125,.10);
+      --brand: #44437d;
+      --brand-light: #5c5b9e;
+      --brand-accent: #6c6bb5;
+      --brand-bg: #eeedf8;
+      --brand-glow: rgba(68,67,125,.12);
+      --ok: #0f9d58;
+      --shadow: 0 8px 32px rgba(26,24,50,.08);
+      --shadow-lg: 0 16px 56px rgba(26,24,50,.13);
+      --shadow-card: 0 4px 20px rgba(26,24,50,.06);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --radius-xs: 10px;
+      --container: 1240px;
+      --header-h: 72px;
     }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
     body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: #f8f9fb;
-      color: #222;
-      margin: 0;
-      padding: 0;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .sticky-wrapper {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    /* Header styles - Mobile first approach */
-    header {
-      background: #44437d;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      padding: 1rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      text-align: center;
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-    .logo a {
-      color: #ffffff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
-      text-decoration: none;
-      font-family:'Lucida Calligraphy',cursive,serif;
-      font-size: 1.3rem;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .claim {
-      text-align: center;
-      margin-bottom: 1rem;
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; }
+    .container { width: min(100% - 28px, var(--container)); margin-inline: auto; }
+
+    /* === SKIP LINK === */
+    .skip-link { position: absolute; left: -9999px; top: 0; }
+    .skip-link:focus { left: 16px; top: 16px; z-index: 1000; background: #fff; padding: 12px 16px; border-radius: 12px; }
+
+    /* === HEADER === */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(245,244,250,.82);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-h);
     }
-    .claim img {
-      max-width: 100%;
-      height: auto;
-      max-height: 100px;
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; height: var(--header-h);
     }
-    .language-menu {
-      position: absolute;
-      top: 0.5rem;
-      right: 1rem;
-      display: flex;
-      gap: 0.25rem;
+    .brand {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; min-width: 0; flex-shrink: 1;
     }
-    .language-menu a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 600;
-      padding: 0.3rem 0.5rem;
-      border-radius: 3px;
-      transition: background 0.2s;
-      font-size: 0.8rem;
+    .brand-logo {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 4px 12px rgba(68,67,125,.2);
+      flex-shrink: 0;
     }
-    .language-menu .selected {
-      background: rgba(255,255,255,0.2);
+    .brand-text { min-width: 0; overflow: hidden; }
+    .brand-text strong { display: block; font-size: .88rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .brand-text span { display: block; font-size: .68rem; color: var(--text-secondary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+    .desktop-nav { display: none; gap: 4px; align-items: center; }
+    .desktop-nav a {
+      text-decoration: none; padding: 8px 14px; border-radius: 999px;
+      font-weight: 600; font-size: .9rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .desktop-nav a:hover, .desktop-nav a[aria-current="page"] {
+      background: var(--surface-solid); color: var(--brand);
+      box-shadow: var(--shadow-card);
+    }
+    .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+    /* Mobile language switcher — visible on mobile, hidden on desktop */
+    .mobile-lang-header {
+      display: flex; gap: 1px; align-items: center;
+    }
+    .mobile-lang-header a {
+      text-decoration: none; padding: 4px 6px; border-radius: 999px;
+      font-weight: 700; font-size: .7rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .mobile-lang-header a.active {
+      background: var(--brand-bg); color: var(--brand);
+    }
+
+    /* Desktop language switcher — hidden by default, shown 900px+ */
+    .lang-switch { display: none; gap: 2px; }
+    .lang-switch a {
+      text-decoration: none; padding: 6px 10px; border-radius: 999px;
+      font-weight: 700; font-size: .8rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .lang-switch a:hover, .lang-switch a.active {
+      background: var(--brand-bg); color: var(--brand);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 0; border-radius: 999px; padding: 12px 20px; font-weight: 700;
+      font-size: .9rem; text-decoration: none; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      font-family: inherit;
+    }
+    .btn-primary {
       color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+      box-shadow: 0 8px 24px rgba(68,67,125,.22);
     }
-    /* Navigation - Mobile first */
-    .nav {
-      background: #f4f5fa;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 0;
-      width: 100%;
-      position: relative;
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(68,67,125,.3); }
+    .btn-secondary {
+      background: var(--brand-bg); color: var(--brand);
+      border: 1px solid rgba(68,67,125,.1);
     }
-    .nav-inner {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      background: #f4f5fa;
-      top: 100%;
-      left: 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      z-index: 110;
-    }
-    .nav-inner.open {
-      display: flex;
-    }
-    .nav-item {
-      width: 100%;
-    }
-    .nav-item a {
-      color: #44437d;
-      font-weight: 500;
-      text-decoration: none;
-      padding: 1rem 1.5rem;
-      border-radius: 0;
-      transition: background 0.2s;
+    .btn-secondary:hover { background: #e2e0f3; }
+
+    /* Mobile toggle */
+    .mobile-toggle {
+      width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+      background: #fff; box-shadow: var(--shadow-card); display: inline-grid;
+      place-items: center; cursor: pointer; font-size: 1.1rem;
       -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      width: 100%;
-      border-bottom: 1px solid #e0e0e0;
     }
-    .nav-item:last-child a {
-      border-bottom: none;
+    .mobile-panel {
+      display: none; position: absolute; top: var(--header-h); left: 0; right: 0;
+      background: rgba(245,244,250,.96); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line); padding: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1); z-index: 99;
     }
-    .nav-item.active a,
-    .nav-item a:hover {
-      background: #e3e4f5;
+    .mobile-panel.open { display: block; }
+    .mobile-panel nav { display: grid; gap: 6px; }
+    .mobile-panel nav a {
+      text-decoration: none; background: #fff; padding: 14px 16px;
+      border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
+      font-weight: 600; display: block;
     }
-    .hamburger {
-      display: flex;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 4px;
-      padding: 1rem 1.5rem;
-      -webkit-tap-highlight-color: transparent;
-      z-index: 120;
-      background: #f4f5fa;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
+    /* === HERO === */
+    .hero { padding: 28px 0 16px; }
+    .hero-grid {
+      display: grid; gap: 20px; grid-template-columns: 1fr;
+      align-items: stretch;
     }
-    .hamburger .line {
-      width: 25px;
-      height: 3px;
-      background: #44437d;
-      border-radius: 2px;
-      transition: all 0.3s ease;
+    .hero-copy {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      padding: 28px 22px;
     }
-    .hamburger.active .line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    .eyebrow {
+      display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
+      padding: 8px 14px; border-radius: 999px;
+      background: var(--brand-bg); color: var(--brand);
+      font-size: .82rem; font-weight: 700;
     }
-    .hamburger.active .line:nth-child(2) {
-      opacity: 0;
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 3.6rem);
+      line-height: 1.08; margin: 16px 0 14px;
+      letter-spacing: -.02em; font-weight: 400;
     }
-    .hamburger.active .line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
+    .lead {
+      font-size: clamp(.95rem, 1.4vw, 1.1rem);
+      color: var(--text-secondary); max-width: 60ch;
     }
-    /* Main content */
-    main {
-      max-width: 1200px;
-      margin: 1rem auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      padding: 1rem;
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0;
     }
-    /* Intro section styles */
-    .intro-section {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding: 1rem 0;
+    .pill {
+      padding: 8px 14px; border-radius: 999px; background: #fff;
+      border: 1px solid var(--line); font-weight: 600; font-size: .85rem;
+      text-decoration: none; color: var(--text); transition: all .2s;
     }
-    .intro-section h1 {
-      font-size: 1.8rem;
-      color: #44437d;
-      margin-bottom: 1rem;
-      line-height: 1.3;
+    a.pill:hover {
+      background: var(--brand-bg); color: var(--brand);
+      border-color: rgba(68,67,125,.25);
     }
-    .intro-section h3 {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 1rem;
-      line-height: 1.5;
+    .pill-lang a {
+      text-decoration: none; color: var(--text); font-weight: 700;
+      padding: 2px 4px; border-radius: 6px; transition: all .2s;
     }
-    .intro-section p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.7;
-      max-width: 100%;
-      margin: 0 auto;
-      text-align: left;
+    .pill-lang a:hover {
+      background: var(--brand); color: #fff;
     }
-    /* Campaign Banner Styles */
-    .campaign-banner {
-      background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-      color: #fff;
-      padding: 1.25rem 1.5rem;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
-      position: relative;
-      overflow: hidden;
+    .trustbar {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 22px;
     }
-    .campaign-banner::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-      animation: shimmer 3s ease-in-out infinite;
+    .trust {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      padding: 14px; box-shadow: var(--shadow-card); text-align: center;
     }
-    @keyframes shimmer {
-      0%, 100% { transform: translateX(-30%) translateY(-30%); }
-      50% { transform: translateX(30%) translateY(30%); }
+    .trust strong { display: block; font-size: 1.2rem; color: var(--brand); }
+    .trust span { color: var(--text-secondary); font-size: .85rem; }
+
+    .hero-visual {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      padding: 16px; overflow: hidden;
     }
-    .campaign-banner-content {
-      position: relative;
-      z-index: 1;
+    .hero-visual img {
+      width: 100%; border-radius: 20px; box-shadow: var(--shadow);
     }
-    .campaign-banner .campaign-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    .location-callout {
+      margin-top: 14px; padding: 14px 16px;
+      background: var(--brand-bg); border-radius: var(--radius-sm);
+      border-left: 4px solid var(--brand);
+      font-size: .88rem; color: var(--text-secondary); line-height: 1.5;
     }
-    .campaign-banner .campaign-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .location-callout strong { color: var(--text); }
+
+    /* === SECTIONS === */
+    .section { padding: 28px 0 12px; }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 16px; margin-bottom: 18px; flex-wrap: wrap;
     }
-    .campaign-banner .campaign-subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      opacity: 0.95;
+    .section-head h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400; letter-spacing: -.01em;
     }
-    .campaign-banner .campaign-dates {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      margin-bottom: 0.75rem;
+
+    /* === SCROLL SECTIONS === */
+    .scroll-track {
+      display: flex; overflow-x: auto; gap: 14px;
+      padding: 4px 0 20px; scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: var(--brand) #e8e7f0;
     }
-    .campaign-banner .campaign-cta {
-      display: inline-block;
-      background: #fff;
-      color: #c41e3a;
-      font-weight: 600;
-      padding: 0.6rem 1.5rem;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
+    .scroll-track::-webkit-scrollbar { height: 6px; }
+    .scroll-track::-webkit-scrollbar-track { background: #e8e7f0; border-radius: 3px; }
+    .scroll-track::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 3px; }
+
+    .s-card {
+      flex: 0 0 270px; background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow-card); overflow: hidden;
+      text-decoration: none; color: inherit; scroll-snap-align: start;
+      border: 1px solid var(--line); transition: transform .2s, box-shadow .2s;
     }
-    .campaign-banner .campaign-cta:hover {
-      background: #f0f0f0;
-      transform: scale(1.05);
+    .s-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .s-card img {
+      width: 100%; height: 170px; object-fit: cover; display: block;
     }
-    /* Scrollable container styles */
-    .scroll-section {
-      margin: 2rem 0;
+    .s-card-body { padding: 14px 16px; }
+    .s-card-body h3 {
+      font-size: .95rem; font-weight: 700; margin: 0 0 6px;
+      color: var(--brand); line-height: 1.3;
     }
-    .scroll-section h2 {
-      font-size: 1.5rem;
-      color: #44437d;
-      text-align: center;
-      margin-bottom: 1.5rem;
+    .s-card-body p {
+      font-size: .82rem; color: var(--text-secondary); line-height: 1.45; margin: 0;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
     }
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding: 1rem 0 2rem 0;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-    }
-    .scroll-container::-webkit-scrollbar {
-      height: 8px;
-    }
-    .scroll-container::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 4px;
-    }
-    .scroll-container::-webkit-scrollbar-thumb {
-      background: #44437d;
-      border-radius: 4px;
-    }
-    .scroll-container::-webkit-scrollbar-thumb:hover {
-      background: #333259;
-    }
-    .scroll-item {
-      flex: 0 0 280px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      color: inherit;
-      scroll-snap-align: start;
-    }
-    .scroll-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .scroll-item-image {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .scroll-item-content {
-      padding: 1rem;
-    }
-    .scroll-item-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #44437d;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-    }
-    .scroll-item-description {
-      font-size: 0.85rem;
-      color: #666;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    /* Navigation arrows */
+
     .scroll-nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      display: flex; justify-content: center; gap: 10px; margin-top: 8px;
     }
     .scroll-arrow {
-      background: #44437d;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      font-size: 1.2rem;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brand); color: #fff; border: 0;
+      display: inline-grid; place-items: center; cursor: pointer;
+      transition: all .2s; font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(68,67,125,.2);
     }
-    .scroll-arrow:hover {
-      background: #333259;
+    .scroll-arrow:hover { background: #333259; transform: scale(1.08); }
+
+    /* === FAQ === */
+    .faq-grid { display: grid; gap: 10px; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: var(--shadow-card); overflow: hidden;
     }
-    .scroll-arrow:disabled {
-      background: #ccc;
-      cursor: not-allowed;
+    .faq-item summary {
+      cursor: pointer; font-weight: 700; padding: 16px 18px;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      font-size: .95rem;
     }
-    /* Video iframe */
-    iframe {
-      width: 100%;
-      max-width: 100%;
-      aspect-ratio: 16/9;
-      border: none;
-      border-radius: 8px;
-      margin: 2rem auto;
-      display: block;
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand);
+      transition: transform .2s; flex-shrink: 0; margin-left: 12px;
     }
-    /* Elfsight widget - Google Reviews */
-    .elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9 {
-      margin: 2rem 0;
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item .faq-body {
+      padding: 0 18px 16px; color: var(--text-secondary); font-size: .9rem; line-height: 1.6;
     }
-    /* Booking section styles */
-    #broneeri-container {
-      margin: 2.5rem 0 0 0;
-      padding: 1.5rem 0 0 0;
-      border-top: 1px solid #e3e4f5;
-      text-align: center;
+
+    /* === VIDEO === */
+    .video-wrap {
+      margin: 28px 0; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
     }
-    /* Booking Button Styles */
-    #salonlife-widget-root .button-cta {
-      display: inline-block;
-      background: #44437d;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 5px;
-      padding: 0.8rem 1.6rem;
-      font-size: 1.1rem;
-      text-decoration: none;
-      margin: 1.2rem auto 0 auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.2s;
-      cursor: pointer;
-      border: none;
+    .video-wrap iframe {
+      width: 100%; aspect-ratio: 16/9; border: none; display: block;
     }
-    #salonlife-widget-root .button-cta:hover {
-      background: #222259;
+
+    /* === HERO REVIEWS === */
+    .hero-reviews { margin-top: 18px; }
+
+    /* === SEO CONTENT BLOCK === */
+    .seo-section {
+      padding: 32px 0 20px;
     }
-    /* Cookie Notice */
+    .seo-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400; margin-bottom: 18px;
+      color: var(--text);
+    }
+    .seo-grid {
+      display: grid; gap: 20px; grid-template-columns: 1fr;
+    }
+    .seo-col h3 {
+      font-size: .95rem; font-weight: 700; color: var(--brand);
+      margin-bottom: 8px;
+    }
+    .seo-col p {
+      font-size: .88rem; color: var(--text-secondary); line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .seo-col a {
+      color: var(--brand); text-decoration: none;
+      border-bottom: 1px dotted var(--brand); transition: all .2s;
+    }
+    .seo-col a:hover { border-bottom-style: solid; }
+    @media (min-width: 900px) {
+      .seo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      background: #1a1832; color: rgba(255,255,255,.7);
+      padding: 36px 0 56px; margin-top: 28px;
+    }
+    .footer-grid {
+      display: grid; gap: 24px; grid-template-columns: 1fr;
+    }
+    .footer-grid strong { color: #fff; display: block; margin-bottom: 6px; font-size: .9rem; }
+    .footer-grid a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-grid a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 12px; align-items: center; margin-top: 8px; }
+    .footer-social img { width: 32px; height: 32px; border-radius: 8px; opacity: .8; transition: opacity .2s; }
+    .footer-social img:hover { opacity: 1; }
+    .footer-copy { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); font-size: .82rem; }
+
+    /* === GO-TOP === */
+    .go-top {
+      position: fixed; bottom: 20px; right: 20px; z-index: 90;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--brand); color: #fff; border: 0;
+      box-shadow: 0 4px 16px rgba(68,67,125,.3);
+      cursor: pointer; display: none; place-items: center;
+      font-size: 1.3rem; transition: transform .2s;
+    }
+    .go-top:hover { transform: translateY(-3px); }
+
+    /* === MOBILE STICKY BOOKING BAR === */
+    .mobile-book-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 95;
+      background: rgba(245,244,250,.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--line);
+      padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+    }
+    .mobile-book-bar .book-info {
+      font-size: .82rem; color: var(--text-secondary); line-height: 1.3;
+    }
+    .mobile-book-bar .book-info strong {
+      display: block; font-size: .9rem; color: var(--text);
+    }
+    .mobile-book-bar .btn {
+      flex-shrink: 0; padding: 12px 22px;
+    }
+
+    /* === COOKIE NOTICE === */
     #cookieNotice {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      max-width: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 9999;
+      position: fixed; bottom: 20px; left: 20px;
+      background: #fff; border: 1px solid #ddd; border-radius: 16px;
+      padding: 18px; max-width: 320px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15); z-index: 9999;
+      font-size: .88rem; line-height: 1.5;
     }
-    #cookieNotice .btn-primary {
-      background: #44437d;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
+    #cookieNotice .cookie-btn {
+      background: var(--brand); color: #fff; border: 0;
+      padding: 8px 18px; border-radius: 999px; cursor: pointer;
+      font-weight: 700; font-size: .85rem; margin-top: 10px;
+      font-family: inherit;
+    }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 640px) {
+      .trustbar { grid-template-columns: repeat(4,1fr); }
+      .s-card { flex: 0 0 290px; }
+    }
+    /* Extra bottom padding on mobile for sticky booking bar */
+    @media (max-width: 899px) {
+      .site-footer { padding-bottom: 90px; }
+      .go-top { bottom: 80px; }
+      #cookieNotice { bottom: 80px; }
+    }
+    @media (min-width: 900px) {
+      .desktop-nav, .lang-switch { display: flex; }
+      .mobile-toggle, .mobile-lang-header { display: none; }
+      .brand-text span { font-size: .78rem; }
+      .brand-logo { width: 42px; height: 42px; border-radius: 12px; }
+      .brand-text strong { font-size: .95rem; }
+      .hero-grid { grid-template-columns: 1.15fr .85fr; }
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr .8fr; }
+      .s-card { flex: 0 0 300px; }
+      .mobile-book-bar { display: none !important; }
+    }
+    @media (min-width: 1200px) {
+      .s-card { flex: 0 0 320px; }
+    }
+
+    /* === SCROLL & ENTRANCE ANIMATIONS === */
+
+    /* Base hidden states — auto-applied by JS */
+    [data-anim] {
+      opacity: 0;
+      transition: opacity .7s cubic-bezier(.16,1,.3,1),
+                  transform .7s cubic-bezier(.16,1,.3,1),
+                  filter .7s cubic-bezier(.16,1,.3,1);
+      will-change: opacity, transform;
+    }
+    /* Prevent left/right animation transforms from causing page overflow */
+    .hero { overflow: hidden; }
+    [data-anim="up"]    { transform: translateY(48px); }
+    [data-anim="down"]  { transform: translateY(-36px); }
+    [data-anim="left"]  { transform: translateX(40px); }
+    [data-anim="right"] { transform: translateX(-40px); }
+    [data-anim="scale"] { transform: scale(.88); }
+    [data-anim="blur"]  { transform: translateY(24px); filter: blur(8px); }
+    [data-anim="pop"]   { transform: scale(.6); }
+
+    /* Visible state */
+    [data-anim].in {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Mobile booking bar — never animated */
+    .mobile-book-bar, .mobile-book-bar * {
+      opacity: 1 !important; transform: none !important;
+      filter: none !important; animation: none !important;
+    }
+
+    /* Hero entrance — faster, more dramatic */
+    .hero [data-anim] {
+      transition-duration: .9s;
+    }
+
+    /* Cards get a subtle hover lift that's separate from entrance */
+    .s-card, .faq-item {
+      transition: transform .25s ease, box-shadow .25s ease, opacity .7s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .s-card.in, .faq-item.in { opacity: 1; transform: translateY(0); }
+
+    /* Floating accent for trust blocks */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .trust.in {
+      animation: float 4s ease-in-out infinite;
+      animation-delay: var(--float-d, 0s);
+    }
+
+    /* Pill pop-in */
+    .pill[data-anim="pop"].in {
+      animation: pill-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+    }
+    @keyframes pill-pop {
+      0%   { opacity: 0; transform: scale(.5); }
+      60%  { transform: scale(1.08); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Eyebrow slide-in */
+    @keyframes slide-in-badge {
+      0%   { opacity: 0; transform: translateX(-30px) scale(.9); }
+      100% { opacity: 1; transform: none; }
+    }
+    .eyebrow[data-anim].in {
+      animation: slide-in-badge .7s cubic-bezier(.16,1,.3,1) forwards;
+    }
+
+    /* H1 character feel */
+    h1[data-anim].in {
+      animation: heading-rise .9s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes heading-rise {
+      0%   { opacity: 0; transform: translateY(50px); filter: blur(4px); }
+      100% { opacity: 1; transform: none; filter: none; }
+    }
+
+    /* Scroll track cards — stagger set by JS */
+    .scroll-track [data-anim] {
+      transition-duration: .55s;
+    }
+
+    /* ── Grid layout for .single-box cards (Diagnosis, workshops, services pages) ── */
+    .flx-container-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 540px) {
+      .flx-container-services { grid-template-columns: 1fr; }
+    }
+    .single-box {
+      background: var(--c-surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      padding: 1.5rem;
       cursor: pointer;
-      margin-left: 0.5rem;
-    }
-    /* Footer */
-    .page-footer {
-      background: #222;
-      color: #fff;
-      padding: 2rem 0;
-      margin-top: 2rem;
-    }
-    .flx-container {
+      transition: transform .25s, box-shadow .25s;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
       align-items: center;
       text-align: center;
-    }
-    .flx-container a,
-    .flx-container span {
-      color: #fff;
       text-decoration: none;
     }
-    .goTop {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: #44437d;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      cursor: pointer;
-      z-index: 99;
-      font-size: 1.5rem;
-      display: none;
+    .single-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
     }
-    /* Enhanced keyword links styling */
-    .keyword-link {
-      color: #44437d;
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 1px dotted #44437d;
-      transition: all 0.2s ease;
-      padding: 0.1rem 0.2rem;
-      margin: -0.1rem -0.2rem;
-      border-radius: 3px;
-    }
-    .keyword-link:hover {
-      background: #e3e4f5;
-      border-bottom: none;
-    }
-    /* FAQ Section Styles - Optimized for AI Overview */
-    .faq-item {
-      background: #f8f9fb;
-      border-radius: 8px;
-      padding: 1.25rem;
+    .single-box-img {
+      width: 100%;
+      max-width: 240px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
       margin-bottom: 1rem;
-      border-left: 4px solid #44437d;
     }
-    .faq-question {
+    .single-box h3 {
       font-size: 1.05rem;
       font-weight: 600;
-      color: #44437d;
-      margin-bottom: 0.75rem;
+      color: var(--brand);
+      margin-bottom: .5rem;
     }
-    .faq-answer {
-      font-size: 0.95rem;
-      color: #555;
+    .single-box-txt {
+      font-size: .9rem;
+      color: var(--c-text-muted);
       line-height: 1.6;
+      text-align: left;
     }
-    /* Responsive breakpoints - Mobile first */
-    /* Small phones */
-    @media (max-width: 360px) {
-      .logo a {
-        font-size: 1.1rem;
-      }
-      .claim img {
-        max-height: 80px;
-      }
-      .intro-section h1 {
-        font-size: 1.5rem;
-      }
-      .scroll-item {
-        flex: 0 0 250px;
-      }
-      main {
-        padding: 0.75rem;
-        margin: 0.5rem;
-        border-radius: 8px;
-      }
-      .language-menu {
-        right: 0.5rem;
-        top: 0.25rem;
-      }
-      .language-menu a {
-        padding: 0.2rem 0.3rem;
-        font-size: 0.7rem;
-      }
-      .campaign-banner {
-        padding: 1rem;
-      }
-      .campaign-banner .campaign-title {
-        font-size: 1.2rem;
-      }
-      .campaign-banner .campaign-subtitle {
-        font-size: 1rem;
-      }
+    /* Animate single-box cards like s-cards */
+    .flx-container-services [data-anim] {
+      transition-duration: .55s;
     }
-    /* Standard mobile phones */
-    @media (min-width: 361px) and (max-width: 480px) {
-      .scroll-item {
-        flex: 0 0 260px;
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-anim] {
+        opacity: 1 !important; transform: none !important;
+        filter: none !important; transition: none !important;
+        animation: none !important;
       }
-      .intro-section h1 {
-        font-size: 1.6rem;
-      }
-      .claim img {
-        max-height: 90px;
-      }
-    }
-    /* Large phones / small tablets */
-    @media (min-width: 481px) and (max-width: 767px) {
-      .scroll-item {
-        flex: 0 0 280px;
-      }
-      .intro-section h1 {
-        font-size: 1.8rem;
-      }
-      .claim img {
-        max-height: 100px;
-      }
-      main {
-        padding: 1.25rem;
-      }
-    }
-    /* Tablets and desktop */
-    @media (min-width: 768px) {
-      .container {
-        padding: 0 2rem;
-      }
-      .hamburger {
-        display: none;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 0;
-      }
-      .nav-inner {
-        display: flex !important;
-        flex-direction: row;
-        gap: 2rem;
-        position: static;
-        background: transparent;
-        box-shadow: none;
-        width: auto;
-      }
-      .nav-item {
-        width: auto;
-      }
-      .nav-item a {
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        border-bottom: none;
-        gap: 0.25rem;
-      }
-      .language-menu {
-        top: 1rem;
-        right: 2rem;
-      }
-      .language-menu a {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.9rem;
-      }
-      .logo a {
-        font-size: 1.5rem;
-      }
-      .claim img {
-        max-height: 120px;
-        max-width: 400px;
-      }
-      .intro-section {
-        padding: 2rem 0;
-      }
-      .intro-section h1 {
-        font-size: 2.5rem;
-      }
-      .intro-section h3 {
-        font-size: 1.3rem;
-      }
-      .intro-section p {
-        font-size: 1.1rem;
-        max-width: 800px;
-        text-align: center;
-      }
-      .scroll-section h2 {
-        font-size: 2rem;
-      }
-      .scroll-container {
-        gap: 1.5rem;
-      }
-      .scroll-item {
-        flex: 0 0 300px;
-      }
-      .scroll-item-content {
-        padding: 1.5rem;
-      }
-      .scroll-item-title {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-      }
-      .scroll-item-description {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      main {
-        margin: 2rem auto;
-        padding: 2rem 2rem;
-      }
-      .flx-container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-        align-items: flex-start;
-      }
-      .goTop {
-        bottom: 2rem;
-        right: 2rem;
-      }
-      .campaign-banner {
-        padding: 1.5rem 2rem;
-      }
-      .campaign-banner .campaign-title {
-        font-size: 1.6rem;
-      }
-      .campaign-banner .campaign-subtitle {
-        font-size: 1.2rem;
-      }
-    }
-    /* Large desktops */
-    @media (min-width: 1200px) {
-      .scroll-item {
-        flex: 0 0 320px;
-      }
-      .scroll-container {
-        gap: 2rem;
-      }
+      .trust.in { animation: none !important; }
     }
   </style>
 </head>
 <body>
-  <div id="wrap">
-    <div class="sticky-wrapper">
-      <header>
-        <div class="logo">
-          <a href="/et/index.html">Teie usaldusväärne massaažiterapeut</a>
+  <a class="skip-link" href="#content">Liigu põhisisu juurde</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="/et/home.html" aria-label="MV Therapy avaleht">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <strong>MV Therapy</strong>
+          <span>Medical Verified Therapy</span>
         </div>
-        <div class="claim">
-          <img src="/public/img/mvsubheader.png" alt="MV Therapy alapealkiri" width="400" height="60">
-        </div>
-        <div class="language-menu">
-          <a href="/et/home.html" class="selected" aria-label="Eesti keel">EST</a>
-          <a href="/ru/home.html" aria-label="Русский язык">РУС</a>
-          <a href="/en/home.html" aria-label="English">ENG</a>
-        </div>
-      </header>
-      <nav class="nav" role="navigation" aria-label="Peamenüü">
-        <div class="hamburger" id="hamburger" tabindex="0" aria-label="Ava menüü" role="button">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-        <div class="nav-inner" id="nav-inner">
-          <div class="nav-item active">
-            <a href="/et/home.html" aria-label="Avaleht">
-              <span class="material-symbols-outlined" aria-hidden="true">home</span>
-              <span>Kodu</span>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a href="/et/services.html">Massaažid</a>
-          </div>
-          <div class="nav-item"><a href="/et/Diagnosis.html" itemprop="url"><span itemprop="name">Diagnoosid</span></a></div>
-          <div class="nav-item">
-            <a href="/et/campaign.html">Kampaaniad</a>
-          </div>
-          <div class="nav-item">
-            <a href="/et/workshops.html">Koolitused</a>
-          </div>
-          <div class="nav-item">
-            <a href="/et/team.html">Meeskond</a>
-          </div>
-          <div class="nav-item">
-            <a href="/et/kkk.html">KKK</a>
-          </div>
-          <div class="nav-item">
-            <a href="/et/blog.html">Blogi</a>
-          </div>
-        </div>
+      </a>
+      <nav class="desktop-nav" aria-label="Peamenüü">
+        <a href="/et/home.html" aria-current="page">Avaleht</a>
+        <a href="/et/services.html">Massaažid</a>
+        <a href="/et/Diagnosis.html">Diagnoosid</a>
+        <a href="/et/campaign.html">Kampaaniad</a>
+        <a href="/et/workshops.html">Koolitused</a>
+        <a href="/et/team.html">Meeskond</a>
+        <a href="/et/kkk.html">KKK</a>
+        <a href="/et/blog.html">Blogi</a>
       </nav>
-    </div>
-    <main id="main-app">
-      <div class="container">
-        <!-- Intro section -->
-        <section class="intro-section">
-          <h1>Parim Massaaž Pärnus - MV Therapy</h1>
-          <p><strong>MV Therapy on Pärnu parim massaažisalong</strong> spetsialiseeritud <strong class="keyword-link">meditsiinilisele massaažile</strong> lihaspõhiste probleemide lahendamiseks. Samuti teeme <strong class="keyword-link">lõõgastavat massaaži Pärnus</strong>, et taastada kliendi psühho-emotsionaalne seisund – see on iga tõhusa ravi tähtis osa. Pakume kvaliteetset <strong class="keyword-link">professionaalset massaaži Pärnu kesklinnas</strong> aadressil <strong>Rüütli 47</strong>.
-          
-          Meie <strong class="keyword-link">massaaži teenuste</strong> hulka kuuluvad <strong class="keyword-link">klassikaline massaaž Pärnus</strong>, <strong class="keyword-link">meditsiiniline massaaž</strong>, <strong class="keyword-link">spordimassaaž Pärnu</strong>, <strong>kõrgintensiivne magnetteraapia</strong>, <strong>lööklaine teraapia</strong>, <strong>triggerpunkti teraapia</strong>, <strong class="keyword-link">süvakudede massaaž</strong> ning veel 8 erinevat <strong class="keyword-link">massaažitüüpi Pärnus</strong>.
-          
-          Kõik teenused on läbi viidud diplomeeritud <strong class="keyword-link">massaažiterapeudi</strong> poolt <strong>6. taseme kutsetunnistusega</strong>. <strong>Broneerige oma aeg juba täna</strong> ja kogege <strong class="keyword-link">professionaalset massaažiteenust Pärnus</strong>!</p>
-        </section>
-
-        <!-- Campaign Banner - Winter Promotion -->
-        <section class="campaign-banner" aria-label="Talvekampaania">
-          <div class="campaign-banner-content">
-            <div class="campaign-icon">❄️ 🌨️ ❄️</div>
-            <div class="campaign-title">Talvekampaania</div>
-            <div class="campaign-subtitle">Kõik manuaalsed massaažid soodushinnaga!</div>
-            <div class="campaign-dates">01.12.2025 – 28.02.2026</div>
-           Vaata lähemalt broneerimissüsteemis
-          </div>
-        </section>
-
-        <!-- Services scrollable section -->
-        <section class="scroll-section">
-          <h2>Meie Massaažiteenused Pärnus</h2>
-          <div class="scroll-container" id="services-scroll">
-            <a href="/et/services/2.html" class="scroll-item">
-              <img src="/public/img/services/6.jpg" alt="Klassikaline massaaž Pärnus" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Klassikaline massaaž</div>
-                <div class="scroll-item-description">Silitused, hõõrumine ja paitamine vereringe parandamiseks Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/1.html" class="scroll-item">
-              <img src="/public/img/services/2.jpg" alt="Meditsiiniline massaaž Pärnus" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Meditsiiniline massaaž</div>
-                <div class="scroll-item-description">Tervislik lähenemine krooniliste lihasvalude ravimiseks Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/15.html" class="scroll-item">
-              <img src="/public/img/blog/102.jpg" alt="Kõrgintensiivne magnetteraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kõrgintensiivne magnetteraapia</div>
-                <div class="scroll-item-description">See on revolutsiooniline valuravi meetod ilma ravimiteta Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/3.html" class="scroll-item">
-              <img src="/public/img/services/20.png" alt="Lööklaine teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lööklaine teraapia</div>
-                <div class="scroll-item-description">Helilained kroonilise valu ja põletiku leevendamiseks Rüütli 47...</div>
-              </div>
-            </a>
-            <a href="/et/services/4.html" class="scroll-item">
-              <img src="/public/img/services/5.jpg" alt="Triggerpunkti teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Triggerpunkti teraapia</div>
-                <div class="scroll-item-description">Valulike lihassõlmede ja pingekohtade vabastamine Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/5.html" class="scroll-item">
-              <img src="/public/img/services/10.jpg" alt="Spordimassaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Spordimassaaž</div>
-                <div class="scroll-item-description">Sportlastele enne ja pärast treeningut Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/6.html" class="scroll-item">
-              <img src="/public/img/services/16.jpg" alt="Süvakudede massaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Süvakudede massaaž</div>
-                <div class="scroll-item-description">Lihaste sügavamate kihtide kroonilise valu ravi Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/7.html" class="scroll-item">
-              <img src="/public/img/services/14.jpg" alt="Kupumassaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kupumassaaž</div>
-                <div class="scroll-item-description">Vaakum parandab lümfi- ja vereringet Pärnu massaaži keskuses...</div>
-              </div>
-            </a>
-            <a href="/et/services/8.html" class="scroll-item">
-              <img src="/public/img/services/12.jpg" alt="Gua Sha teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Gua Sha teraapia</div>
-                <div class="scroll-item-description">Traditsiooniline Hiina nahakraapimise tehnika vereringe stimuleerimiseks Pärnus...</div>
-              </div>
-            </a>
-            <a href="/et/services/9.html" class="scroll-item">
-              <img src="/public/img/services/13.jpg" alt="Biovoolu massaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Biovoolu massaaž</div>
-                <div class="scroll-item-description">Mikrovoolud ja bioelektriline stimulatsioon naha elastsuse suurendamiseks Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/10.html" class="scroll-item">
-              <img src="/public/img/services/3.jpg" alt="Lümfimassaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lümfimassaaž</div>
-                <div class="scroll-item-description">Lümfivedeliku voolu suurendamine ja tursete vähendamine Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/11.html" class="scroll-item">
-              <img src="/public/img/services/7.jpg" alt="Jalatalla massaaž" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Jalatalla massaaž</div>
-                <div class="scroll-item-description">Jalgade vereringe ja funktsionaalsuse parandamine Rüütli 47...</div>
-              </div>
-            </a>
-            <a href="/et/services/12.html" class="scroll-item">
-              <img src="/public/img/services/9.jpg" alt="Ultraheli teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Ultraheli teraapia</div>
-                <div class="scroll-item-description">Mikrovibratsioon soojendab kudesid ja parandab ainevahetust Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/13.html" class="scroll-item">
-              <img src="/public/img/services/18.jpg" alt="Manuaalne lihastestimine" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Manuaalne lihastestimine</div>
-                <div class="scroll-item-description">Poose ja liikumismustrite analüüs personaalseks massaaži plaaniks Pärnu kesklinnas...</div>
-              </div>
-            </a>
-            <a href="/et/services/14.html" class="scroll-item">
-              <img src="/public/img/services/1.jpg" alt="Kinesioteipimine" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kinesioteipimine</div>
-                <div class="scroll-item-description">Lihaste ja liigeste taastumise ning raviprotsessi toetamine Pärnu kesklinnas...</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('services-scroll', -300)" aria-label="Keri vasakule">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('services-scroll', 300)" aria-label="Keri paremale">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
-        <!-- Diagnosis-based treatment scrollable section -->
-        <section class="scroll-section">
-          <h2>Diagnoosipõhine Ravi Pärnus</h2>
-          <div class="scroll-container" id="diagnosis-scroll">
-            <a href="/et/Diagnosis/1.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/1d.jpg" alt="Protrusiooni, hernatsiooni ja ekstrusiooni ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Protrusiooni, hernatsiooni ja ekstrusiooni ravi</div>
-                <div class="scroll-item-description">Lüllivahelise ketta probleemide tõhus ravi ilma operatsioonita. Kõrgintensiivne magnetravi ja lööklaine teraapia aitavad kehal ennast parandada...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/2.html" class="scroll-item">
-              <img src="/public/img/blog/101.jpg" alt="Plantaarfastsiidi (kuke kannuse) ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Plantaarfastsiidi (kuke kannuse) ravi</div>
-                <div class="scroll-item-description">Lõpetage hommikune kannuvalu! Lööklaine teraapia kiirendab paranemist ja taastab jala normaalse funktsiooni...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/3.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/3d.jpg" alt="Lateraalne ja mediaalne epikondüliit ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lateraalne ja mediaalne epikondüliit</div>
-                <div class="scroll-item-description">Tennisisti ja golfisti küünarnuku kiire ravi. Kombineeritud magnetravi ja lööklaine teraapia taastab jõu ja lõpetab valu...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/4.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/4d.jpg" alt="Piriformise sündroomi ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Piriformise sündroomi ravi</div>
-                <div class="scroll-item-description">Istmikunärvi valu ja tuharavalu efektiivne ravi. Kõrgintensiivne magnetteraapia vabastab pingutatud lihase ja leevendab valu...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/5.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/5d.jpg" alt="Depressiooni, ärevuse ja üleväsimuse ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Deep Reset - Depressiooni, ärevuse, üleväsimuse ravi</div>
-                <div class="scroll-item-description">Aju sügav reset ilma ravimiteta. Magnetravi tasakaalustab neurotransmitterid ja toob tagasi elurõõmu ning energia...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/6.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/6d.jpg" alt="Migreeni ja kroonilise peavalu ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Migreeni (Kroonilise peavalu) ravi</div>
-                <div class="scroll-item-description">Lõpetage kroonilised migreenid! Manuaalteraapia ja magnetravi kombinatsioon katkestab valu nõiaringi ja toob kestva kergenduse...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/7.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/7d.jpg" alt="Erektsioonihäire ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Erektsioonihäire (ED) ravi</div>
-                <div class="scroll-item-description">Taastage mehelikkus looduslikul teel! Magnetiline intensiivravi tugevdab vaagnapõhjalihaseid ja parandab vereringet...</div>
-              </div>
-            </a>
-            <a href="/et/Diagnosis/8.html" class="scroll-item">
-              <img src="/public/img/Diagnosis/8d.jpg" alt="Adhesiivse kapsuliidi ravi" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Adhesiivse kapsuliidi ravi</div>
-                <div class="scroll-item-description">Külmunud õla kiire ravi. Kombineeritud lööklaine- ja magnetteraapia lõhub adhesioonid ja taastab õla liikuvuse...</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('diagnosis-scroll', -300)" aria-label="Keri vasakule">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('diagnosis-scroll', 300)" aria-label="Keri paremale">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
-        <!-- Blog scrollable section -->
-        <section class="scroll-section">
-          <h2>Meie Massaaži Blogiartiklid</h2>
-          <div class="scroll-container" id="blog-scroll">
-            <a href="/et/blog/102.html" class="scroll-item">
-              <img src="/public/img/blog/102.jpg" alt="Kõrgintensiivne magnetravi teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kõrgintensiivne magnetravi teraapia</div>
-                <div class="scroll-item-description">Kui keha saadab pidevalt märguandeid – valu ei taandu...</div>
-              </div>
-            </a>
-            <a href="/et/blog/101.html" class="scroll-item">
-              <img src="/public/img/blog/101.jpg" alt="Krooniline kukekannus ja lööklaine teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Krooniline kukekannus: Lööklaineteraapia efektiivsus</div>
-                <div class="scroll-item-description">Kui hommikul voodist tõustes käib kannast läbi valusähvatus, mis paneb sind korraks kikivarvul seisma...</div>
-              </div>
-            </a>
-            <a href="/et/blog/59.html" class="scroll-item">
-              <img src="/public/img/blog/59.jpg" alt="Lööklaine teraapia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lööklaine teraapia</div>
-                <div class="scroll-item-description">Lööklaine teraapia on kaasaegne ja mitteinvasiivne ravimeetod, mis kasutab kõrgsageduslikke helilaineid...</div>
-              </div>
-            </a>
-            <a href="/et/blog/36.html" class="scroll-item">
-              <img src="/public/img/blog/36.jpg" alt="Kutsetunnistusega massaažiterapeut versus kiirkursused" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Kutsetunnistusega massaažiterapeut versus kiirkursused</div>
-                <div class="scroll-item-description">Mõista kvalifikatsioonide erinevust massaažiterapeudi valimisel.</div>
-              </div>
-            </a>
-            <a href="/et/blog/35.html" class="scroll-item">
-              <img src="/public/img/blog/35.jpg" alt="Massaaž jooksjatele" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massaaž jooksjatele: spetsialisti pilgu läbi</div>
-                <div class="scroll-item-description">Professionaali juhend massaaži kasulikkusest jooksjate sooritusvõimele ja taastumisele.</div>
-              </div>
-            </a>
-            <a href="/et/blog/24.html" class="scroll-item">
-              <img src="/public/img/blog/24.jpg" alt="Süvakoemassaaž ja närviretseptorid" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Süvakoemassaaž ja närviretseptorid</div>
-                <div class="scroll-item-description">Saa teada süvakoemassaaži teaduslikust taustast ja selle mõjust lihaspingetele.</div>
-              </div>
-            </a>
-            <a href="/et/blog/22.html" class="scroll-item">
-              <img src="/public/img/blog/22.jpg" alt="Lümfimassaaž: tervise ja heaolu edendamine" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Lümfimassaaž: tervise ja heaolu edendamine</div>
-                <div class="scroll-item-description">Mõista lümfimassaaži kasulikkust detoksikatsiooniks ja immuunsüsteemi toetamiseks.</div>
-              </div>
-            </a>
-            <a href="/et/blog/19.html" class="scroll-item">
-              <img src="/public/img/blog/19.jpg" alt="Karpaalkanali sündroomi leevendamine massaažiteraapiaga" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Karpaalkanali sündroomi leevendamine massaažiteraapiaga</div>
-                <div class="scroll-item-description">Uuri, kuidas massaažiteraapia pakub loomulikku viisi karpaalkanali sümptomite leevendamiseks.</div>
-              </div>
-            </a>
-            <a href="/et/blog/5.html" class="scroll-item">
-              <img src="/public/img/blog/5.jpg" alt="Massaaži tähtsus võitlussportlastele" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massaaži tähtsus võitlussportlastele</div>
-                <div class="scroll-item-description">Massaaž mängib võtmerolli võitlussportlaste taastumisel ja sooritusvõime parandamisel.</div>
-              </div>
-            </a>
-            <a href="/et/blog/6.html" class="scroll-item">
-              <img src="/public/img/blog/6.jpg" alt="Massaažiterapeutide roll ennetavas meditsiinis" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massaažiterapeutide roll ennetava meditsiini praktikas</div>
-                <div class="scroll-item-description">Saa teada, kuidas regulaarne massaaž aitab ennetada terviseprobleeme ja säilitada heaolu.</div>
-              </div>
-            </a>
-            <a href="/et/blog/7.html" class="scroll-item">
-              <img src="/public/img/blog/7.jpg" alt="Massaaž tänapäeva meditsiinis" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massaaž on tänapäeva meditsiinis oluline ravimeetod</div>
-                <div class="scroll-item-description">Avasta, miks massaaži tunnustatakse üha enam kui tänapäeva tervishoiu olulist osa.</div>
-              </div>
-            </a>
-            <a href="/et/blog/12.html" class="scroll-item">
-              <img src="/public/img/blog/12.jpg" alt="Füsioteraapia ja ravimassaaži sünergia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Füsioteraapia ja ravimassaaži sünergia</div>
-                <div class="scroll-item-description">Füsioteraapia kombineerimine massaažiga võib viia terviklikuma ja tõhusama taastumiseni.</div>
-              </div>
-            </a>
-            <a href="/et/blog/13.html" class="scroll-item">
-              <img src="/public/img/blog/13.jpg" alt="Massööri peamised abivahendid – funktsionaalne anatoomia ja kinesioloogia" class="scroll-item-image" loading="lazy">
-              <div class="scroll-item-content">
-                <div class="scroll-item-title">Massööri peamised abivahendid – Funktsionaalne anatoomia ja kinesioloogia</div>
-                <div class="scroll-item-description">Keha struktuuri ja liikumise mõistmine on tõhusa massaažiteraapia jaoks ülioluline.</div>
-              </div>
-            </a>
-          </div>
-          <div class="scroll-nav">
-            <button class="scroll-arrow" onclick="scrollContainer('blog-scroll', -300)" aria-label="Keri vasakule">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button class="scroll-arrow" onclick="scrollContainer('blog-scroll', 300)" aria-label="Keri paremale">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </section>
-        <!-- FAQ section - Optimized for AI Overview (shorter, more direct answers) -->
-        <section class="scroll-section" id="faq-section">
-          <h2>Korduma Kippuvad Küsimused</h2>
-          <div id="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">Millistele probleemidele on meditsiiniline massaaž mõeldud?</div>
-              <div class="faq-answer">Meditsiiniline massaaž aitab krooniliste lihasvalude, närvipitsumise, migreenide ja liigeste jäikuse korral. See keskendub konkreetse probleemi ravimisele, mitte lihtsalt lõõgastamisele.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Kuidas erineb meditsiiniline massaaž tavalisest massaažist?</div>
-              <div class="faq-answer">Meditsiiniline massaaž on sihitud teraapia, mis kasutab süvakudede tehnikaid ja anatoomilisi teadmisi konkreetsete terviseprobleemide lahendamiseks. Tavaline massaaž keskendub üldisele lõõgastusele.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Kui sageli peaksin tegema meditsiinilist massaaži?</div>
-              <div class="faq-answer">Aktiivse ravi ajal soovitame 4–7-päevaste vahedega seanssi. Pärast tulemuste saavutamist piisab hooldusseanssidest kord kuus. Terapeut koostab personaalse plaani.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Kas meditsiiniline massaaž võib olla valus?</div>
-              <div class="faq-answer">Meditsiiniline massaaž on intensiivsem kui tavaline, kuid ei tohiks põhjustada liigset valu. Terapeut kohandab survet vastavalt teie tagasisidele – avatud suhtlus seansi ajal on oluline.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Kuidas valmistuda massaažiks?</div>
-              <div class="faq-answer">Vältige enne seanssi rasket toitu ja jooge vett. Pärast massaaži tarbige 1–2 liitrit vett, tehke kerget liikumist ja puhake piisavalt. Intensiivne treening ei ole kohe soovitatav.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Millised on lümfimassaaži vastunäidustused?</div>
-              <div class="faq-answer">Lümfimassaaži tuleb vältida ägedate infektsioonide, palaviku, südame- või neerupuudulikkuse, aktiivsete kasvajate ja sügavate veenitrombide korral. Krooniliste haiguste puhul konsulteerige arstiga.</div>
-            </div>
-          </div>
-        </section>
-        <!-- Elfsight Google Reviews widget -->
-        <div class="elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9" data-elfsight-app-lazy></div>
-        <!-- Video -->
-        <iframe src="https://www.youtube.com/embed/w3Ld7qczhHU?si=yYNA4vY2RCwRVQ2t" title="MV Therapy professionaalne massaaž ja magnetravi teraapia Pärnus" allowfullscreen loading="lazy"></iframe>
-        <!-- BRONEERIMISSÜSTEEMI KONTEINER -->
-        <div id="broneeri-container"></div>
+      <div class="header-actions">
+        <div class="mobile-lang-header" aria-label="Keeled">
+          <a href="/et/home.html" class="active">EST</a>
+          <a href="/ru/home.html">РУС</a>
+          <a href="/en/home.html">ENG</a>
+        </div>
+        <div class="lang-switch" aria-label="Keeled">
+          <a href="/et/home.html" class="active">EST</a>
+          <a href="/ru/home.html">РУС</a>
+          <a href="/en/home.html">ENG</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Ava menüü">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
       </div>
-    </main>
-    <button class="goTop" id="scrollBtn" title="Keri üles" aria-label="Keri lehe algusesse">
-      <span class="material-symbols-outlined">expand_less</span>
-    </button>
-    <footer class="page-footer">
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
       <div class="container">
-        <div class="flx-container">
-          <div>
-            <span class="material-symbols-outlined" aria-hidden="true">copyright</span> 
-            2025 MVTherapy - Parim Massaaž Pärnus
+        <nav aria-label="Mobiilimenüü">
+          <a href="/et/home.html">Avaleht</a>
+          <a href="/et/services.html">Massaažid</a>
+          <a href="/et/Diagnosis.html">Diagnoosid</a>
+          <a href="/et/campaign.html">Kampaaniad</a>
+          <a href="/et/workshops.html">Koolitused</a>
+          <a href="/et/team.html">Meeskond</a>
+          <a href="/et/kkk.html">KKK</a>
+          <a href="/et/blog.html">Blogi</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">5.0★ Google hinnang · 5 000+ klienti · Pärnu kesklinn</div>
+          <h1>Massaaž Pärnus&nbsp; MV&nbsp;Therapy</h1>
+          <p class="lead">Meditsiinilisele massaažile spetsialiseerunud teraapiakeskus <strong>Rüütli 47, Pärnu kesklinnas</strong>. Pakume triggerpunkti teraapiat, kõrgintensiivset magnetteraapiat, lööklaine teraapiat, süvakudede massaaži, spordimassaaži, klassikalist ja lõõgastavat massaaži – kokku üle 14 erineva teenuse. Kõik teostab <strong>6. taseme kutsetunnistusega massaažiterapeut</strong>.</p>
+          <div class="hero-pills">
+            <a class="pill" href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener noreferrer">6. taseme kutsetunnistus ↗</a>
+            <a class="pill" href="https://share.google/qSNawGe4CYtPM7RS1" target="_blank" rel="noopener noreferrer">📍 Rüütli 47, Pärnu</a>
+            <span class="pill pill-lang"><a href="/et/home.html">ET</a> · <a href="/ru/home.html">RU</a> · <a href="/en/home.html">EN</a></span>
+            <a class="pill" href="/et/services.html">Meditsiiniline & lõõgastav</a>
           </div>
-          <div>
-            Pärnu, Rüütli 47 II korrus<br>
-            <span class="material-symbols-outlined" aria-hidden="true">home_pin</span> 
-            <a href="/et/map.html">Asukoht kaardil</a>
+          <div class="trustbar">
+            <div class="trust"><strong>5 000+</strong><span>rahulolev klient</span></div>
+            <div class="trust"><strong>2020–</strong><span>tegutsenud Pärnus</span></div>
+            <div class="trust"><strong>5.0★</strong><span>Google hinnang</span></div>
+            <div class="trust"><strong>3 keelt</strong><span>ET, RU, EN</span></div>
           </div>
-          <div>
-            <span class="material-symbols-outlined" aria-hidden="true">contact_phone</span> 
-            Tel. <a href="tel:+37258189561">+372 5818 9561</a><br>
-            <span class="material-symbols-outlined" aria-hidden="true">outgoing_mail</span> 
-            <a href="mailto:info@mvtherapy.ee">info@mvtherapy.ee</a>
+          <!-- Google Reviews inside hero -->
+          <div class="hero-reviews">
+            <div class="elfsight-app-c135dfda-edeb-4fe3-9a87-35daacb460c9" data-elfsight-app-lazy></div>
           </div>
-          <div>
-            <a href="https://www.facebook.com/profile.php?id=100090837369433" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               title="Külasta meie Facebook lehte"
-               aria-label="Facebook">
-            <img src="/public/img/fb_svg.png" 
-                   style="width:36px" 
-                   alt="Facebook" 
-                   width="36" 
-                   height="36" 
-                   loading="lazy">
-            </a>
+        </div>
+
+        <aside class="hero-visual" aria-label="Teraapia pilt ja asukohainfo">
+          <img src="/public/img/m1.jpg" alt="Massaažiterapeut Roman Gussev kutsetunnistuste taustal">
+          <div class="location-callout">
+            <strong>📍 Meie asukoht Pärnu südames:</strong> Asume Pärnu vanalinna peamisel jalakäijate tänaval <strong>Rüütli 47, 2. korrus</strong> – ajaloolise vanalinna südames. Punase Torni (15. sajandi mälestusmärk) ja Iseseisvuse väljaku lähedal. Pärnu rand on 15-minutilise jalutuskäigu kaugusel. <strong>Teenindame Pärnu elanikke ja külastajaid alates 2020. aastast</strong> – üle 5000 rahulolev klient Pärnust ja üle Eesti!
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="teenused">
+      <div class="container">
+        <div class="section-head">
+          <h2>Meie massaažiteenused Pärnus</h2>
+          <a class="btn btn-secondary" href="/et/services.html">Kõik teenused →</a>
+        </div>
+        <div class="scroll-track" id="services-scroll">
+          <a href="/et/services/2.html" class="s-card">
+            <img src="/public/img/services/6.jpg" alt="Klassikalise massaaži seanss lõõgastavas keskkonnas">
+            <div class="s-card-body"><h3>Klassikaline massaaž</h3><p>Silitused, hõõrumine ja paitamine vereringe parandamiseks Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/1.html" class="s-card">
+            <img src="/public/img/services/2.jpg" alt="Meditsiinilise massaaži protseduur selja piirkonnas">
+            <div class="s-card-body"><h3>Meditsiiniline massaaž</h3><p>Tervislik lähenemine krooniliste lihasvalude ravimiseks Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/15.html" class="s-card">
+            <img src="/public/img/blog/102.jpg" alt="Magnetteraapia seade raviseansil">
+            <div class="s-card-body"><h3>Kõrgintensiivne magnetteraapia</h3><p>Revolutsiooniline valuravi meetod ilma ravimiteta Rüütli 47.</p></div>
+          </a>
+          <a href="/et/services/3.html" class="s-card">
+            <img src="/public/img/services/20.png" alt="Lööklaine teraapia seade ja protseduur">
+            <div class="s-card-body"><h3>Lööklaine teraapia</h3><p>Helilained kroonilise valu ja põletiku leevendamiseks Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/4.html" class="s-card">
+            <img src="/public/img/services/5.jpg" alt="Terapeut töötab triggerpunkti piirkonnas">
+            <div class="s-card-body"><h3>Triggerpunkti teraapia</h3><p>Valulike lihassõlmede ja pingekohtade vabastamine Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/5.html" class="s-card">
+            <img src="/public/img/services/10.jpg" alt="Spordimassaaži seanss sportlasele">
+            <div class="s-card-body"><h3>Spordimassaaž</h3><p>Sportlastele enne ja pärast treeningut Pärnu massaažikeskuses.</p></div>
+          </a>
+          <a href="/et/services/6.html" class="s-card">
+            <img src="/public/img/services/16.jpg" alt="Süvakudede massaaži tehnika seljal">
+            <div class="s-card-body"><h3>Süvakudede massaaž</h3><p>Lihaste sügavamate kihtide kroonilise valu ravi Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/7.html" class="s-card">
+            <img src="/public/img/services/14.jpg" alt="Kupumassaaži vaakumkupud seljal">
+            <div class="s-card-body"><h3>Kupumassaaž</h3><p>Vaakum parandab lümfi- ja vereringet Pärnu massaažikeskuses.</p></div>
+          </a>
+          <a href="/et/services/8.html" class="s-card">
+            <img src="/public/img/services/12.jpg" alt="Gua Sha kraapimistehnika protseduur">
+            <div class="s-card-body"><h3>Gua Sha teraapia</h3><p>Traditsiooniline Hiina nahakraapimise tehnika vereringe stimuleerimiseks Pärnus.</p></div>
+          </a>
+          <a href="/et/services/9.html" class="s-card">
+            <img src="/public/img/services/13.jpg" alt="Biovoolu massaaži seanss mikrovooludega">
+            <div class="s-card-body"><h3>Biovoolu massaaž</h3><p>Mikrovoolud ja bioelektriline stimulatsioon naha elastsuse suurendamiseks Pärnus.</p></div>
+          </a>
+          <a href="/et/services/10.html" class="s-card">
+            <img src="/public/img/services/3.jpg" alt="Lümfimassaaži õrn tehnika jäsemetel">
+            <div class="s-card-body"><h3>Lümfimassaaž</h3><p>Lümfivedeliku voolu suurendamine ja tursete vähendamine Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/11.html" class="s-card">
+            <img src="/public/img/services/7.jpg" alt="Jalatalla massaaž refleksoloogi tehnikaga">
+            <div class="s-card-body"><h3>Jalatalla massaaž</h3><p>Jalgade vereringe ja funktsionaalsuse parandamine Rüütli 47.</p></div>
+          </a>
+          <a href="/et/services/12.html" class="s-card">
+            <img src="/public/img/services/9.jpg" alt="Ultraheli teraapia seade kudede raviks">
+            <div class="s-card-body"><h3>Ultraheli teraapia</h3><p>Mikrovibratsioon soojendab kudesid ja parandab ainevahetust Pärnu kesklinnas.</p></div>
+          </a>
+          <a href="/et/services/13.html" class="s-card">
+            <img src="/public/img/services/18.jpg" alt="Terapeut hindab kliendi liikuvust ja poosi">
+            <div class="s-card-body"><h3>Manuaalne lihastestimine</h3><p>Poose ja liikumismustrite analüüs personaalseks massaaži plaaniks Pärnus.</p></div>
+          </a>
+          <a href="/et/services/14.html" class="s-card">
+            <img src="/public/img/services/1.jpg" alt="Kinesioteibi paigaldamine liigesele">
+            <div class="s-card-body"><h3>Kinesioteipimine</h3><p>Lihaste ja liigeste taastumise ning raviprotsessi toetamine Pärnu kesklinnas.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('services-scroll',-320)" aria-label="Keri vasakule"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('services-scroll',320)" aria-label="Keri paremale"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNOSIS SCROLL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Diagnoosipõhine ravi Pärnus</h2>
+          <a class="btn btn-secondary" href="/et/Diagnosis.html">Kõik diagnoosid →</a>
+        </div>
+        <div class="scroll-track" id="diagnosis-scroll">
+          <a href="/et/Diagnosis/1.html" class="s-card">
+            <img src="/public/img/Diagnosis/1d.jpg" alt="Seljavaluga klient saab lülisamba ravi">
+            <div class="s-card-body"><h3>Protrusiooni, hernatsiooni ja ekstrusiooni ravi</h3><p>Lüllivahelise ketta probleemide tõhus ravi ilma operatsioonita Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/2.html" class="s-card">
+            <img src="/public/img/blog/101.jpg" alt="Kuke kannuse ravi lööklaine teraapiaga">
+            <div class="s-card-body"><h3>Plantaarfastsiidi (kuke kannuse) ravi</h3><p>Lõpetage hommikune kannuvalu! Lööklaine teraapia kiirendab paranemist Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/3.html" class="s-card">
+            <img src="/public/img/Diagnosis/3d.jpg" alt="Küünarnuki epikondüliidi raviseanss">
+            <div class="s-card-body"><h3>Lateraalne ja mediaalne epikondüliit</h3><p>Tennisisti ja golfisti küünarnuku kiire ravi kombineeritud teraapiatega Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/4.html" class="s-card">
+            <img src="/public/img/Diagnosis/4d.jpg" alt="Piriformise lihase teraapia vaagnapiirkonnas">
+            <div class="s-card-body"><h3>Piriformise sündroomi ravi</h3><p>Istmikunärvi valu ja tuharavalu efektiivne ravi magnetteraapiaga Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/5.html" class="s-card">
+            <img src="/public/img/Diagnosis/5d.jpg" alt="Magnetteraapia seanss vaimse tervise toetamiseks">
+            <div class="s-card-body"><h3>Deep Reset – Depressiooni, ärevuse ravi</h3><p>Aju sügav reset ilma ravimiteta. Magnetravi tasakaalustab neurotransmitterid Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/6.html" class="s-card">
+            <img src="/public/img/Diagnosis/6d.jpg" alt="Peavalude leevendamine manuaalteraapiaga">
+            <div class="s-card-body"><h3>Migreeni (kroonilise peavalu) ravi</h3><p>Manuaalteraapia ja magnetravi kombinatsioon katkestab valu nõiaringi Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/7.html" class="s-card">
+            <img src="/public/img/Diagnosis/7d.jpg" alt="Vaagnapõhja magnetteraapia protseduur">
+            <div class="s-card-body"><h3>Erektsioonihäire (ED) ravi</h3><p>Magnetiline intensiivravi tugevdab vaagnapõhjalihaseid ja parandab vereringet Pärnus.</p></div>
+          </a>
+          <a href="/et/Diagnosis/8.html" class="s-card">
+            <img src="/public/img/Diagnosis/8d.jpg" alt="Külmunud õla teraapia liikuvuse taastamiseks">
+            <div class="s-card-body"><h3>Adhesiivse kapsuliidi ravi</h3><p>Külmunud õla kiire ravi. Lööklaine- ja magnetteraapia taastab liikuvuse Pärnus.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('diagnosis-scroll',-320)" aria-label="Keri vasakule"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('diagnosis-scroll',320)" aria-label="Keri paremale"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG SCROLL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Blogiartiklid</h2>
+          <a class="btn btn-secondary" href="/et/blog.html">Kõik artiklid →</a>
+        </div>
+        <div class="scroll-track" id="blog-scroll">
+          <a href="/et/blog/102.html" class="s-card">
+            <img src="/public/img/blog/102.jpg" alt="Kõrgintensiivne magnetravi teraapia">
+            <div class="s-card-body"><h3>Kõrgintensiivne magnetravi teraapia</h3><p>Kui keha saadab pidevalt märguandeid – valu ei taandu...</p></div>
+          </a>
+          <a href="/et/blog/101.html" class="s-card">
+            <img src="/public/img/blog/101.jpg" alt="Krooniline kukekannus ja lööklaine teraapia">
+            <div class="s-card-body"><h3>Krooniline kukekannus: Lööklaineteraapia efektiivsus</h3><p>Kui hommikul voodist tõustes käib kannast läbi valusähvatus...</p></div>
+          </a>
+          <a href="/et/blog/59.html" class="s-card">
+            <img src="/public/img/blog/59.jpg" alt="Lööklaine teraapia">
+            <div class="s-card-body"><h3>Lööklaine teraapia</h3><p>Kaasaegne ja mitteinvasiivne ravimeetod, mis kasutab kõrgsageduslikke helilaineid...</p></div>
+          </a>
+          <a href="/et/blog/36.html" class="s-card">
+            <img src="/public/img/blog/36.jpg" alt="Kutsetunnistusega massaažiterapeut">
+            <div class="s-card-body"><h3>Kutsetunnistusega terapeut versus kiirkursused</h3><p>Mõista kvalifikatsioonide erinevust massaažiterapeudi valimisel.</p></div>
+          </a>
+          <a href="/et/blog/35.html" class="s-card">
+            <img src="/public/img/blog/35.jpg" alt="Massaaž jooksjatele">
+            <div class="s-card-body"><h3>Massaaž jooksjatele: spetsialisti pilgu läbi</h3><p>Professionaali juhend massaaži kasulikkusest jooksjate taastumisele.</p></div>
+          </a>
+          <a href="/et/blog/24.html" class="s-card">
+            <img src="/public/img/blog/24.jpg" alt="Süvakoemassaaž ja närviretseptorid">
+            <div class="s-card-body"><h3>Süvakoemassaaž ja närviretseptorid</h3><p>Saa teada süvakoemassaaži teaduslikust taustast ja selle mõjust.</p></div>
+          </a>
+          <a href="/et/blog/22.html" class="s-card">
+            <img src="/public/img/blog/22.jpg" alt="Lümfimassaaž">
+            <div class="s-card-body"><h3>Lümfimassaaž: tervise ja heaolu edendamine</h3><p>Lümfimassaaži kasulikkus detoksikatsiooniks ja immuunsüsteemi toetamiseks.</p></div>
+          </a>
+          <a href="/et/blog/19.html" class="s-card">
+            <img src="/public/img/blog/19.jpg" alt="Karpaalkanali sündroom">
+            <div class="s-card-body"><h3>Karpaalkanali sündroomi leevendamine</h3><p>Kuidas massaažiteraapia pakub loomulikku viisi sümptomite leevendamiseks.</p></div>
+          </a>
+          <a href="/et/blog/5.html" class="s-card">
+            <img src="/public/img/blog/5.jpg" alt="Massaaž võitlussportlastele">
+            <div class="s-card-body"><h3>Massaaži tähtsus võitlussportlastele</h3><p>Massaaž võtmerolli taastumisel ja sooritusvõime parandamisel.</p></div>
+          </a>
+          <a href="/et/blog/6.html" class="s-card">
+            <img src="/public/img/blog/6.jpg" alt="Massaažiterapeutide roll ennetavas meditsiinis">
+            <div class="s-card-body"><h3>Massaažiterapeudi roll ennetavas meditsiinis</h3><p>Kuidas regulaarne massaaž aitab ennetada terviseprobleeme.</p></div>
+          </a>
+          <a href="/et/blog/7.html" class="s-card">
+            <img src="/public/img/blog/7.jpg" alt="Massaaž tänapäeva meditsiinis">
+            <div class="s-card-body"><h3>Massaaž tänapäeva meditsiinis</h3><p>Miks tunnustatakse massaaži üha enam tervishoiu olulise osana.</p></div>
+          </a>
+          <a href="/et/blog/12.html" class="s-card">
+            <img src="/public/img/blog/12.jpg" alt="Füsioteraapia ja ravimassaaži sünergia">
+            <div class="s-card-body"><h3>Füsioteraapia ja ravimassaaži sünergia</h3><p>Kombineerimine massaažiga viib terviklikuma ja tõhusama taastumiseni.</p></div>
+          </a>
+          <a href="/et/blog/13.html" class="s-card">
+            <img src="/public/img/blog/13.jpg" alt="Funktsionaalne anatoomia ja kinesioloogia">
+            <div class="s-card-body"><h3>Funktsionaalne anatoomia ja kinesioloogia</h3><p>Keha struktuuri ja liikumise mõistmine tõhusa teraapia jaoks.</p></div>
+          </a>
+        </div>
+        <div class="scroll-nav">
+          <button class="scroll-arrow" onclick="scrollEl('blog-scroll',-320)" aria-label="Keri vasakule"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button class="scroll-arrow" onclick="scrollEl('blog-scroll',320)" aria-label="Keri paremale"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Korduma kippuvad küsimused</h2>
+          <a class="btn btn-secondary" href="/et/kkk.html">Rohkem küsimusi →</a>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>Millistele probleemidele on meditsiiniline massaaž mõeldud?</summary>
+            <div class="faq-body">Meditsiiniline massaaž aitab krooniliste lihasvalude, närvipitsumise, migreenide ja liigeste jäikuse korral. See keskendub konkreetse probleemi ravimisele, mitte lihtsalt lõõgastamisele.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Kuidas erineb meditsiiniline massaaž tavalisest massaažist?</summary>
+            <div class="faq-body">Meditsiiniline massaaž on sihitud teraapia, mis kasutab süvakudede tehnikaid ja anatoomilisi teadmisi konkreetsete terviseprobleemide lahendamiseks. Tavaline massaaž keskendub üldisele lõõgastusele.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Kui sageli peaksin tegema meditsiinilist massaaži?</summary>
+            <div class="faq-body">Aktiivse ravi ajal soovitame 4–7-päevaste vahedega seanssi. Pärast tulemuste saavutamist piisab hooldusseanssidest kord kuus. Terapeut koostab personaalse plaani.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Kas meditsiiniline massaaž võib olla valus?</summary>
+            <div class="faq-body">Meditsiiniline massaaž on intensiivsem kui tavaline, kuid ei tohiks põhjustada liigset valu. Terapeut kohandab survet vastavalt teie tagasisidele – avatud suhtlus seansi ajal on oluline.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Kuidas valmistuda massaažiks?</summary>
+            <div class="faq-body">Vältige enne seanssi rasket toitu ja jooge vett. Pärast massaaži tarbige 1–2 liitrit vett, tehke kerget liikumist ja puhake piisavalt. Intensiivne treening ei ole kohe soovitatav.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Millised on lümfimassaaži vastunäidustused?</summary>
+            <div class="faq-body">Lümfimassaaži tuleb vältida ägedate infektsioonide, palaviku, südame- või neerupuudulikkuse, aktiivsete kasvajate ja sügavate veenitrombide korral. Krooniliste haiguste puhul konsulteerige arstiga.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="container">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/w3Ld7qczhHU?si=yYNA4vY2RCwRVQ2t" allowfullscreen loading="lazy" title="MV Therapy tutvustus"></iframe>
+      </div>
+    </section>
+
+    <!-- SEO CONTENT BLOCK — keyword-rich, visually subtle, valuable for Google -->
+    <section class="section seo-section">
+      <div class="container">
+        <h2>Massaažiteraapia Pärnus  MV Therapy</h2>
+        <div class="seo-grid">
+          <div class="seo-col">
+            <h3>Terapeudi kvalifikatsioon</h3>
+            <p>MV Therapy massaažiterapeut <strong>Roman Gussev</strong> omab <a href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener">6. taseme kutsetunnistust (nr 219003)</a>, mis on Eesti massaažiterapeudi kõrgeim kutsetase. Lisaks on Roman lõpetanud Tallinna Tervishoiu Kõrgkooli meditsiiniõe õppekava, mis annab süvendatud teadmised anatoomiast, füsioloogiast ja patoloogiast.</p>
+            <p>Alates 2020. aastast on MV Therapy teenindanud üle 5000 kliendi. Vastuvõtt toimub aadressil <a href="https://share.google/qSNawGe4CYtPM7RS1" target="_blank" rel="noopener">Rüütli 47, Pärnu kesklinn</a>. Teenindame eesti, vene ja inglise keeles. <a href="/et/team.html">Loe lähemalt terapeudi taustast →</a></p>
+          </div>
+          <div class="seo-col">
+            <h3>Teenused ja meetodid</h3>
+            <p>Pakume üle 14 erineva massaažiteenuse Pärnus: <a href="/et/services/1.html">meditsiiniline massaaž</a>, <a href="/et/services/2.html">klassikaline massaaž</a>, <a href="/et/services/5.html">spordimassaaž</a>, <a href="/et/services/6.html">süvakudede massaaž</a>, <a href="/et/services/4.html">triggerpunkti teraapia</a>, <a href="/et/services/7.html">kupumassaaž</a>, <a href="/et/services/10.html">lümfimassaaž</a>, <a href="/et/services/8.html">Gua Sha</a>, <a href="/et/services/9.html">biovoolu massaaž</a>, <a href="/et/services/11.html">jalatalla massaaž</a>, <a href="/et/services/12.html">ultraheli teraapia</a>, <a href="/et/services/14.html">kinesioteipimine</a> ja <a href="/et/services/13.html">manuaalne lihastestimine</a>.</p>
+            <p>Lisaks manuaalsele teraapiale pakume Pärnus ka <a href="/et/services/15.html">kõrgintensiivset magnetteraapiat (EMTT)</a> ja <a href="/et/services/3.html">lööklaine teraapiat (ESWT)</a>  tõenduspõhiseid meetodeid krooniliste lihas-skeleti probleemide lahendamiseks.</p>
+          </div>
+          <div class="seo-col">
+            <h3>Kellele sobib ja kellele mitte</h3>
+            <p>Meie teenused sobivad inimestele, kes kannatavad krooniliste lihaspingete, seljavalu, kaelavalu, peavalude, liigeste jäikuse või ülekoormusest tekkinud kaebuste all. Samuti sportlastele, kes soovivad kiirendada taastumist ja parandada sooritusvõimet.</p>
+            <p>Massaaž <strong>ei sobi</strong> ägeda põletiku, palaviku, nahainfektsioonide, tromboosi ega onkoloogiliste haiguste aktiivse faasi korral. Krooniliste haiguste puhul soovitame eelnevalt konsulteerida oma arstiga. <a href="/et/kkk.html">Vaata korduma kippuvaid küsimusi →</a></p>
           </div>
         </div>
       </div>
-    </footer>
-    <div id="cookieNotice" class="light display-right" style="display: none;" role="dialog" aria-label="Küpsiste teade">
-      <div class="content-wrap">
-        <div class="msg-wrap">
-          <p>
-            Kasutame küpsiseid teie sirvimiskogemuse parandamiseks, isikupärastatud reklaamide või sisu esitamiseks ja liikluse analüüsimiseks. Klõpsates "OK", nõustute meie küpsiste kasutamisega.
-            <button class="btn-primary" aria-label="Nõustu küpsistega">OK</button>
-          </p>
+    </section>
+
+    <!-- SalonLife booking widget mount point (hidden - opens as popup via button click) -->
+    <div id="broneeri-container" style="height:0;overflow:hidden;margin:0;padding:0;"></div>
+  </main>
+
+  <!-- GO TOP -->
+  <button class="go-top" id="goTop" aria-label="Keri lehe algusesse">
+    <span class="material-symbols-outlined">expand_less</span>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>MV Therapy</strong>
+          <div>Medical Verified Therapy</div>
+          <div style="margin-top:6px;font-size:.82rem;">© 2025 MV Therapy – Massaaž Pärnus</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100090837369433" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img src="/public/img/fb_svg.png" alt="Facebook" width="32" height="32">
+            </a>
+            <a href="https://www.instagram.com/medmassaaz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:#fff;font-weight:700;font-size:.85rem;">IG</a>
+            <a href="https://www.tiktok.com/@medmassaaz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color:#fff;font-weight:700;font-size:.85rem;">TT</a>
+          </div>
+        </div>
+        <div>
+          <strong>Aadress</strong>
+          <div>Rüütli 47 II korrus</div>
+          <div>80010 Pärnu, Eesti</div>
+          <a href="/et/map.html" style="font-size:.85rem;">📍 Vaata kaardil</a>
+        </div>
+        <div>
+          <strong>Kontakt</strong>
+          <div><a href="tel:+37258189561">+372 5818 9561</a></div>
+          <div><a href="mailto:info@mvtherapy.ee">info@mvtherapy.ee</a></div>
+        </div>
+        <div>
+          <strong>Lehed</strong>
+          <div><a href="/et/services.html">Teenused</a></div>
+          <div><a href="/et/Diagnosis.html">Diagnoosid</a></div>
+          <div><a href="/et/blog.html">Blogi</a></div>
+          <div><a href="/et/kkk.html">KKK</a></div>
         </div>
       </div>
     </div>
+  </footer>
+
+  <!-- STICKY MOBILE BOOKING BAR -->
+  <div class="mobile-book-bar" id="mobileBookBar">
+    <div class="book-info">
+      <strong>MV Therapy</strong>
+      Rüütli 47, Pärnu
+    </div>
+    <button class="btn btn-primary book-trigger">Broneeri</button>
   </div>
-  <!-- FAQPage structured data for LLM and SEO - Optimized shorter answers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Millistele probleemidele on meditsiiniline massaaž mõeldud?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Meditsiiniline massaaž aitab krooniliste lihasvalude, närvipitsumise, migreenide ja liigeste jäikuse korral. See keskendub konkreetse probleemi ravimisele, mitte lihtsalt lõõgastamisele."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kuidas erineb meditsiiniline massaaž tavalisest massaažist?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Meditsiiniline massaaž on sihitud teraapia, mis kasutab süvakudede tehnikaid ja anatoomilisi teadmisi konkreetsete terviseprobleemide lahendamiseks. Tavaline massaaž keskendub üldisele lõõgastusele."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kui sageli peaksin tegema meditsiinilist massaaži?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Aktiivse ravi ajal soovitame 4–7-päevaste vahedega seanssi. Pärast tulemuste saavutamist piisab hooldusseanssidest kord kuus. Terapeut koostab personaalse plaani."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kas meditsiiniline massaaž võib olla valus?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Meditsiiniline massaaž on intensiivsem kui tavaline, kuid ei tohiks põhjustada liigset valu. Terapeut kohandab survet vastavalt teie tagasisidele – avatud suhtlus seansi ajal on oluline."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kuidas valmistuda massaažiks?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vältige enne seanssi rasket toitu ja jooge vett. Pärast massaaži tarbige 2–3 liitrit vett, tehke kerget liikumist ja puhake piisavalt. Intensiivne treening ei ole kohe soovitatav."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Millised on lümfimassaaži vastunäidustused?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Lümfimassaaži tuleb vältida ägedate infektsioonide, palaviku, südame- või neerupuudulikkuse, aktiivsete kasvajate ja sügavate veenitrombide korral. Krooniliste haiguste puhul konsulteerige arstiga."
-        }
-      }
-    ]
-  }
-  </script>
-  <!-- Scripts -->
+
+  <!-- COOKIE NOTICE -->
+  <div id="cookieNotice" style="display:none;" role="dialog" aria-label="Küpsiste teade">
+    <p>Kasutame küpsiseid teie sirvimiskogemuse parandamiseks, isikupärastatud sisu esitamiseks ja liikluse analüüsimiseks.</p>
+    <button class="cookie-btn" id="cookieAccept">OK, nõustun</button>
+  </div>
+
+  <!-- === SCRIPTS === -->
+
+  <!-- Scroll helper -->
   <script>
-    // Scroll functionality for horizontal containers - INP optimized
-    function scrollContainer(containerId, scrollAmount) {
-      requestAnimationFrame(() => {
-        const container = document.getElementById(containerId);
-        if (container) {
-          container.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-          });
-        }
+    function scrollEl(id, amount) {
+      requestAnimationFrame(function() {
+        var el = document.getElementById(id);
+        if (el) el.scrollBy({ left: amount, behavior: 'smooth' });
       });
     }
-    // DOM Content Loaded Event
+  </script>
+
+  <!-- Mobile menu, scroll-top, cookie -->
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Mobile menu functionality - INP optimized
-      const hamburger = document.getElementById('hamburger');
-      const navInner = document.getElementById('nav-inner');
-      function toggleMobileMenu() {
-        requestAnimationFrame(() => {
-          navInner.classList.toggle('open');
-          hamburger.classList.toggle('active');
-          const isOpen = navInner.classList.contains('open');
-          hamburger.setAttribute('aria-expanded', isOpen);
-          if (isOpen) {
-            document.body.style.overflow = 'hidden';
-          } else {
-            document.body.style.overflow = '';
+      // Mobile menu
+      var toggle = document.getElementById('mobileToggle');
+      var panel = document.getElementById('mobilePanel');
+      if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+          var open = panel.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        panel.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+        });
+        document.addEventListener('click', function(e) {
+          if (!toggle.contains(e.target) && !panel.contains(e.target)) {
+            panel.classList.remove('open');
+            toggle.setAttribute('aria-expanded','false');
           }
         });
       }
-      hamburger.addEventListener('click', toggleMobileMenu);
-      hamburger.addEventListener('keypress', function(e) {
-        if (e.key === "Enter" || e.key === " ") {
+
+      // Booking triggers — click SalonLife widget button directly
+      document.querySelectorAll('.book-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
           e.preventDefault();
-          toggleMobileMenu();
-        }
-      });
-      // Close mobile menu when clicking nav links on mobile
-      document.querySelectorAll('.nav-item a').forEach(link => {
-        link.addEventListener('click', e => {
-          if(window.innerWidth <= 767) {
-            requestAnimationFrame(() => {
-              navInner.classList.remove('open');
-              hamburger.classList.remove('active');
-              hamburger.setAttribute('aria-expanded', 'false');
-              document.body.style.overflow = '';
-            });
+          var container = document.getElementById('broneeri-container');
+          if (!container) return;
+          // Temporarily make container visible so click registers
+          container.style.cssText = 'height:auto;overflow:visible;';
+          var slBtn = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
+          if (slBtn) {
+            slBtn.click();
+            // Re-hide after SalonLife popup opens
+            setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
+          } else {
+            // Widget may not be loaded yet, retry
+            setTimeout(function() {
+              var retry = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
+              if (retry) retry.click();
+              setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
+            }, 1000);
           }
         });
       });
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navInner.contains(e.target)) {
-          requestAnimationFrame(() => {
-            navInner.classList.remove('open');
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-          });
-        }
-      });
-      // Scroll to top button - throttled for performance
-      const scrollBtn = document.getElementById('scrollBtn');
-      let scrollTimeout;
-      function toggleScrollButton() {
-        if (scrollTimeout) return;
-        scrollTimeout = setTimeout(() => {
-          scrollTimeout = null;
-          if (window.scrollY > 200) {
-            scrollBtn.style.display = 'flex';
-          } else {
-            scrollBtn.style.display = 'none';
-          }
+
+      // Go top
+      var goTop = document.getElementById('goTop');
+      var scrollTimer;
+      window.addEventListener('scroll', function() {
+        if (scrollTimer) return;
+        scrollTimer = setTimeout(function() {
+          scrollTimer = null;
+          goTop.style.display = window.scrollY > 300 ? 'grid' : 'none';
         }, 100);
-      }
-      window.addEventListener('scroll', toggleScrollButton, { passive: true });
-      scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-      // Cookie notice functionality
-      const cookieNotice = document.getElementById('cookieNotice');
-      const cookieButton = cookieNotice.querySelector('.btn-primary');
-      // Check if cookies have been accepted
+      }, { passive: true });
+      goTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      // Cookie
+      var notice = document.getElementById('cookieNotice');
+      var accept = document.getElementById('cookieAccept');
       if (!localStorage.getItem('cookieAccepted')) {
-        setTimeout(() => {
-          cookieNotice.style.display = 'block';
-        }, 1000);
+        setTimeout(function() { notice.style.display = 'block'; }, 1200);
       }
-      cookieButton.addEventListener('click', function() {
-        localStorage.setItem('cookieAccepted', 'true');
-        cookieNotice.style.display = 'none';
-      });
-      // Initialize scroll button state
-      toggleScrollButton();
-      // Close menu on window resize
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-          requestAnimationFrame(() => {
-            navInner.classList.remove('open');
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-          });
-        }
+      accept.addEventListener('click', function() {
+        localStorage.setItem('cookieAccepted','true');
+        notice.style.display = 'none';
       });
     });
   </script>
-  <!-- Elfsight script for Google Reviews -->
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-  <!-- Booking System Script - SalonLife Widget -->
+
+  <!-- Scroll & entrance animations engine -->
   <script>
-    // Booking system text translations
-    var book_texts = {
-      et: 'Broneeri aeg',
-      ru: 'Записаться на приём',
-      en: 'Book appointment'
-    };
-    // SalonLife Widget Loader
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      function init() {
+        var main = document.getElementById('content');
+        if (!main) return;
+
+        /* ── 1. HERO entrance: assign data-anim to each element with stagger ── */
+        var hero = main.querySelector('.hero');
+        if (hero) {
+          var map = [
+            ['.eyebrow',      'right',  0],
+            ['h1',            'blur',   .12],
+            ['.lead',         'up',     .25],
+          ];
+          map.forEach(function(m) {
+            var el = hero.querySelector(m[0]);
+            if (el) { el.setAttribute('data-anim', m[1]); el.style.transitionDelay = m[2] + 's'; }
+          });
+          // Pills — pop in one by one
+          hero.querySelectorAll('.pill').forEach(function(p, i) {
+            p.setAttribute('data-anim', 'pop');
+            p.style.transitionDelay = (.35 + i * .08) + 's';
+          });
+          // Trust blocks — scale in with stagger, then float
+          hero.querySelectorAll('.trust').forEach(function(t, i) {
+            t.setAttribute('data-anim', 'scale');
+            t.style.transitionDelay = (.42 + i * .1) + 's';
+            t.style.setProperty('--float-d', (i * .6) + 's');
+          });
+          // Hero image
+          var heroImg = hero.querySelector('.hero-visual img');
+          if (heroImg) { heroImg.setAttribute('data-anim', 'scale'); heroImg.style.transitionDelay = '.15s'; }
+          // Location callout
+          var loc = hero.querySelector('.location-callout');
+          if (loc) { loc.setAttribute('data-anim', 'up'); loc.style.transitionDelay = '.3s'; }
+        }
+
+        /* ── 2. Section headings ── */
+        main.querySelectorAll('.section-head h2, .section-head .btn').forEach(function(el, i) {
+          el.setAttribute('data-anim', i % 2 === 0 ? 'up' : 'left');
+        });
+
+        /* ── 3. Scroll-track cards — slide up with stagger per track ── */
+        main.querySelectorAll('.scroll-track').forEach(function(track) {
+          track.querySelectorAll('.s-card').forEach(function(card, i) {
+            card.setAttribute('data-anim', 'up');
+            card.style.transitionDelay = (i * .07) + 's';
+          });
+        });
+
+        /* ── 4. Scroll nav arrows ── */
+        main.querySelectorAll('.scroll-nav .scroll-arrow').forEach(function(btn, i) {
+          btn.setAttribute('data-anim', i === 0 ? 'right' : 'left');
+          btn.style.transitionDelay = '.2s';
+        });
+
+        /* ── 5. FAQ items — alternate left/right ── */
+        main.querySelectorAll('.faq-item').forEach(function(faq, i) {
+          faq.setAttribute('data-anim', i % 2 === 0 ? 'left' : 'right');
+          faq.style.transitionDelay = (i * .08) + 's';
+        });
+
+        /* ── 6. Video ── */
+        var video = main.querySelector('.video-wrap');
+        if (video) { video.setAttribute('data-anim', 'scale'); }
+
+        /* ── 7. Single-box cards (Diagnosis, workshops, services pages) ── */
+        main.querySelectorAll('.flx-container-services .single-box').forEach(function(card, i) {
+          card.setAttribute('data-anim', 'up');
+          card.style.transitionDelay = (i * .07) + 's';
+        });
+
+        /* ── 8. IntersectionObserver — trigger .in class ── */
+        var vH = window.innerHeight || 700;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+        var allAnim = main.querySelectorAll('[data-anim]');
+        allAnim.forEach(function(el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < vH && rect.bottom > 0) {
+            // Already in viewport on load — small delay so user sees the entrance
+            setTimeout(function() { el.classList.add('in'); }, 80);
+          } else {
+            obs.observe(el);
+          }
+        });
+
+        /* ── 9. Re-observe scroll-track cards on scroll (they may be off-screen horizontally) ── */
+        main.querySelectorAll('.scroll-track').forEach(function(track) {
+          track.addEventListener('scroll', function() {
+            track.querySelectorAll('[data-anim]:not(.in)').forEach(function(card) {
+              var r = card.getBoundingClientRect();
+              if (r.left < window.innerWidth && r.right > 0) {
+                card.classList.add('in');
+              }
+            });
+          }, { passive: true });
+        });
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+
+  <!-- Elfsight Google Reviews -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  <!-- SalonLife Booking Widget -->
+  <script>
+    var book_texts = { et: 'Broneeri aeg', ru: 'Записаться на приём', en: 'Book appointment' };
     !function(e,n,t){
-      var i=document, o="script", a=i.createElement(o), d=i.getElementsByTagName(o)[0];
-      a.async=!0;
-      a.defer=!0;
-      a.src="//widget.salon.life/static/js/widget.js?t=" + (new Date()).getTime();
+      var i=document,o="script",a=i.createElement(o),d=i.getElementsByTagName(o)[0];
+      a.async=!0;a.defer=!0;
+      a.src="//widget.salon.life/static/js/widget.js?t="+(new Date).getTime();
       n&&a.addEventListener("load",function(){t.SalonLifeCb=n},!1);
       d.parentNode.insertBefore(a,d)
     }(0,function(){
-      // Initialize SalonLife Widget
       window.SalonLifeWidget.mount({
-        identifier: 3986, // Your clinic identifier
-        button_text: book_texts['et'], // Button text in Estonian
-        language: 'et', // Language setting
-        color: '#44437d', // Brand color
-        container: '#broneeri-container' // Container element
+        identifier:3986,button_text:book_texts.et,language:'et',color:'#44437d',container:'#broneeri-container'
       })
     },window);
   </script>
-  <!-- Analytics Script - Matomo -->
+
+  <!-- Matomo Analytics -->
   <script>
-    var _paq = window._paq = window._paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//mvtherapy.ee/matomo/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+    var _paq=window._paq=window._paq||[];
+    _paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);
+    (function(){var u="//mvtherapy.ee/matomo/";
+    _paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','1']);
+    var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];
+    g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();
   </script>
 </body>
 </html>
