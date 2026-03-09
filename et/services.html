@@ -160,6 +160,8 @@
       --bg: #f5f4fa;
       --surface: rgba(255,255,255,.78);
       --surface-solid: #ffffff;
+      --c-surface: var(--surface);
+      --c-text-muted: var(--text-secondary);
       --text: #1a1832;
       --text-secondary: #5e5977;
       --line: rgba(68,67,125,.10);
@@ -788,11 +790,11 @@
   </header>
 
   <!-- ===== MAIN ===== -->
-  <main id="content" id="main-app">
+  <main id="content">
       <div class="container">
         <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/et/index.html">Avaleht</a>
+          <a href="/et/home.html">Avaleht</a>
           <span>›</span>
           <span>Massaažiteenused Pärnus</span>
         </nav>
@@ -801,117 +803,117 @@
         
         <div class="flx-container-services">
           <!-- 1. Klassikaline massaaž → 1.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/1.html'">
+          <a class="single-box" href="/et/services/1.html">
             <h3>Klassikaline massaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/6.jpg" alt="Klassikalise massaaži seanss lõõgastavas keskkonnas" width="240" height="180">
             <div class="single-box-txt">Silitused, hõõrumine ja paitamine vereringe parandamiseks Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 2. Meditsiiniline massaaž → 2.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/2.html'">
+          <a class="single-box" href="/et/services/2.html">
             <h3>Meditsiiniline massaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/2.jpg" alt="Meditsiinilise ravimassaaži seanss krooniliste lihasvalude raviks" width="240" height="180">
             <div class="single-box-txt">Tervislik lähenemine krooniliste lihasvalude ravimiseks Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 3. Kõrgintensiivne magnetteraapia → 15.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/15.html'">
+          <a class="single-box" href="/et/services/15.html">
             <h3>Kõrgintensiivne magnetteraapia</h3>
             <img class="single-box-img"  src="/public/img/blog/102.jpg" alt="Kõrgintensiivne magnetteraapia raviseade protseduuris" width="240" height="180">
             <div class="single-box-txt">See on revolutsiooniline valuravi meetod ilma ravimiteta Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 4. Lööklaine teraapia → 3.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/3.html'">
+          <a class="single-box" href="/et/services/3.html">
             <h3>Lööklaine teraapia Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/20.png" alt="Lööklaine teraapia seade ja protseduur" width="240" height="180">
             <div class="single-box-txt">Helilained kroonilise valu ja põletiku leevendamiseks Rüütli 47...</div>
-          </div>
+          </a>
           
           <!-- 5. Triggerpunkti teraapia → 4.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/4.html'">
+          <a class="single-box" href="/et/services/4.html">
             <h3>Triggerpunkti teraapia Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/5.jpg" alt="Triggerpunkti teraapia seanss lihassõlmede vabastamiseks" width="240" height="180">
             <div class="single-box-txt">Valulike lihassõlmede ja pingekohtade vabastamine Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 6. Spordimassaaž → 5.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/5.html'">
+          <a class="single-box" href="/et/services/5.html">
             <h3>Spordimassaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/10.jpg" alt="Spordimassaaži seanss sportlasele enne ja pärast treeningut" width="240" height="180">
             <div class="single-box-txt">Sportlastele enne ja pärast treeningut Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 7. Süvakudede massaaž → 6.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/6.html'">
+          <a class="single-box" href="/et/services/6.html">
             <h3>Süvakudede massaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/16.jpg" alt="Süvakudede massaaži tehnika seanss lihaste sügavamate kihtide raviks" width="240" height="180">
             <div class="single-box-txt">Lihaste sügavamate kihtide kroonilise valu ravi Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 8. Kupumassaaž → 7.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/7.html'">
+          <a class="single-box" href="/et/services/7.html">
             <h3>Kupumassaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/14.jpg" alt="Kupumassaaž vaakumiga lümfi- ja vereringe parandamiseks" width="240" height="180">
             <div class="single-box-txt">Vaakum parandab lümfi- ja vereringet Pärnu massaaži keskuses...</div>
-          </div>
+          </a>
           
           <!-- 9. Gua Sha teraapia → 8.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/8.html'">
+          <a class="single-box" href="/et/services/8.html">
             <h3>Gua Sha teraapia Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/12.jpg" alt="Gua Sha nahakraapimise tehnika protseduur vereringe stimuleerimiseks" width="240" height="180">
             <div class="single-box-txt">Traditsiooniline Hiina nahakraapimise tehnika vereringe stimuleerimiseks Pärnus...</div>
-          </div>
+          </a>
           
           <!-- 10. Biovoolu massaaž → 9.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/9.html'">
+          <a class="single-box" href="/et/services/9.html">
             <h3>Biovoolu massaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/13.jpg" alt="Biovoolu teraapia mikrovoolud naha elastsuse suurendamiseks" width="240" height="180">
             <div class="single-box-txt">Mikrovoolud ja bioelektriline stimulatsioon naha elastsuse suurendamiseks Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 11. Lümfimassaaž → 10.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/10.html'">
+          <a class="single-box" href="/et/services/10.html">
             <h3>Lümfimassaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/3.jpg" alt="Lümfimassaaž lümfivedeliku voolu suurendamiseks ja tursete vähendamiseks" width="240" height="180">
             <div class="single-box-txt">Lümfivedeliku voolu suurendamine ja tursete vähendamine Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 12. Jalatalla massaaž → 11.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/11.html'">
+          <a class="single-box" href="/et/services/11.html">
             <h3>Jalatalla massaaž Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/7.jpg" alt="Jalatalla refleksoloogia massaaži seanss jalgade vereringe parandamiseks" width="240" height="180">
             <div class="single-box-txt">Jalgade vereringe ja funktsionaalsuse parandamine Rüütli 47...</div>
-          </div>
+          </a>
           
           <!-- 13. Ultraheli teraapia → 12.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/12.html'">
+          <a class="single-box" href="/et/services/12.html">
             <h3>Ultraheli teraapia Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/9.jpg" alt="Ultraheli teraapia seade kudede soojendamiseks ja ainevahetuse parandamiseks" width="240" height="180">
             <div class="single-box-txt">Mikrovibratsioon soojendab kudesid ja parandab ainevahetust Pärnu kesklinnas...</div>
-          </div>
+          </a>
           
           <!-- 14. Manuaalne lihastestimine → 13.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/13.html'">
+          <a class="single-box" href="/et/services/13.html">
             <h3>Manuaalne lihastestimine Pärnus</h3>
             <img class="single-box-img"  src="/public/img/services/18.jpg" alt="Manuaalne lihastestimise seanss poosi ja liikumismustrite analüüsiks" width="240" height="180">
             <div class="single-box-txt">Poose ja liikumismustrite analüüs personaalseks massaaži plaaniks Pärnus...</div>
-          </div>
+          </a>
           
           <!-- 15. Kinesioteipimine → 14.html -->
-          <div class="single-box" onclick="window.location.href='/et/services/14.html'">
+          <a class="single-box" href="/et/services/14.html">
             <h3>Kinesioteipimine Pärnus</h3>
-            <img class="single-box-img"  src="/public/img/services/1.jpg" alt="Kinesiosei paigaldamine lihaste ja liigeste toetamiseks raviprotsessis" width="240" height="180">
+            <img class="single-box-img"  src="/public/img/services/1.jpg" alt="Kinesioteibi paigaldamine lihaste ja liigeste toetamiseks raviprotsessis" width="240" height="180">
             <div class="single-box-txt">Lihaste ja liigeste taastumise ning raviprotsessi toetamine Pärnu kesklinnas...</div>
-          </div>
+          </a>
         </div>
         
         <!-- Local SEO Content Section -->
         <section class="seo-section">
           <h2>Professionaalne massaažiterapeut Pärnus - MV Therapy</h2>
-          <p>MV Therapy on Pärnu kesklinnas asuv professionaalne massaažisalong, mis pakub laia valikut massaažiteenuseid Rüütli 47 aadressil. Meie kogenud massaažiterapeut on spetsialiseerunud <strong>meditsiinilisele massaažile Pärnus</strong>, <strong>lööklaine terapiale</strong> ja teistele kaasaegsetele ravimeetoditele.</p>
+          <p>MV Therapy on Pärnu kesklinnas asuv professionaalne massaažisalong, mis pakub laia valikut massaažiteenuseid Rüütli 47 aadressil. Meie kogenud massaažiterapeut on spetsialiseerunud <strong>meditsiinilisele massaažile Pärnus</strong>, <strong>lööklaine teraapiale</strong> ja teistele kaasaegsetele ravimeetoditele.</p>
           
-          <p>Kui otsite <strong>kvaliteetset massaaži Pärnus</strong>, siis MV Therapy on õige valik. Pakume nii klassikalist relaxing massaaži kui ka spetsialiseeritud raviteenuseid nagu <strong>triggerpunkti teraapia</strong>, <strong>süvakudede massaaž</strong> ja <strong>lümfimassaaž</strong>. Meie massaažikeskus asub Pärnu kesklinnas ja on kergesti ligipääsetav.</p>
+          <p>Kui otsite <strong>kvaliteetset massaaži Pärnus</strong>, siis MV Therapy on õige valik. Pakume nii klassikalist lõõgastavat massaaži kui ka spetsialiseeritud raviteenuseid nagu <strong>triggerpunkti teraapia</strong>, <strong>süvakudede massaaž</strong> ja <strong>lümfimassaaž</strong>. Meie massaažikeskus asub Pärnu kesklinnas ja on kergesti ligipääsetav.</p>
           
           <p><strong>Massaažiteenused Pärnus:</strong> Klassikaline massaaž, Meditsiiniline massaaž, Kõrgintensiivne magnetteraapia, Lööklaine teraapia, Triggerpunkti teraapia, Spordimassaaž, Süvakudede massaaž, Kupumassaaž, Gua Sha teraapia, Biovoolu massaaž, Lümfimassaaž, Jalatalla massaaž, Ultraheli teraapia, Manuaalne lihastestimine, Kinesioteipimine.</p>
         </section>
@@ -935,8 +937,8 @@
               <img src="/public/img/fb_svg.png" alt="Facebook" width="32" height="32">
             </a>
             <a href="https://www.instagram.com/medmassaaz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:#fff;font-weight:700;font-size:.85rem;">IG</a>
-            <a href="https://www.tiktok.com/@medmassaaz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color:#fff;font-weight:700;font-size:.85rem;">TT</a>
-          </div>
+            <a href="https://www.tiktok.com/@medmassaaz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color:#fff;font-weight:700;font-size:.85rem;">TT</div>
+          </a>
         </div>
         <div>
           <strong>Aadress</strong>

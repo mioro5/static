@@ -432,10 +432,11 @@ def extract_main(html):
     m = re.search(r'(<main\b[^>]*>)(.*?)(</main>)', html, re.DOTALL | re.IGNORECASE)
     if m:
         open_tag, content, close_tag = m.group(1), m.group(2), m.group(3)
-        # Ensure id="content" is on main
+        # Ensure id="content" is on main and avoid duplicate id attributes.
         if 'id="content"' not in open_tag:
             open_tag = open_tag.replace('<main', '<main id="content"', 1)
-        # Remove broneeri-container from main if at the very end (we'll keep it)
+        # If a legacy/generated page has a second id attribute, drop it.
+        open_tag = re.sub(r'(<main\b[^>]*\bid="content"[^>]*?)\s+id="[^"]+"', r'\1', open_tag)
         return open_tag + content + close_tag
     return None
 
