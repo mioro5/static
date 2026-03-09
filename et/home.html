@@ -663,6 +663,56 @@
       transition-duration: .55s;
     }
 
+    /* ── Grid layout for .single-box cards (Diagnosis, workshops, services pages) ── */
+    .flx-container-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 540px) {
+      .flx-container-services { grid-template-columns: 1fr; }
+    }
+    .single-box {
+      background: var(--c-surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .single-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .single-box-img {
+      width: 100%;
+      max-width: 240px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+    .single-box h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--brand);
+      margin-bottom: .5rem;
+    }
+    .single-box-txt {
+      font-size: .9rem;
+      color: var(--c-text-muted);
+      line-height: 1.6;
+      text-align: left;
+    }
+    /* Animate single-box cards like s-cards */
+    .flx-container-services [data-anim] {
+      transition-duration: .55s;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       [data-anim] {
         opacity: 1 !important; transform: none !important;
@@ -1237,6 +1287,12 @@
         /* ── 6. Video ── */
         var video = main.querySelector('.video-wrap');
         if (video) { video.setAttribute('data-anim', 'scale'); }
+
+        /* ── 7. Single-box cards (Diagnosis, workshops, services pages) ── */
+        main.querySelectorAll('.flx-container-services .single-box').forEach(function(card, i) {
+          card.setAttribute('data-anim', 'up');
+          card.style.transitionDelay = (i * .07) + 's';
+        });
 
         /* ── 8. IntersectionObserver — trigger .in class ── */
         var vH = window.innerHeight || 700;
