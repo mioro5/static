@@ -8,7 +8,7 @@ import os
 import re
 from pathlib import Path
 
-BASE = Path('/home/user/static')
+BASE = Path(__file__).resolve().parent
 HOME = BASE / 'et' / 'home.html'
 
 # ─── Extract from home.html ───────────────────────────────────────────────────
@@ -25,6 +25,112 @@ NEW_FONTS = """  <!-- Fonts -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"></noscript>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">"""
+
+
+# Shared fallback styles for ET pages that still use legacy content blocks
+LEGACY_COMPONENT_CSS = """
+
+    /* === LEGACY CONTENT COMPONENTS === */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0 14px;
+      font-size: .9rem;
+      color: var(--text-secondary);
+    }
+    .breadcrumb a { color: var(--brand); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .h-div-txt { margin-bottom: 16px; }
+    .h-div-txt h1 { margin-bottom: 10px; }
+    .intro-text { font-size: 1.02rem; color: var(--text-secondary); line-height: 1.65; }
+
+    .grey-container {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      margin: 14px 0 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .benefits-section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      margin: 14px 0 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .benefits-list { display: grid; gap: 8px; margin-top: 10px; }
+    .benefit-item { color: var(--text-secondary); }
+
+    .flx-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .flx-medium-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .flx-medium-box:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .flx-box-inner {
+      min-height: 200px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      position: relative;
+    }
+    .flx-box-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05) 10%, rgba(0,0,0,.62) 100%);
+    }
+    .date-price-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: inline-flex;
+      gap: 8px;
+      z-index: 2;
+      background: rgba(255,255,255,.92);
+      color: #1f1d35;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .flx-medium-box-a {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
+    }
+    .flx-medium-box-content {
+      padding: 12px 14px 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .flx-container { grid-template-columns: 1fr; }
+      .flx-box-inner { min-height: 180px; }
+    }
+"""
 
 # New footer
 NEW_FOOTER = """  <!-- FOOTER -->
@@ -432,10 +538,11 @@ def extract_main(html):
     m = re.search(r'(<main\b[^>]*>)(.*?)(</main>)', html, re.DOTALL | re.IGNORECASE)
     if m:
         open_tag, content, close_tag = m.group(1), m.group(2), m.group(3)
-        # Ensure id="content" is on main
+        # Ensure id="content" is on main and avoid duplicate id attributes.
         if 'id="content"' not in open_tag:
             open_tag = open_tag.replace('<main', '<main id="content"', 1)
-        # Remove broneeri-container from main if at the very end (we'll keep it)
+        # If a legacy/generated page has a second id attribute, drop it.
+        open_tag = re.sub(r'(<main\b[^>]*\bid="content"[^>]*?)\s+id="[^"]+"', r'\1', open_tag)
         return open_tag + content + close_tag
     return None
 
@@ -638,13 +745,20 @@ def clean_meta_seo(head_content):
 def extract_page_css(html):
     """Extract CSS from <style> blocks that is page-specific (not base styles)."""
     styles = re.findall(r'<style>(.*?)</style>', html, re.DOTALL | re.IGNORECASE)
-    all_css = '\n'.join(styles)
-    if not all_css.strip():
+    if not styles:
         return ''
+
+    marker = '/* === PAGE-SPECIFIC STYLES === */'
+    all_css = '\n'.join(styles)
+
+    # Idempotency: if the page already contains our generated marker, avoid
+    # re-ingesting CSS from the generated file (it can contain a full copy of
+    # base styles and would keep growing on each run).
+    if marker in all_css:
+        return ''
+
     filtered = filter_old_css(all_css)
     return filtered.strip()
-
-ALREADY_PROCESSED_MARKER = 'class="site-header"'
 
 # ─── Process a single file ───────────────────────────────────────────────────
 def process_file(filepath):
@@ -653,11 +767,6 @@ def process_file(filepath):
 
     # Skip home.html (template, already done)
     if filepath == HOME:
-        return False
-
-    # Skip already-processed files (idempotency)
-    if ALREADY_PROCESSED_MARKER in html:
-        print(f'    -> already updated, skipping')
         return False
 
     # Get URLs for lang switch
@@ -680,7 +789,7 @@ def process_file(filepath):
         return False
 
     # Build CSS: new base + page-specific (page-specific after, so it can override)
-    combined_css = NEW_CSS
+    combined_css = NEW_CSS + LEGACY_COMPONENT_CSS
     if page_css:
         combined_css += '\n\n    /* === PAGE-SPECIFIC STYLES === */\n    ' + page_css.replace('\n', '\n    ')
 
