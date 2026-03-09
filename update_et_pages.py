@@ -645,11 +645,12 @@ def extract_page_css(html):
     marker = '/* === PAGE-SPECIFIC STYLES === */'
     all_css = '\n'.join(styles)
 
-    # Idempotency: if the page already contains our generated marker, avoid
-    # re-ingesting CSS from the generated file (it can contain a full copy of
-    # base styles and would keep growing on each run).
+    # Idempotency: if the page already contains our generated marker, extract
+    # only the CSS after the marker (page-specific part from the previous run).
+    # This preserves page-specific styles across repeated runs of this script.
     if marker in all_css:
-        return ''
+        after_marker = all_css.split(marker, 1)[1].strip()
+        return after_marker if after_marker else ''
 
     filtered = filter_old_css(all_css)
     return filtered.strip()
