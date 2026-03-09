@@ -21,14 +21,13 @@
   <meta property="og:image" content="https://mvtherapy.ee/public/img/mvsubheader.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="MV Therapy">
   <meta property="og:locale" content="et_EE">
 
   <!-- Twitter Card Meta Tags -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Massaažiteenused Pärnus - 15 Erinevat Massaažitüüpi | MV Therapy">
   <meta property="twitter:description" content="MV Therapy Pärnus: klassikaline, meditsiiniline, lööklaine teraapia, triggerpunkti-, spordi-, süvakudede massaaž. Professionaalne massaaž Rüütli 47.">
-  <meta property="twitter:image" content="https://mvtherapy.ee/public/img/mvsubheader.png" width="400" height="60">
+  <meta property="twitter:image" content="https://mvtherapy.ee/public/img/mvsubheader.png">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://mvtherapy.ee/et/services.html">
@@ -46,60 +45,104 @@
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://mvtherapy.ee",
-  "name": "MV Therapy",
+  "@type": ["LocalBusiness", "MedicalBusiness", "HealthAndBeautyBusiness"],
+  "name": "MV Therapy - Massaaž Pärnus",
+  "alternateName": ["MV Therapy", "MV Therapy massaažisalong"],
   "image": "https://mvtherapy.ee/public/img/mvsubheader.png",
-  "description": "Professionaalne massaažisalong Pärnus. Pakume 15 erinevat massaažitüüpi: klassikaline, meditsiiniline, lööklaine teraapia, triggerpunkti teraapia ja palju muud.",
+  "description": "Massaažiteraapia keskus Pärnu kesklinnas. 15 erinevat massaažitüüpi: klassikaline, meditsiiniline, lööklaine teraapia, triggerpunkti teraapia, spordimassaaž ja palju muud. 6. taseme kutsetunnistusega massaažiterapeut.",
   "url": "https://mvtherapy.ee",
   "telephone": "+372 5818 9561",
   "email": "info@mvtherapy.ee",
+  "priceRange": "€45-€85",
+  "paymentAccepted": ["Cash", "Credit Card"],
+  "currenciesAccepted": "EUR",
   "address": {
   "@type": "PostalAddress",
-  "streetAddress": "Rüütli 47, II korrus",
+  "streetAddress": "Rüütli 47 II korrus",
   "addressLocality": "Pärnu",
   "addressRegion": "Pärnu maakond",
-  "postalCode": "80014",
+  "postalCode": "80010",
   "addressCountry": "EE"
   },
   "geo": {
   "@type": "GeoCoordinates",
-  "latitude": 58.3859,
-  "longitude": 24.4971
+  "latitude": "58.3859",
+  "longitude": "24.4971"
   },
-  "openingHoursSpecification": {
+  "openingHoursSpecification": [{
   "@type": "OpeningHoursSpecification",
-  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-  "opens": "09:00",
-  "closes": "18:00"
-  },
-  "priceRange": "€€",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-  "serviceArea": {
-  "@type": "GeoCircle",
-  "geoMidpoint": {
-  "@type": "GeoCoordinates",
-  "latitude": 58.3859,
-  "longitude": 24.4971
-  },
-  "geoRadius": "50000"
-  },
+  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+  "opens": "10:00",
+  "closes": "19:00"
+  }],
+  "openingHours": "Mo-Su 10:00-19:00 (eelbroneerimisel)",
+  "hasMap": "https://share.google/qSNawGe4CYtPM7RS1",
+  "foundingDate": "2020",
+  "isAccessibleForFree": false,
+  "publicAccess": true,
   "hasOfferCatalog": {
   "@type": "OfferCatalog",
-  "name": "Massaažiteenused",
+  "name": "Massaažiteenused Pärnus",
   "itemListElement": [
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Klassikaline massaaž", "description": "Silitused, hõõrumine ja paitamine vereringe parandamiseks"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Meditsiiniline massaaž", "description": "Tervislik lähenemine krooniliste lihasvalude ravimiseks"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lööklaine teraapia", "description": "Helilained kroonilise valu ja põletiku leevendamiseks"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Triggerpunkti teraapia", "description": "Valulike lihassõlmede ja pingekohtade vabastamine"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spordimassaaž", "description": "Sportlastele enne ja pärast treeningut"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Süvakudede massaaž", "description": "Lihaste sügavamate kihtide kroonilise valu ravi"}},
-  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lümfimassaaž", "description": "Lümfivedeliku voolu suurendamine ja tursete vähendamine"}}
+  {"@type": "Offer", "itemOffered": {"@type": "MedicalService", "name": "Klassikaline massaaž Pärnus", "description": "Silitused, hõõrumine ja paitamine vereringe parandamiseks"}},
+  {"@type": "Offer", "itemOffered": {"@type": "MedicalService", "name": "Meditsiiniline massaaž Pärnus", "description": "Tervislik lähenemine krooniliste lihasvalude ravimiseks"}},
+  {"@type": "Offer", "itemOffered": {"@type": "MedicalService", "name": "Lööklaine teraapia Pärnus", "description": "Helilained kroonilise valu ja põletiku leevendamiseks"}},
+  {"@type": "Offer", "itemOffered": {"@type": "MedicalService", "name": "Triggerpunkti teraapia Pärnus", "description": "Valulike lihassõlmede ja pingekohtade vabastamine"}},
+  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spordimassaaž Pärnus", "description": "Sportlastele enne ja pärast treeningut"}},
+  {"@type": "Offer", "itemOffered": {"@type": "MedicalService", "name": "Kõrgintensiivne magnetteraapia Pärnus", "description": "Revolutsiooniline valuravi meetod ilma ravimiteta"}},
+  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Süvakudede massaaž Pärnus", "description": "Lihaste sügavamate kihtide kroonilise valu ravi"}},
+  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lümfimassaaž Pärnus", "description": "Lümfivedeliku voolu suurendamine ja tursete vähendamine"}}
   ]
   },
+  "employee": {
+  "@type": "Person",
+  "name": "Roman Gussev",
+  "jobTitle": "Massaažiterapeut",
+  "description": "7+ aastat kogemust meditsiinilise massaažiga. Spetsialiseerunud lööklaine teraapiale, magnetravile ja triggerpunkti teraapiale.",
+  "hasCredential": [
+  {"@type": "EducationalOccupationalCredential", "credentialCategory": "6. taseme kutsetunnistus", "recognizedBy": {"@type": "Organization", "name": "Kutsekoda"}},
+  {"@type": "EducationalOccupationalCredential", "credentialCategory": "Meditsiiniõe kvalifikatsioon"}
+  ],
+  "knowsAbout": ["Lööklaine teraapia","Kõrgintensiivne magnetravi","Triggerpunkti teraapia","Meditsiiniline massaaž","Spordimassaaž","Süvakudede massaaž"]
+  },
+  "areaServed": [
+  {"@type": "City", "name": "Pärnu", "containedInPlace": {"@type": "Country", "name": "Estonia"}},
+  {"@type": "State", "name": "Pärnu maakond", "containedInPlace": {"@type": "Country", "name": "Estonia"}},
+  {"@type": "Country", "name": "Estonia"}
+  ],
   "sameAs": [
-  "https://www.facebook.com/profile.php?id=100090837369433"
+  "https://www.facebook.com/profile.php?id=100090837369433",
+  "https://www.instagram.com/medmassaaz/",
+  "https://www.tiktok.com/@medmassaaz",
+  "https://mvtherapy.ee"
+  ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {"@type": "ListItem", "position": 1, "name": "Avaleht", "item": "https://mvtherapy.ee/et/home.html"},
+  {"@type": "ListItem", "position": 2, "name": "Massaažiteenused Pärnus", "item": "https://mvtherapy.ee/et/services.html"}
+  ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {"@type": "Question", "name": "Millistele probleemidele on meditsiiniline massaaž mõeldud?", "acceptedAnswer": {"@type": "Answer", "text": "Meditsiiniline massaaž aitab krooniliste lihasvalude, närvipitsumise, migreenide ja liigeste jäikuse korral. See keskendub konkreetse probleemi ravimisele, mitte lihtsalt lõõgastamisele."}},
+  {"@type": "Question", "name": "Kuidas erineb meditsiiniline massaaž tavalisest massaažist?", "acceptedAnswer": {"@type": "Answer", "text": "Meditsiiniline massaaž on sihitud teraapia, mis kasutab süvakudede tehnikaid ja anatoomilisi teadmisi konkreetsete terviseprobleemide lahendamiseks. Tavaline massaaž keskendub üldisele lõõgastusele."}},
+  {"@type": "Question", "name": "Kui sageli peaksin tegema meditsiinilist massaaži?", "acceptedAnswer": {"@type": "Answer", "text": "Aktiivse ravi ajal soovitame 4–7-päevaste vahedega seanssi. Pärast tulemuste saavutamist piisab hooldusseanssidest kord kuus. Terapeut koostab personaalse plaani."}},
+  {"@type": "Question", "name": "Kas meditsiiniline massaaž võib olla valus?", "acceptedAnswer": {"@type": "Answer", "text": "Meditsiiniline massaaž on intensiivsem kui tavaline, kuid ei tohiks põhjustada liigset valu. Terapeut kohandab survet vastavalt teie tagasisidele – avatud suhtlus seansi ajal on oluline."}},
+  {"@type": "Question", "name": "Kuidas valmistuda massaažiks?", "acceptedAnswer": {"@type": "Answer", "text": "Vältige enne seanssi rasket toitu ja jooge vett. Pärast massaaži tarbige 1–2 liitrit vett, tehke kerget liikumist ja puhake piisavalt. Intensiivne treening ei ole kohe soovitatav."}},
+  {"@type": "Question", "name": "Millised on lümfimassaaži vastunäidustused?", "acceptedAnswer": {"@type": "Answer", "text": "Lümfimassaaži tuleb vältida ägedate infektsioonide, palaviku, südame- või neerupuudulikkuse, aktiivsete kasvajate ja sügavate veenitrombide korral. Krooniliste haiguste puhul konsulteerige arstiga."}}
   ]
   }
   </script>
