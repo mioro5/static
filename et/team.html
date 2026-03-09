@@ -807,7 +807,122 @@
       }
       .trust.in { animation: none !important; }
     }
-  
+
+    /* ── Team page specific styles ── */
+    .h-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .h-div-txt {
+      width: 100%;
+      text-align: center;
+    }
+    .h-div-img {
+      max-width: 100%;
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .qualifications {
+      background: var(--brand-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--brand);
+    }
+    .qualifications h3 {
+      color: var(--brand);
+      margin-top: 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .qualifications ul {
+      list-style: none;
+      padding: 0;
+    }
+    .qualifications li {
+      padding: .5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: .9rem;
+    }
+    .qualifications li:before {
+      content: "✓";
+      color: var(--brand);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .experience-section {
+      margin: 1.5rem 0;
+    }
+    .experience-section h3 {
+      color: var(--brand);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .experience-item {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin: 1rem 0;
+      box-shadow: var(--shadow-card);
+    }
+    .experience-item h4 {
+      color: var(--brand);
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+    .experience-item p {
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+    .seo-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .keyword-link {
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--brand);
+      transition: all .2s ease;
+    }
+    .keyword-link:hover {
+      background: var(--brand-bg);
+      padding: .1rem .2rem;
+      border-radius: 3px;
+      border-bottom: none;
+    }
+    @media (min-width: 768px) {
+      .h-div {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .h-div-txt {
+        flex: 1 1 60%;
+        text-align: left;
+      }
+      .h-div-img {
+        flex: 0 0 340px;
+        width: 340px;
+      }
+    }
+
   </style>
 </head>
 <body>
