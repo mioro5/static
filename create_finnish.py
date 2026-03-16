@@ -10,7 +10,7 @@ import re
 import shutil
 
 SOURCE_DIR = '/home/user/static/en'
-TARGET_DIR = '/home/user/static/fin'
+TARGET_DIR = '/home/user/static/fi'
 
 # ── Finnish notice banner CSS (inserted before </style>) ──────────────────────
 NOTICE_CSS = """
@@ -772,7 +772,7 @@ def update_navigation(content, rel_path):
     - Remove workshop link
     - Translate nav items
     - Add FIN to language switchers (both mobile and desktop)
-    - Update brand href to /fin/
+    - Update brand href to /fi/
     """
     # Determine current page filename for lang switcher
     filename = os.path.basename(rel_path)
@@ -802,10 +802,10 @@ def update_navigation(content, rel_path):
     for old, new in nav_map:
         content = re.sub(old, new, content)
 
-    # Update brand link to /fin/
+    # Update brand link to /fi/
     content = content.replace(
         'href="/en/home.html" aria-label="MV Therapy etusivu"',
-        'href="/fin/home.html" aria-label="MV Therapy etusivu"'
+        'href="/fi/home.html" aria-label="MV Therapy etusivu"'
     )
 
     # Replace language switchers — build new switcher with FIN active
@@ -815,7 +815,7 @@ def update_navigation(content, rel_path):
             f'          <a href="/et/{lang_page}">EST</a>\n'
             f'          <a href="/ru/{lang_page}">RUS</a>\n'
             f'          <a href="/en/{lang_page}">ENG</a>\n'
-            f'          <a href="/fin/{lang_page}" class="active">FIN</a>\n'
+            f'          <a href="/fi/{lang_page}" class="active">FIN</a>\n'
             '        </div>'
         )
 
@@ -825,7 +825,7 @@ def update_navigation(content, rel_path):
             f'          <a href="/et/{lang_page}">EST</a>\n'
             f'          <a href="/ru/{lang_page}">RUS</a>\n'
             f'          <a href="/en/{lang_page}">ENG</a>\n'
-            f'          <a href="/fin/{lang_page}" class="active">FIN</a>\n'
+            f'          <a href="/fi/{lang_page}" class="active">FIN</a>\n'
             '        </div>'
         )
 
@@ -848,7 +848,7 @@ def update_navigation(content, rel_path):
 def update_footer_links(content):
     """Update all internal /en/ links to /fin/ in footer and body."""
     # Replace /en/ links → /fin/ (but keep external links unchanged)
-    content = re.sub(r'href="/en/', 'href="/fin/', content)
+    content = re.sub(r'href="/en/', 'href="/fi/', content)
     return content
 
 
