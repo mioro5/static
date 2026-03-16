@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Shockwave Therapy | MV Therapy Blog</title>
+  <meta name="description" content="MV Therapy offers hieronta in Parnu. Learn about Shockwave Therapy, its hyödyt, and how it can help relieve muscle tension and accelerate palautuminen from various conditions.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <!-- Geo Location Meta Tagit -->
+  <meta name="geo.region" content="EE-67">
+  <meta name="geo.placename" content="Pärnu, Estonia">
+  <meta name="geo.position" content="58.3859;24.4971">
+  <meta name="ICBM" content="58.3859, 24.4971">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+
+  <style>
+
+    :root {
+      --bg: #f5f4fa;
+      --surface: rgba(255,255,255,.78);
+      --surface-solid: #ffffff;
+      --c-surface: var(--surface);
+      --c-text-muted: var(--text-secondary);
+      --text: #1a1832;
+      --text-secondary: #5e5977;
+      --line: rgba(68,67,125,.10);
+      --brand: #44437d;
+      --brand-light: #5c5b9e;
+      --brand-accent: #6c6bb5;
+      --brand-bg: #eeedf8;
+      --brand-glow: rgba(68,67,125,.12);
+      --ok: #0f9d58;
+      --shadow: 0 8px 32px rgba(26,24,50,.08);
+      --shadow-lg: 0 16px 56px rgba(26,24,50,.13);
+      --shadow-card: 0 4px 20px rgba(26,24,50,.06);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --radius-xs: 10px;
+      --container: 1240px;
+      --header-h: 72px;
+    }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; }
+    .container { width: min(100% - 28px, var(--container)); margin-inline: auto; }
+
+    /* === SKIP LINK === */
+    .skip-link { position: absolute; left: -9999px; top: 0; }
+    .skip-link:focus { left: 16px; top: 16px; z-index: 1000; background: #fff; padding: 12px 16px; border-radius: 12px; }
+
+    /* === HEADER === */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(245,244,250,.82);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-h);
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; height: var(--header-h);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; min-width: 0; flex-shrink: 1;
+    }
+    .brand-logo {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 4px 12px rgba(68,67,125,.2);
+      flex-shrink: 0;
+    }
+    .brand-text { min-width: 0; overflow: hidden; }
+    .brand-text strong { display: block; font-size: .88rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .brand-text span { display: block; font-size: .68rem; color: var(--text-secondary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+    .desktop-nav { display: none; gap: 4px; align-items: center; }
+    .desktop-nav a {
+      text-decoration: none; padding: 8px 14px; border-radius: 999px;
+      font-weight: 600; font-size: .9rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .desktop-nav a:hover, .desktop-nav a[aria-current="page"] {
+      background: var(--surface-solid); color: var(--brand);
+      box-shadow: var(--shadow-card);
+    }
+    .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+    /* Mobile language switcher — visible on mobile, hidden on desktop */
+    .mobile-lang-header {
+      display: flex; gap: 1px; align-items: center;
+    }
+    .mobile-lang-header a {
+      text-decoration: none; padding: 4px 6px; border-radius: 999px;
+      font-weight: 700; font-size: .7rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .mobile-lang-header a.active {
+      background: var(--brand-bg); color: var(--brand);
+    }
+
+    /* Desktop language switcher — hidden by default, shown 900px+ */
+    .lang-switch { display: none; gap: 2px; }
+    .lang-switch a {
+      text-decoration: none; padding: 6px 10px; border-radius: 999px;
+      font-weight: 700; font-size: .8rem; color: var(--text-secondary);
+      transition: all .2s;
+    }
+    .lang-switch a:hover, .lang-switch a.active {
+      background: var(--brand-bg); color: var(--brand);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 0; border-radius: 999px; padding: 12px 20px; font-weight: 700;
+      font-size: .9rem; text-decoration: none; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      font-family: inherit;
+    }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+      box-shadow: 0 8px 24px rgba(68,67,125,.22);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(68,67,125,.3); }
+    .btn-secondary {
+      background: var(--brand-bg); color: var(--brand);
+      border: 1px solid rgba(68,67,125,.1);
+    }
+    .btn-secondary:hover { background: #e2e0f3; }
+
+    /* Mobile toggle */
+    .mobile-toggle {
+      width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+      background: #fff; box-shadow: var(--shadow-card); display: inline-grid;
+      place-items: center; cursor: pointer; font-size: 1.1rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-panel {
+      display: none; position: absolute; top: var(--header-h); left: 0; right: 0;
+      background: rgba(245,244,250,.96); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line); padding: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1); z-index: 99;
+    }
+    .mobile-panel.open { display: block; }
+    .mobile-panel nav { display: grid; gap: 6px; }
+    .mobile-panel nav a {
+      text-decoration: none; background: #fff; padding: 14px 16px;
+      border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
+      font-weight: 600; display: block;
+    }
+    /* === HERO === */
+    .hero { padding: 28px 0 16px; }
+    .hero-grid {
+      display: grid; gap: 20px; grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+    .hero-copy {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      padding: 28px 22px;
+    }
+    .eyebrow {
+      display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
+      padding: 8px 14px; border-radius: 999px;
+      background: var(--brand-bg); color: var(--brand);
+      font-size: .82rem; font-weight: 700;
+    }
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 3.6rem);
+      line-height: 1.08; margin: 16px 0 14px;
+      letter-spacing: -.02em; font-weight: 400;
+    }
+    .lead {
+      font-size: clamp(.95rem, 1.4vw, 1.1rem);
+      color: var(--text-secondary); max-width: 60ch;
+    }
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0;
+    }
+    .pill {
+      padding: 8px 14px; border-radius: 999px; background: #fff;
+      border: 1px solid var(--line); font-weight: 600; font-size: .85rem;
+      text-decoration: none; color: var(--text); transition: all .2s;
+    }
+    a.pill:hover {
+      background: var(--brand-bg); color: var(--brand);
+      border-color: rgba(68,67,125,.25);
+    }
+    .pill-lang a {
+      text-decoration: none; color: var(--text); font-weight: 700;
+      padding: 2px 4px; border-radius: 6px; transition: all .2s;
+    }
+    .pill-lang a:hover {
+      background: var(--brand); color: #fff;
+    }
+    .trustbar {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 22px;
+    }
+    .trust {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      padding: 14px; box-shadow: var(--shadow-card); text-align: center;
+    }
+    .trust strong { display: block; font-size: 1.2rem; color: var(--brand); }
+    .trust span { color: var(--text-secondary); font-size: .85rem; }
+
+    .hero-visual {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      padding: 16px; overflow: hidden;
+    }
+    .hero-visual img {
+      width: 100%; border-radius: 20px; box-shadow: var(--shadow);
+    }
+    .location-callout {
+      margin-top: 14px; padding: 14px 16px;
+      background: var(--brand-bg); border-radius: var(--radius-sm);
+      border-left: 4px solid var(--brand);
+      font-size: .88rem; color: var(--text-secondary); line-height: 1.5;
+    }
+    .location-callout strong { color: var(--text); }
+
+    /* === SECTIONS === */
+    .section { padding: 28px 0 12px; }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 16px; margin-bottom: 18px; flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400; letter-spacing: -.01em;
+    }
+
+    /* === SCROLL SECTIONS === */
+    .scroll-track {
+      display: flex; overflow-x: auto; gap: 14px;
+      padding: 4px 0 20px; scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: var(--brand) #e8e7f0;
+    }
+    .scroll-track::-webkit-scrollbar { height: 6px; }
+    .scroll-track::-webkit-scrollbar-track { background: #e8e7f0; border-radius: 3px; }
+    .scroll-track::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 3px; }
+
+    .s-card {
+      flex: 0 0 270px; background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow-card); overflow: hidden;
+      text-decoration: none; color: inherit; scroll-snap-align: start;
+      border: 1px solid var(--line); transition: transform .2s, box-shadow .2s;
+    }
+    .s-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .s-card img {
+      width: 100%; height: 170px; object-fit: cover; display: block;
+    }
+    .s-card-body { padding: 14px 16px; }
+    .s-card-body h3 {
+      font-size: .95rem; font-weight: 700; margin: 0 0 6px;
+      color: var(--brand); line-height: 1.3;
+    }
+    .s-card-body p {
+      font-size: .82rem; color: var(--text-secondary); line-height: 1.45; margin: 0;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    .scroll-nav {
+      display: flex; justify-content: center; gap: 10px; margin-top: 8px;
+    }
+    .scroll-arrow {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brand); color: #fff; border: 0;
+      display: inline-grid; place-items: center; cursor: pointer;
+      transition: all .2s; font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(68,67,125,.2);
+    }
+    .scroll-arrow:hover { background: #333259; transform: scale(1.08); }
+
+    /* === FAQ === */
+    .faq-grid { display: grid; gap: 10px; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: var(--shadow-card); overflow: hidden;
+    }
+    .faq-item summary {
+      cursor: pointer; font-weight: 700; padding: 16px 18px;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      font-size: .95rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand);
+      transition: transform .2s; flex-shrink: 0; margin-left: 12px;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item .faq-body {
+      padding: 0 18px 16px; color: var(--text-secondary); font-size: .9rem; line-height: 1.6;
+    }
+
+    /* === VIDEO === */
+    .video-wrap {
+      margin: 28px 0; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap iframe {
+      width: 100%; aspect-ratio: 16/9; border: none; display: block;
+    }
+
+    /* === HERO REVIEWS === */
+    .hero-reviews { margin-top: 18px; }
+
+    /* === SEO CONTENT BLOCK === */
+    .seo-section {
+      padding: 32px 0 20px;
+    }
+    .seo-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400; margin-bottom: 18px;
+      color: var(--text);
+    }
+    .seo-grid {
+      display: grid; gap: 20px; grid-template-columns: 1fr;
+    }
+    .seo-col h3 {
+      font-size: .95rem; font-weight: 700; color: var(--brand);
+      margin-bottom: 8px;
+    }
+    .seo-col p {
+      font-size: .88rem; color: var(--text-secondary); line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .seo-col a {
+      color: var(--brand); text-decoration: none;
+      border-bottom: 1px dotted var(--brand); transition: all .2s;
+    }
+    .seo-col a:hover { border-bottom-style: solid; }
+    @media (min-width: 900px) {
+      .seo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      background: #1a1832; color: rgba(255,255,255,.7);
+      padding: 36px 0 56px; margin-top: 28px;
+    }
+    .footer-grid {
+      display: grid; gap: 24px; grid-template-columns: 1fr;
+    }
+    .footer-grid strong { color: #fff; display: block; margin-bottom: 6px; font-size: .9rem; }
+    .footer-grid a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-grid a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 12px; align-items: center; margin-top: 8px; }
+    .footer-social img { width: 32px; height: 32px; border-radius: 8px; opacity: .8; transition: opacity .2s; }
+    .footer-social img:hover { opacity: 1; }
+    .footer-copy { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); font-size: .82rem; }
+
+    /* === GO-TOP === */
+    .go-top {
+      position: fixed; bottom: 20px; right: 20px; z-index: 90;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--brand); color: #fff; border: 0;
+      box-shadow: 0 4px 16px rgba(68,67,125,.3);
+      cursor: pointer; display: none; place-items: center;
+      font-size: 1.3rem; transition: transform .2s;
+    }
+    .go-top:hover { transform: translateY(-3px); }
+
+    /* === MOBILE STICKY BOOKING BAR === */
+    .mobile-book-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 95;
+      background: rgba(245,244,250,.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--line);
+      padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+    }
+    .mobile-book-bar .book-info {
+      font-size: .82rem; color: var(--text-secondary); line-height: 1.3;
+    }
+    .mobile-book-bar .book-info strong {
+      display: block; font-size: .9rem; color: var(--text);
+    }
+    .mobile-book-bar .btn {
+      flex-shrink: 0; padding: 12px 22px;
+    }
+
+    /* === COOKIE NOTICE === */
+    #cookieNotice {
+      position: fixed; bottom: 20px; left: 20px;
+      background: #fff; border: 1px solid #ddd; border-radius: 16px;
+      padding: 18px; max-width: 320px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15); z-index: 9999;
+      font-size: .88rem; line-height: 1.5;
+    }
+    #cookieNotice .cookie-btn {
+      background: var(--brand); color: #fff; border: 0;
+      padding: 8px 18px; border-radius: 999px; cursor: pointer;
+      font-weight: 700; font-size: .85rem; margin-top: 10px;
+      font-family: inherit;
+    }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 640px) {
+      .trustbar { grid-template-columns: repeat(4,1fr); }
+      .s-card { flex: 0 0 290px; }
+    }
+    /* Extra bottom padding on mobile for sticky booking bar */
+    @media (max-width: 899px) {
+      .site-footer { padding-bottom: 90px; }
+      .go-top { bottom: 80px; }
+      #cookieNotice { bottom: 80px; }
+    }
+    @media (min-width: 900px) {
+      .desktop-nav, .lang-switch { display: flex; }
+      .mobile-toggle, .mobile-lang-header { display: none; }
+      .brand-text span { font-size: .78rem; }
+      .brand-logo { width: 42px; height: 42px; border-radius: 12px; }
+      .brand-text strong { font-size: .95rem; }
+      .hero-grid { grid-template-columns: 1.15fr .85fr; }
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr .8fr; }
+      .s-card { flex: 0 0 300px; }
+      .mobile-book-bar { display: none !important; }
+    }
+    @media (min-width: 1200px) {
+      .s-card { flex: 0 0 320px; }
+    }
+
+    /* === SCROLL & ENTRANCE ANIMATIONS === */
+
+    /* Base hidden states — auto-applied by JS */
+    [data-anim] {
+      opacity: 0;
+      transition: opacity .7s cubic-bezier(.16,1,.3,1),
+                  transform .7s cubic-bezier(.16,1,.3,1),
+                  filter .7s cubic-bezier(.16,1,.3,1);
+      will-change: opacity, transform;
+    }
+    /* Prevent left/right animation transforms from causing page overflow */
+    .hero { overflow: hidden; }
+    [data-anim="up"]    { transform: translateY(48px); }
+    [data-anim="down"]  { transform: translateY(-36px); }
+    [data-anim="left"]  { transform: translateX(40px); }
+    [data-anim="right"] { transform: translateX(-40px); }
+    [data-anim="scale"] { transform: scale(.88); }
+    [data-anim="blur"]  { transform: translateY(24px); filter: blur(8px); }
+    [data-anim="pop"]   { transform: scale(.6); }
+
+    /* Visible state */
+    [data-anim].in {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Mobile booking bar — never animated */
+    .mobile-book-bar, .mobile-book-bar * {
+      opacity: 1 !important; transform: none !important;
+      filter: none !important; animation: none !important;
+    }
+
+    /* Hero entrance — faster, more dramatic */
+    .hero [data-anim] {
+      transition-duration: .9s;
+    }
+
+    /* Cards get a subtle hover lift that's separate from entrance */
+    .s-card, .faq-item {
+      transition: transform .25s ease, box-shadow .25s ease, opacity .7s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .s-card.in, .faq-item.in { opacity: 1; transform: translateY(0); }
+
+    /* Floating accent for trust blocks */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .trust.in {
+      animation: float 4s ease-in-out infinite;
+      animation-delay: var(--float-d, 0s);
+    }
+
+    /* Pill pop-in */
+    .pill[data-anim="pop"].in {
+      animation: pill-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+    }
+    @keyframes pill-pop {
+      0%   { opacity: 0; transform: scale(.5); }
+      60%  { transform: scale(1.08); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Eyebrow slide-in */
+    @keyframes slide-in-badge {
+      0%   { opacity: 0; transform: translateX(-30px) scale(.9); }
+      100% { opacity: 1; transform: none; }
+    }
+    .eyebrow[data-anim].in {
+      animation: slide-in-badge .7s cubic-bezier(.16,1,.3,1) forwards;
+    }
+
+    /* H1 character feel */
+    h1[data-anim].in {
+      animation: heading-rise .9s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes heading-rise {
+      0%   { opacity: 0; transform: translateY(50px); filter: blur(4px); }
+      100% { opacity: 1; transform: none; filter: none; }
+    }
+
+    /* Scroll track cards — stagger set by JS */
+    .scroll-track [data-anim] {
+      transition-duration: .55s;
+    }
+
+    /* ── Grid layout for .single-box cards (Diagnosis, workshops, services pages) ── */
+    .flx-container-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 540px) {
+      .flx-container-services { grid-template-columns: 1fr; }
+    }
+    .single-box {
+      background: var(--c-surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+    }
+    .single-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .single-box-img {
+      width: 100%;
+      max-width: 240px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+    .single-box h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--brand);
+      margin-bottom: .5rem;
+    }
+    .single-box-txt {
+      font-size: .9rem;
+      color: var(--c-text-muted);
+      line-height: 1.6;
+      text-align: left;
+    }
+    /* Animate single-box cards like s-cards */
+    .flx-container-services [data-anim] {
+      transition-duration: .55s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-anim] {
+        opacity: 1 !important; transform: none !important;
+        filter: none !important; transition: none !important;
+        animation: none !important;
+      }
+      .trust.in { animation: none !important; }
+    }
+  
+
+    /* === PAGE-SPECIFIC STYLES === */
+    :root {
+          --bg: #f5f4fa;
+          --surface: rgba(255,255,255,.78);
+          --surface-solid: #ffffff;
+          --c-surface: var(--surface);
+          --c-text-muted: var(--text-secondary);
+          --text: #1a1832;
+          --text-secondary: #5e5977;
+          --line: rgba(68,67,125,.10);
+          --brand: #44437d;
+          --brand-light: #5c5b9e;
+          --brand-accent: #6c6bb5;
+          --brand-bg: #eeedf8;
+          --brand-glow: rgba(68,67,125,.12);
+          --ok: #0f9d58;
+          --shadow: 0 8px 32px rgba(26,24,50,.08);
+          --shadow-lg: 0 16px 56px rgba(26,24,50,.13);
+          --shadow-card: 0 4px 20px rgba(26,24,50,.06);
+          --radius: 20px;
+          --radius-sm: 14px;
+          --radius-xs: 10px;
+          --container: 1240px;
+          --header-h: 72px;
+        }
+    
+    *,*::before,*::after { box-sizing: border-box; margin: 0; }
+    
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+    
+    body {
+          font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+          color: var(--text);
+          background: var(--bg);
+          line-height: 1.6;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          overflow-x: hidden;
+        }
+    
+    img { max-width: 100%; display: block; height: auto; }
+    
+    a { color: inherit; }
+    
+    .container { width: min(100% - 28px, var(--container)); margin-inline: auto; }
+    
+    /* === SKIP LINK === */
+        .skip-link { position: absolute; left: -9999px; top: 0; }
+    
+    .skip-link:focus { left: 16px; top: 16px; z-index: 1000; background: #fff; padding: 12px 16px; border-radius: 12px; }
+    
+    /* === HEADER === */
+        .site-header {
+          position: sticky; top: 0; z-index: 100;
+          backdrop-filter: blur(20px) saturate(1.4);
+          -webkit-backdrop-filter: blur(20px) saturate(1.4);
+          background: rgba(245,244,250,.82);
+          border-bottom: 1px solid var(--line);
+          height: var(--header-h);
+        }
+    
+    .topbar {
+          display: flex; align-items: center; justify-content: space-between;
+          gap: 8px; height: var(--header-h);
+        }
+    
+    .brand {
+          display: flex; align-items: center; gap: 8px;
+          text-decoration: none; min-width: 0; flex-shrink: 1;
+        }
+    
+    .brand-logo {
+          width: 38px; height: 38px; border-radius: 10px;
+          background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 4px 12px rgba(68,67,125,.2);
+          flex-shrink: 0;
+        }
+    
+    .brand-text { min-width: 0; overflow: hidden; }
+    
+    .brand-text strong { display: block; font-size: .88rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    
+    .brand-text span { display: block; font-size: .68rem; color: var(--text-secondary); white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    
+    .desktop-nav { display: none; gap: 4px; align-items: center; }
+    
+    .desktop-nav a {
+          text-decoration: none; padding: 8px 14px; border-radius: 999px;
+          font-weight: 600; font-size: .9rem; color: var(--text-secondary);
+          transition: all .2s;
+        }
+    
+    .desktop-nav a:hover, .desktop-nav a[aria-current="page"] {
+          background: var(--surface-solid); color: var(--brand);
+          box-shadow: var(--shadow-card);
+        }
+    
+    .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    
+    /* Mobile language switcher — visible on mobile, hidden on desktop */
+        .mobile-lang-header {
+          display: flex; gap: 1px; align-items: center;
+        }
+    
+    .mobile-lang-header a {
+          text-decoration: none; padding: 4px 6px; border-radius: 999px;
+          font-weight: 700; font-size: .7rem; color: var(--text-secondary);
+          transition: all .2s;
+        }
+    
+    .mobile-lang-header a.active {
+          background: var(--brand-bg); color: var(--brand);
+        }
+    
+    /* Desktop language switcher — hidden by default, shown 900px+ */
+        .lang-switch { display: none; gap: 2px; }
+    
+    .lang-switch a {
+          text-decoration: none; padding: 6px 10px; border-radius: 999px;
+          font-weight: 700; font-size: .8rem; color: var(--text-secondary);
+          transition: all .2s;
+        }
+    
+    .lang-switch a:hover, .lang-switch a.active {
+          background: var(--brand-bg); color: var(--brand);
+        }
+    
+    /* Buttons */
+        .btn {
+          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+          border: 0; border-radius: 999px; padding: 12px 20px; font-weight: 700;
+          font-size: .9rem; text-decoration: none; cursor: pointer;
+          transition: transform .2s, box-shadow .2s;
+          font-family: inherit;
+        }
+    
+    .btn-primary {
+          color: #fff;
+          background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+          box-shadow: 0 8px 24px rgba(68,67,125,.22);
+        }
+    
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(68,67,125,.3); }
+    
+    .btn-secondary {
+          background: var(--brand-bg); color: var(--brand);
+          border: 1px solid rgba(68,67,125,.1);
+        }
+    
+    .btn-secondary:hover { background: #e2e0f3; }
+    
+    /* Mobile toggle */
+        .mobile-toggle {
+          width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+          background: #fff; box-shadow: var(--shadow-card); display: inline-grid;
+          place-items: center; cursor: pointer; font-size: 1.1rem;
+          -webkit-tap-highlight-color: transparent;
+        }
+    
+    .mobile-panel {
+          display: none; position: absolute; top: var(--header-h); left: 0; right: 0;
+          background: rgba(245,244,250,.96); backdrop-filter: blur(20px);
+          border-bottom: 1px solid var(--line); padding: 16px;
+          box-shadow: 0 12px 40px rgba(0,0,0,.1); z-index: 99;
+        }
+    
+    .mobile-panel.open { display: block; }
+    
+    .mobile-panel nav { display: grid; gap: 6px; }
+    
+    .mobile-panel nav a {
+          text-decoration: none; background: #fff; padding: 14px 16px;
+          border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
+          font-weight: 600; display: block;
+        }
+    
+    /* === HERO === */
+        .hero { padding: 28px 0 16px; }
+    
+    .hero-grid {
+          display: grid; gap: 20px; grid-template-columns: 1fr;
+          align-items: stretch;
+        }
+    
+    .hero-copy {
+          background: var(--surface);
+          border: 1px solid rgba(255,255,255,.7);
+          backdrop-filter: blur(16px);
+          border-radius: 28px;
+          box-shadow: var(--shadow-lg);
+          padding: 28px 22px;
+        }
+    
+    .eyebrow {
+          display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap;
+          padding: 8px 14px; border-radius: 999px;
+          background: var(--brand-bg); color: var(--brand);
+          font-size: .82rem; font-weight: 700;
+        }
+    
+    h1 {
+          font-family: 'DM Serif Display', Georgia, serif;
+          font-size: clamp(1.8rem, 5vw, 3.6rem);
+          line-height: 1.08; margin: 16px 0 14px;
+          letter-spacing: -.02em; font-weight: 400;
+        }
+    
+    .lead {
+          font-size: clamp(.95rem, 1.4vw, 1.1rem);
+          color: var(--text-secondary); max-width: 60ch;
+        }
+    
+    .hero-pills {
+          display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0;
+        }
+    
+    .pill {
+          padding: 8px 14px; border-radius: 999px; background: #fff;
+          border: 1px solid var(--line); font-weight: 600; font-size: .85rem;
+          text-decoration: none; color: var(--text); transition: all .2s;
+        }
+    
+    a.pill:hover {
+          background: var(--brand-bg); color: var(--brand);
+          border-color: rgba(68,67,125,.25);
+        }
+    
+    .pill-lang a {
+          text-decoration: none; color: var(--text); font-weight: 700;
+          padding: 2px 4px; border-radius: 6px; transition: all .2s;
+        }
+    
+    .pill-lang a:hover {
+          background: var(--brand); color: #fff;
+        }
+    
+    .trustbar {
+          display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 22px;
+        }
+    
+    .trust {
+          background: #fff; border: 1px solid var(--line); border-radius: 16px;
+          padding: 14px; box-shadow: var(--shadow-card); text-align: center;
+        }
+    
+    .trust strong { display: block; font-size: 1.2rem; color: var(--brand); }
+    
+    .trust span { color: var(--text-secondary); font-size: .85rem; }
+    
+    .hero-visual {
+          background: var(--surface);
+          border: 1px solid rgba(255,255,255,.7);
+          backdrop-filter: blur(16px);
+          border-radius: 28px;
+          box-shadow: var(--shadow-lg);
+          padding: 16px; overflow: hidden;
+        }
+    
+    .hero-visual img {
+          width: 100%; border-radius: 20px; box-shadow: var(--shadow);
+        }
+    
+    .location-callout {
+          margin-top: 14px; padding: 14px 16px;
+          background: var(--brand-bg); border-radius: var(--radius-sm);
+          border-left: 4px solid var(--brand);
+          font-size: .88rem; color: var(--text-secondary); line-height: 1.5;
+        }
+    
+    .location-callout strong { color: var(--text); }
+    
+    /* === SECTIONS === */
+        .section { padding: 28px 0 12px; }
+    
+    .section-head {
+          display: flex; align-items: end; justify-content: space-between;
+          gap: 16px; margin-bottom: 18px; flex-wrap: wrap;
+        }
+    
+    .section-head h2 {
+          font-family: 'DM Serif Display', serif;
+          font-size: clamp(1.4rem, 3vw, 2.2rem);
+          font-weight: 400; letter-spacing: -.01em;
+        }
+    
+    /* === SCROLL SECTIONS === */
+        .scroll-track {
+          display: flex; overflow-x: auto; gap: 14px;
+          padding: 4px 0 20px; scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+          scrollbar-width: thin; scrollbar-color: var(--brand) #e8e7f0;
+        }
+    
+    .scroll-track::-webkit-scrollbar { height: 6px; }
+    
+    .scroll-track::-webkit-scrollbar-track { background: #e8e7f0; border-radius: 3px; }
+    
+    .scroll-track::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 3px; }
+    
+    .s-card {
+          flex: 0 0 270px; background: #fff; border-radius: var(--radius);
+          box-shadow: var(--shadow-card); overflow: hidden;
+          text-decoration: none; color: inherit; scroll-snap-align: start;
+          border: 1px solid var(--line); transition: transform .2s, box-shadow .2s;
+        }
+    
+    .s-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    
+    .s-card img {
+          width: 100%; height: 170px; object-fit: cover; display: block;
+        }
+    
+    .s-card-body { padding: 14px 16px; }
+    
+    .s-card-body h3 {
+          font-size: .95rem; font-weight: 700; margin: 0 0 6px;
+          color: var(--brand); line-height: 1.3;
+        }
+    
+    .s-card-body p {
+          font-size: .82rem; color: var(--text-secondary); line-height: 1.45; margin: 0;
+          display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+    
+    .scroll-nav {
+          display: flex; justify-content: center; gap: 10px; margin-top: 8px;
+        }
+    
+    .scroll-arrow {
+          width: 40px; height: 40px; border-radius: 50%;
+          background: var(--brand); color: #fff; border: 0;
+          display: inline-grid; place-items: center; cursor: pointer;
+          transition: all .2s; font-size: 1.1rem;
+          box-shadow: 0 4px 12px rgba(68,67,125,.2);
+        }
+    
+    .scroll-arrow:hover { background: #333259; transform: scale(1.08); }
+    
+    /* === FAQ === */
+        .faq-grid { display: grid; gap: 10px; }
+    
+    .faq-item {
+          background: #fff; border: 1px solid var(--line); border-radius: 16px;
+          box-shadow: var(--shadow-card); overflow: hidden;
+        }
+    
+    .faq-item summary {
+          cursor: pointer; font-weight: 700; padding: 16px 18px;
+          list-style: none; display: flex; justify-content: space-between; align-items: center;
+          font-size: .95rem;
+        }
+    
+    .faq-item summary::-webkit-details-marker { display: none; }
+    
+    .faq-item summary::after {
+          content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand);
+          transition: transform .2s; flex-shrink: 0; margin-left: 12px;
+        }
+    
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    
+    .faq-item .faq-body {
+          padding: 0 18px 16px; color: var(--text-secondary); font-size: .9rem; line-height: 1.6;
+        }
+    
+    /* === VIDEO === */
+        .video-wrap {
+          margin: 28px 0; border-radius: var(--radius); overflow: hidden;
+          box-shadow: var(--shadow);
+        }
+    
+    .video-wrap iframe {
+          width: 100%; aspect-ratio: 16/9; border: none; display: block;
+        }
+    
+    /* === HERO REVIEWS === */
+        .hero-reviews { margin-top: 18px; }
+    
+    @media (min-width: 900px) {
+          .seo-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    
+    /* === RESPONSIVE === */
+        @media (min-width: 640px) {
+          .trustbar { grid-template-columns: repeat(4,1fr); }
+          .s-card { flex: 0 0 290px; }
+        }
+    
+    /* Extra bottom padding on mobile for sticky booking bar */
+        @media (max-width: 899px) {
+          .site-footer { padding-bottom: 90px; }
+          .go-top { bottom: 80px; }
+          #cookieNotice { bottom: 80px; }
+        }
+    
+    @media (min-width: 900px) {
+          .desktop-nav, .lang-switch { display: flex; }
+          .mobile-toggle, .mobile-lang-header { display: none; }
+          .brand-text span { font-size: .78rem; }
+          .brand-logo { width: 42px; height: 42px; border-radius: 12px; }
+          .brand-text strong { font-size: .95rem; }
+          .hero-grid { grid-template-columns: 1.15fr .85fr; }
+          .footer-grid { grid-template-columns: 1.4fr 1fr 1fr .8fr; }
+          .s-card { flex: 0 0 300px; }
+          .mobile-book-bar { display: none !important; }
+        }
+    
+    @media (min-width: 1200px) {
+          .s-card { flex: 0 0 320px; }
+        }
+    
+    /* === SCROLL & ENTRANCE ANIMATIONS === */
+    
+        /* Base hidden states — auto-applied by JS */
+        [data-anim] {
+          opacity: 0;
+          transition: opacity .7s cubic-bezier(.16,1,.3,1),
+                      transform .7s cubic-bezier(.16,1,.3,1),
+                      filter .7s cubic-bezier(.16,1,.3,1);
+          will-change: opacity, transform;
+        }
+    
+    /* Prevent left/right animation transforms from causing page overflow */
+        .hero { overflow: hidden; }
+    
+    [data-anim="up"]    { transform: translateY(48px); }
+    
+    [data-anim="down"]  { transform: translateY(-36px); }
+    
+    [data-anim="left"]  { transform: translateX(40px); }
+    
+    [data-anim="right"] { transform: translateX(-40px); }
+    
+    [data-anim="scale"] { transform: scale(.88); }
+    
+    [data-anim="blur"]  { transform: translateY(24px); filter: blur(8px); }
+    
+    [data-anim="pop"]   { transform: scale(.6); }
+    
+    /* Visible state */
+        [data-anim].in {
+          opacity: 1;
+          transform: none;
+          filter: none;
+        }
+    
+    /* Hero entrance — faster, more dramatic */
+        .hero [data-anim] {
+          transition-duration: .9s;
+        }
+    
+    /* Cards get a subtle hover lift that's separate from entrance */
+        .s-card, .faq-item {
+          transition: transform .25s ease, box-shadow .25s ease, opacity .7s cubic-bezier(.16,1,.3,1) !important;
+        }
+    
+    .s-card.in, .faq-item.in { opacity: 1; transform: translateY(0); }
+    
+    /* Floating accent for trust blocks */
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+    
+    .trust.in {
+          animation: float 4s ease-in-out infinite;
+          animation-delay: var(--float-d, 0s);
+        }
+    
+    /* Pill pop-in */
+        .pill[data-anim="pop"].in {
+          animation: pill-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+        }
+    
+    @keyframes pill-pop {
+          0%   { opacity: 0; transform: scale(.5); }
+          60%  { transform: scale(1.08); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+    
+    /* Eyebrow slide-in */
+        @keyframes slide-in-badge {
+          0%   { opacity: 0; transform: translateX(-30px) scale(.9); }
+          100% { opacity: 1; transform: none; }
+        }
+    
+    .eyebrow[data-anim].in {
+          animation: slide-in-badge .7s cubic-bezier(.16,1,.3,1) forwards;
+        }
+    
+    /* H1 character feel */
+        h1[data-anim].in {
+          animation: heading-rise .9s cubic-bezier(.16,1,.3,1) forwards;
+        }
+    
+    @keyframes heading-rise {
+          0%   { opacity: 0; transform: translateY(50px); filter: blur(4px); }
+          100% { opacity: 1; transform: none; filter: none; }
+        }
+    
+    /* Scroll track cards — stagger set by JS */
+        .scroll-track [data-anim] {
+          transition-duration: .55s;
+        }
+    
+    @media (max-width: 540px) {
+          .flx-container-services { grid-template-columns: 1fr; }
+        }
+    
+    .single-box {
+          background: var(--c-surface);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow-card);
+          padding: 1.5rem;
+          cursor: pointer;
+          transition: transform .25s, box-shadow .25s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          text-decoration: none;
+        }
+    
+    .single-box:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-lg);
+        }
+    
+    .single-box-img {
+          width: 100%;
+          max-width: 240px;
+          height: 180px;
+          object-fit: cover;
+          border-radius: var(--radius-sm);
+          margin-bottom: 1rem;
+        }
+    
+    .single-box h3 {
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: var(--brand);
+          margin-bottom: .5rem;
+        }
+    
+    .single-box-txt {
+          font-size: .9rem;
+          color: var(--c-text-muted);
+          line-height: 1.6;
+          text-align: left;
+        }
+    
+    @media (prefers-reduced-motion: reduce) {
+          [data-anim] {
+            opacity: 1 !important; transform: none !important;
+            filter: none !important; transition: none !important;
+            animation: none !important;
+          }
+          .trust.in { animation: none !important; }
+        }
+    
+    /* ── Blog sub-page specific styles ── */
+        .flx-small-box {
+          flex: 1 1 220px;
+          max-width: 220px;
+          background: #f4f5fa;
+          border-radius: var(--radius, 10px);
+          box-shadow: var(--shadow-card, 0 1px 4px rgba(0,0,0,0.04));
+          overflow: hidden;
+          margin-bottom: 1rem;
+          display: flex;
+          flex-direction: column;
+        }
+    
+    .flx-box-inner {
+          height: 140px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 10px 10px 0 0;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-start;
+        }
+    
+    .flx-small-box-a {
+          display: block;
+          color: var(--brand, #44437d);
+          font-weight: 600;
+          text-decoration: none;
+          padding: 0.7rem 1rem;
+          font-size: 1.05rem;
+          transition: color 0.2s;
+          background: var(--surface, #fff);
+          border-radius: 0 0 10px 10px;
+        }
+    
+    .flx-small-box-a:hover {
+          color: #222;
+          background: #e3e4f5;
+        }
+    
+    .img-right {
+          float: right;
+          margin-left: 1rem;
+          margin-bottom: 1rem;
+        }
+    
+    @media (max-width: 900px) {
+          .single-box-img.img-right {
+            float: none;
+            margin: 1rem auto;
+            display: block;
+          }
+        }
+  
+    /* ===== FINNISH LANGUAGE NOTICE BANNER ===== */
+    .fin-notice {
+      background: linear-gradient(135deg, #fff8e1, #fff3cd);
+      border-bottom: 2px solid #f5a623;
+      padding: 12px 0;
+      text-align: center;
+      font-size: .9rem;
+      color: #5d4037;
+      font-weight: 500;
+      position: relative;
+      z-index: 99;
+    }
+    .fin-notice .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .fin-notice-flag { font-size: 1.3rem; flex-shrink: 0; }
+    .fin-notice-text { line-height: 1.4; }
+    .fin-notice-text strong { color: #3e2723; }
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Siirry pääsisältöön</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="/fin/home.html" aria-label="MV Therapy etusivu">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <strong>MV Therapy</strong>
+          <span>Lääketieteellisesti varmennettu terapia</span>
+        </div>
+      </a>
+      <nav class="desktop-nav" aria-label="Päävalikko">
+        <a href="/fin/home.html">Etusivu</a>
+        <a href="/fin/services.html">Hieronnat</a>
+        <a href="/fin/Diagnosis.html">Diagnoosit</a>
+        <a href="/fin/campaign.html">Kampanjat</a>
+        <a href="/fin/team.html">Tiimi</a>
+        <a href="/fin/kkk.html">UKK</a>
+        <a href="/fin/blog.html" aria-current="page">Blogi</a>
+      </nav>
+      <div class="header-actions">
+        <div class="mobile-lang-header" aria-label="Kieli">
+          <a href="/et/blog/59.html">EST</a>
+          <a href="/ru/blog/59.html">RUS</a>
+          <a href="/en/blog/59.html">ENG</a>
+          <a href="/fin/blog/59.html" class="active">FIN</a>
+        </div>
+        <div class="lang-switch" aria-label="Kieli">
+          <a href="/et/blog/59.html">EST</a>
+          <a href="/ru/blog/59.html">RUS</a>
+          <a href="/en/blog/59.html">ENG</a>
+          <a href="/fin/blog/59.html" class="active">FIN</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Avaa valikko">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
+      <div class="container">
+        <nav aria-label="Mobiilivalikko">
+          <a href="/fin/home.html">Etusivu</a>
+          <a href="/fin/services.html">Hieronnat</a>
+          <a href="/fin/Diagnosis.html">Diagnoosit</a>
+          <a href="/fin/campaign.html">Kampanjat</a>
+          <a href="/fin/team.html">Tiimi</a>
+          <a href="/fin/kkk.html">UKK</a>
+          <a href="/fin/blog.html">Blogi</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Suomenkielinen kieli-ilmoitus -->
+  <div class="fin-notice" role="note">
+    <div class="container">
+      <span class="fin-notice-flag">🇫🇮</span>
+      <span class="fin-notice-text"><strong>Kielitiedote:</strong> En puhu suomea, mutta loin tämän sivun, jotta sinun olisi mukavampi tutustua palveluihimme.</span>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+<main id="content" >
+      <div class="container">
+        <h2 id="blog0" data-lng>Articles</h2>
+        <div class="h-div">
+          <div class="h-div-txt">
+            <h3>Shockwave Therapy</h3>
+            <div>
+              <div class="single-box-txt">
+                <img class="single-box-img img-right" src="/public/img/blog/59.jpg" alt="Shockwave Therapy">
+                What is Shockwave Therapy? <br>
+                A brief overview and explanation<br>
+                Shockwave terapia is a modern and non-invasive hoito method that uses high-frequency sound waves to treat various body tissues. This terapia has proven effective in treating various medical and physiotherapeutic conditions, especially chronic kipu and inflammation.<br>
+                The principle of shockwave terapia is that short and intense acoustic impulses are directed to the target area using a device. These impulses create microscopic traumas in the tissues, which stimulate the body's natural healing process. As a result, blood circulation increases, anti-inflammatory responses are activated, and tissue regeneration accelerates.<br>
+                Therapy is known for its ability to relieve kipu and improve mobility without surgical intervention or medication. This makes shockwave terapia an attractive choice for people seeking effective and safe hoito methods for various terveys problems.<br>
+                Shockwave terapia is widely used to treat the following conditions:<br>
+                • Chronic tendinitis, such as tennis and golfer's elbow<br>
+                • Plantar fasciitis or heel kipu<br>
+                • Shoulder kipu, including calcific tendinitis<br>
+                • Achilles tendinitis<br>
+                • Muscle kipu and myofascial trigger points<br>
+                The procedure is quick and convenient, usually one session lasts about 15-20 minutes. Patients often feel improvement after the first session, although several hoitos may be necessary to achieve the best results.<br><br>
+                <b>How does shockwave terapia work?</b><br>
+                1. Generation and direction of sound waves: The shockwave terapia device generates high-frequency acoustic waves that are precisely directed to the treated area. These short but intense shockwave impulses penetrate deep into the tissues, causing microscopic mechanical stresses.<br>
+                2. Creation of microscopic traumas: Shockwave impulses create microscopic damage in the tissues. Although this may sound daunting, it is actually very beneficial, as these small traumas stimulate the body's natural healing process. The body responds to these microscopic damages by increasing blood circulation and metabolism in the damaged area.<br>
+                3. Acceleration of the healing process: Increased blood flow and metabolism bring more oxygen and nutrients to the damaged area, which are necessary for tissue palautuminen. They also help remove inflammatory and damaged cells, which speeds up the healing process.<br>
+                4. Anti-inflammatory effect: Shockwave terapia also stimulates anti-inflammatory responses. This helps reduce swelling and kipu, which are often associated with chronic conditions such as tendinitis and plantar fasciitis.<br>
+                5. Stimulation of collagen production: Shockwave impulses promote the production of new collagen, which is an important component of terveysy and strong tissues. This helps strengthen and repair damaged areas, reducing the risk of further injuries.<br>
+                6. Pain relief: One of the main hyödyt of shockwave terapia is kipu relief. Impulses disrupt the transmission of kipu signals along nerve fibers and reduce the sensitivity of kipu receptors. The result is immediate kipu reduction and improved mobility.<br><br>
+                <b>For whom is shockwave terapia effective?</b><br>
+                The effectiveness of shockwave terapia for various problems is due to its multifaceted effect on the body. Specifically, here is how shockwave terapia helps:<br>
+                1. Tendon and ligament diseases: stimulates angiogenesis (formation of new blood vessels), accelerates fibroblast activity, reduces inflammatory processes and swelling.<br>
+                2. Muscle kipu and muscle tension: relaxes muscle spasms, improves blood supply to muscle tissue, stimulates regeneration of lihakset and connective tissues.<br>
+                3. Nerve kipu and neuralgia: reduces nerve inflammation, improves blood supply to nerves, promotes the release of endorphins.<br>
+                4. Bone problems and joint diseases: stimulates osteogenesis, improves blood supply to bone tissue, reduces joint inflammation and swelling.<br>
+                5. Bursitis and other soft tissue diseases: reduces inflammation and swelling in the bursa area, improves blood circulation and lymph flow, stimulates collagen production.<br>
+                6. Sports injuries: accelerates tissue healing, reduces inflammation and swelling, improves elasticity of lihakset and tendons.<br>
+                7. Rheumatic diseases: reduces inflammation and swelling, improves blood circulation, stimulates collagen production.<br>
+                8. Post-traumatic conditions: accelerates tissue healing, reduces inflammation and swelling, promotes softening of scar tissue.<br>
+                9. Circulation problems and tissue palautuminen: improves blood circulation and lymph flow, stimulates angiogenesis, promotes tissue regeneration.<br>
+                10. Other: helps with various other conditions by improving circulation, reducing inflammation, and promoting tissue palautuminen.<br>
+                The effectiveness of shockwave terapia is due to its ability to stimulate the body's natural healing processes by improving circulation, reducing inflammation, and promoting cell renewal in damaged areas.<br><br>
+                <b>What to expect from a shockwave terapia session?</b><br>
+                1. Pre-hoito and assessment: the therapist assesses your condition and creates a hoito plan.<br>
+                2. Preparation for the session: comfortable position, gel or moist cloth on the skin if necessary.<br>
+                3. Application of shockwaves: the device is directed to the problem area, the session may include various application methods.<br>
+                4. Description of sensations: feedback may be requested during hoito.<br>
+                5. Session duration: usually 15–30 minutes.<br>
+                6. Frequency and duration of hoito: several sessions per week, depending on the condition.<br>
+                7. Aftercare and recommendations: after the session, recommendations for stretching, activity, and kipu relief.<br>
+                8. Potential side effects: mild kipu or redness, which quickly subsides.<br>
+                9. Planning further hoito: if necessary, subsequent sessions and discussion of further hoito.<br>
+                Shockwave terapia sessions offer an individual and targeted approach to solving your specific terveys problems and can support your palautuminen and recuperation from various conditions.<br><br>
+                <b>Safety and side effects</b><br>
+                Shockwave terapia is generally safe and well-tolerated. Possible side effects are usually mild and temporary, such as mild kipu, redness, or swelling in the hoito area.<br>
+                <b>Who is not suitable for shockwave terapia?</b><br>
+                Not recommended for pregnant women, people with blood clotting disorders, patients with pacemakers, in cases of acute infections or skin damage in the hoito areas, for cancer in the hoito area, for growing children in the areas of bone growth plates, in case of recent corticosteroid injection, and other restrictions.<br>
+                <br>
+                <b>Yhteenveto:</b><br>
+                Shockwave terapia is an effective, safe, and non-invasive hoito method that can help with many chronic and acute conditions, supporting the body's natural healing processes and improving quality of life.
+              </div>
+              <div id="broneeri-container"></div>
+            </div>
+          </div>
+        </div>
+        <h4 data-lng id="blog2">All articles</h4>
+        <div class="flx-container">
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/13.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/13.html">The main aids of a hieronta therapist - Functional anatomy and kinesiology.</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/12.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/12.html">The synergy between physioterapia and remedial hieronta: the key to comprehensive hoito.</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/7.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/7.html">Massage is an important hoito method in modern medicine.</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/6.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/6.html">The role of hieronta therapists in preventive medicine practice</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/5.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/5.html">The Importance of Massage for Martial Arts Competitors</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/19.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/19.html">Relieving Carpal Tunnel Syndrome with Massage Therapy: Natural and Effective Alternative</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/22.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/22.html">Lymphatic Massage: Promoting Health and Well-being</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/24.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/24.html">Deep tissue hieronta and nerve receptors: How it helps to relieve muscle tension</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/35.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/35.html">Massage for Runners: A Specialist's Insight</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/36.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/36.html">Qualified Massage Therapist: Industry-Certified versus Quick Courses</a>
+          </div>
+          <div class="flx-small-box">
+            <div class="flx-box-inner" style="background-image:url(/public/img/blog/59.jpg);"></div>
+            <a class="flx-small-box-a" href="/fin/blog/59.html">Shockwave Therapy</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  <!-- BRONEERI CONTAINER -->
+  <div id="broneeri-container" style="height:0;overflow:hidden;margin:0;padding:0;"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>MV Therapy</strong>
+          <div>Lääketieteellisesti varmennettu terapia</div>
+          <div style="margin-top:6px;font-size:.82rem;">© 2025 MV Therapy – Hieronta Pärnussa</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100090837369433" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img src="/public/img/fb_svg.png" alt="Facebook" width="32" height="32">
+            </a>
+            <a href="https://www.instagram.com/medmassaaz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:#fff;font-weight:700;font-size:.85rem;">IG</a>
+            <a href="https://www.tiktok.com/@medmassaaz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color:#fff;font-weight:700;font-size:.85rem;">TT</a>
+          </div>
+        </div>
+        <div>
+          <strong>Osoite</strong>
+          <div>Rüütli 47, 2. kerros</div>
+          <div>80010 Pärnu, Estonia</div>
+          <a href="/fin/map.html" style="font-size:.85rem;">📍 Näytä kartalla</a>
+        </div>
+        <div>
+          <strong>Yhteystiedot</strong>
+          <div><a href="tel:+37258189561">+372 5818 9561</a></div>
+          <div><a href="mailto:info@mvterapia.ee">info@mvterapia.ee</a></div>
+        </div>
+        <div>
+          <strong>Sivut</strong>
+          <div><a href="/fin/services.html">Hierontapalvelut</a></div>
+          <div><a href="/fin/Diagnosis.html">Diagnoosit</a></div>
+          <div><a href="/fin/blog.html">Blogi</a></div>
+          <div><a href="/fin/kkk.html">UKK</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GO TOP -->
+  <button class="go-top" id="goTop" aria-label="Vieritä sivun alkuun">
+    <span class="material-symbols-outlined">expand_less</span>
+  </button>
+
+  <!-- STICKY MOBILE BOOKING BAR -->
+  <div class="mobile-book-bar" id="mobileBookBar">
+    <div class="book-info">
+      <strong>MV Therapy</strong>
+      Rüütli 47, Pärnu
+    </div>
+    <button class="btn btn-primary book-trigger">Varaa aika</button>
+  </div>
+
+  <!-- COOKIE NOTICE -->
+  <div id="cookieNotice" style="display:none;" role="dialog" aria-label="Evästeilmoitus">
+    <p>Käytämme evästeitä parantaaksemme käyttökokemustasi, personoidaksemme sisältöä ja analysoidaksemme liikennettä.</p>
+    <button class="cookie-btn" id="cookieAccept">OK, hyväksy</button>
+  </div>
+
+  <!-- === SCRIPTS === -->
+
+  <!-- Scroll helper -->
+  <script>
+    function scrollEl(id, amount) {
+      requestAnimationFrame(function() {
+        var el = document.getElementById(id);
+        if (el) el.scrollBy({ left: amount, behavior: 'smooth' });
+      });
+    }
+  </script>
+
+  <!-- Mobile menu, scroll-top, cookie, booking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu
+      var toggle = document.getElementById('mobileToggle');
+      var panel = document.getElementById('mobilePanel');
+      if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+          var open = panel.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        panel.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+        });
+        document.addEventListener('click', function(e) {
+          if (!toggle.contains(e.target) && !panel.contains(e.target)) {
+            panel.classList.remove('open');
+            toggle.setAttribute('aria-expanded','false');
+          }
+        });
+      }
+
+      // Booking triggers
+      document.querySelectorAll('.book-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var container = document.getElementById('broneeri-container');
+          if (!container) return;
+          container.style.cssText = 'height:auto;overflow:visible;';
+          var slBtn = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
+          if (slBtn) {
+            slBtn.click();
+            setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
+          } else {
+            setTimeout(function() {
+              var retry = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
+              if (retry) retry.click();
+              setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
+            }, 1000);
+          }
+        });
+      });
+
+      // Go top
+      var goTop = document.getElementById('goTop');
+      var scrollTimer;
+      window.addEventListener('scroll', function() {
+        if (scrollTimer) return;
+        scrollTimer = setTimeout(function() {
+          scrollTimer = null;
+          if (goTop) goTop.style.display = window.scrollY > 300 ? 'grid' : 'none';
+        }, 100);
+      }, { passive: true });
+      if (goTop) goTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      // Cookie
+      var notice = document.getElementById('cookieNotice');
+      var accept = document.getElementById('cookieAccept');
+      if (notice && accept) {
+        if (!localStorage.getItem('cookieAccepted')) {
+          setTimeout(function() { notice.style.display = 'block'; }, 1200);
+        }
+        accept.addEventListener('click', function() {
+          localStorage.setItem('cookieAccepted','true');
+          notice.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+  <!-- Scroll & entrance animations engine -->
+  <script>
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      function init() {
+        var main = document.getElementById('content');
+        if (!main) return;
+        var hero = main.querySelector('.hero');
+        if (hero) {
+          var map = [
+            ['.eyebrow','right',0],['h1','blur',.12],['.lead','up',.25],
+          ];
+          map.forEach(function(m) {
+            var el = hero.querySelector(m[0]);
+            if (el) { el.setAttribute('data-anim', m[1]); el.style.transitionDelay = m[2] + 's'; }
+          });
+          hero.querySelectorAll('.pill').forEach(function(p, i) {
+            p.setAttribute('data-anim','pop'); p.style.transitionDelay = (.35 + i * .08) + 's';
+          });
+          hero.querySelectorAll('.trust').forEach(function(t, i) {
+            t.setAttribute('data-anim','scale'); t.style.transitionDelay = (.42 + i * .1) + 's';
+            t.style.setProperty('--float-d', (i * .6) + 's');
+          });
+          var heroImg = hero.querySelector('.hero-visual img');
+          if (heroImg) { heroImg.setAttribute('data-anim','scale'); heroImg.style.transitionDelay = '.15s'; }
+          var loc = hero.querySelector('.location-callout');
+          if (loc) { loc.setAttribute('data-anim','up'); loc.style.transitionDelay = '.3s'; }
+        }
+        main.querySelectorAll('.section-head h2, .section-head .btn').forEach(function(el, i) {
+          el.setAttribute('data-anim', i % 2 === 0 ? 'up' : 'left');
+        });
+        main.querySelectorAll('.scroll-track').forEach(function(track) {
+          track.querySelectorAll('.s-card').forEach(function(card, i) {
+            card.setAttribute('data-anim','up'); card.style.transitionDelay = (i * .07) + 's';
+          });
+        });
+        main.querySelectorAll('.scroll-nav .scroll-arrow').forEach(function(btn, i) {
+          btn.setAttribute('data-anim', i === 0 ? 'right' : 'left');
+          btn.style.transitionDelay = '.2s';
+        });
+        main.querySelectorAll('.faq-item').forEach(function(faq, i) {
+          faq.setAttribute('data-anim', i % 2 === 0 ? 'left' : 'right');
+          faq.style.transitionDelay = (i * .08) + 's';
+        });
+        var video = main.querySelector('.video-wrap');
+        if (video) { video.setAttribute('data-anim','scale'); }
+        /* Single-box cards (Diagnosis, workshops, services pages) */
+        main.querySelectorAll('.flx-container-services .single-box').forEach(function(card, i) {
+          card.setAttribute('data-anim', 'up');
+          card.style.transitionDelay = (i * .07) + 's';
+        });
+        var vH = window.innerHeight || 700;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+        main.querySelectorAll('[data-anim]').forEach(function(el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < vH && rect.bottom > 0) setTimeout(function() { el.classList.add('in'); }, 80);
+          else obs.observe(el);
+        });
+        main.querySelectorAll('.scroll-track').forEach(function(track) {
+          track.addEventListener('scroll', function() {
+            track.querySelectorAll('[data-anim]:not(.in)').forEach(function(card) {
+              var r = card.getBoundingClientRect();
+              if (r.left < window.innerWidth && r.right > 0) card.classList.add('in');
+            });
+          }, { passive: true });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+
+  <!-- Elfsight Google Reviews -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  <!-- SalonLife Booking Widget (English) -->
+  <script>
+    var book_texts = { et: 'Broneeri aeg', ru: 'Записаться на приём', en: 'Varaa aika' };
+    !function(e,n,t){
+      var i=document,o="script",a=i.createElement(o),d=i.getElementsByTagName(o)[0];
+      a.async=!0;a.defer=!0;
+      a.src="//widget.salon.life/static/js/widget.js?t="+(new Date).getTime();
+      n&&a.addEventListener("load",function(){t.SalonLifeCb=n},!1);
+      d.parentNode.insertBefore(a,d)
+    }(0,function(){
+      window.SalonLifeWidget.mount({
+        identifier:3986,button_text:book_texts.en,language:'en',color:'#44437d',container:'#broneeri-container'
+      })
+    },window);
+  </script>
+
+  <!-- Matomo Analytics -->
+  <script>
+    var _paq=window._paq=window._paq||[];
+    _paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);
+    (function(){var u="//mvterapia.ee/matomo/";
+    _paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','1']);
+    var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];
+    g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();
+  </script>
+</body>
+</html>
