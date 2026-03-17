@@ -1240,6 +1240,27 @@
     .fin-notice-text { line-height: 1.4; }
     .fin-notice-text strong { color: #3e2723; }
 
+    .flx-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .flx-container { flex-direction: column; gap: 1rem; }
+      .flx-small-box { max-width: 100%; }
+    }
+    @media (min-width: 361px) and (max-width: 480px) {
+      .flx-small-box { flex: 1 1 100%; min-width: 0; max-width: 100%; }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+      .flx-small-box { flex: 1 1 calc(50% - 0.5rem); min-width: 250px; }
+      .flx-container { gap: 1rem; }
+    }
+    @media (min-width: 1200px) {
+      .flx-small-box { flex: 1 1 320px; max-width: 350px; }
+      .flx-container { gap: 2rem; }
+    }
 </style>
 </head>
 <body>
@@ -1252,7 +1273,7 @@
         <div class="brand-logo" aria-hidden="true"></div>
         <div class="brand-text">
           <strong>MV Therapy</strong>
-          <span>Lääketieteellisesti varmennettu terapia</span>
+          <span>Medical Verified Therapy</span>
         </div>
       </a>
       <nav class="desktop-nav" aria-label="Päävalikko">
@@ -1441,7 +1462,7 @@
       <div class="footer-grid">
         <div>
           <strong>MV Therapy</strong>
-          <div>Lääketieteellisesti varmennettu terapia</div>
+          <div>Medical Verified Therapy</div>
           <div style="margin-top:6px;font-size:.82rem;">© 2025 MV Therapy – Hieronta Pärnussa</div>
           <div class="footer-social">
             <a href="https://www.facebook.com/profile.php?id=100090837369433" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
