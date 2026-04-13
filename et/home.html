@@ -728,7 +728,7 @@
 
     /* === PARTNER BAR === */
     .partner-bar {
-      display: flex; gap: 16px; margin: 0 0 14px; justify-content: center; align-items: center;
+      display: flex; gap: 28px; margin: 0 0 10px; justify-content: center; align-items: center;
     }
     .partner-bar-header {
       display: none;
@@ -738,6 +738,7 @@
       text-decoration: none; color: var(--text-secondary);
       font-size: .65rem; font-weight: 700; transition: all .2s;
       -webkit-tap-highlight-color: transparent;
+      padding: 4px 8px;
     }
     .partner-icon:hover {
       color: var(--brand);
@@ -747,16 +748,20 @@
       width: 28px; height: 28px; object-fit: contain; border-radius: 4px;
       display: block;
     }
+    @media (max-width: 899px) {
+      .hero { padding: 12px 0 16px; }
+    }
     @media (min-width: 900px) {
       .partner-bar { display: none; }
       .partner-bar-header {
-        display: flex; gap: 10px; align-items: center;
+        display: flex; gap: 6px; align-items: center; flex-shrink: 0;
       }
       .partner-bar-header .partner-icon {
-        flex-direction: row; gap: 5px; font-size: .75rem;
+        flex-direction: column; gap: 2px; padding: 2px 6px;
+        font-size: .6rem;
       }
       .partner-bar-header .partner-icon img {
-        width: 32px; height: 32px;
+        width: 26px; height: 26px;
       }
     }
   </style>
