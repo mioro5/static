@@ -728,7 +728,10 @@
 
     /* === PARTNER BAR === */
     .partner-bar {
-      display: flex; gap: 16px; margin: 0 0 14px; align-items: center;
+      display: flex; gap: 16px; margin: 0 0 14px; justify-content: center; align-items: center;
+    }
+    .partner-bar-header {
+      display: none;
     }
     .partner-icon {
       display: flex; flex-direction: column; align-items: center; gap: 3px;
@@ -743,6 +746,18 @@
     .partner-icon img {
       width: 28px; height: 28px; object-fit: contain; border-radius: 4px;
       display: block;
+    }
+    @media (min-width: 900px) {
+      .partner-bar { display: none; }
+      .partner-bar-header {
+        display: flex; gap: 10px; align-items: center;
+      }
+      .partner-bar-header .partner-icon {
+        flex-direction: row; gap: 5px; font-size: .75rem;
+      }
+      .partner-bar-header .partner-icon img {
+        width: 32px; height: 32px;
+      }
     }
   </style>
 </head>
@@ -759,6 +774,20 @@
           <span>Medical Verified Therapy</span>
         </div>
       </a>
+      <div class="partner-bar-header" aria-label="Partnerid">
+        <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus/services" target="_blank" rel="noopener noreferrer" class="partner-icon" aria-label="Stebby">
+          <img src="/public/img/stebby.png" alt="Stebby" width="32" height="32">
+          <span>Stebby</span>
+        </a>
+        <a href="/et/services.html" class="partner-icon" aria-label="Tsekk">
+          <img src="/public/img/tsek.png" alt="Tsekk" width="32" height="32">
+          <span>Tsekk</span>
+        </a>
+        <a href="/et/services.html" class="partner-icon" aria-label="Partner">
+          <img src="/public/img/partner.png" alt="Partner" width="32" height="32">
+          <span>Partner</span>
+        </a>
+      </div>
       <nav class="desktop-nav" aria-label="Peamenüü">
         <a href="/et/home.html" aria-current="page">Avaleht</a>
         <a href="/et/services.html">Massaažid</a>
