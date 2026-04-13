@@ -728,14 +728,14 @@
 
     /* === PARTNER BAR === */
     .partner-bar {
-      display: flex; gap: 8px; margin-top: 0; margin-bottom: 16px;
+      display: flex; gap: 8px; margin: 0 0 14px;
     }
     .partner-icon {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      background: #fff; border: 1px solid var(--line); border-radius: 14px;
-      padding: 12px 10px 10px; text-decoration: none; color: var(--text-secondary);
-      font-size: .72rem; font-weight: 700; transition: all .2s;
-      flex: 1; text-align: center; box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      background: #fff; border: 1px solid var(--line); border-radius: 12px;
+      padding: 8px 10px 7px; text-decoration: none; color: var(--text-secondary);
+      font-size: .68rem; font-weight: 700; transition: all .2s;
+      flex: 0 0 auto; min-width: 72px; text-align: center; box-shadow: var(--shadow-card);
       -webkit-tap-highlight-color: transparent;
     }
     .partner-icon:hover {
@@ -744,7 +744,7 @@
       transform: translateY(-2px); box-shadow: var(--shadow);
     }
     .partner-icon img {
-      width: 48px; height: 48px; object-fit: contain; border-radius: 8px;
+      width: 36px; height: 36px; object-fit: contain; border-radius: 6px;
       display: block;
     }
   </style>
@@ -811,23 +811,24 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="container">
+        <!-- Partner / benefits icons — above hero card -->
+        <div class="partner-bar">
+          <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus/services" target="_blank" rel="noopener noreferrer" class="partner-icon" aria-label="Stebby – maksmine Stebby kaudu">
+            <img src="/public/img/stebby.png" alt="Stebby" width="36" height="36">
+            <span>Stebby</span>
+          </a>
+          <a href="/et/services.html" class="partner-icon" aria-label="Tsekk – väljastame tsekke">
+            <img src="/public/img/tsek.png" alt="Tsekk" width="36" height="36">
+            <span>Tsekk</span>
+          </a>
+          <a href="/et/services.html" class="partner-icon" aria-label="Koostöö ettevõtetega">
+            <img src="/public/img/partner.png" alt="Partner" width="36" height="36">
+            <span>Partner</span>
+          </a>
+        </div>
+        <div class="hero-grid">
         <div class="hero-copy">
-          <!-- Partner / benefits icons -->
-          <div class="partner-bar">
-            <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus/services" target="_blank" rel="noopener noreferrer" class="partner-icon" aria-label="Stebby – maksmine Stebby kaudu">
-              <img src="/public/img/stebby.png" alt="Stebby" width="48" height="48">
-              <span>Stebby</span>
-            </a>
-            <a href="/et/services.html" class="partner-icon" aria-label="Tsekk – väljastame tsekke">
-              <img src="/public/img/tsek.png" alt="Tsekk" width="48" height="48">
-              <span>Tsekk</span>
-            </a>
-            <a href="/et/services.html" class="partner-icon" aria-label="Koostöö ettevõtetega">
-              <img src="/public/img/partner.png" alt="Partner" width="48" height="48">
-              <span>Partner</span>
-            </a>
-          </div>
           <div class="eyebrow">5.0★ Google hinnang · 5 000+ klienti · Pärnu kesklinn</div>
           <h1>Massaaž Pärnus&nbsp; MV&nbsp;Therapy</h1>
           <p class="lead">Meditsiinilisele massaažile spetsialiseerunud teraapiakeskus <strong>Rüütli 47, Pärnu kesklinnas</strong>. Pakume triggerpunkti teraapiat, kõrgintensiivset magnetteraapiat, lööklaine teraapiat, süvakudede massaaži, spordimassaaži, klassikalist ja lõõgastavat massaaži – kokku üle 14 erineva teenuse. Kõik teostab <strong>6. taseme kutsetunnistusega massaažiterapeut</strong>.</p>
@@ -855,6 +856,7 @@
             <strong>📍 Meie asukoht Pärnu südames:</strong> Asume Pärnu vanalinna peamisel jalakäijate tänaval <strong>Rüütli 47, 2. korrus</strong> – ajaloolise vanalinna südames. Punase Torni (15. sajandi mälestusmärk) ja Iseseisvuse väljaku lähedal. Pärnu rand on 15-minutilise jalutuskäigu kaugusel. <strong>Teenindame Pärnu elanikke ja külastajaid alates 2020. aastast</strong> – üle 5000 rahulolev klient Pärnust ja üle Eesti!
           </div>
         </aside>
+        </div><!-- /.hero-grid -->
       </div>
     </section>
 
