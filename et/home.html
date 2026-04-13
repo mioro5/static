@@ -231,6 +231,30 @@
     }
     .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 
+    /* Partner quick-access icons in header */
+    .header-partner-icons {
+      display: flex; align-items: center; gap: 5px; flex-shrink: 0;
+    }
+    .header-partner-icons a {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      border-radius: 9px; overflow: hidden;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+      opacity: .88;
+    }
+    .header-partner-icons a:hover {
+      transform: translateY(-2px); opacity: 1;
+      box-shadow: 0 4px 14px rgba(68,67,125,.22);
+    }
+    .header-partner-icons img {
+      width: 32px; height: 32px; object-fit: contain; display: block;
+      border-radius: 9px;
+    }
+    @media (min-width: 900px) {
+      .header-partner-icons a { width: 38px; height: 38px; border-radius: 11px; }
+      .header-partner-icons img { width: 38px; height: 38px; border-radius: 11px; }
+    }
+
     /* Mobile language switcher — visible on mobile, hidden on desktop */
     .mobile-lang-header {
       display: flex; gap: 1px; align-items: center;
@@ -740,6 +764,19 @@
           <span>Medical Verified Therapy</span>
         </div>
       </a>
+      <!-- Partner quick-access icons -->
+      <div class="header-partner-icons">
+        <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus" target="_blank" rel="noopener noreferrer" aria-label="Stebby – broneeri massaaž" title="Stebby">
+          <img src="/public/img/stebby.png" alt="Stebby" width="38" height="38" loading="lazy">
+        </a>
+        <a href="/et/tsek.html" aria-label="Tsekk – vastuvõetav kõikides ettevõtetes ja kindlustuses" title="Tsekk">
+          <img src="/public/img/tsek.png" alt="Tsekk" width="38" height="38" loading="lazy">
+        </a>
+        <a href="/et/partner.html" aria-label="Ettevõtete koostöö – sõlmime lepinguid" title="Partner">
+          <img src="/public/img/partner.png" alt="Partner" width="38" height="38" loading="lazy">
+        </a>
+      </div>
+
       <nav class="desktop-nav" aria-label="Peamenüü">
         <a href="/et/home.html" aria-current="page">Avaleht</a>
         <a href="/et/services.html">Massaažid</a>
