@@ -728,23 +728,20 @@
 
     /* === PARTNER BAR === */
     .partner-bar {
-      display: flex; gap: 8px; margin: 0 0 14px;
+      display: flex; gap: 16px; margin: 0 0 14px; align-items: center;
     }
     .partner-icon {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      background: #fff; border: 1px solid var(--line); border-radius: 12px;
-      padding: 8px 10px 7px; text-decoration: none; color: var(--text-secondary);
-      font-size: .68rem; font-weight: 700; transition: all .2s;
-      flex: 0 0 auto; min-width: 72px; text-align: center; box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      text-decoration: none; color: var(--text-secondary);
+      font-size: .65rem; font-weight: 700; transition: all .2s;
       -webkit-tap-highlight-color: transparent;
     }
     .partner-icon:hover {
-      background: var(--brand-bg); color: var(--brand);
-      border-color: rgba(68,67,125,.25);
-      transform: translateY(-2px); box-shadow: var(--shadow);
+      color: var(--brand);
+      transform: translateY(-2px);
     }
     .partner-icon img {
-      width: 36px; height: 36px; object-fit: contain; border-radius: 6px;
+      width: 28px; height: 28px; object-fit: contain; border-radius: 4px;
       display: block;
     }
   </style>
@@ -815,15 +812,15 @@
         <!-- Partner / benefits icons — above hero card -->
         <div class="partner-bar">
           <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus/services" target="_blank" rel="noopener noreferrer" class="partner-icon" aria-label="Stebby – maksmine Stebby kaudu">
-            <img src="/public/img/stebby.png" alt="Stebby" width="36" height="36">
+            <img src="/public/img/stebby.png" alt="Stebby" width="28" height="28">
             <span>Stebby</span>
           </a>
           <a href="/et/services.html" class="partner-icon" aria-label="Tsekk – väljastame tsekke">
-            <img src="/public/img/tsek.png" alt="Tsekk" width="36" height="36">
+            <img src="/public/img/tsek.png" alt="Tsekk" width="28" height="28">
             <span>Tsekk</span>
           </a>
           <a href="/et/services.html" class="partner-icon" aria-label="Koostöö ettevõtetega">
-            <img src="/public/img/partner.png" alt="Partner" width="36" height="36">
+            <img src="/public/img/partner.png" alt="Partner" width="28" height="28">
             <span>Partner</span>
           </a>
         </div>
