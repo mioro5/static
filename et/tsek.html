@@ -2,11 +2,361 @@
 <html lang="et">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tsekk | MV Therapy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes">
+  <title>Tšekid ja kindlustus | MV Therapy Pärnus</title>
+  <meta name="description" content="MV Therapy väljastab ametlikke tšekke nii paberkandjal kui digitaalselt. Aktsepteeritud kõigi Eesti kindlustusfirmade, tööandjate ja asutuste poolt.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mvtherapy.ee/et/tsek.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <style>
+    :root {
+      --bg:#f5f4fa; --surface:rgba(255,255,255,.78); --surface-solid:#fff;
+      --text:#1a1832; --text-secondary:#5e5977; --line:rgba(68,67,125,.10);
+      --brand:#44437d; --brand-accent:#6c6bb5; --brand-bg:#eeedf8;
+      --ok:#0f9d58; --shadow:0 8px 32px rgba(26,24,50,.08);
+      --shadow-lg:0 16px 56px rgba(26,24,50,.13); --shadow-card:0 4px 20px rgba(26,24,50,.06);
+      --radius:20px; --radius-sm:14px; --container:1240px; --header-h:72px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'DM Sans',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;display:block;height:auto}
+    a{color:inherit}
+    .container{width:min(100% - 28px,var(--container));margin-inline:auto}
+    .skip-link{position:absolute;left:-9999px;top:0}
+    .skip-link:focus{left:16px;top:16px;z-index:1000;background:#fff;padding:12px 16px;border-radius:12px}
+
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:100;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);background:rgba(245,244,250,.82);border-bottom:1px solid var(--line);height:var(--header-h)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;height:var(--header-h)}
+    .brand{display:flex;align-items:center;gap:8px;text-decoration:none;min-width:0;flex-shrink:1}
+    .brand-logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-accent));box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 4px 12px rgba(68,67,125,.2);flex-shrink:0}
+    .brand-text{min-width:0;overflow:hidden}
+    .brand-text strong{display:block;font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand-text span{display:block;font-size:.68rem;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .desktop-nav{display:none;gap:4px;align-items:center}
+    .desktop-nav a{text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem;color:var(--text-secondary);transition:all .2s}
+    .desktop-nav a:hover,.desktop-nav a[aria-current="page"]{background:var(--surface-solid);color:var(--brand);box-shadow:var(--shadow-card)}
+    .header-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+    .mobile-lang-header{display:flex;gap:1px;align-items:center}
+    .mobile-lang-header a{text-decoration:none;padding:4px 6px;border-radius:999px;font-weight:700;font-size:.7rem;color:var(--text-secondary);transition:all .2s}
+    .mobile-lang-header a.active{background:var(--brand-bg);color:var(--brand)}
+    .lang-switch{display:none;gap:2px}
+    .lang-switch a{text-decoration:none;padding:6px 10px;border-radius:999px;font-weight:700;font-size:.8rem;color:var(--text-secondary);transition:all .2s}
+    .lang-switch a:hover,.lang-switch a.active{background:var(--brand-bg);color:var(--brand)}
+    .mobile-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-card);display:inline-grid;place-items:center;cursor:pointer;font-size:1.1rem;-webkit-tap-highlight-color:transparent}
+    .mobile-panel{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:rgba(245,244,250,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.1);z-index:99}
+    .mobile-panel.open{display:block}
+    .mobile-panel nav{display:grid;gap:6px}
+    .mobile-panel nav a{text-decoration:none;background:#fff;padding:14px 16px;border-radius:var(--radius-sm);box-shadow:var(--shadow-card);font-weight:600;display:block}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font-weight:700;font-size:.9rem;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-accent));box-shadow:0 8px 24px rgba(68,67,125,.22)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(68,67,125,.3)}
+    .btn-secondary{background:var(--brand-bg);color:var(--brand);border:1px solid rgba(68,67,125,.1)}
+    .btn-secondary:hover{background:#e2e0f3}
+
+    /* HERO */
+    .hero{padding:28px 0 16px}
+    .hero-copy{background:var(--surface);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(16px);border-radius:28px;box-shadow:var(--shadow-lg);padding:28px 22px}
+    .eyebrow{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 14px;border-radius:999px;background:var(--brand-bg);color:var(--brand);font-size:.82rem;font-weight:700}
+    h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.08;margin:16px 0 14px;letter-spacing:-.02em;font-weight:400}
+    .lead{font-size:clamp(.95rem,1.4vw,1.05rem);color:var(--text-secondary);max-width:60ch}
+
+    /* SECTIONS */
+    .section{padding:28px 0 12px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+    .section-head h2{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:400;letter-spacing:-.01em}
+
+    /* INFO CARDS */
+    .info-grid{display:grid;gap:14px;grid-template-columns:1fr}
+    .info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow-card)}
+    .info-card-icon{font-size:1.8rem;margin-bottom:10px}
+    .info-card h3{font-size:1rem;font-weight:700;color:var(--brand);margin-bottom:8px}
+    .info-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.7}
+
+    /* INSURANCE LIST */
+    .insurance-grid{display:grid;gap:10px;grid-template-columns:1fr}
+    .insurance-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 18px;box-shadow:var(--shadow-card);display:flex;align-items:flex-start;gap:12px}
+    .insurance-item::before{content:"✓";color:var(--ok);font-weight:700;font-size:1rem;flex-shrink:0;margin-top:1px}
+    .insurance-item strong{display:block;font-size:.9rem;color:var(--text);margin-bottom:2px}
+    .insurance-item span{font-size:.82rem;color:var(--text-secondary)}
+
+    /* HIGHLIGHT BOX */
+    .highlight-box{background:var(--brand-bg);border-left:4px solid var(--brand);border-radius:var(--radius-sm);padding:18px 20px;margin-top:16px}
+    .highlight-box p{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin:0}
+    .highlight-box strong{color:var(--text)}
+
+    /* CTA BLOCK */
+    .cta-block{background:linear-gradient(135deg,var(--brand),var(--brand-accent));border-radius:var(--radius);padding:28px 24px;text-align:center;color:#fff;margin:28px 0}
+    .cta-block h2{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:400;margin-bottom:10px}
+    .cta-block p{font-size:.95rem;opacity:.88;margin-bottom:20px}
+    .cta-block .btn{background:#fff;color:var(--brand)}
+    .cta-block .btn:hover{background:#f0f0fa}
+    .cta-contact{margin-top:14px;font-size:.88rem;opacity:.8}
+    .cta-contact a{color:#fff;text-decoration:underline}
+
+    /* FOOTER */
+    .site-footer{background:#1a1832;color:rgba(255,255,255,.7);padding:36px 0 56px;margin-top:28px}
+    .footer-grid{display:grid;gap:24px;grid-template-columns:1fr}
+    .footer-grid strong{color:#fff;display:block;margin-bottom:6px;font-size:.9rem}
+    .footer-grid a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+    .footer-grid a:hover{color:#fff}
+    .footer-social{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .footer-copy{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:.82rem}
+
+    /* GO TOP */
+    .go-top{position:fixed;bottom:20px;right:20px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--brand);color:#fff;border:0;box-shadow:0 4px 16px rgba(68,67,125,.3);cursor:pointer;display:none;place-items:center;font-size:1.3rem;transition:transform .2s}
+    .go-top:hover{transform:translateY(-3px)}
+
+    /* MOBILE BOOK BAR */
+    .mobile-book-bar{position:fixed;bottom:0;left:0;right:0;z-index:95;background:rgba(245,244,250,.92);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+    .mobile-book-bar .book-info{font-size:.82rem;color:var(--text-secondary);line-height:1.3}
+    .mobile-book-bar .book-info strong{display:block;font-size:.9rem;color:var(--text)}
+
+    @media(min-width:640px){.info-grid{grid-template-columns:repeat(2,1fr)}.insurance-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.desktop-nav,.lang-switch{display:flex}.mobile-toggle,.mobile-lang-header{display:none}.footer-grid{grid-template-columns:1.4fr 1fr 1fr .8fr}.info-grid{grid-template-columns:repeat(3,1fr)}.insurance-grid{grid-template-columns:repeat(2,1fr)}.mobile-book-bar{display:none!important}}
+    @media(max-width:899px){.site-footer{padding-bottom:90px}.go-top{bottom:80px}}
+  </style>
 </head>
 <body>
-  <p>Tsekk – tulemas peagi.</p>
-  <a href="/et/home.html">← Tagasi avalehele</a>
+  <a class="skip-link" href="#content">Liigu põhisisu juurde</a>
+
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="/et/home.html" aria-label="MV Therapy avaleht">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-text"><strong>MV Therapy</strong><span>Medical Verified Therapy</span></div>
+      </a>
+      <nav class="desktop-nav" aria-label="Peamenüü">
+        <a href="/et/home.html">Avaleht</a>
+        <a href="/et/services.html">Massaažid</a>
+        <a href="/et/Diagnosis.html">Diagnoosid</a>
+        <a href="/et/campaign.html">Kampaaniad</a>
+        <a href="/et/workshops.html">Koolitused</a>
+        <a href="/et/team.html">Meeskond</a>
+        <a href="/et/kkk.html">KKK</a>
+        <a href="/et/blog.html">Blogi</a>
+      </nav>
+      <div class="header-actions">
+        <div class="mobile-lang-header">
+          <a href="/et/tsek.html" class="active">EST</a>
+          <a href="/ru/home.html">РУС</a>
+          <a href="/en/home.html">ENG</a>
+          <a href="/fi/home.html">FIN</a>
+        </div>
+        <div class="lang-switch">
+          <a href="/et/tsek.html" class="active">EST</a>
+          <a href="/ru/home.html">РУС</a>
+          <a href="/en/home.html">ENG</a>
+          <a href="/fi/home.html">FIN</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Ava menüü">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
+      <div class="container">
+        <nav aria-label="Mobiilimenüü">
+          <a href="/et/home.html">Avaleht</a>
+          <a href="/et/services.html">Massaažid</a>
+          <a href="/et/Diagnosis.html">Diagnoosid</a>
+          <a href="/et/campaign.html">Kampaaniad</a>
+          <a href="/et/workshops.html">Koolitused</a>
+          <a href="/et/team.html">Meeskond</a>
+          <a href="/et/kkk.html">KKK</a>
+          <a href="/et/blog.html">Blogi</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="eyebrow">🧾 Paber- ja digitšekid · Tasuta väljastamine</div>
+          <h1>Tšekid ja kindlustus</h1>
+          <p class="lead">MV Therapy väljastab massaažiteenuse eest ametliku tšeki — nii paberkandjal kui ka digitaalselt. Meie tšekid vastavad kõikidele nõuetele ja on aktsepteeritud Eesti kindlustusfirmade, tööandjate ning asutuste poolt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLOKK 1: Paber- ja digitšekid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Paber- ja digitšekid</h2></div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon">🖨️</div>
+            <h3>Paberkandjal tšekk</h3>
+            <p>Väljastame pabertšeki kohapeal pärast seanssi. Tšekil on kirjas teenuse nimetus, kuupäev, summa ja MV Therapy OÜ rekvisiidid. Sobib kindlustusele esitamiseks samal päeval.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">📧</div>
+            <h3>Digitaalne tšekk e-postile</h3>
+            <p>Soovi korral saadame tšeki PDF-formaadis e-posti teel 24 tunni jooksul. Mugav arhiveerida ja edastada tööandjale või kindlustusele ilma paberit hoidmata.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">✅</div>
+            <h3>Mida tšekil on kirjas</h3>
+            <p>Teenuse nimetus ja kirjeldus, seansi kuupäev, makstud summa, MV Therapy OÜ nimi, registrikood ja aadress. Dokument vastab raamatupidamisseaduse nõuetele.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Tšeki väljastamine on täiesti tasuta</strong> — see on meie teenuse loomulik osa. Palun teavita meid enne seanssi, kui soovid digitaalset versiooni.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLOKK 2: Kindlustusfirmad -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Kindlustusfirmad Eestis</h2></div>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin-bottom:18px;max-width:65ch">Meie tšekke aktsepteerivad kõik Eestis tegutsevad kindlustusseltsid, sealhulgas:</p>
+        <div class="insurance-grid">
+          <div class="insurance-item"><div><strong>ERGO Insurance SE</strong><span>Tervisekindlustus ja kollektiivne kindlustus</span></div></div>
+          <div class="insurance-item"><div><strong>If P&amp;C Insurance AS</strong><span>Täiendav tervisekindlustus tööandjate kaudu</span></div></div>
+          <div class="insurance-item"><div><strong>Compensa Life Vienna Insurance Group SE</strong><span>Elukindlustus tervisehüvitistega</span></div></div>
+          <div class="insurance-item"><div><strong>PZU Kindlustus</strong><span>Tervise- ja õnnetusjuhtumikindlustus</span></div></div>
+          <div class="insurance-item"><div><strong>Salva Kindlustuse AS</strong><span>Tervisekindlustuse paketid</span></div></div>
+          <div class="insurance-item"><div><strong>BTA Baltic Insurance Company</strong><span>Tervise- ja reisikindlustus</span></div></div>
+          <div class="insurance-item"><div><strong>Mandatum Life Insurance Baltic SE</strong><span>Tervisehüvitised elukindlustuse raames</span></div></div>
+          <div class="insurance-item"><div><strong>Swedbank P&amp;C Insurance AS</strong><span>Tervise lisakindlustus</span></div></div>
+        </div>
+        <div class="highlight-box">
+          <p>Kui sinu kindlustuspakett katab massaažikulusid, on meie tšekk hüvitise taotlemiseks sobiv dokument. Vajadusel lisame tšekile täiendavaid andmeid vastavalt kindlustusseltsi nõuetele.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLOKK 3: Tööandja kompensatsioon -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Tööandja tervisekompensatsioon</h2></div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon">💼</div>
+            <h3>Maksuvaba hüvitis</h3>
+            <p>Eesti tööandjad saavad töötajate tervise- ja spordikulusid hüvitada maksuvabalt kuni <strong>100 € kvartalis (400 € aastas)</strong>. Massaažiteraapia kuulub aktsepteeritud kulude hulka.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">📋</div>
+            <h3>Kuidas kasutada</h3>
+            <p>Pärast seanssi edasta meie tšekk oma raamatupidajale või personaliosakonnale. Tšekk on sobiv kuludokument tööandja tervisetoetuse saamiseks — ei ole vaja eelnevat kooskõlastust.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">🏢</div>
+            <h3>Kes kasutavad</h3>
+            <p>IT-ettevõtted, pangad, tootmisettevõtted, riigiasutused — paljud Eesti tööandjad pakuvad tervisetoetust. Küsi oma personaliosakonnast, kas sinul on see hüvitis olemas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLOKK 4: Kollektiivne kindlustus -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Kollektiivne kindlustus ja ettevõttepaketid</h2></div>
+        <div class="info-grid" style="grid-template-columns:1fr">
+          <div class="info-card" style="max-width:100%">
+            <div class="info-card-icon">👥</div>
+            <h3>Ettevõtte kollektiivne tervisekindlustus</h3>
+            <p>Paljud ettevõtted pakuvad töötajatele kollektiivset tervisekindlustust, mis katab ka massaažiteenuseid. Tüüpiliselt kuuluvad hüvitatavate teenuste hulka <strong>meditsiiniline massaaž, triggerpunkti teraapia, lööklaine teraapia</strong> ja muud füsioteraapiaga seotud protseduurid.</p>
+            <p style="margin-top:10px">MV Therapy 6. taseme kutsetunnistusega terapeut vastab kõikidele nõuetele, mida kollektiivne kindlustus ette näeb. Meie tšekil on kõik vajalikud andmed hüvitise taotlemiseks.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Näpunäide:</strong> Kui sa pole kindel, kas sinu kindlustus katab massaaži — võta meiega ühendust. Aitame selgitada välja vajalikud dokumendid ja tõendid, mida sinu kindlustusselts nõuab.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container">
+      <div class="cta-block">
+        <h2>Broneeri aeg — tšekk on kaasas</h2>
+        <p>Iga seansi järel väljastame tšeki — paberkandjal või digitaalselt. Küsi julgelt ka enne seanssi.</p>
+        <a href="tel:+37258189561" class="btn">📞 +372 5818 9561</a>
+        <div class="cta-contact">Kirjuta meile: <a href="mailto:info@mvtherapy.ee">info@mvtherapy.ee</a> · Tšeki väljastamine on tasuta.</div>
+      </div>
+    </section>
+
+    <div id="broneeri-container" style="height:0;overflow:hidden;margin:0;padding:0;"></div>
+  </main>
+
+  <button class="go-top" id="goTop" aria-label="Keri lehe algusesse">
+    <span class="material-symbols-outlined">expand_less</span>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>MV Therapy</strong>
+          <div>Medical Verified Therapy</div>
+          <div style="margin-top:6px;font-size:.82rem">© 2025 MV Therapy – Massaaž Pärnus</div>
+        </div>
+        <div>
+          <strong>Aadress</strong>
+          <div>Rüütli 47 II korrus</div>
+          <div>80010 Pärnu, Eesti</div>
+          <a href="/et/map.html" style="font-size:.85rem">📍 Vaata kaardil</a>
+        </div>
+        <div>
+          <strong>Kontakt</strong>
+          <div><a href="tel:+37258189561">+372 5818 9561</a></div>
+          <div><a href="mailto:info@mvtherapy.ee">info@mvtherapy.ee</a></div>
+        </div>
+        <div>
+          <strong>Lehed</strong>
+          <div><a href="/et/services.html">Teenused</a></div>
+          <div><a href="/et/Diagnosis.html">Diagnoosid</a></div>
+          <div><a href="/et/tsek.html">Tšekk</a></div>
+          <div><a href="/et/partner.html">Partner</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-book-bar">
+    <div class="book-info"><strong>MV Therapy</strong>Rüütli 47, Pärnu</div>
+    <button class="btn btn-primary book-trigger">Broneeri</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mobileToggle');
+      var panel = document.getElementById('mobilePanel');
+      toggle.addEventListener('click', function() {
+        var open = panel.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      var goTop = document.getElementById('goTop');
+      window.addEventListener('scroll', function() {
+        goTop.style.display = window.scrollY > 300 ? 'grid' : 'none';
+      }, {passive:true});
+      goTop.addEventListener('click', function() { window.scrollTo({top:0,behavior:'smooth'}); });
+      document.querySelectorAll('.book-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function() { if(window.SalonLifeWidget) window.SalonLifeWidget.open(); });
+      });
+    });
+  </script>
+  <script>
+    var book_texts={et:'Broneeri aeg'};
+    !function(e,n,t){var i=document,o="script",a=i.createElement(o),d=i.getElementsByTagName(o)[0];a.async=!0;a.defer=!0;a.src="//widget.salon.life/static/js/widget.js?t="+(new Date).getTime();n&&a.addEventListener("load",function(){t.SalonLifeCb=n},!1);d.parentNode.insertBefore(a,d)}(0,function(){window.SalonLifeWidget.mount({identifier:3986,button_text:book_texts.et,language:'et',color:'#44437d',container:'#broneeri-container'})},window);
+  </script>
+  <script>
+    var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);
+    (function(){var u="//mvtherapy.ee/matomo/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','1']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();
+  </script>
 </body>
 </html>
