@@ -428,6 +428,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mvtherapy.ee/et/arve.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mvtherapy.ee/et/partner.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mvtherapy.ee/et/services.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -990,6 +1002,18 @@
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mvtherapy.ee/ru/arve.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mvtherapy.ee/ru/partner.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mvtherapy.ee/ru/services.html</loc>
