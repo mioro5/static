@@ -91,7 +91,8 @@
   },
   "areaServed": "Pärnu, Estonia",
   "serviceType": "Lööklaine teraapia",
-  "medicalSpecialty": "Füsioteraapia"
+  "medicalSpecialty": "Füsioteraapia",
+  "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"19:00"}]
   }
   </script>
   <!-- Geo Location Meta Tags -->
@@ -1391,6 +1392,23 @@
     .partner-icon img { width:28px; height:28px; object-fit:contain; border-radius:4px; display:block; }
     @media(min-width:900px) { .partner-bar { display:none; } .partner-bar-header { display:flex; gap:6px; align-items:center; flex-shrink:0; } .partner-bar-header .partner-icon { flex-direction:column; gap:2px; padding:2px 6px; font-size:.6rem; } .partner-bar-header .partner-icon img { width:26px; height:26px; } }
   </style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Kui valulik on lööklaine teraapia?","acceptedAnswer":{"@type":"Answer","text":"Lööklaine teraapia võib põhjustada mõõdukat ebamugavustunnet, kuid ei tohiks olla talumatu. Terapeut kohandab intensiivsust teie mugavusega."}},
+{"@type":"Question","name":"Mitu seanssi on vaja?","acceptedAnswer":{"@type":"Answer","text":"Tavaliselt 3-6 seanssi 4-7 päeva intervalliga. Mõned patsiendid tunnevad paranemist juba esimese seansi järel."}},
+{"@type":"Question","name":"Kas lööklaine teraapia on ohutu?","acceptedAnswer":{"@type":"Answer","text":"Jah, see on ohutu mitteinvasiivne meetod. Kõrvalmõjud on minimaalsed ja ajutised."}},
+{"@type":"Question","name":"Millal näen paranemist?","acceptedAnswer":{"@type":"Answer","text":"Mõned tunnevad kergendust 24-48 tunni jooksul, teised alles mõne nädala pärast. Maksimaalne kasu ilmneb 6-12 nädalat pärast ravi."}},
+{"@type":"Question","name":"Kas saan pärast ravi kohe tööle minna?","acceptedAnswer":{"@type":"Answer","text":"Jah! Lööklaine teraapia ei vaja taastumisaega. Soovitame vältida intensiivset treeningut 24 tundi pärast seanssi."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Avaleht","item":"https://mvtherapy.ee/et/home.html"},
+{"@type":"ListItem","position":2,"name":"Massaažid","item":"https://mvtherapy.ee/et/services.html"},
+{"@type":"ListItem","position":3,"name":"Lööklaine teraapia","item":"https://mvtherapy.ee/et/services/looklaine-teraapia.html"}
+]}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#content">Liigu põhisisu juurde</a>
@@ -1491,7 +1509,7 @@
         <article>
           <div class="service-hero">
             <div class="service-info">
-              <h1>Lööklaine teraapia</h1>
+              <h1>Lööklaine teraapia Pärnus</h1>
               <div class="service-description">
                 Lööklaine teraapia kasutab kõrgsageduslikke helilaineid kudede ravimiseks ning on tõhus kroonilise valu ja põletiku leevendamisel (nt plantaarfastsiit, õlavalu). Impulsid stimuleerivad vereringet, kollageeni tootmist ja keha loomulikku paranemist.
               </div>
