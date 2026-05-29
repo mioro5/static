@@ -1042,10 +1042,10 @@
           </div>
           <div class="seo-col" style="grid-column: 1 / -1;">
             <h3>Broneeri Viimsi massaaž</h3>
-            <p>Professionaalne Viimsi massaaž aitab vabaneda lihaspingetest, parandada liikuvust ja kiirendada taastumist. MV Therapy vastuvõtt toimub Viimsi Haiglas, Ravi tee 4 - vaid 15 minutit Tallinna kesklinnast. <button class="book-trigger" style="background:none;border:none;color:var(--brand);font-weight:700;cursor:pointer;font-family:inherit;font-size:inherit;padding:0;text-decoration:underline;">Broneeri Viimsi massaaži aeg</button> ja alusta tervemalt elamisest juba täna.</p>
+            <p>Professionaalne Viimsi massaaž aitab vabaneda lihaspingetest, parandada liikuvust ja kiirendada taastumist. MV Therapy vastuvõtt toimub Viimsi Haiglas, Ravi tee 4 - vaid 15 minutit Tallinna kesklinnast. <a class="book-trigger" href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer" style="color:var(--brand);font-weight:700;text-decoration:underline;">Broneeri Viimsi massaaži aeg</a> ja alusta tervemalt elamisest juba täna.</p>
           </div>
         </div>
-        <p style="margin-top:16px;font-weight:600;">Kas vajad leevendust? <a href="#" class="book-trigger" style="color:var(--brand);text-decoration:underline;">Broneeri Viimsi massaaži aeg</a> ja paranda oma elukvaliteeti.</p>
+        <p style="margin-top:16px;font-weight:600;">Kas vajad leevendust? <a href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer" class="book-trigger" style="color:var(--brand);text-decoration:underline;">Broneeri Viimsi massaaži aeg</a> ja paranda oma elukvaliteeti.</p>
       </div>
     </section>
 
@@ -1106,7 +1106,7 @@
       <strong>MV Therapy</strong>
       Ravi tee 4, Haabneeme
     </div>
-    <button class="btn btn-primary book-trigger">Broneeri</button>
+    <a class="btn btn-primary" href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer">Broneeri aeg</a>
   </div>
 
   <!-- COOKIE NOTICE -->
@@ -1150,30 +1150,6 @@
           }
         });
       }
-
-      // Booking triggers - click SalonLife widget button directly
-      document.querySelectorAll('.book-trigger').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var container = document.getElementById('broneeri-container');
-          if (!container) return;
-          // Temporarily make container visible so click registers
-          container.style.cssText = 'height:auto;overflow:visible;';
-          var slBtn = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
-          if (slBtn) {
-            slBtn.click();
-            // Re-hide after SalonLife popup opens
-            setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
-          } else {
-            // Widget may not be loaded yet, retry
-            setTimeout(function() {
-              var retry = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
-              if (retry) retry.click();
-              setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
-            }, 1000);
-          }
-        });
-      });
 
       // Go top
       var goTop = document.getElementById('goTop');

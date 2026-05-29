@@ -1067,10 +1067,10 @@
           </div>
           <div class="seo-col" style="grid-column: 1 / -1;">
             <h3>Book Viimsi massage</h3>
-            <p>Professional Viimsi massage helps relieve muscle tension, improve mobility and speed up recovery. MV Therapy sessions take place at Viimsi Hospital, Ravi tee 4 - just 15 minutes from Tallinn city centre. <button class="book-trigger" style="background:none;border:none;color:var(--brand);font-weight:700;cursor:pointer;font-family:inherit;font-size:inherit;padding:0;text-decoration:underline;">Book your Viimsi massage</button> and start living healthier today.</p>
+            <p>Professional Viimsi massage helps relieve muscle tension, improve mobility and speed up recovery. MV Therapy sessions take place at Viimsi Hospital, Ravi tee 4 - just 15 minutes from Tallinn city centre. <a class="book-trigger" href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer" style="color:var(--brand);font-weight:700;text-decoration:underline;">Book your Viimsi massage</a> and start living healthier today.</p>
           </div>
         </div>
-        <p style="margin-top:16px;font-weight:600;">Need relief? <a href="#" class="book-trigger" style="color:var(--brand);text-decoration:underline;">Book your Viimsi massage appointment</a> and improve your quality of life.</p>
+        <p style="margin-top:16px;font-weight:600;">Need relief? <a href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer" class="book-trigger" style="color:var(--brand);text-decoration:underline;">Book your Viimsi massage appointment</a> and improve your quality of life.</p>
       </div>
     </section>
 
@@ -1130,7 +1130,7 @@
       <strong>MV Therapy</strong>
       Ravi tee 4, Viimsi
     </div>
-    <button class="btn btn-primary book-trigger">Book appointment</button>
+    <a class="btn btn-primary" href="https://mv-therapy-2.salon.life/mv-therapy-viimsi" target="_blank" rel="noopener noreferrer">Book appointment</a>
   </div>
 
   <!-- COOKIE NOTICE -->
@@ -1172,27 +1172,6 @@
           }
         });
       }
-
-      // Booking triggers
-      document.querySelectorAll('.book-trigger').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var container = document.getElementById('broneeri-container');
-          if (!container) return;
-          container.style.cssText = 'height:auto;overflow:visible;';
-          var slBtn = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
-          if (slBtn) {
-            slBtn.click();
-            setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
-          } else {
-            setTimeout(function() {
-              var retry = container.querySelector('.button-cta, button, [class*="button"], [class*="btn"]');
-              if (retry) retry.click();
-              setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
-            }, 1000);
-          }
-        });
-      });
 
       // Go top
       var goTop = document.getElementById('goTop');
