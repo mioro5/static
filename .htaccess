@@ -74,6 +74,9 @@ RewriteRule ^(et|ru|en|fi)/Diagnosis/7\.html$ /$1/Diagnosis/vaagnapohja-magnette
 RewriteRule ^(et|ru|en|fi)/Diagnosis/8\.html$ /$1/Diagnosis/kulmunud-olg-ravi.html [R=301,L]
 RewriteRule ^(et|ru|en|fi)/Diagnosis/9\.html$ /$1/Diagnosis/paanikahoog-ravi.html [R=301,L]
 
+# --- tsek.html -> arve.html (ümber nimetatud) ---
+RewriteRule ^et/tsek\.html$ /et/arve.html [R=301,L]
+
 # --- EN puuduvad lehed -> ET versioon ---
 RewriteRule ^en/arve\.html$ /et/arve.html [R=301,L]
 RewriteRule ^en/partner\.html$ /et/partner.html [R=301,L]
