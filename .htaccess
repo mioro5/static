@@ -1,1 +1,196 @@
-Redirect 301 /et/tsek.html /et/arve.html
+# ============================================================
+# MV Therapy .htaccess — versioon 8.4
+# Viimati uuendatud: mai 2026
+#
+# ET: kõik olemas (55 faili) — sh tallinn.html, paanikahoog-ravi.html
+# RU: kõik olemas (55 faili) — sh tallinn.html, paanikahoog-ravi.html
+# EN: puuduvad arve.html, partner.html, workshops.html, workshops/ alalehed
+# FI: puuduvad arve.html, partner.html, workshops.html, workshops/ alalehed
+# Services ja Diagnosis ümber nimetatud numbrilistelt kirjeldavatele nimedele
+# v8.1: lisatud kkk redirect, html9 kirjaviga, query string keeleteadlik
+# v8.2: lisatud EN/FI workshops numbrid, root?lang=
+# v8.3: lisatud Diagnosis/9 redirect paanikahoog-ravi, versioon uuendatud
+# v8.4: refleksoteraapia -> labajalamassaaz redirect
+# ============================================================
+
+# 1. Käivita mootor
+RewriteEngine On
+RewriteBase /
+
+# 2. HTTPS ja www eemaldus
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 3. /static/ eemaldus URL-ist
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^static/(.*)$ /$1 [R=301,L]
+
+# 4. Avalehe suunamine (sh query string versioonid)
+RewriteCond %{QUERY_STRING} lang=ru
+RewriteRule ^$ /ru/home.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=en
+RewriteRule ^$ /en/home.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=fi
+RewriteRule ^$ /fi/home.html? [R=301,L]
+
+RewriteRule ^$ /et/home.html [L,R=301]
+
+# ============================================================
+# 5. REDIRECTID — ENNE reeglit 6!
+# ============================================================
+
+# --- refleksoteraapia -> labajalamassaaz (301 permanent) ---
+RewriteRule ^(et|ru|en|fi)/services/refleksoteraapia\.html$ /$1/services/labajalamassaaz.html [R=301,L]
+
+# --- Services numbrilised -> kirjeldavad nimed (kõik 4 keelt) ---
+RewriteRule ^(et|ru|en|fi)/services/1\.html$ /$1/services/meditsiiniline-massaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/2\.html$ /$1/services/ortopeediline-klassikaline-massaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/3\.html$ /$1/services/looklaine-teraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/4\.html$ /$1/services/triggerpunkti-teraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/5\.html$ /$1/services/terapeutiline-spordimassaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/6\.html$ /$1/services/suvakudede-massaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/7\.html$ /$1/services/kupumassaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/8\.html$ /$1/services/gua-sha-teraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/9\.html$ /$1/services/bioelektri-massaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/10\.html$ /$1/services/lumfimassaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/11\.html$ /$1/services/labajalamassaaz.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/12\.html$ /$1/services/ultraheli-teraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/13\.html$ /$1/services/manuaalne-lihastest.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/14\.html$ /$1/services/kinesioteipimine.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/services/15\.html$ /$1/services/korgintensiivne-magnetteraapia.html [R=301,L]
+
+# --- Diagnosis numbrilised -> kirjeldavad nimed (kõik 4 keelt) ---
+RewriteRule ^(et|ru|en|fi)/Diagnosis/1\.html$ /$1/Diagnosis/diski-hernia-protrusioon.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/2\.html$ /$1/Diagnosis/kannakannus-plantaarne-fastsiit.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/3\.html$ /$1/Diagnosis/epikondüliit-ravi.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/4\.html$ /$1/Diagnosis/piriformise-sundroom.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/5\.html$ /$1/Diagnosis/depressioon-magnetteraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/6\.html$ /$1/Diagnosis/migreen-peavalu-ravi.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/7\.html$ /$1/Diagnosis/vaagnapohja-magnetteraapia.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/8\.html$ /$1/Diagnosis/kulmunud-olg-ravi.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/9\.html$ /$1/Diagnosis/paanikahoog-ravi.html [R=301,L]
+
+# --- EN puuduvad lehed -> ET versioon ---
+RewriteRule ^en/arve\.html$ /et/arve.html [R=301,L]
+RewriteRule ^en/partner\.html$ /et/partner.html [R=301,L]
+RewriteRule ^en/workshops\.html$ /et/workshops.html [R=301,L]
+
+# --- FI puuduvad lehed -> ET versioon ---
+RewriteRule ^fi/arve\.html$ /et/arve.html [R=301,L]
+RewriteRule ^fi/partner\.html$ /et/partner.html [R=301,L]
+RewriteRule ^fi/workshops\.html$ /et/workshops.html [R=301,L]
+
+# --- WORKSHOPS alalehed numbrilised ---
+RewriteRule ^en/workshops/([0-9]+)\.html$ /et/workshops.html [R=301,L]
+RewriteRule ^fi/workshops/([0-9]+)\.html$ /et/workshops.html [R=301,L]
+
+# --- WORKSHOPS alalehed nimelistele ---
+RewriteRule ^et/workshops/([a-zA-Z-]+)\.html$ /et/workshops.html [R=301,L]
+RewriteRule ^ru/workshops/([a-zA-Z-]+)\.html$ /ru/workshops.html [R=301,L]
+RewriteRule ^en/workshops/([a-zA-Z-]+)\.html$ /et/workshops.html [R=301,L]
+RewriteRule ^fi/workshops/([a-zA-Z-]+)\.html$ /et/workshops.html [R=301,L]
+
+# --- CAMPAIGN alalehed numbrilised ---
+RewriteRule ^et/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
+RewriteRule ^ru/campaign/([0-9]+)\.html$ /ru/campaign.html [R=301,L]
+RewriteRule ^en/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
+RewriteRule ^fi/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
+
+# --- Index.html -> home.html ---
+RewriteRule ^et/index\.html$ /et/home.html [R=301,L]
+RewriteRule ^ru/index\.html$ /ru/home.html [R=301,L]
+RewriteRule ^en/index\.html$ /en/home.html [R=301,L]
+RewriteRule ^fi/index\.html$ /fi/home.html [R=301,L]
+
+# --- /keel/home ilma .html-ta ---
+RewriteRule ^et/home$ /et/home.html [R=301,L]
+RewriteRule ^ru/home$ /ru/home.html [R=301,L]
+RewriteRule ^en/home$ /en/home.html [R=301,L]
+RewriteRule ^fi/home$ /fi/home.html [R=301,L]
+
+# --- Kataloogid -> pealehed ---
+RewriteRule ^et/$ /et/home.html [R=301,L]
+RewriteRule ^ru/$ /ru/home.html [R=301,L]
+RewriteRule ^en/$ /en/home.html [R=301,L]
+RewriteRule ^fi/$ /fi/home.html [R=301,L]
+RewriteRule ^et/blog/$ /et/blog.html [R=301,L]
+RewriteRule ^ru/blog/$ /ru/blog.html [R=301,L]
+RewriteRule ^en/blog/$ /en/blog.html [R=301,L]
+RewriteRule ^fi/blog/$ /fi/blog.html [R=301,L]
+
+# --- Juurtaseme vanad URL-id ---
+RewriteRule ^home$ /et/home.html [R=301,L]
+RewriteRule ^index$ /et/home.html [R=301,L]
+RewriteRule ^campaign$ /et/campaign.html [R=301,L]
+RewriteRule ^services$ /et/services.html [R=301,L]
+RewriteRule ^workshops$ /et/workshops.html [R=301,L]
+
+# --- /kkk juurtaseme -> ET avaleht ---
+RewriteRule ^kkk$ /et/home.html [R=301,L]
+
+# --- Kirjaviga .html9 ---
+RewriteRule ^ru/blog/5\.html9$ /ru/blog/5.html [R=301,L]
+
+# --- Vanad query string URL-id --- keeleteadlik ---
+RewriteCond %{QUERY_STRING} lang=ru
+RewriteRule ^campaign$ /ru/campaign.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=en
+RewriteRule ^campaign$ /et/campaign.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^id=
+RewriteRule ^campaign$ /et/campaign.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=ru
+RewriteRule ^workshops$ /ru/workshops.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^id=
+RewriteRule ^workshops$ /et/workshops.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=ru
+RewriteRule ^home$ /ru/home.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} lang=en
+RewriteRule ^home$ /en/home.html? [R=301,L]
+
+# --- Rootsi ja Norra -> eesti ---
+RewriteRule ^sv/(.*)$ /et/home.html [R=301,L]
+RewriteRule ^no/(.*)$ /et/home.html [R=301,L]
+
+# ============================================================
+# 6. PEIDETUD SUUNAMINE: static -> puhas URL
+# ============================================================
+RewriteCond %{REQUEST_URI} !^/static/
+RewriteRule ^(et|ru|en|fi)/(.*)$ static/$1/$2 [L]
+
+# 7. Robots ja Sitemap
+RewriteRule ^robots\.txt$ static/robots.txt [L]
+RewriteRule ^sitemap\.xml$ static/sitemap.xml [L]
+
+# ============================================================
+# 8. Brauseri cache
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
+# ============================================================
+# 9. Gzip kompressioon
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml application/json
+</IfModule>
