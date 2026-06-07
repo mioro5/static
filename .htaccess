@@ -1,5 +1,5 @@
 # ============================================================
-# MV Therapy .htaccess — versioon 8.4
+# MV Therapy .htaccess — versioon 8.5
 # Viimati uuendatud: mai 2026
 #
 # ET: kõik olemas (55 faili) — sh tallinn.html, paanikahoog-ravi.html
@@ -11,6 +11,7 @@
 # v8.2: lisatud EN/FI workshops numbrid, root?lang=
 # v8.3: lisatud Diagnosis/9 redirect paanikahoog-ravi, versioon uuendatud
 # v8.4: refleksoteraapia -> labajalamassaaz redirect
+# v8.5: tallinn.html -> home.html redirects
 # ============================================================
 
 # 1. Käivita mootor
@@ -45,6 +46,12 @@ RewriteRule ^$ /et/home.html [L,R=301]
 
 # --- refleksoteraapia -> labajalamassaaz (301 permanent) ---
 RewriteRule ^(et|ru|en|fi)/services/refleksoteraapia\.html$ /$1/services/labajalamassaaz.html [R=301,L]
+
+# --- tallinn.html -> home.html (301 permanent) ---
+RewriteRule ^et/tallinn\.html$ /et/home.html [R=301,L]
+RewriteRule ^ru/tallinn\.html$ /ru/home.html [R=301,L]
+RewriteRule ^en/tallinn\.html$ /en/home.html [R=301,L]
+RewriteRule ^fi/tallinn\.html$ /fi/home.html [R=301,L]
 
 # --- Services numbrilised -> kirjeldavad nimed (kõik 4 keelt) ---
 RewriteRule ^(et|ru|en|fi)/services/1\.html$ /$1/services/meditsiiniline-massaaz.html [R=301,L]
