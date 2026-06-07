@@ -613,6 +613,9 @@
     .footer-grid strong { color: #fff; display: block; margin-bottom: 6px; font-size: .9rem; }
     .footer-grid a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
     .footer-grid a:hover { color: #fff; }
+    .footer-locations { display: flex; flex-direction: column; gap: 10px; }
+    .footer-location { display: flex; flex-direction: column; gap: 2px; }
+    .footer-location span { color: rgba(255,255,255,.7); font-size: .85rem; }
     .footer-social { display: flex; gap: 12px; align-items: center; margin-top: 8px; }
     .footer-social img { width: 32px; height: 32px; border-radius: 8px; opacity: .8; transition: opacity .2s; }
     .footer-social img:hover { opacity: 1; }
@@ -1220,9 +1223,18 @@
         </div>
         <div>
           <strong>Address</strong>
-          <div>Rüütli 47, 2nd floor</div>
-          <div>80010 Pärnu, Estonia</div>
-          <a href="/en/map.html" style="font-size:.85rem;">📍 View on map</a>
+          <div class="footer-locations">
+            <div class="footer-location">
+              <strong>Tallinn / Viimsi</strong>
+              <span>Viimsi Haigla, Ravi tee 4</span>
+              <span>74001 Haabneeme</span>
+            </div>
+            <div class="footer-location">
+              <strong>Pärnu</strong>
+              <span>Rüütli 47 II korrus</span>
+              <span>80010 Pärnu</span>
+            </div>
+          </div>
         </div>
         <div>
           <strong>Contact</strong>

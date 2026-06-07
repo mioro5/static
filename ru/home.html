@@ -563,6 +563,9 @@
     .footer-grid strong { color: #fff; display: block; margin-bottom: 6px; font-size: .9rem; }
     .footer-grid a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
     .footer-grid a:hover { color: #fff; }
+    .footer-locations { display: flex; flex-direction: column; gap: 10px; }
+    .footer-location { display: flex; flex-direction: column; gap: 2px; }
+    .footer-location span { color: rgba(255,255,255,.7); font-size: .85rem; }
     .footer-social { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
     .footer-social a {
       width: 36px; height: 36px; border-radius: 8px;
@@ -1230,9 +1233,18 @@
         </div>
         <div>
           <strong>Адрес</strong>
-          <div>Рюйтли 47, 2-й этаж</div>
-          <div>80010 Пярну, Эстония</div>
-          <a href="/ru/map.html" style="font-size:.85rem;">📍 Показать на карте</a>
+          <div class="footer-locations">
+            <div class="footer-location">
+              <strong>Таллин / Виймси</strong>
+              <span>Viimsi Haigla, Ravi tee 4</span>
+              <span>74001 Haabneeme</span>
+            </div>
+            <div class="footer-location">
+              <strong>Пярну</strong>
+              <span>Rüütli 47 II korrus</span>
+              <span>80010 Pärnu</span>
+            </div>
+          </div>
         </div>
         <div>
           <strong>Контакты</strong>
