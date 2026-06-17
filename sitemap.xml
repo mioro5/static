@@ -164,6 +164,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://mvtherapy.ee/en/privaatsuspoliitika.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://mvtherapy.ee/en/map.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -454,6 +460,12 @@
   <url>
     <loc>https://mvtherapy.ee/et/tingimused.html</loc>
     <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mvtherapy.ee/et/privaatsuspoliitika.html</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -776,6 +788,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://mvtherapy.ee/fi/privaatsuspoliitika.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://mvtherapy.ee/fi/map.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1066,6 +1084,12 @@
   <url>
     <loc>https://mvtherapy.ee/ru/tingimused.html</loc>
     <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mvtherapy.ee/ru/privaatsuspoliitika.html</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
