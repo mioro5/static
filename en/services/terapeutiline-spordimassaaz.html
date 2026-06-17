@@ -174,7 +174,10 @@
     .footer-social img:hover { opacity: 1; }
     .go-top { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 48px; height: 48px; border-radius: 50%; background: var(--brand); color: #fff; border: 0; box-shadow: 0 4px 16px rgba(68,67,125,.3); cursor: pointer; display: none; place-items: center; font-size: 1.3rem; transition: transform .2s; }
     .go-top:hover { transform: translateY(-3px); }
-    .mobile-book-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 95; background: rgba(245,244,250,.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--line); padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 -4px 20px rgba(0,0,0,.08); }
+    .mobile-book-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 95; background: rgba(245,244,250,.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--line); padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+      pointer-events: none;
+    }
+    .mobile-book-bar .btn, .mobile-book-bar .book-info { pointer-events: auto; }
     .mobile-book-bar .book-info { font-size: .82rem; color: var(--text-secondary); line-height: 1.3; }
     .mobile-book-bar .book-info strong { display: block; font-size: .9rem; color: var(--text); }
     .mobile-book-bar .btn { flex-shrink: 0; padding: 12px 22px; }

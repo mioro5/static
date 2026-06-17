@@ -527,7 +527,9 @@
       padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
       display: flex; align-items: center; justify-content: space-between; gap: 10px;
       box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+      pointer-events: none;
     }
+    .mobile-book-bar .btn, .mobile-book-bar .book-info { pointer-events: auto; }
     .mobile-book-bar .book-info {
       font-size: .82rem; color: var(--text-secondary); line-height: 1.3;
     }
