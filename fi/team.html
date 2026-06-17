@@ -1528,7 +1528,42 @@
     .fin-notice-text { line-height: 1.4; }
     .fin-notice-text strong { color: #3e2723; }
 
-</style>
+
+    .location-badges-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .location-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .location-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f4f4f9;
+      border: 1px solid #e2e2ec;
+      border-left: 4px solid #44437d;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #333;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s;
+    }
+    .location-badge:hover { transform: translateY(-2px); }
+    .pin-icon { width: 18px; height: 18px; fill: #44437d; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .location-badges { flex-direction: column; width: 100%; }
+      .location-badge { width: 100%; box-sizing: border-box; justify-content: center; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#content">Siirry pääsisältöön</a>
@@ -1604,6 +1639,18 @@
           <div class="h-div">
             <div class="h-div-txt">
               <h1 id="team1" itemprop="jobTitle">Lisensioitu <strong><a href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener noreferrer" class="keyword-link">Hieroja</a></strong> tason 6 sertifikaatilla</h1>
+        <div class="location-badges-container">
+          <div class="location-badges">
+            <a href="#booking" class="location-badge">
+              <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span><strong>Viimsin sairaala</strong></span>
+            </a>
+            <a href="/fi/parnu.html" class="location-badge">
+              <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span><strong>Pärnu keskusta</strong></span>
+            </a>
+          </div>
+        </div>
               <p id="team2" itemprop="description">Hei, olen lisensioitu <strong><a href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener noreferrer" class="keyword-link">hierontaterapeutti</a></strong>, jolla on Kutsekoda myöntämä <strong>tason 6 ammatillinen todistus</strong> (#219003). Olen jäsen Estonian <a href="https://massaaziliit.ee/liikmed/" target="_blank" rel="noopener noreferrer" class="keyword-link">Massage Union</a> -yhdistyksessä. Lisäksi toimin opettajana Estonian School of Massage and Therapy -oppilaitoksessa ja opiskelen lääketiedettä Tallinn Health Care College -korkeakoulussa.</p>
               
               <p>Tavoitteeni on tarjota jokaiselle asiakkaalle ammattimainen ja yksilöllinen lähestymistapa käyttämällä näyttöön perustuvia hierontatekniikoita ja moderneja terapiamenetelmiä.</p>

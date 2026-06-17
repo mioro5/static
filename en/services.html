@@ -1307,6 +1307,41 @@
           }
           .trust.in { animation: none !important; }
         }
+  
+    .location-badges-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .location-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .location-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f4f4f9;
+      border: 1px solid #e2e2ec;
+      border-left: 4px solid #44437d;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #333;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s;
+    }
+    .location-badge:hover { transform: translateY(-2px); }
+    .pin-icon { width: 18px; height: 18px; fill: #44437d; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .location-badges { flex-direction: column; width: 100%; }
+      .location-badge { width: 100%; box-sizing: border-box; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -1377,6 +1412,18 @@
 
         <div class="eyebrow">5.0★ Google rating · 5 000+ clients · Viimsi Hospital</div>
         <h1 id="services-head">Massage Services in Tallinn</h1>
+        <div class="location-badges-container">
+          <div class="location-badges">
+            <a href="#booking" class="location-badge">
+              <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span><strong>Viimsi Hospital</strong></span>
+            </a>
+            <a href="/en/parnu.html" class="location-badge">
+              <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span><strong>Pärnu Centre</strong></span>
+            </a>
+          </div>
+        </div>
         <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:16px;">📍 Services available: Tallinn (Viimsi Hospital, Ravi tee 4) · Pärnu (Rüütli 47)</p>
         <div class="flx-container-services">
           <!-- 1. Classical massage → 1.html -->
