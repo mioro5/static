@@ -72,7 +72,8 @@ RewriteRule ^(et|ru|en|fi)/services/15\.html$ /$1/services/korgintensiivne-magne
 
 # --- Diagnosis numbrilised -> kirjeldavad nimed (kõik 4 keelt) ---
 RewriteRule ^(et|ru|en|fi)/Diagnosis/1\.html$ /$1/Diagnosis/diski-hernia-protrusioon.html [R=301,L]
-RewriteRule ^(et|ru|en|fi)/Diagnosis/2\.html$ /$1/Diagnosis/kannakannus-plantaarne-fastsiit.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/2\.html$ /$1/Diagnosis/kukekannus-plantaarne-fastsiit.html [R=301,L]
+RewriteRule ^(et|ru|en|fi)/Diagnosis/kannakannus-plantaarne-fastsiit\.html$ /$1/Diagnosis/kukekannus-plantaarne-fastsiit.html [R=301,L]
 RewriteRule ^(et|ru|en|fi)/Diagnosis/3\.html$ /$1/Diagnosis/epikondüliit-ravi.html [R=301,L]
 RewriteRule ^(et|ru|en|fi)/Diagnosis/4\.html$ /$1/Diagnosis/piriformise-sundroom.html [R=301,L]
 RewriteRule ^(et|ru|en|fi)/Diagnosis/5\.html$ /$1/Diagnosis/depressioon-magnetteraapia.html [R=301,L]
