@@ -51,7 +51,10 @@
   <script type="application/ld+json" id="business-schema">
   {
   "@context": "https://schema.org",
+  "@graph": [
+  {
   "@type": ["LocalBusiness", "MedicalBusiness", "HealthAndBeautyBusiness"],
+  "@id": "https://mvtherapy.ee/#organization",
   "name": "MV Therapy - Massage in Pärnu",
   "alternateName": ["MV Therapy", "MV Therapy massage salon"],
   "description": "Professional massage therapy centre in Pärnu city centre. Medical (therapeutic) massage, sports massage, relaxation massage, magnetic therapy and shockwave therapy. Level 6 certified massage therapist.",
@@ -120,37 +123,18 @@
   "name": "Magnetic therapy in Pärnu",
   "description": "High-intensity magnetic therapy pain treatment method"
   }
+  },
+  {
+  "@type": "Offer",
+  "itemOffered": {
+  "@type": "MedicalService",
+  "name": "Shockwave therapy in Pärnu",
+  "description": "ESWT shockwave therapy for chronic tendinitis and heel spurs"
+  }
   }
   ]
   },
-  "employee": {
-  "@type": "Person",
-  "name": "Roman Gussev",
-  "jobTitle": "Massage Therapist",
-  "description": "7+ years of experience in medical (therapeutic) massage. Specializations: shockwave therapy, magnetic therapy, trigger point therapy.",
-  "hasCredential": [
-  {
-  "@type": "EducationalOccupationalCredential",
-  "credentialCategory": "Level 6 professional certificate",
-  "recognizedBy": {
-  "@type": "Organization",
-  "name": "Professional Board"
-  }
-  },
-  {
-  "@type": "EducationalOccupationalCredential",
-  "credentialCategory": "Assistant nurse (Tallinna Tervishoiu Kõrgkool)"
-  }
-  ],
-  "knowsAbout": [
-  "Shockwave therapy",
-  "High-intensity magnetic therapy",
-  "Trigger point therapy",
-  "Medical massage",
-  "Sports massage",
-  "Deep tissue massage"
-  ]
-  },
+  "employee": { "@id": "https://mvtherapy.ee/#roman-gussev" },
   "areaServed": [
   {
   "@type": "City",
@@ -174,6 +158,39 @@
   "https://www.instagram.com/medmassaaz/",
   "https://www.tiktok.com/@medmassaaz",
   "https://mvtherapy.ee"
+  ]
+  },
+  {
+  "@type": "Person",
+  "@id": "https://mvtherapy.ee/#roman-gussev",
+  "name": "Roman Gussev",
+  "url": "https://mvtherapy.ee/en/team.html",
+  "jobTitle": "Massage Therapist",
+  "description": "7+ years of experience in medical (therapeutic) massage. Specializations: shockwave therapy, magnetic therapy, trigger point therapy.",
+  "worksFor": { "@id": "https://mvtherapy.ee/#organization" },
+  "hasCredential": [
+  {
+  "@type": "EducationalOccupationalCredential",
+  "credentialCategory": "Level 6 professional certificate",
+  "recognizedBy": {
+  "@type": "Organization",
+  "name": "Kutsekoda"
+  }
+  },
+  {
+  "@type": "EducationalOccupationalCredential",
+  "credentialCategory": "Assistant nurse (Tallinna Tervishoiu Kõrgkool)"
+  }
+  ],
+  "knowsAbout": [
+  "Shockwave therapy",
+  "High-intensity magnetic therapy",
+  "Trigger point therapy",
+  "Medical massage",
+  "Sports massage",
+  "Deep tissue massage"
+  ]
+  }
   ]
   }
   </script>
@@ -246,6 +263,38 @@
   "acceptedAnswer": {
   "@type": "Answer",
   "text": "Magnetic therapy is a non-invasive treatment using high-intensity magnetic fields. It helps with chronic pain and nerve issues. MV Therapy uses modern professional PEMF/EMTT equipment."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "How much does medical massage cost in Pärnu?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Prices at MV Therapy start from €30 per session. The exact price depends on the service chosen, its duration and the techniques used. All current prices are available in the booking system and on the services page."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "Does the Estonian Health Insurance Fund cover massage at MV Therapy?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "The Estonian Health Insurance Fund does not enter into direct contracts with massage therapists in Estonia - only physiotherapists qualify for that. However, you can use the Stebby platform, your employer's tax-free health benefit (up to €400 per year), and insurance-funded rehabilitation in case of a workplace injury."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "How do I choose a good massage therapist in Pärnu?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Check the therapist's professional certificate in the Estonian Qualifications Register (kutseregister.ee), prefer therapists with a level 5 or 6 certificate, read Google reviews, and check whether the therapist has a medical background and works with evidence-based methods. MV Therapy's therapist Roman Gussev holds a level 6 professional certificate and is a qualified assistant nurse."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "What is the difference between high-intensity magnetic therapy and physiotherapy?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "High-intensity magnetic therapy (EMTT) uses pulsed magnetic fields that penetrate up to 18 cm into tissue, stimulating regeneration and reducing inflammation. Physiotherapy focuses on active exercises and restoring movement patterns. These methods complement each other - for many patients, combining both gives the best results."
   }
   }
   ]
@@ -1165,6 +1214,22 @@
           <details class="faq-item">
             <summary>What are the contraindications for lymphatic massage?</summary>
             <div class="faq-body">Lymphatic massage should be avoided in cases of acute infections, fever, heart or kidney failure, active tumours and deep vein thrombosis. Consult your doctor for chronic conditions.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How much does medical massage cost in Pärnu?</summary>
+            <div class="faq-body">Prices at MV Therapy start from €30 per session. The exact price depends on the service chosen, its duration and the techniques used. All current prices are available in the booking system and on the <a href="/en/services.html">services page</a>.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Does the Estonian Health Insurance Fund cover massage at MV Therapy?</summary>
+            <div class="faq-body">The Estonian Health Insurance Fund does not enter into direct contracts with massage therapists in Estonia – only physiotherapists qualify for that. However, you can use the <a href="https://app.stebby.eu/pos/mv.therapy.massaazi.ja.vaimse.teraapia.keskus/services" target="_blank" rel="noopener">Stebby platform</a>, your employer's tax-free health benefit (up to €400 per year), and insurance-funded rehabilitation in case of a workplace injury.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How do I choose a good massage therapist in Pärnu?</summary>
+            <div class="faq-body">Check the therapist's professional certificate in the <a href="https://www.kutseregister.ee/" target="_blank" rel="noopener">Estonian Qualifications Register</a>, prefer therapists with a level 5 or 6 certificate, read Google reviews, and check whether the therapist has a medical background and works with evidence-based methods. MV Therapy's therapist Roman Gussev holds a <a href="https://www.kutseregister.ee/ctrl/et/Tunnistused/vaata/11337053/1" target="_blank" rel="noopener">level 6 professional certificate</a> and is a qualified assistant nurse.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What is the difference between high-intensity magnetic therapy and physiotherapy?</summary>
+            <div class="faq-body">High-intensity magnetic therapy (EMTT) uses pulsed magnetic fields that penetrate up to 18 cm into tissue, stimulating regeneration and reducing inflammation. Physiotherapy focuses on active exercises and restoring movement patterns. These methods complement each other – for many patients, combining both gives the best results.</div>
           </details>
         </div>
       </div>
