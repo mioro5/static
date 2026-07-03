@@ -108,8 +108,8 @@ RewriteRule ^fi/workshops/([a-zA-Z-]+)\.html$ /et/workshops.html [R=301,L]
 # --- CAMPAIGN alalehed numbrilised ---
 RewriteRule ^et/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
 RewriteRule ^ru/campaign/([0-9]+)\.html$ /ru/campaign.html [R=301,L]
-RewriteRule ^en/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
-RewriteRule ^fi/campaign/([0-9]+)\.html$ /et/campaign.html [R=301,L]
+RewriteRule ^en/campaign/([0-9]+)\.html$ /en/campaign.html [R=301,L]
+RewriteRule ^fi/campaign/([0-9]+)\.html$ /fi/campaign.html [R=301,L]
 
 # --- Index.html -> home.html ---
 RewriteRule ^et/index\.html$ /et/home.html [R=301,L]
