@@ -1,0 +1,52 @@
+# MV Therapy
+
+> Medical (therapeutic) massage clinic in the Tallinn/Viimsi area and in Pärnu, Estonia. Specializes in trigger point therapy, deep tissue massage, high-intensity magnetic therapy (EMTT), and shockwave therapy (ESWT). Led by Roman Gussev, a Level 6 certified massage therapist.
+
+MV Therapy operates from two locations in Estonia: Ravi tee 4, Viimsi Hospital (Fertilitas), Haabneeme, near Tallinn; and Rüütli 47, Pärnu city centre. The practice focuses on evidence-based medical massage and pain treatment rather than relaxation/spa massage, and treats conditions such as trigger points, chronic muscle pain, sports injuries, plantar fasciitis (heel spur), frozen shoulder, disc herniation, and tension headaches. Content is available in Estonian, English, Russian, and Finnish.
+
+## Main pages
+
+- [Home (Tallinn/Viimsi)](https://mvtherapy.ee/en/home.html): Overview of the Tallinn/Viimsi location, services, and credentials.
+- [Pärnu location](https://mvtherapy.ee/en/parnu.html): Overview of the Pärnu location and services.
+- [All services](https://mvtherapy.ee/en/services.html): Full list of massage and therapy services offered.
+- [Conditions treated](https://mvtherapy.ee/en/Diagnosis.html): Diagnosis-based pain treatment overview.
+- [Team / therapist profile](https://mvtherapy.ee/en/team.html): Roman Gussev's qualifications and background.
+
+## Services
+
+- [Medical (Therapeutic) Massage](https://mvtherapy.ee/en/services/meditsiiniline-massaaz.html)
+- [Trigger Point Therapy](https://mvtherapy.ee/en/services/triggerpunkti-teraapia.html)
+- [Deep Tissue Massage](https://mvtherapy.ee/en/services/suvakudede-massaaz.html)
+- [Shockwave Therapy (ESWT)](https://mvtherapy.ee/en/services/looklaine-teraapia.html)
+- [High-Intensity Magnetic Therapy (EMTT)](https://mvtherapy.ee/en/services/korgintensiivne-magnetteraapia.html)
+- [Therapeutic Sports Massage](https://mvtherapy.ee/en/services/terapeutiline-spordimassaaz.html)
+- [Lymphatic Massage](https://mvtherapy.ee/en/services/lumfimassaaz.html)
+- [Classic (Orthopedic) Massage](https://mvtherapy.ee/en/services/ortopeediline-klassikaline-massaaz.html)
+- [Cupping Massage](https://mvtherapy.ee/en/services/kupumassaaz.html)
+- [Functional Foot Massage](https://mvtherapy.ee/en/services/labajalamassaaz.html)
+- [Bioenergetic Massage](https://mvtherapy.ee/en/services/bioelektri-massaaz.html)
+- [Gua Sha Therapy](https://mvtherapy.ee/en/services/gua-sha-teraapia.html)
+- [Kinesio Taping](https://mvtherapy.ee/en/services/kinesioteipimine.html)
+- [Ultrasound Therapy](https://mvtherapy.ee/en/services/ultraheli-teraapia.html)
+- [Manual Muscle Testing](https://mvtherapy.ee/en/services/manuaalne-lihastest.html)
+
+## Conditions treated
+
+- [Plantar Fasciitis (Heel Spur)](https://mvtherapy.ee/en/Diagnosis/kukekannus-plantaarne-fastsiit.html)
+- [Frozen Shoulder](https://mvtherapy.ee/en/Diagnosis/kulmunud-olg-ravi.html)
+- [Disc Herniation / Protrusion](https://mvtherapy.ee/en/Diagnosis/diski-hernia-protrusioon.html)
+- [Migraine / Headache Treatment](https://mvtherapy.ee/en/Diagnosis/migreen-peavalu-ravi.html)
+- [Piriformis Syndrome](https://mvtherapy.ee/en/Diagnosis/piriformise-sundroom.html)
+- [Epicondylitis (Tennis/Golfer's Elbow)](https://mvtherapy.ee/en/Diagnosis/epikondüliit-ravi.html)
+
+## Other languages
+
+- Estonian: [https://mvtherapy.ee/et/home.html](https://mvtherapy.ee/et/home.html)
+- Russian: [https://mvtherapy.ee/ru/home.html](https://mvtherapy.ee/ru/home.html)
+- Finnish: [https://mvtherapy.ee/fi/home.html](https://mvtherapy.ee/fi/home.html)
+
+## Optional
+
+- [FAQ](https://mvtherapy.ee/en/kkk.html)
+- [Blog](https://mvtherapy.ee/en/blog.html)
+- [Training courses (workshops)](https://mvtherapy.ee/et/workshops.html)
