@@ -2079,6 +2079,23 @@
         });
       });
 
+      // FAQ accordion toggle
+      document.querySelectorAll('.faq-question').forEach(function(q) {
+        function toggleFaq() {
+          var answer = q.nextElementSibling;
+          if (!answer || !answer.classList.contains('faq-answer')) return;
+          var isOpen = answer.classList.toggle('open');
+          q.setAttribute('aria-expanded', String(isOpen));
+        }
+        q.addEventListener('click', toggleFaq);
+        q.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFaq();
+          }
+        });
+      });
+
       // Go top
       var goTop = document.getElementById('goTop');
       var scrollTimer;
