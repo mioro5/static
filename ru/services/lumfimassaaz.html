@@ -423,36 +423,6 @@
     /* === HERO REVIEWS === */
     .hero-reviews { margin-top: 18px; }
 
-    /* === SEO CONTENT BLOCK === */
-    .seo-section {
-      padding: 32px 0 20px;
-    }
-    .seo-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-      font-weight: 400; margin-bottom: 18px;
-      color: var(--text);
-    }
-    .seo-grid {
-      display: grid; gap: 20px; grid-template-columns: 1fr;
-    }
-    .seo-col h3 {
-      font-size: .95rem; font-weight: 700; color: var(--brand);
-      margin-bottom: 8px;
-    }
-    .seo-col p {
-      font-size: .88rem; color: var(--text-secondary); line-height: 1.7;
-      margin-bottom: 10px;
-    }
-    .seo-col a {
-      color: var(--brand); text-decoration: none;
-      border-bottom: 1px dotted var(--brand); transition: all .2s;
-    }
-    .seo-col a:hover { border-bottom-style: solid; }
-    @media (min-width: 900px) {
-      .seo-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
     /* === FOOTER === */
     .site-footer {
       background: #1a1832; color: rgba(255,255,255,.7);
@@ -1069,10 +1039,6 @@
     /* === HERO REVIEWS === */
         .hero-reviews { margin-top: 18px; }
     
-    @media (min-width: 900px) {
-          .seo-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    
     /* === RESPONSIVE === */
         @media (min-width: 640px) {
           .trustbar { grid-template-columns: repeat(4,1fr); }
@@ -1340,6 +1306,64 @@
           font-weight: 500;
           color: var(--brand, #44437d);
         }
+
+    .comparison-intro {
+      background: #f8f9fb;
+      border-radius: var(--radius, 8px);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 1.5rem 0 2rem;
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      border: 1px solid var(--line, #e0e0e0);
+    }
+
+    .comparison-col-header {
+      padding: 1.1rem 1.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comparison-col-header.therapeutic { background: var(--brand, #44437d); }
+    .comparison-col-header.aesthetic { background: #b8860b; }
+
+    .comparison-row-label {
+      grid-column: 1 / -1;
+      background: #ececf5;
+      padding: .7rem 1.5rem;
+      font-weight: 700;
+      color: var(--brand, #44437d);
+      border-top: 1px solid var(--line, #e0e0e0);
+    }
+
+    .comparison-cell {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid var(--line, #e0e0e0);
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .comparison-cell.therapeutic { background: #fafafd; border-right: 1px solid var(--line, #e0e0e0); }
+    .comparison-cell.aesthetic { background: #fffdf7; }
+    .comparison-cell ul { margin: 0; padding-left: 1.15rem; }
+    .comparison-cell li { margin-bottom: .45rem; }
+    .comparison-note {
+      font-size: .85rem;
+      color: var(--text-secondary, #666);
+      font-style: italic;
+      margin-top: .5rem;
+    }
+
+    @media (max-width: 720px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comparison-cell.therapeutic { border-right: none; }
+    }
     
     .faq-section {
           margin-top: 3rem;
@@ -1396,11 +1420,11 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Kas lümfimassaaž on valulik?","acceptedAnswer":{"@type":"Answer","text":"Ei, lümfimassaaž on väga õrn ja peaks olema meeldiv. Surve on palju kergem kui tavalise massaaži puhul."}},
-{"@type":"Question","name":"Millal näen tulemusi?","acceptedAnswer":{"@type":"Answer","text":"Paljud tunnevad kergendust juba esimese seansi järel. Krooniliste probleemide korral tuleb mõju 3-5 seansi järel."}},
-{"@type":"Question","name":"Kui sageli peaks lümfimassaaži tegema?","acceptedAnswer":{"@type":"Answer","text":"Ägedate tursete korral mitmeid seanse nädalas, krooniliste probleemide korral 1-2 korda nädalas, ennetuseks kord kuus."}},
-{"@type":"Question","name":"Kas võin tunda end halvemini pärast massaaži?","acceptedAnswer":{"@type":"Answer","text":"Harvadel juhtudel võite tunda kerget väsimust - see on normaalne detoksikatsiooni reaktsioon. Jooge rohkelt vett ja puhake."}},
-{"@type":"Question","name":"Kas lümfimassaaž aitab kaalulanguse puhul?","acceptedAnswer":{"@type":"Answer","text":"Lümfimassaaž ei ole otseselt kaalulanguse meetod, kuid võib vähendada vedeliku tagasipidamist ja parandada ainevahetust."}}
+{"@type":"Question","name":"Болезненен ли лимфодренажный массаж?","acceptedAnswer":{"@type":"Answer","text":"Нет, лимфодренажный массаж очень мягкий и должен быть приятным. Давление намного легче, чем при обычном массаже."}},
+{"@type":"Question","name":"Когда я увижу результаты?","acceptedAnswer":{"@type":"Answer","text":"Многие чувствуют облегчение уже после первого сеанса. При хронических проблемах эффект наступает через 3-5 сеансов."}},
+{"@type":"Question","name":"Как часто следует делать лимфодренажный массаж?","acceptedAnswer":{"@type":"Answer","text":"5 сеансов в неделю при острых отёках, 1-2 раза в неделю при хронических проблемах, раз в месяц для профилактики."}},
+{"@type":"Question","name":"Могу ли я чувствовать себя хуже после массажа?","acceptedAnswer":{"@type":"Answer","text":"В редких случаях возможна лёгкая усталость - это нормальная реакция на движение жидкости в теле. Пейте больше воды и отдыхайте."}},
+{"@type":"Question","name":"Помогают ли лимфодренажный массаж и прессотерапия при похудении или целлюлите?","acceptedAnswer":{"@type":"Answer","text":"Прямого похудения ожидать не стоит. Уменьшение окружности измеримо, но происходит в основном за счёт перераспределения жидкости, а не потери жира."}}
 ]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -1519,69 +1543,129 @@
             
             <p>В отличие от кровеносной системы, лимфатическая система не имеет сердца, которое перекачивало бы жидкость - поэтому движение лимфатической жидкости медленное и зависит от мышечных сокращений, дыхания и внешних стимуляций, таких как массаж.</p>
             
-            <p>Когда лимфатическая система не работает оптимально, могут возникнуть отёки, ослабление иммунной системы и накопление токсинов в тканях.</p>
+            <p>Когда лимфатическая система не работает оптимально, могут возникнуть отёки, ослабление иммунной системы и накопление продуктов обмена веществ в тканях.</p>
           </section>
 
-          <section class="how-it-works-section">
-            <h2>Как работает лимфодренажный массаж?</h2>
-            <p>Лимфодренажный массаж использует специальные, мягкие и ритмичные техники:</p>
-            
-            <div class="benefits-grid">
-              <div class="benefit-card">
-                <h4>Мягкие движения</h4>
-                <p>Лёгкие, ритмичные движения стимулируют лимфатические узлы и лимфатические сосуды, увеличивая ток лимфатической жидкости без повреждения тканей.</p>
+          <section class="comparison-section">
+            <h2>Два научно обоснованных подхода: терапевтический и эстетический</h2>
+            <div class="comparison-intro">
+              <p>Один и тот же метод (ручной лимфодренаж в сочетании с аппаратом прессотерапии) на самом деле служит двум разным целям, в зависимости от вашей основной потребности. <strong>Терапевтический</strong> подход направлен на измеримое, медицински доказанное лечение отёков/лимфедемы. <strong>Эстетический</strong> подход использует ту же технологию для косметического устранения задержки жидкости и улучшения общего самочувствия тела. Ниже честно представлена научная база, показания и ожидаемые результаты для каждого подхода отдельно.</p>
+            </div>
+
+            <div class="comparison-intro" style="background:#f1ede0;border-left:4px solid #b8860b;">
+              <h3 style="margin-top:0;color:#8a6a10;">Прогрев (инфракрасное тепло): преимущество профессионального аппарата</h3>
+              <p>Наш аппарат прессотерапии - это не обычная, одноуровневая машина: тепло регулируется на <strong>4 точных уровнях: 39°C, 41°C, 43°C и 45°C</strong>, которые терапевт настраивает по ходу сеанса в зависимости от ощущений и комфорта клиента. Такая точная регулировка - признак профессионального медицинского оборудования, которого обычно нет у простых, домашних аппаратов прессотерапии.</p>
+              <p>У аппарата также есть <strong>4 разных режима работы</strong>, адаптированных под разные потребности, включая умный режим "Pretherapy", который следует точно той же логике, которую терапевт использует, вручную открывая лимфатические узлы: сначала жидкость освобождается из области ближе к туловищу, и только затем давление постепенно продвигается в более отдалённые участки конечности. Технология самого аппарата построена так, чтобы следовать естественному направлению лимфатической системы: рука и умная технология выполняют одну и ту же работу вместе, только на разных уровнях, и результат получается более равномерным и глубоким, чем у простого аппарата с однородным давлением.</p>
+              <p>Тепло расширяет кровеносные сосуды и увеличивает кровоток в мышцах<sup>[7]</sup>, снижает жёсткость мышц и соединительной ткани и улучшает их эластичность<sup>[7][8]</sup> - прогретая ткань становится мягче и более восприимчивой к давлению, точно так же, как тёплая резиновая лента растягивается легче, чем холодная. Тепло также ускоряет движение лимфы: температура 40°C заметно увеличивает транспорт лимфы по сравнению с более низкими температурами<sup>[2]</sup>. Наш аппарат применяет тепло и давление одновременно, в рамках одного и того же цикла: тёплая, расслабленная ткань не сопротивляется давлению, поэтому аппарат работает вместе с тканью, а не против неё<sup>[8]</sup>. Именно это сочетание тепла и точного, последовательного давления и отличает нашу процедуру от обычной прессотерапии, использующей только давление, и поднимает результат на профессиональный уровень.</p>
+              <p><strong>Когда тепло не используется:</strong> при острой травме или остром отёке, в области открытых ран или недавних послеоперационных швов, на участках с нарушенной чувствительностью кожи, при подозрении на тромбоз глубоких вен, во время лихорадки, а также на участке, который уже горячий или воспалённый на ощупь<sup>[9]</sup>.</p>
+            </div>
+
+            <div class="comparison-grid">
+              <div class="comparison-col-header therapeutic">🩺 Терапевтический</div>
+              <div class="comparison-col-header aesthetic">✨ Эстетический</div>
+
+              <div class="comparison-row-label">Что происходит во время сеанса</div>
+              <div class="comparison-cell therapeutic">
+                <p>Терапевт вручную открывает основные зоны лимфатических узлов (шея, подмышка, паховая область), после чего аппарат прессотерапии продолжает работу на больших участках тела последовательным давлением. Программа и давление настраиваются в зависимости от конкретного диагноза.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Направленное давление</h4>
-                <p>Мягкое давление в правильном направлении помогает лимфатической жидкости двигаться к лимфатическим узлам, где токсины фильтруются.</p>
+              <div class="comparison-cell aesthetic">
+                <p>Аппарат прессотерапии используется по всему телу: ноги, руки/верхняя часть тела или всё сразу, в зависимости от потребности. Терапевт вручную открывает лимфатические узлы так же, как на терапевтическом сеансе, после чего основную работу выполняет аппарат. Курс обычно короче и более частый, чем курс лечения хронического состояния.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Уменьшение отёков</h4>
-                <p>Стимулирует лимфодренаж, помогая удалять избыточные жидкости из тканей и уменьшая отёки.</p>
+
+              <div class="comparison-row-label">Научные данные</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Исследование показало, что в интенсивной фазе лечения лимфедемы ручной лимфодренаж в сочетании с аппаратом пневматической компрессии заметно сильнее уменьшал объём отёка, чем только ручная терапия (примерно 43% против 37%); рука и аппарат дополняют друг друга, а не заменяют<sup>[1]</sup></li>
+                  <li>3-летнее долгосрочное наблюдение показало устойчивое уменьшение окружности конечности и улучшение эластичности тканей без осложнений<sup>[2]</sup></li>
+                  <li>У пациентов с лимфедемой и липедемой показано, что уменьшение окружности конечности сопровождается реальным улучшением восприятия тела и качества жизни<sup>[5]</sup></li>
+                  <li>Использование аппарата стимулирует высвобождение оксида азота, что улучшает кровоснабжение и помогает уменьшить воспаление в обрабатываемой зоне<sup>[3]</sup></li>
+                </ul>
               </div>
-              <div class="benefit-card">
-                <h4>Укрепление иммунной системы</h4>
-                <p>Улучшает циркуляцию лейкоцитов и активирует лимфатические узлы, укрепляя защитные силы организма.</p>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Исследование комбинированного ручного и механического лимфодренажа (10 сеансов за две недели) показало явное, измеримое уменьшение окружности сразу в нескольких зонах тела (живот, бёдра, ягодичная складка), наряду с высокой удовлетворённостью клиентов<sup>[4]</sup></li>
+                  <li>Лимфодренаж в четырёхнедельном исследовании измеримо уменьшил <strong>толщину подкожной жировой ткани</strong> (15,4%) и выраженность целлюлита<sup>[6]</sup></li>
+                </ul>
+                <p class="comparison-note">Часть эффекта - перераспределение жидкости (быстрое, но требует поддержания), часть - измеримое изменение самой ткани (уменьшение толщины подкожной жировой ткани, освобождение лимфатических путей). Последнее даёт более долгосрочную, профилактическую пользу.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Детоксикация</h4>
-                <p>Ускоряет выведение токсинов и продуктов распада из тканей, способствуя естественному процессу очищения организма.</p>
+
+              <div class="comparison-row-label">Показания</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Лимфедема (в т.ч. послеоперационная, после рака груди)</li>
+                  <li>Хронический отёк ног/рук</li>
+                  <li>Венозная недостаточность, застойный дерматит</li>
+                  <li>Послеоперационное восстановление</li>
+                  <li>Спортивное восстановление</li>
+                </ul>
               </div>
-              <div class="benefit-card">
-                <h4>Расслабление</h4>
-                <p>Мягкие, успокаивающие движения активируют парасимпатическую нервную систему, снижая стресс и улучшая качество сна.</p>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Косметическая задержка жидкости (напр. перед мероприятием, сезонный отёк)</li>
+                  <li>Поддерживающее улучшение структуры кожи и внешнего вида целлюлита</li>
+                  <li>Ощущение "тяжёлых ног", общее улучшение кровообращения</li>
+                </ul>
+              </div>
+
+              <div class="comparison-row-label" style="grid-column: 1 / -1; background:#f1f0fb;">Противопоказания (действуют для обоих подходов)</div>
+              <div class="comparison-cell" style="grid-column: 1 / -1; background:#fafafd;">
+                <ul style="columns:2;gap:2rem;">
+                  <li>Диагностированная сердечная недостаточность</li>
+                  <li>Острый тромбоз глубоких вен (ТГВ) или тромбофлебит</li>
+                  <li>Острая инфекция в зоне обработки</li>
+                  <li>Нелеченое злокачественное новообразование в зоне обработки (без разрешения врача)</li>
+                  <li>Нелеченый гипотиреоз</li>
+                  <li>Беременность (проконсультируйтесь с терапевтом заранее)</li>
+                  <li>Неконтролируемое высокое давление</li>
+                </ul>
+                <p class="comparison-note">Дополнительно: если во время сеанса используется инфракрасное тепло, действуют дополнительные ограничения, см. выше "Прогрев (инфракрасное тепло): преимущество профессионального аппарата".</p>
+              </div>
+
+              <div class="comparison-row-label">Ожидаемые эффекты</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Облегчение симптомов лимфедемы и хронического отёка (тяжесть, напряжение, боль)</li>
+                  <li>Более быстрое устранение послеоперационного или посттравматического отёка и ускорение заживления</li>
+                  <li>Восстановление подвижности суставов и конечности, напр. подвижности плеча после операции по поводу рака груди</li>
+                  <li>Облегчение симптомов венозной недостаточности и застойного дерматита (изменения кожи, хронический отёк)</li>
+                </ul>
+              </div>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Устранение избыточной задержки жидкости и освобождение лимфатических путей, что предотвращает быстрое повторное накопление жидкости в том же месте</li>
+                  <li>Измеримое уменьшение толщины подкожной жировой ткани и улучшение внешнего вида целлюлита</li>
+                  <li>Более упругая кожа, более ровное и "лёгкое" ощущение тела</li>
+                </ul>
+              </div>
+
+              <div class="comparison-row-label">Продолжительность курса</div>
+              <div class="comparison-cell therapeutic">
+                <p><strong>Острый отёк:</strong> 5 сеансов в неделю, 2-4 недели.<br>
+                <strong>Хроническая лимфедема:</strong> 1-2 раза в неделю на длительный срок, вместе с ежедневным компрессионным бельём дома.<br>
+                <strong>Профилактика/поддержание:</strong> примерно 1 раз в месяц.</p>
+              </div>
+              <div class="comparison-cell aesthetic">
+                <p><strong>Обычный курс:</strong> 8-12 сеансов, 2 раза в неделю.<br>
+                <strong>Поддерживающая фаза:</strong> от 1 раза в неделю до 1 раза в месяц.<br>
+                Как и в случае других эстетических поддерживающих курсов, регулярность даёт наиболее равномерный результат.</p>
               </div>
             </div>
-          </section>
 
-          <section>
-            <h2>При каких состояниях помогает лимфодренажный массаж?</h2>
-            <div class="applications-grid">
-              <div class="application-item">Отёки ног и рук</div>
-              <div class="application-item">Послеоперационное восстановление</div>
-              <div class="application-item">Отёки во время и после беременности</div>
-              <div class="application-item">Хронические воспаления</div>
-              <div class="application-item">Слабость иммунной системы</div>
-              <div class="application-item">Синдром хронической усталости</div>
-              <div class="application-item">Фибромиалгия</div>
-              <div class="application-item">Стресс и тревожность</div>
-              <div class="application-item">Нарушения сна</div>
-              <div class="application-item">Проблемы с пищеварением</div>
-              <div class="application-item">Целлюлит</div>
-              <div class="application-item">Мигрень и головные боли</div>
+            <div class="comparison-note" style="margin-top:1rem;">
+              <strong>Использованные источники:</strong>
+              <ol style="padding-left:1.2rem;font-size:.85rem;">
+                <li>Zaleska M, Olszewski WL. <em>Intermittent pneumatic compression therapy: A systematic review.</em> <a href="https://www.researchgate.net/publication/228437510" target="_blank" rel="noopener noreferrer">researchgate.net</a></li>
+                <li>Miranda F Jr, et al. <em>Effectiveness of intermittent pneumatic compression in long-term therapy of lymphedema of lower limbs.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/24927065/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+                <li>Effect of lower limb pressotherapy on rheological and biochemical blood indices. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11476452/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Godoy JMP, et al. <em>Treatment of cellulite based on the hypothesis of a novel physiopathology.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3114606/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Body image and related factors in patients with lower extremity lymphedema and lipedema. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12571398" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Comparison of Extracorporeal Shock Wave Therapy versus Manual Lymphatic Drainage on Cellulite after Liposuction. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8371620/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Using heat therapy for the management of musculoskeletal pain. International Pharmaceutical Federation (FIP) guidance. <a href="https://www.fip.org/file/6080" target="_blank" rel="noopener noreferrer">fip.org</a></li>
+                <li>Substantiating the Therapeutic Effects of Simultaneous Heat Massage Combined with Conventional Physical Therapy for Treatment of Lower Back Pain. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10093909/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Massage Therapists Guide to Heat Therapy. Thermotherapy contraindications overview. <a href="https://mblexguide.com/massage-therapists-guide-to-heat-therapy/" target="_blank" rel="noopener noreferrer">mblexguide.com</a></li>
+              </ol>
             </div>
           </section>
-
-          <div class="special-techniques">
-            <h3>Специальные техники лимфодренажного массажа</h3>
-            <p>Наши терапевты используют различные техники лимфодренажного массажа в соответствии с вашими потребностями:</p>
-            <ul>
-              <li><strong>Manual Lymphatic Drainage (MLD)</strong> - классический метод доктора Воддера</li>
-              <li><strong>Лимфодренаж лица</strong> - специально для снятия отёков и напряжений лица</li>
-              <li><strong>Антицеллюлитный лимфомассаж</strong> - помогает улучшить структуру кожи</li>
-              <li><strong>Глубокий лимфомассаж</strong> - при хронических проблемах</li>
-            </ul>
-          </div>
 
           <section>
             <h2>Процесс лимфодренажного массажа</h2>
@@ -1592,17 +1676,21 @@
               </div>
               <div class="process-step" data-step="2">
                 <h4>Подготовка</h4>
-                <p>Поиск удобного положения и при необходимости использование специального масла</p>
+                <p>Поиск удобного положения и при необходимости использование специального масла. Рекомендуем удобную, спортивную одежду и запасной комплект одежды с собой.</p>
               </div>
               <div class="process-step" data-step="3">
                 <h4>Глубокое дыхание</h4>
                 <p>Правильная техника дыхания активирует диафрагму и стимулирует лимфоток</p>
               </div>
               <div class="process-step" data-step="4">
-                <h4>Мягкий массаж</h4>
-                <p>Специальные, лёгкие движения в определённой последовательности и направлении</p>
+                <h4>Открытие лимфатических узлов</h4>
+                <p>Терапевт вручную открывает точные зоны лимфатических узлов (шея, подмышка, паховая область)</p>
               </div>
               <div class="process-step" data-step="5">
+                <h4>Сеанс прессотерапии</h4>
+                <p>Основную работу выполняет аппарат: равномерное, последовательное давление на ноги, руки/верхнюю часть тела или всё тело, в зависимости от потребности. Многие программы используют вместе с давлением и инфракрасное тепло (см. выше почему и когда).</p>
+              </div>
+              <div class="process-step" data-step="6">
                 <h4>Последующий уход</h4>
                 <p>Рекомендации по питьевому режиму и движению для оптимизации результатов</p>
               </div>
@@ -1614,7 +1702,7 @@
             <p>После лимфодренажного массажа особенно важно следовать рекомендациям для достижения оптимального результата:</p>
             
             <ul class="aftercare-list">
-              <li><strong>Пейте много воды</strong> - минимум 3 литра в день для вымывания токсинов</li>
+              <li><strong>Пейте много воды</strong> - минимум 3 литра в день для поддержки работы лимфатической системы</li>
               <li><strong>Избегайте солёной пищи</strong> в первый день - во избежание задержки жидкости</li>
               <li><strong>Выполняйте лёгкие движения</strong> - прогулка стимулирует лимфоток</li>
               <li><strong>Достаточно отдыхайте</strong> - лимфатическая система активно работает во время сна</li>
@@ -1624,18 +1712,7 @@
           </div>
 
           <div class="contraindications-section">
-            <h3>Противопоказания</h3>
-            <p>Лимфодренажный массаж подходит не всем. Пожалуйста, сообщите терапевту, если у вас есть:</p>
-            <ul>
-              <li>Острая инфекция или лихорадка</li>
-              <li>Сердечная недостаточность</li>
-              <li>Почечная недостаточность</li>
-              <li>Активные онкологические заболевания (без консультации врача)</li>
-              <li>Глубокие венозные тромбы</li>
-              <li>Острый период аллергических реакций</li>
-              <li>Быстро распространяющиеся кожные заболевания</li>
-              <li>Гипотиреоз (нелеченый)</li>
-            </ul>
+            <p><strong>Противопоказания указаны выше, в общей сравнительной таблице</strong>. Они действуют как для терапевтического, так и для эстетического подхода. Пожалуйста, всегда информируйте терапевта о своём состоянии здоровья перед сеансом.</p>
           </div>
 
           <div class="cta-section">
@@ -1661,7 +1738,7 @@
                 Когда я увижу результаты?
               </div>
               <div class="faq-answer">
-                Многие люди чувствуют облегчение уже после первого сеанса, особенно если проблема - острый отёк. При хронических проблемах эффект может проявиться после 3-5 сеансов. Эффект детоксикации обычно заметен в течение 24-48 часов.
+                Многие люди чувствуют облегчение уже после первого сеанса, особенно если проблема - острый отёк. При хронических проблемах эффект может проявиться после 3-5 сеансов. Уменьшение задержки жидкости обычно заметно в течение 24-48 часов; для эстетических целей результат лучше всего поддерживается регулярным курсом.
               </div>
             </div>
 
@@ -1670,7 +1747,7 @@
                 Как часто следует делать лимфодренажный массаж?
               </div>
               <div class="faq-answer">
-                В зависимости от состояния: при острых отёках может потребоваться несколько сеансов в неделю, при хронических проблемах 1-2 раза в неделю, для профилактики раз в месяц. Терапевт составит для вас индивидуальный план лечения.
+                В зависимости от состояния: 5 сеансов в неделю при острых отёках, 1-2 раза в неделю при хронических проблемах, раз в месяц для профилактики. Терапевт составит для вас индивидуальный план лечения.
               </div>
             </div>
 
@@ -1679,16 +1756,16 @@
                 Могу ли я чувствовать себя хуже после массажа?
               </div>
               <div class="faq-answer">
-                В редких случаях вы можете почувствовать лёгкую усталость или головокружение - это нормальная реакция детоксикации. Пейте много воды и отдыхайте. Если симптомы сохраняются более 24 часов, свяжитесь с терапевтом.
+                В редких случаях вы можете почувствовать лёгкую усталость или головокружение - это нормальная реакция на движение жидкости в теле. Пейте много воды и отдыхайте. Если симптомы сохраняются более 24 часов, свяжитесь с терапевтом.
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                Помогает ли лимфодренажный массаж при похудении?
+                Помогают ли лимфодренажный массаж и прессотерапия при похудении или целлюлите?
               </div>
               <div class="faq-answer">
-                Лимфодренажный массаж не является прямым методом похудения, но может помочь уменьшить задержку жидкости и улучшить обмен веществ. В сочетании со здоровыми пищевыми привычками и движением может поддержать похудение.
+                Прямого похудения ожидать не стоит: уменьшение окружности происходит в основном за счёт перераспределения жидкости, а не потери жировых клеток. Однако исследования показывают статистически значимое уменьшение окружности в нескольких зонах тела и высокую удовлетворённость клиентов уже после 10 сеансов комбинированного ручного и механического лимфодренажа. Наилучший и наиболее устойчивый результат даёт сочетание с здоровым питанием и физической активностью.
               </div>
             </div>
           </section>
@@ -1823,6 +1900,23 @@
               if (retry) retry.click();
               setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
             }, 1000);
+          }
+        });
+      });
+
+      // FAQ accordion toggle
+      document.querySelectorAll('.faq-question').forEach(function(q) {
+        function toggleFaq() {
+          var answer = q.nextElementSibling;
+          if (!answer || !answer.classList.contains('faq-answer')) return;
+          var isOpen = answer.classList.toggle('open');
+          q.setAttribute('aria-expanded', String(isOpen));
+        }
+        q.addEventListener('click', toggleFaq);
+        q.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFaq();
           }
         });
       });

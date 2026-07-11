@@ -423,36 +423,6 @@
     /* === HERO REVIEWS === */
     .hero-reviews { margin-top: 18px; }
 
-    /* === SEO CONTENT BLOCK === */
-    .seo-section {
-      padding: 32px 0 20px;
-    }
-    .seo-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-      font-weight: 400; margin-bottom: 18px;
-      color: var(--text);
-    }
-    .seo-grid {
-      display: grid; gap: 20px; grid-template-columns: 1fr;
-    }
-    .seo-col h3 {
-      font-size: .95rem; font-weight: 700; color: var(--brand);
-      margin-bottom: 8px;
-    }
-    .seo-col p {
-      font-size: .88rem; color: var(--text-secondary); line-height: 1.7;
-      margin-bottom: 10px;
-    }
-    .seo-col a {
-      color: var(--brand); text-decoration: none;
-      border-bottom: 1px dotted var(--brand); transition: all .2s;
-    }
-    .seo-col a:hover { border-bottom-style: solid; }
-    @media (min-width: 900px) {
-      .seo-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
     /* === FOOTER === */
     .site-footer {
       background: #1a1832; color: rgba(255,255,255,.7);
@@ -1069,10 +1039,6 @@
     /* === HERO REVIEWS === */
         .hero-reviews { margin-top: 18px; }
     
-    @media (min-width: 900px) {
-          .seo-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    
     /* === RESPONSIVE === */
         @media (min-width: 640px) {
           .trustbar { grid-template-columns: repeat(4,1fr); }
@@ -1340,6 +1306,64 @@
           font-weight: 500;
           color: var(--brand, #44437d);
         }
+
+    .comparison-intro {
+      background: #f8f9fb;
+      border-radius: var(--radius, 8px);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 1.5rem 0 2rem;
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      border: 1px solid var(--line, #e0e0e0);
+    }
+
+    .comparison-col-header {
+      padding: 1.1rem 1.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comparison-col-header.therapeutic { background: var(--brand, #44437d); }
+    .comparison-col-header.aesthetic { background: #b8860b; }
+
+    .comparison-row-label {
+      grid-column: 1 / -1;
+      background: #ececf5;
+      padding: .7rem 1.5rem;
+      font-weight: 700;
+      color: var(--brand, #44437d);
+      border-top: 1px solid var(--line, #e0e0e0);
+    }
+
+    .comparison-cell {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid var(--line, #e0e0e0);
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .comparison-cell.therapeutic { background: #fafafd; border-right: 1px solid var(--line, #e0e0e0); }
+    .comparison-cell.aesthetic { background: #fffdf7; }
+    .comparison-cell ul { margin: 0; padding-left: 1.15rem; }
+    .comparison-cell li { margin-bottom: .45rem; }
+    .comparison-note {
+      font-size: .85rem;
+      color: var(--text-secondary, #666);
+      font-style: italic;
+      margin-top: .5rem;
+    }
+
+    @media (max-width: 720px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comparison-cell.therapeutic { border-right: none; }
+    }
     
     .faq-section {
           margin-top: 3rem;
@@ -1414,11 +1438,11 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Kas lümfimassaaž on valulik?","acceptedAnswer":{"@type":"Answer","text":"Ei, lümfimassaaž on väga õrn ja peaks olema meeldiv. Surve on palju kergem kui tavalise massaaži puhul."}},
-{"@type":"Question","name":"Millal näen tulemusi?","acceptedAnswer":{"@type":"Answer","text":"Paljud tunnevad kergendust juba esimese seansi järel. Krooniliste probleemide korral tuleb mõju 3-5 seansi järel."}},
-{"@type":"Question","name":"Kui sageli peaks lümfimassaaži tegema?","acceptedAnswer":{"@type":"Answer","text":"Ägedate tursete korral mitmeid seanse nädalas, krooniliste probleemide korral 1-2 korda nädalas, ennetuseks kord kuus."}},
-{"@type":"Question","name":"Kas võin tunda end halvemini pärast massaaži?","acceptedAnswer":{"@type":"Answer","text":"Harvadel juhtudel võite tunda kerget väsimust - see on normaalne detoksikatsiooni reaktsioon. Jooge rohkelt vett ja puhake."}},
-{"@type":"Question","name":"Kas lümfimassaaž aitab kaalulanguse puhul?","acceptedAnswer":{"@type":"Answer","text":"Lümfimassaaž ei ole otseselt kaalulanguse meetod, kuid võib vähendada vedeliku tagasipidamist ja parandada ainevahetust."}}
+{"@type":"Question","name":"Onko lymfahieronta kivuliasta?","acceptedAnswer":{"@type":"Answer","text":"Ei, lymfahieronta on hyvin hellävarainen ja sen pitäisi olla miellyttävä. Paine on paljon kevyempi kuin tavallisessa hieronnassa."}},
+{"@type":"Question","name":"Milloin näen tuloksia?","acceptedAnswer":{"@type":"Answer","text":"Monet tuntevat helpotusta jo ensimmäisen hoitokerran jälkeen. Kroonisissa ongelmissa vaikutus näkyy 3-5 hoitokerran jälkeen."}},
+{"@type":"Question","name":"Kuinka usein lymfahierontaa kannattaa tehdä?","acceptedAnswer":{"@type":"Answer","text":"5 hoitokertaa viikossa akuutissa turvotuksessa, 1-2 kertaa viikossa kroonisissa ongelmissa, kerran kuukaudessa ennaltaehkäisyyn."}},
+{"@type":"Question","name":"Voinko tuntea oloni huonommaksi hieronnan jälkeen?","acceptedAnswer":{"@type":"Answer","text":"Harvoissa tapauksissa voit tuntea lievää väsymystä - tämä on normaali reaktio nesteen liikkeeseen kehossa. Juo runsaasti vettä ja lepää."}},
+{"@type":"Question","name":"Auttavatko lymfahieronta ja painehoito laihtumisessa tai selluliittiin?","acceptedAnswer":{"@type":"Answer","text":"Suoraa laihtumista ei pidä odottaa. Ympärysmitan pieneneminen on mitattavaa, mutta johtuu pääasiassa nesteen uudelleenjakautumisesta, ei rasvan häviämisestä."}}
 ]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -1524,134 +1548,187 @@
           </div>
 
           <section class="lymphatic-section">
-            <h2>What is the lymphatic system?</h2>
-            <p>The lymphatic system is part of our immune system and plays a crucial role in body cleansing. It consists of lymph nodes, a network of lymphatic vessels, and lymphatic fluid that transports white blood cells, proteins, and waste products throughout the body.</p>
+            <h2>Mikä on lymfajärjestelmä?</h2>
+            <p>Lymfajärjestelmä on osa immuunijärjestelmäämme ja sillä on tärkeä rooli kehon puhdistumisessa. Se koostuu imusolmukkeista, lymfasuonten verkostosta ja lymfanesteestä, joka kuljettaa valkosoluja, proteiineja ja kuona-aineita ympäri kehoa.</p>
             
-            <p>Unlike the circulatory system, the lymphatic system doesn't have a heart to pump fluid - therefore lymphatic fluid movement is slow and depends on muscle contractions, breathing, and external stimulation such as massage.</p>
+            <p>Toisin kuin verenkiertojärjestelmällä, lymfajärjestelmällä ei ole sydäntä, joka pumppaisi nestettä - siksi lymfanesteen liike on hidasta ja riippuu lihassupistuksista, hengityksestä ja ulkoisista ärsykkeistä, kuten hieronnasta.</p>
             
-            <p>When the lymphatic system doesn't function optimally, swelling, weakened immunity, and toxin accumulation in tissues can occur.</p>
+            <p>Kun lymfajärjestelmä ei toimi optimaalisesti, voi ilmetä turvotusta, heikentynyttä immuniteettia ja aineenvaihduntajätteiden kertymistä kudoksiin.</p>
           </section>
 
-          <section class="how-it-works-section">
-            <h2>How does lymphatic massage work?</h2>
-            <p>Lymphatic massage uses special, gentle and rhythmic techniques:</p>
-            
-            <div class="benefits-grid">
-              <div class="benefit-card">
-                <h4>Gentle movements</h4>
-                <p>Light, rhythmic movements stimulate lymph nodes and lymphatic vessels, increasing lymphatic fluid flow without damaging tissues.</p>
+          <section class="comparison-section">
+            <h2>Kaksi tieteeseen perustuvaa lähestymistapaa: terapeuttinen ja esteettinen</h2>
+            <div class="comparison-intro">
+              <p>Sama menetelmä (manuaalinen lymfaterapia yhdistettynä painehoitolaitteeseen) palvelee itse asiassa kahta eri tavoitetta riippuen pääasiallisesta tarpeestasi. <strong>Terapeuttinen</strong> lähestymistapa keskittyy mitattavaan, lääketieteellisesti todistettuun turvotuksen/lymfedeeman hoitoon. <strong>Esteettinen</strong> lähestymistapa käyttää samaa teknologiaa kosmeettisen nesteen kertymisen lievittämiseen ja yleisen kehotuntemuksen parantamiseen. Alla on molemmista erikseen, rehellisesti esitetty tieteellinen tausta, käyttöaiheet ja odotetut tulokset.</p>
+            </div>
+
+            <div class="comparison-intro" style="background:#f1ede0;border-left:4px solid #b8860b;">
+              <h3 style="margin-top:0;color:#8a6a10;">Lämpö (infrapunalämpö): ammattilaitteen etu</h3>
+              <p>Painehoitolaitteemme ei ole tavallinen, yksitasoinen laite: lämpöä voidaan säätää <strong>4 tarkalla tasolla: 39°C, 41°C, 43°C ja 45°C</strong>, joita terapeutti säätää lennossa asiakkaan tuntemusten ja mukavuuden mukaan. Tällainen tarkka säädettävyys on ammattimaisen lääketieteellisen laitteen tunnusmerkki, jota yksinkertaisemmilla ja kotikäyttöön tarkoitetuilla painehoitolaitteilla ei yleensä ole.</p>
+              <p>Laitteessa on myös <strong>4 erilaista toimintatilaa</strong>, jotka on räätälöity eri tarpeisiin, mukaan lukien älykäs "Pretherapy"-tila, joka noudattaa täsmälleen samaa logiikkaa, jota terapeutti käyttää avatessaan imusolmukkeita käsin: ensin neste vapautetaan vartalon lähellä olevasta alueesta, ja vasta sitten paine etenee askel askeleelta raajan kauempiin osiin. Laitteemme oma teknologia on siis rakennettu noudattamaan lymfajärjestelmän luonnollista suuntaa: käsi ja älykäs teknologia tekevät saman työn yhdessä, vain eri tasoilla, ja tulos on tasaisempi ja perusteellisempi kuin yksinkertaisella, tasapaineisella laitteella.</p>
+              <p>Lämpö laajentaa verisuonia ja lisää lihasten verenkiertoa<sup>[7]</sup>, vähentää lihasten ja sidekudoksen jäykkyyttä ja parantaa niiden joustavuutta<sup>[7][8]</sup> - lämmitetty kudos on pehmeämpi ja vastaanottavaisempi paineelle, aivan kuten lämmin kuminauha venyy helpommin kuin kylmä. Lämpö nopeuttaa myös lymfan liikettä: 40°C lämpötila lisää merkittävästi lymfan kulkeutumista verrattuna alempiin lämpötiloihin<sup>[2]</sup>. Laitteemme kohdistaa lämpöä ja painetta samanaikaisesti, saman jakson aikana: lämmin, rentoutunut kudos ei vastusta painetta, joten laite työskentelee kudoksen kanssa, ei sitä vastaan<sup>[8]</sup>. Juuri tämä lämmön ja tarkan, peräkkäisen paineen yhteisvaikutus erottaa toimenpiteemme tavallisesta, vain painetta käyttävästä painehoidosta ja nostaa tuloksen ammattitasolle.</p>
+              <p><strong>Milloin lämpöä ei käytetä:</strong> akuutin vamman tai akuutin turvotuksen yhteydessä, avoimien haavojen tai äskettäisten leikkaushaavojen alueella, alueilla, joilla on heikentynyt ihotuntemus, epäillyn syvän laskimotukoksen yhteydessä, kuumeen aikana, tai alueella, joka tuntuu jo kuumalta tai tulehtuneelta kosketettaessa<sup>[9]</sup>.</p>
+            </div>
+
+            <div class="comparison-grid">
+              <div class="comparison-col-header therapeutic">🩺 Terapeuttinen</div>
+              <div class="comparison-col-header aesthetic">✨ Esteettinen</div>
+
+              <div class="comparison-row-label">Mitä hoitokerran aikana tehdään</div>
+              <div class="comparison-cell therapeutic">
+                <p>Terapeutti avaa käsin tärkeimmät imusolmukealueet (kaula, kainalo, nivunen), minkä jälkeen painehoitolaite jatkaa työtä suuremmilla kehon alueilla peräkkäisellä paineella. Ohjelma ja paine asetetaan tarkan diagnoosin mukaan.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Directed pressure</h4>
-                <p>Gentle pressure in the right direction helps lymphatic fluid move toward lymph nodes, where toxins are filtered out.</p>
+              <div class="comparison-cell aesthetic">
+                <p>Painehoitolaitetta käytetään koko kehon alueella: jalat, kädet/yläkeho tai molemmat yhtä aikaa, tarpeen mukaan. Terapeutti avaa imusolmukkeet käsin samalla tavalla kuin terapeuttisessa hoitokerrassa, minkä jälkeen laite tekee pääosan työstä. Hoitojakso on tyypillisesti lyhyempi ja useammin toistuva kuin kroonisen tilan hoitojakso.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Swelling reduction</h4>
-                <p>Stimulates lymphatic drainage, helping remove excess fluids from tissues and reducing swelling.</p>
+
+              <div class="comparison-row-label">Tieteelliset tulokset</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Tutkimus osoitti, että lymfedeeman hoidon intensiivivaiheessa manuaalinen lymfaterapia yhdistettynä pneumaattiseen kompressiolaitteeseen vähensi turvotuksen määrää huomattavasti enemmän kuin pelkkä käsin tehty terapia (noin 43% vs 37%); käsi ja laite täydentävät toisiaan, eivät korvaa<sup>[1]</sup></li>
+                  <li>3-vuotinen pitkäaikaisseuranta osoitti pysyvän raajan ympärysmitan pienenemisen ja kudoksen elastisuuden paranemisen ilman komplikaatioita<sup>[2]</sup></li>
+                  <li>Lymfedeema- ja lipedeemapotilailla on osoitettu, että raajan ympärysmitan pieneneminen kulkee käsi kädessä todellisen kehotuntemuksen ja elämänlaadun paranemisen kanssa<sup>[5]</sup></li>
+                  <li>Laitteen käyttö stimuloi typpioksidin vapautumista, mikä parantaa verenkiertoa ja auttaa vähentämään tulehdusta hoidetulla alueella<sup>[3]</sup></li>
+                </ul>
               </div>
-              <div class="benefit-card">
-                <h4>Immune system strengthening</h4>
-                <p>Improves white blood cell circulation and activates lymph nodes, strengthening the body's defense mechanisms.</p>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Yhdistetyn manuaalisen ja mekaanisen lymfaterapian tutkimus (10 hoitokertaa kahden viikon aikana) osoitti selvän, mitattavan ympärysmitan pienenemisen useilla kehon alueilla samanaikaisesti (vatsa, reidet ja pakaravako), sekä korkean asiakastyytyväisyyden<sup>[4]</sup></li>
+                  <li>Lymfaterapia vähensi mitattavasti <strong>ihonalaisen rasvakudoksen paksuutta</strong> (15,4%) ja selluliitin vaikeusastetta neljän viikon tutkimuksessa<sup>[6]</sup></li>
+                </ul>
+                <p class="comparison-note">Osa vaikutuksesta on nesteen uudelleenjakautumista (nopeaa, mutta vaatii ylläpitoa), osa on mitattava kudosmuutos (ihonalaisen rasvakudoksen paksuuden pieneneminen, lymfateiden vapautuminen). Jälkimmäinen antaa pidempiaikaisen, ennaltaehkäisevän hyödyn.</p>
               </div>
-              <div class="benefit-card">
-                <h4>Detoxification</h4>
-                <p>Accelerates toxin and waste product removal from tissues, promoting the body's natural cleansing process.</p>
+
+              <div class="comparison-row-label">Käyttöaiheet</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Lymfedeema (myös leikkauksen jälkeinen, rintasyövän jälkeinen)</li>
+                  <li>Krooninen turvotus jaloissa/käsissä</li>
+                  <li>Laskimoiden vajaatoiminta, staasidermatiitti</li>
+                  <li>Leikkauksen jälkeinen toipuminen</li>
+                  <li>Urheilusta toipuminen</li>
+                </ul>
               </div>
-              <div class="benefit-card">
-                <h4>Relaxation</h4>
-                <p>Gentle, calming movements activate the parasympathetic nervous system, reducing stress and improving sleep quality.</p>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Kosmeettinen nesteen kertyminen (esim. ennen tapahtumaa, kausiluonteinen turvotus)</li>
+                  <li>Ihon rakenteen ja selluliitin ulkonäön tukeva parantaminen</li>
+                  <li>"Raskaiden jalkojen" tunne, yleinen verenkierron vilkastuttaminen</li>
+                </ul>
               </div>
+
+              <div class="comparison-row-label" style="grid-column: 1 / -1; background:#f1f0fb;">Vasta-aiheet (koskevat molempia lähestymistapoja)</div>
+              <div class="comparison-cell" style="grid-column: 1 / -1; background:#fafafd;">
+                <ul style="columns:2;gap:2rem;">
+                  <li>Diagnosoitu sydämen vajaatoiminta</li>
+                  <li>Akuutti syvä laskimotukos (SLT) tai tromboflebiitti</li>
+                  <li>Akuutti infektio hoitoalueella</li>
+                  <li>Hoitamaton pahanlaatuinen kasvain hoitoalueella (ilman lääkärin lupaa)</li>
+                  <li>Hoitamaton kilpirauhasen vajaatoiminta</li>
+                  <li>Raskaus (keskustele terapeutin kanssa etukäteen)</li>
+                  <li>Hallitsematon korkea verenpaine</li>
+                </ul>
+                <p class="comparison-note">Lisäksi: jos hoitokerralla käytetään infrapunalämpöä, sovelletaan lisärajoituksia, katso yllä "Lämpö (infrapunalämpö): ammattilaitteen etu".</p>
+              </div>
+
+              <div class="comparison-row-label">Odotetut vaikutukset</div>
+              <div class="comparison-cell therapeutic">
+                <ul>
+                  <li>Lymfedeeman ja kroonisen turvotuksen oireiden (raskaudentunne, jännitys, kipu) lievittyminen</li>
+                  <li>Leikkauksen tai vamman jälkeisen turvotuksen nopeampi väheneminen ja paranemisen nopeutuminen</li>
+                  <li>Nivelten ja raajan liikelaajuuden palautuminen, esim. olkanivelen liikkuvuus rintasyöpäleikkauksen jälkeen</li>
+                  <li>Laskimoiden vajaatoiminnan ja staasidermatiitin oireiden (ihomuutokset, krooninen turvotus) lievittyminen</li>
+                </ul>
+              </div>
+              <div class="comparison-cell aesthetic">
+                <ul>
+                  <li>Liiallisen nesteen kertymisen häviäminen ja lymfateiden vapautuminen, mikä ehkäisee nesteen nopean uudelleenkertymisen samaan paikkaan</li>
+                  <li>Mitattava ihonalaisen rasvakudoksen paksuuden pieneneminen ja selluliitin ulkonäön parantuminen</li>
+                  <li>Ihon kiinteytyminen, tasaisempi ja "kevyempi" kehotuntemus</li>
+                </ul>
+              </div>
+
+              <div class="comparison-row-label">Hoitojakson pituus</div>
+              <div class="comparison-cell therapeutic">
+                <p><strong>Akuutti turvotus:</strong> 5 hoitokertaa viikossa, 2-4 viikkoa.<br>
+                <strong>Krooninen lymfedeema:</strong> 1-2 kertaa viikossa pidemmällä aikavälillä, yhdessä päivittäisen kompressiovaatteen kanssa kotona.<br>
+                <strong>Ennaltaehkäisy/ylläpito:</strong> noin 1 kerta kuukaudessa.</p>
+              </div>
+              <div class="comparison-cell aesthetic">
+                <p><strong>Tyypillinen hoitojakso:</strong> 8-12 hoitokertaa, 2 kertaa viikossa.<br>
+                <strong>Ylläpitovaihe:</strong> 1 kerta viikossa - 1 kerta kuukaudessa.<br>
+                Kuten muissakin esteettisissä ylläpitohoidoissa, säännöllisyys antaa tasaisimman tuloksen.</p>
+              </div>
+            </div>
+
+            <div class="comparison-note" style="margin-top:1rem;">
+              <strong>Käytetyt lähteet:</strong>
+              <ol style="padding-left:1.2rem;font-size:.85rem;">
+                <li>Zaleska M, Olszewski WL. <em>Intermittent pneumatic compression therapy: A systematic review.</em> <a href="https://www.researchgate.net/publication/228437510" target="_blank" rel="noopener noreferrer">researchgate.net</a></li>
+                <li>Miranda F Jr, et al. <em>Effectiveness of intermittent pneumatic compression in long-term therapy of lymphedema of lower limbs.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/24927065/" target="_blank" rel="noopener noreferrer">PubMed</a></li>
+                <li>Effect of lower limb pressotherapy on rheological and biochemical blood indices. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11476452/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Godoy JMP, et al. <em>Treatment of cellulite based on the hypothesis of a novel physiopathology.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3114606/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Body image and related factors in patients with lower extremity lymphedema and lipedema. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12571398" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Comparison of Extracorporeal Shock Wave Therapy versus Manual Lymphatic Drainage on Cellulite after Liposuction. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8371620/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Using heat therapy for the management of musculoskeletal pain. International Pharmaceutical Federation (FIP) guidance. <a href="https://www.fip.org/file/6080" target="_blank" rel="noopener noreferrer">fip.org</a></li>
+                <li>Substantiating the Therapeutic Effects of Simultaneous Heat Massage Combined with Conventional Physical Therapy for Treatment of Lower Back Pain. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10093909/" target="_blank" rel="noopener noreferrer">PMC</a></li>
+                <li>Massage Therapists Guide to Heat Therapy. Thermotherapy contraindications overview. <a href="https://mblexguide.com/massage-therapists-guide-to-heat-therapy/" target="_blank" rel="noopener noreferrer">mblexguide.com</a></li>
+              </ol>
             </div>
           </section>
 
           <section>
-            <h2>What conditions does lymphatic massage help with?</h2>
-            <div class="applications-grid">
-              <div class="application-item">Leg and arm swelling</div>
-              <div class="application-item">Post-surgical recovery</div>
-              <div class="application-item">Pregnancy and postpartum swelling</div>
-              <div class="application-item">Chronic inflammation</div>
-              <div class="application-item">Weakened immune system</div>
-              <div class="application-item">Chronic fatigue syndrome</div>
-              <div class="application-item">Fibromyalgia</div>
-              <div class="application-item">Stress and anxiety</div>
-              <div class="application-item">Sleep disorders</div>
-              <div class="application-item">Digestive problems</div>
-              <div class="application-item">Cellulite</div>
-              <div class="application-item">Migraines and headaches</div>
-            </div>
-          </section>
-
-          <div class="special-techniques">
-            <h3>Special lymphatic massage techniques</h3>
-            <p>Our therapists use various lymphatic massage techniques according to your needs:</p>
-            <ul>
-              <li><strong>Manual Lymphatic Drainage (MLD)</strong> - classic Dr. Vodder method</li>
-              <li><strong>Facial lymphatic drainage</strong> - specially for facial swelling and tension relief</li>
-              <li><strong>Anti-cellulite lymphatic massage</strong> - helps improve skin structure</li>
-              <li><strong>Deep lymphatic massage</strong> - for chronic problems</li>
-            </ul>
-          </div>
-
-          <section>
-            <h2>Lymphatic massage process</h2>
+            <h2>Lymfahieronnan prosessi</h2>
             <div class="process-steps">
               <div class="process-step" data-step="1">
-                <h4>Assessment</h4>
-                <p>The therapist evaluates your lymphatic system condition and identifies problem areas</p>
+                <h4>Arviointi</h4>
+                <p>Terapeutti arvioi lymfajärjestelmäsi tilan ja tunnistaa ongelma-alueet</p>
               </div>
               <div class="process-step" data-step="2">
-                <h4>Preparation</h4>
-                <p>Finding a comfortable position and using special oil if needed</p>
+                <h4>Valmistelu</h4>
+                <p>Mukavan asennon löytäminen ja tarvittaessa erityisöljyn käyttö. Suosittelemme mukavaa, urheilullista vaatetusta ja vaihtovaatteiden mukaan ottamista.</p>
               </div>
               <div class="process-step" data-step="3">
-                <h4>Deep breathing</h4>
-                <p>Proper breathing technique activates the diaphragm and stimulates lymph flow</p>
+                <h4>Syvä hengitys</h4>
+                <p>Oikea hengitystekniikka aktivoi pallean ja stimuloi lymfan virtausta</p>
               </div>
               <div class="process-step" data-step="4">
-                <h4>Gentle massage</h4>
-                <p>Special, light movements in a specific sequence and direction</p>
+                <h4>Imusolmukkeiden avaaminen</h4>
+                <p>Terapeutti avaa käsin tarkat imusolmukealueet (kaula, kainalo, nivunen)</p>
               </div>
               <div class="process-step" data-step="5">
-                <h4>Aftercare</h4>
-                <p>Recommendations for water intake and movement to optimize results</p>
+                <h4>Painehoitokerta</h4>
+                <p>Laite tekee pääosan työstä: tasainen, peräkkäinen paine jaloille, käsille/yläkeholle tai koko keholle, tarpeen mukaan. Monet ohjelmat käyttävät paineen kanssa myös infrapunalämpöä (katso yllä miksi ja milloin).</p>
+              </div>
+              <div class="process-step" data-step="6">
+                <h4>Jälkihoito</h4>
+                <p>Suosituksia vedenjuontiin ja liikkumiseen tulosten optimoimiseksi</p>
               </div>
             </div>
           </section>
 
           <div class="aftercare-section">
-            <h3>Important aftercare</h3>
-            <p>After lymphatic massage, it's especially important to follow recommendations to achieve optimal results:</p>
+            <h3>Tärkeä jälkihoito</h3>
+            <p>Lymfahieronnan jälkeen on erityisen tärkeää noudattaa suosituksia optimaalisen tuloksen saavuttamiseksi:</p>
             
             <ul class="aftercare-list">
-              <li><strong>Drink plenty of water</strong> - at least 3 liters per day to flush out toxins</li>
-              <li><strong>Avoid salty foods</strong> on the first day - to prevent fluid retention</li>
-              <li><strong>Do light exercise</strong> - walking stimulates lymph flow</li>
-              <li><strong>Rest adequately</strong> - the lymphatic system works actively during sleep</li>
-              <li><strong>Avoid alcohol</strong> for 24 hours after massage</li>
-              <li><strong>Wear loose clothing</strong> - to avoid restricting lymph flow</li>
+              <li><strong>Juo runsaasti vettä</strong> - vähintään 3 litraa päivässä tukemaan lymfajärjestelmän toimintaa</li>
+              <li><strong>Vältä suolaista ruokaa</strong> ensimmäisenä päivänä - nesteen kertymisen ehkäisemiseksi</li>
+              <li><strong>Liiku kevyesti</strong> - kävely stimuloi lymfan virtausta</li>
+              <li><strong>Lepää riittävästi</strong> - lymfajärjestelmä toimii aktiivisesti unen aikana</li>
+              <li><strong>Vältä alkoholia</strong> 24 tuntia hieronnan jälkeen</li>
+              <li><strong>Käytä löysää vaatetusta</strong> - lymfan virtauksen rajoittamisen välttämiseksi</li>
             </ul>
           </div>
 
           <div class="contraindications-section">
-            <h3>Contraindications</h3>
-            <p>Lymphatic massage is not suitable for everyone. Please inform the therapist if you have:</p>
-            <ul>
-              <li>Acute infection or fever</li>
-              <li>Heart failure</li>
-              <li>Kidney failure</li>
-              <li>Active malignant tumors (without medical consultation)</li>
-              <li>Deep vein thrombosis</li>
-              <li>Acute allergic reaction period</li>
-              <li>Rapidly spreading skin disease</li>
-              <li>Hypothyroidism (untreated)</li>
-            </ul>
+            <p><strong>Vasta-aiheet on esitetty yllä, yhteisessä vertailutaulukossa</strong>. Ne koskevat sekä terapeuttista että esteettistä lähestymistapaa. Kerro terapeutille aina terveydentilastasi ennen hoitokertaa.</p>
           </div>
 
           <div class="cta-section">
-            <h3>Discover the healing power of lymphatic massage</h3>
-            <p>Lymphatic massage offers a natural way to reduce swelling, strengthen the immune system, and improve overall well-being. Give your body the opportunity for natural recovery and cleansing.</p>
-            <p>Lymfaattinen hieronta Viimsin sairaalassa sopii hyvin myös Lasnamäen (Priislen) ja Pirita-Kosen asukkaille, jotka kulkevat Pärnamäe teetä pitkin.</p>
+            <h3>Löydä lymfahieronnan parantava voima</h3>
+            <p>Lymfahieronta tarjoaa luonnollisen tavan vähentää turvotusta, vahvistaa immuunijärjestelmää ja parantaa yleistä hyvinvointia. Anna kehollesi mahdollisuus luonnolliseen toipumiseen ja puhdistumiseen.</p>
+            <p>Lymfahieronta Viimsin sairaalassa sopii hyvin myös Lasnamäen (Priislen) ja Pirita-Kosen asukkaille, jotka kulkevat Pärnamäe teetä pitkin.</p>
           </div>
 
           <section class="faq-section">
@@ -1659,46 +1736,46 @@
             
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                Is lymphatic massage painful?
+                Onko lymfahieronta kivuliasta?
               </div>
               <div class="faq-answer">
-                No, lymphatic massage is very gentle and should be pleasant. The pressure is much lighter than regular massage. If you feel pain, inform the therapist immediately - this means the pressure is too strong.
+                Ei, lymfahieronta on hyvin hellävarainen ja sen pitäisi olla miellyttävä. Paine on paljon kevyempi kuin tavallisessa hieronnassa. Jos tunnet kipua, ilmoita terapeutille heti - se tarkoittaa, että paine on liian voimakas.
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                When will I see results?
+                Milloin näen tuloksia?
               </div>
               <div class="faq-answer">
-                Many people feel relief after the first session, especially if the problem is acute swelling. For chronic problems, effects may appear after 3-5 sessions. Detoxification effects are usually noticeable within 24-48 hours.
+                Monet tuntevat helpotusta jo ensimmäisen hoitokerran jälkeen, erityisesti jos ongelmana on akuutti turvotus. Kroonisissa ongelmissa vaikutus voi näkyä 3-5 hoitokerran jälkeen. Nesteen kertymisen väheneminen näkyy yleensä 24-48 tunnin sisällä; esteettisiin tavoitteisiin säännöllinen ylläpitohoito pitää tuloksen parhaiten.
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                How often should I get lymphatic massage?
+                Kuinka usein lymfahierontaa kannattaa tehdä?
               </div>
               <div class="faq-answer">
-                Depending on the condition: for acute swelling, you may need several sessions per week; for chronic problems, 1-2 times per week; for prevention, once a month. The therapist will create an individual treatment plan for you.
+                Tilanteesta riippuen: 5 hoitokertaa viikossa akuutissa turvotuksessa, 1-2 kertaa viikossa kroonisissa ongelmissa, kerran kuukaudessa ennaltaehkäisyyn. Terapeutti laatii sinulle yksilöllisen hoitosuunnitelman.
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                Can I feel worse after the massage?
+                Voinko tuntea oloni huonommaksi hieronnan jälkeen?
               </div>
               <div class="faq-answer">
-                In rare cases, you may feel mild fatigue or dizziness - this is a normal detoxification reaction. Drink plenty of water and rest. If symptoms persist over 24 hours, contact the therapist.
+                Harvoissa tapauksissa voit tuntea lievää väsymystä tai huimausta - tämä on normaali reaktio nesteen liikkeeseen kehossa. Juo runsaasti vettä ja lepää. Jos oireet jatkuvat yli 24 tuntia, ota yhteyttä terapeuttiin.
               </div>
             </div>
 
             <div class="faq-item">
               <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                Does lymphatic massage help with weight loss?
+                Auttavatko lymfahieronta ja painehoito laihtumisessa tai selluliittiin?
               </div>
               <div class="faq-answer">
-                Lymphatic massage is not directly a weight loss method, but can help reduce fluid retention and improve metabolism. Combined with healthy eating habits and exercise, it may support weight loss.
+                Suoraa laihtumista ei pidä odottaa: ympärysmitan pieneneminen johtuu pääasiassa nesteen uudelleenjakautumisesta, ei rasvasolujen häviämisestä. Tutkimukset kuitenkin osoittavat tilastollisesti merkittävää ympärysmitan pienenemistä useilla kehon alueilla ja korkeaa asiakastyytyväisyyttä jo 10 hoitokerran jälkeen yhdistetyllä manuaalisella ja mekaanisella lymfaterapialla. Parhaan ja kestävimmän tuloksen saa yhdistämällä tämän terveellisiin ruokailu- ja liikuntatottumuksiin.
               </div>
             </div>
           </section>
@@ -1832,6 +1909,23 @@
               if (retry) retry.click();
               setTimeout(function() { container.style.cssText = 'height:0;overflow:hidden;margin:0;padding:0;'; }, 300);
             }, 1000);
+          }
+        });
+      });
+
+      // FAQ accordion toggle
+      document.querySelectorAll('.faq-question').forEach(function(q) {
+        function toggleFaq() {
+          var answer = q.nextElementSibling;
+          if (!answer || !answer.classList.contains('faq-answer')) return;
+          var isOpen = answer.classList.toggle('open');
+          q.setAttribute('aria-expanded', String(isOpen));
+        }
+        q.addEventListener('click', toggleFaq);
+        q.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFaq();
           }
         });
       });
