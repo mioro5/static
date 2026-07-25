@@ -29,6 +29,7 @@ MV Therapy operates from two locations in Estonia: Ravi tee 4, Viimsi Hospital (
 - [Kinesio Taping](https://mvtherapy.ee/en/services/kinesioteipimine.html)
 - [Ultrasound Therapy](https://mvtherapy.ee/en/services/ultraheli-teraapia.html)
 - [Manual Muscle Testing](https://mvtherapy.ee/en/services/manuaalne-lihastest.html)
+- [Manual Therapy](https://mvtherapy.ee/en/services/manuaalteraapia.html)
 
 ## Conditions treated
 
