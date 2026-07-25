@@ -339,6 +339,8 @@
     .technique-item { background: #e3e4f5; padding: 1rem; border-radius: var(--radius, 6px); text-align: center; font-weight: 500; color: var(--brand, #44437d); }
     .faq-section { margin-top: 3rem; }
     .faq-question { background: #f8f9fb; padding: 1rem; font-weight: 600; color: var(--brand, #44437d); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question::after { content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand, #44437d); transition: transform .2s; flex-shrink: 0; margin-left: 12px; }
+    .faq-question[aria-expanded="true"]::after { content: '+'; transform: rotate(45deg); }
     .faq-answer { padding: 1rem; border-top: 1px solid var(--line, #e0e0e0); display: none; }
     .faq-answer.open { display: block; }
     .cta-section { background: linear-gradient(135deg, var(--brand, #44437d), #222259); color: white; padding: 2rem; border-radius: var(--radius, 12px); text-align: center; margin: 3rem 0; }
@@ -491,7 +493,7 @@
       </nav>
 
       <article>
-        <div class="service-hero">
+        <div class="service-hero hero">
           <div class="service-info">
             <h1>Manuaalteraapia Tallinnas</h1>
             <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:16px;">📍 Teenus saadaval: Tallinn (Viimsi Haigla, Ravi tee 4) · Pärnu (Rüütli 47)</p>

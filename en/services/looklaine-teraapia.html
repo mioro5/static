@@ -1357,6 +1357,8 @@
           justify-content: space-between;
           align-items: center;
         }
+    .faq-question::after { content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--brand, #44437d); transition: transform .2s; flex-shrink: 0; margin-left: 12px; }
+    .faq-question[aria-expanded="true"]::after { content: '+'; transform: rotate(45deg); }
     
     .faq-answer {
           padding: 1rem;
@@ -1473,7 +1475,7 @@
         </nav>
 
         <article>
-          <div class="service-hero">
+          <div class="service-hero hero">
             <div class="service-info">
               <h1>Shockwave Therapy in Tallinn</h1>
               <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:16px;">📍 Services available at: Tallinn (Viimsi Hospital, Ravi tee 4) · Pärnu (Rüütli 47)</p>
