@@ -172,6 +172,12 @@ RewriteRule ^home$ /en/home.html? [R=301,L]
 RewriteRule ^sv/(.*)$ /et/home.html [R=301,L]
 RewriteRule ^no/(.*)$ /et/home.html [R=301,L]
 
+# Extensionless URLs -> .html (301)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [R=301,L]
+
 # ============================================================
 # 6. PEIDETUD SUUNAMINE: static -> puhas URL
 # ============================================================
